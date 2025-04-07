@@ -1,0 +1,53 @@
+<nav class="d-flex justify-content-start py-3 border-bottom bg-gray-100 px-5 ">
+    <div class="container ">
+        <!-- <a class="ms-3 color-gray-900 no-underline" routerLink="/tahwesha/home">Shop</a> -->
+
+        <a class="ms-3 color-gray-900 no-underline" routerLink="/sites/dashboard">Home</a>
+
+        <!-- Address Dropdown (Governorate & City) -->
+        <div class="dropdown d-inline ms-3 mb-2 color-gray-900 no-underline" (click)="toggleDropdown('address')"
+            [class.show]="openDropdown === 'address'">
+            <a class="dropdown-toggle border-0 bg-transparent" type="button">
+                Address
+            </a>
+            <ul class="dropdown-menu" [class.show]="openDropdown === 'address'">
+                <li><a class="dropdown-item" routerLink="/sites/governorates">Governorates</a></li>
+                <li><a class="dropdown-item" routerLink="/sites/cities">Cities</a></li>
+            </ul>
+        </div>
+        <div class="dropdown d-inline ms-3 mb-2 color-gray-900 no-underline" (click)="toggleDropdown('items')"
+            [class.show]="openDropdown === 'items'">
+            <a class="dropdown-toggle border-0 bg-transparent" type="button">
+                Items
+            </a>
+            <ul class="dropdown-menu" [class.show]="openDropdown === 'items'">
+                <li><a class="dropdown-item" routerLink="/sites/category">Category</a></li>
+                <li><a class="dropdown-item" routerLink="/sites/product">Product</a></li>
+                <li><a class="dropdown-item" routerLink="/sites/brand">Brand</a></li>
+
+            </ul>
+        </div>
+        <a class="ms-3 color-gray-900 no-underline" routerLink="/sites/discount">Discount</a>
+        <a class="ms-3 color-gray-900 no-underline" routerLink="/salesflow/customers">Customers</a>
+        <a class="ms-3 color-gray-900 no-underline" routerLink="/salesflow/order">Order</a>
+        <a class="ms-3 color-gray-900 no-underline" routerLink="/salesflow/customergroup">CustomerGroup</a>
+        <a class="ms-3 color-gray-900 no-underline" routerLink="/sites/signUpRequest">SignUpRequest</a>
+        <a class="ms-3 color-gray-900 no-underline" routerLink="/salesflow/email">Email</a>
+        <a class="ms-3 color-gray-900 no-underline" routerLink="/sites/ads">Advertisment</a>
+        <div class="dropdown d-inline ms-3 mb-2 color-gray-900 no-underline" (click)="toggleDropdown('settings')"
+            [class.show]="openDropdown === 'settings'">
+            <a class="dropdown-toggle border-0 bg-transparent" type="button">
+                Settings
+            </a>
+            <ul class="dropdown-menu" [class.show]="openDropdown === 'settings'">
+                <li><a class="dropdown-item" routerLink="/salesflow/roles">Roles</a></li>
+                <li><a class="dropdown-item" routerLink="/sites/jobTitle">Employees</a></li>
+            </ul>
+        </div>
+
+    </div>
+</nav>
+
+<div class="mb-5 mt-2 bg-gray-25 container cr5">
+    <router-outlet></router-outlet>
+</div>

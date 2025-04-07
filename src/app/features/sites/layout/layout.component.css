@@ -1,0 +1,21 @@
+nav {
+  position: sticky;
+  top: 0px;
+  z-index: 1000;
+}
+
+a:hover {
+  color: #EB762C !important;
+}
+
+.no-underline {
+  text-decoration: none;
+}
+.dropdown-menu {
+  --bs-dropdown-link-active-bg: rgb(215, 211, 211) !important;
+}
+.dropdown-menu {
+  transform: translateX(-50%); /* Adjust left-right position */
+  left: 50% !important; /* Center under the button */
+  top: 100% !important; /* Ensure it opens below the button */
+}
