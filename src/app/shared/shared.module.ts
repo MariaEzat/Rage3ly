@@ -1,5 +1,5 @@
-import { NgModule } from '@angular/core';
-import { CommonModule, DatePipe } from '@angular/common';
+import { Inject, NgModule } from '@angular/core';
+import { CommonModule, DatePipe, DOCUMENT } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import {
   TranslateLoader,
@@ -101,9 +101,21 @@ export function httpLoaderFactory(http: HttpClient) {
 export class SharedModule {
   constructor(
     private translate: TranslateService,
+    @Inject(DOCUMENT) private document: Document,
+
     private localizationService: LocalizationService
   ) {
-    this.translate.use(localizationService.getLanguage());
-    localizationService.setLanguage(localizationService.getLanguage());
+    //this.translate.use(localizationService.getLanguage());
+    //localizationService.setLanguage(localizationService.getLanguage());
+    const lang = 'ar';
+    this.translate.use(lang);
+    localizationService.setLanguage(lang);
+    this.setDirection(lang);
+
+  }
+  setDirection(lang: string) {
+    const dir = lang === 'ar' || lang === 'he' ? 'rtl' : 'ltr';
+    this.document.documentElement.dir = dir;
+    this.document.documentElement.lang = lang;
   }
 }

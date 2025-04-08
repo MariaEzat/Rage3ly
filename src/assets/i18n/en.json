@@ -220,5 +220,14 @@
     "expired": "Expired",
     "jumb-forward": "Jump Forward",
     "jumb-back": "Jump Back"
+  },
+  "auth":{
+    "login":{
+      "login":"Login",
+      "enterThePhoneNumberandPassword":"Enter The Phone Number and Password",
+      "phoneNumber":"Phone Number",
+      "password":"Password",
+      "forgotPassword?":"Forgot Password ?"
+    }
   }
 }

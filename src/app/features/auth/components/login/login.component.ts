@@ -38,8 +38,8 @@ export class LoginComponent implements OnInit {
       next: (response) => {
         this._sharedService.showToastr(response);
            this.isSubmitting=false
-        localStorage.setItem('rToken', response.data.otPtoken);
-        this._router.navigate(['/auth/otp'], {
+        localStorage.setItem('eToken', response.data.token);
+        this._router.navigate(['/sites/company'], {
           queryParams: { source: 'login'},
         });
         this.isSubmitting=false

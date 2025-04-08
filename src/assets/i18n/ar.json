@@ -210,5 +210,14 @@
     "expired": "Expired",
     "jump-forward": "Jump Forward",
     "jump-back": "Jump Back"
+  },
+  "auth":{
+    "login":{
+      "login":"تسجيل دخول",
+      "enterThePhoneNumberandPassword":"ادخل رقم التليفون و كلمة المرور",
+      "phoneNumber":"رقم التليفون",
+      "password":"كلمة المرور",
+      "forgotPassword?":"هل نسيت كلمة المرور؟"
+    }
   }
 }

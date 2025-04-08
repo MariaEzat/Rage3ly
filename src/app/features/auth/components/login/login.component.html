@@ -1,34 +1,28 @@
 <div class="row mx-0">
-  <div class="col-12 col-lg-8 p-0">
+  <!-- Login Section -->
+  <div class="col-12 col-lg-4 p-0">
     <div class="d-flex flex-column align-items-center justify-content-center vh-100">
-      <div class="w-50 w-xl-75 ">
-          <h1 class="login-title bold">Login</h1>
-      <p class="color-gray-700 mb-4">Continue your journey with oil car.</p>
-      <form [formGroup]="loginForm">
-        <!-- Phone Number Input -->
-          <ng-control [form]="loginForm"  [inputClass]="'mb-3'" control="mobile" label="Phone Number" placeholder="01-xxx-xxx-xxx" (keypress)="numberOnly($event)"></ng-control>
-        <!-- Password Input -->
-          <ng-control [form]="loginForm" [inputClass]="'mb-2'" control="password" label="Password" placeholder="********"
-            [type]="controlType.PASSWORD"></ng-control>
-        <!-- Forgot Password -->
-        <p class=" mb-4">
-          <span class="pointer color-brand-500" routerLink="/auth/phoneforgetpassword">Forgot Password?</span>
-        </p>
-        <button (click)="onSubmit()" class=" btn bg-orange w-100 mt-4" [disabled]="loginForm.invalid || isSubmitting">Login</button>
-
-      </form>
-      <!-- Login Button -->
-      <!-- Signup Link -->
-      <p class="text-center mt-3">
-        Don't Have an Account? <span class="pointer color-brand-500" routerLink="/auth/register" >Sign up</span>
-      </p>
+      <div class="w-75">
+        <h1 class="login-title bold">{{"auth.login.login"|translate}}</h1>
+        <p class="color-gray-700 mb-4">{{"auth.login.enterThePhoneNumberandPassword"|translate}}.</p>
+        <form [formGroup]="loginForm">
+          <ng-control [form]="loginForm" [inputClass]="'mb-3'" control="mobile" label="auth.login.phoneNumber" placeholder="01-xxx-xxx-xxx" (keypress)="numberOnly($event)"></ng-control>
+          <ng-control [form]="loginForm" [inputClass]="'mb-2'" control="password" label="auth.login.password" placeholder="********" [type]="controlType.PASSWORD"></ng-control>
+          <p class="mb-4">
+            <span class="pointer color-brand" routerLink="/auth/phoneforgetpassword">{{"auth.login.forgotPassword?"|translate}}</span>
+          </p>
+          <button (click)="onSubmit()" class="btn bg-brand w-100 mt-4 color-white" [disabled]="loginForm.invalid || isSubmitting">
+            {{"auth.login.login"|translate}}
+          </button>
+        </form>
       </div>
-    
+    </div>
   </div>
-</div>
-<div class="col-12 col-lg-4 p-0">
-  <div class="d-flex justify-content-end vh-100">
-    <img src="/assets/images/login.png" class="vh-100 w-100" alt="login">
-</div>
-</div>
+
+  <!-- Image Section -->
+  <div class="col-12 col-lg-8 p-0">
+    <div class="d-flex justify-content-end align-items-end vh-100">
+      <img src="/assets/images/Image Container.png" class="w-100 h-100 object-fit-cover" alt="login">
+    </div>
+  </div>
 </div>
