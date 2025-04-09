@@ -1,62 +1,67 @@
-<div class="d-flex min-vh-100 ">
-    <!-- Sidebar -->
-  
-    <!-- Main Content -->
-    <div class="flex-grow-1 p-3">
-       
-      <div class="container-fluid p-4">
-        <!-- Filters Section -->
-        <div class="card p-4 mb-4">
-          <h5 class="mb-3 text-white">بحث في الإعلانات</h5>
-          <form class="row g-3">
-            <div class="col-md-4">
-              <label class="form-label text-white">من تاريخ</label>
-              <input type="date" class="form-control" />
-            </div>
-            <div class="col-md-4">
-              <label class="form-label text-white">إلى تاريخ</label>
-              <input type="date" class="form-control" />
-            </div>
-            <div class="col-md-4 d-flex align-items-end justify-content-between">
-              <button type="submit" class="btn btn-primary">بحث</button>
-            </div>
-          </form>
-        </div>
-  
-       
-  
-        <!-- Table Section -->
-        <div class="card p-3">
-           <!-- Add Button -->
-        <div class="text-end ">
-            <h5 class="mb-3 text-white">الإعلانات الموجودة</h5>
+<div class="d-flex min-vh-100 bg-Dark">
+  <!-- Sidebar -->
 
-            <button class="btn btn-primary ms-auto">إضافة إعلان جديد</button>
+  <!-- Main Content -->
+  <div class="flex-grow-1 p-2">
+
+    <div class="container-fluid ">
+      <!-- Filters Section -->
+      <div class="card p-4 mb-4 " style="background-color: #060c26;">
+        <h5 class="mb-3 text-white">Search in Advertisements</h5>
+        <form class="row g-3">
+          <div class="col-md-4">
+            <label class="form-label text-white">من تاريخ</label>
+            <input type="date" class="form-control" />
           </div>
-          <table class="table text-center">
-            <thead class="text-white">
-              <tr>
-                <th>#</th>
-                <th>الاعلان</th>
-                <th>تاريخ النشر</th>
-                <th>تاريخ الانتهاء</th>
-                <th>الخيارات</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr *ngFor="let ad of ads; let i = index">
-                <td>{{ i + 1 }}</td>
-                <td>{{ ad.name }}</td>
-                <td>{{ ad.startDate }}</td>
-                <td>{{ ad.endDate }}</td>
-                <td>
-                  <button class="btn btn-outline-light btn-sm">تعديل</button>
-                  <button class="btn btn-danger btn-sm">حذف</button>
-                </td>
-              </tr>
-            </tbody>
-          </table>
+          <div class="col-md-4">
+            
+            <label class="form-label text-white">من تاريخ</label>
+            <input type="date" class="form-control" />
+          </div>
+          <div class="col-md-4">
+            <label class="form-label text-white">إلى تاريخ</label>
+            <input type="date" class="form-control" />
+          </div>
+          <div class="col-md-4 d-flex align-items-end justify-content-between">
+            <button type="submit" class="btn btn-primary">بحث</button>
+          </div>
+        </form>
+      </div>
+
+
+
+      <!-- Table Section -->
+      <div class="card p-3">
+        <!-- Add Button -->
+        <div class="text-end ">
+          <h5 class="mb-3 text-white">الإعلانات الموجودة</h5>
+
+          <button class="btn btn-primary ms-auto">إضافة إعلان جديد</button>
         </div>
+        <table class="table text-center">
+          <thead class="text-white">
+            <tr>
+              <th>#</th>
+              <th>الاعلان</th>
+              <th>تاريخ النشر</th>
+              <th>تاريخ الانتهاء</th>
+              <th>الخيارات</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let ad of ads; let i = index">
+              <td>{{ i + 1 }}</td>
+              <td>{{ ad.name }}</td>
+              <td>{{ ad.startDate }}</td>
+              <td>{{ ad.endDate }}</td>
+              <td>
+                <button class="btn btn-outline-light btn-sm">تعديل</button>
+                <button class="btn btn-danger btn-sm">حذف</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
       </div>
     </div>
   </div>
+</div>

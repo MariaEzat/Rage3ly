@@ -1,33 +1,24 @@
-<div class="main-panel">
-    <div class="navbar border-bottom py-2 d-flex justify-content-between align-items-center bg-gray-50">
-        <!-- Left section: Logo -->
-        <div class="container">
-            <div class="d-flex align-items-center w-100">
-                <h1 class="m-0 color-gray-900">Hello</h1>
-
-                <!-- User Section in Place of Search -->
-                <div class="d-flex align-items-center ms-auto">
-                    <!-- User Avatar & Info -->
-                    <div class="d-flex align-items-center pointer" routerLink="/sites/employeeProfile">
-                        <img src="./assets/images/avataaar.png" alt="User Image" class="rounded-circle" width="40" height="40">
-                        <div class="ms-2">
-                            <span class="ts color-gray-800 text-nowrap">{{userName}}</span><br>
-                            <small class="ts text-muted">{{ userRole }}</small>
-                        </div>
-                    </div>
-
-                    <!-- Sign Out Button -->
-                    <div class="d-flex align-items-center ms-3" (click)="signOut()">
-                        <img src="/assets/icons/signOut.png" alt="Sign out Icon" class="nav-icon d-block" width="32">
-                        <a class="nav-link text-muted color-gray-800" >SignOut</a>
-                    </div>
-                   
-                </div>
+<div class="main-panel bg-Dark">
+    <div class="navbar bord-bottom py-2 d-flex justify-content-between align-items-center px-4">
+        <div class="w-75 d-flex align-items-center ">
+          <h1 class="m-0 color-white">Hello</h1>
+      
+          <div class="d-flex align-items-center ms-auto ">
+            <div class="d-flex align-items-center  pointer" routerLink="/sites/employeeProfile">
+              <img src="./assets/images/avataaar.png" alt="User Image" class="rounded-circle" width="40" height="40">
+              <div class="ms-2">
+                <span class="ts color-white text-nowrap">{{ userName }}</span><br>
+                <small class="ts color-white">{{ userRole }}</small>
+              </div>
             </div>
+      
+           
+          </div>
         </div>
-    </div>
+      </div>
+      
 
-    <div class="main-page">
+    <div class="main-page ">
         <router-outlet></router-outlet>
     </div>
 </div>

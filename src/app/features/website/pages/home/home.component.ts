@@ -13,7 +13,7 @@ import { forkJoin } from 'rxjs';
 
 @Component({
   standalone: true,
-  selector: 'app-home',
+  selector: '',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css'],
   imports: [CommonModule, CarOilComponent, CarOilNdComponent],

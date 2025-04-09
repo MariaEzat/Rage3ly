@@ -1,28 +1,31 @@
+<!-- Wrapper: full screen split using flex -->
+<div class="d-flex min-vh-100">
 
+  <!-- Sidebar -->
+  <nav class="bg-Dark text-white p-3 sidebar-right d-flex flex-column align-items-center " style="width: 250px;">
+    <div class="mb-4 text-center">
+      <h5 class="fw-bold">Rage3ly.com</h5>
+      <hr />
+    </div>
+    <div class="nav flex-column w-100 text-center">
+      <a class="nav-link text-white py-2" href="#"><i class="bi bi-phone"></i> الهواتف</a>
+      <a class="nav-link text-white py-2 active active-color" routerLink="/sites/ads">
+        ads <img src="assets/images/Icon.png" class="px-1">
+      </a>
+      <a class="nav-link text-white py-2" href="#"><i class="bi bi-people"></i> العملاء</a>
+      <a class="nav-link text-white py-2" href="#"><i class="bi bi-person-badge"></i> صلاحيات المستخدمين</a>
+      <a class="nav-link text-white py-2" href="#"><i class="bi bi-search"></i> نتائج البحث</a>
+      <a class="nav-link text-white py-2" href="#"><i class="bi bi-bell"></i> إشعارات</a>
+    </div>
+    <div class="mt-auto w-100 text-center bg-red-dark">
+      <button class="btn  color-white w-100">
+        <img src="assets/images/elements.png" class="px-2"> تسجيل خروج
+      </button>
+    </div>
+  </nav>
 
-
-<div class="d-flex ">
-    <!-- Main content -->
-
-  
-    <!-- Right Navbar -->
-    <nav class="bg-Dark text-white p-3 sidebar-right d-flex flex-column align-items-center">
-      <div class="mb-4 text-center">
-        <h5 class="fw-bold">Rage3ly.com</h5>
-      </div>
-      <div class="nav flex-column w-100 text-center">
-        <a class="nav-link text-white py-2" href="#"><i class="bi bi-phone"></i> الهواتف</a>
-        <a class="nav-link text-white py-2 active active-color"  routerLink="/sites/ads"> ads <img src="assets/images/Icon.png" class="px-1"> </a>
-        <a class="nav-link text-white py-2" href="#"><i class="bi bi-people"></i> العملاء</a>
-        <a class="nav-link text-white py-2" href="#"><i class="bi bi-person-badge"></i> صلاحيات المستخدمين</a>
-        <a class="nav-link text-white py-2" href="#"><i class="bi bi-search"></i> نتائج البحث</a>
-        <a class="nav-link text-white py-2" href="#"><i class="bi bi-bell"></i> إشعارات</a>
-      </div>
-      <div class="mt-auto w-100 text-center">
-        <button class="btn bg-red color-white w-100"> <img src="assets/images/elements.png" class="px-2">تسجيل خروج</button>
-      </div>
-    </nav>
-  </div>
-  <div class="mb-5 mt-2 bg-gray-25 container cr5">
+  <!-- Main Layout (Top Navbar + Page Content) -->
+  <div class="flex-grow-1 d-flex flex-column bg-Dark">
     <router-outlet></router-outlet>
+  </div>
 </div>
