@@ -5,6 +5,7 @@ import { LoginViewModel } from 'src/app/features/auth/interfaces/authviewmodel';
 import { SharedService } from 'src/app/shared/service/shared.service';
 import { ControlType } from 'src/app/shared/models/enum/control-type.enum';
 import { Router } from '@angular/router';
+import { NgControlComponent } from "../../../../shared/components/ng-control/ng-control.component";
 
 @Component({
   selector: 'app-login',

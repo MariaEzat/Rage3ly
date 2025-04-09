@@ -20,6 +20,8 @@ export class HomeComponent extends CrudIndexBaseUtils {
   override searchViewModel: adsSearchViewModel = new adsSearchViewModel();
   modalRef: BsModalRef;
   override items: adsViewModel[] = [];
+   ads: [] = [];
+
   selectedItem: adsViewModel;
   activation: adsActivateViewModel = { id: '' }
   constructor(public override _sharedService: SharedService,

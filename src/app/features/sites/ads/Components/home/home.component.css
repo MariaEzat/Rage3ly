@@ -1,0 +1,45 @@
+body {
+  background-color: #060B26;
+  color: #fff;
+  font-family: 'Cairo', sans-serif;
+}
+
+.card {
+  background-color: #0B1437;
+  border: none;
+  border-radius: 8px;
+}
+
+.btn-primary {
+  background-color: #4DC3FF;
+  border: none;
+}
+
+.btn-primary:hover {
+  background-color: #35b3f2;
+}
+
+.btn-danger {
+  background-color: #B73C3C;
+  border: none;
+}
+
+.btn-danger:hover {
+  background-color: #a83232;
+}
+
+.table {
+  background-color: transparent;
+  color: #fff;
+}
+
+input,
+select {
+  background-color: #0B1437;
+  border: 1px solid #4DC3FF;
+  color: #fff;
+}
+
+input::placeholder {
+  color: #ccc;
+}

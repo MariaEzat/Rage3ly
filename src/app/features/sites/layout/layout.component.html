@@ -1,53 +1,28 @@
-<nav class="d-flex justify-content-start py-3 border-bottom bg-gray-100 px-5 ">
-    <div class="container ">
-        <!-- <a class="ms-3 color-gray-900 no-underline" routerLink="/tahwesha/home">Shop</a> -->
 
-        <a class="ms-3 color-gray-900 no-underline" routerLink="/sites/dashboard">Home</a>
 
-        <!-- Address Dropdown (Governorate & City) -->
-        <div class="dropdown d-inline ms-3 mb-2 color-gray-900 no-underline" (click)="toggleDropdown('address')"
-            [class.show]="openDropdown === 'address'">
-            <a class="dropdown-toggle border-0 bg-transparent" type="button">
-                Address
-            </a>
-            <ul class="dropdown-menu" [class.show]="openDropdown === 'address'">
-                <li><a class="dropdown-item" routerLink="/sites/governorates">Governorates</a></li>
-                <li><a class="dropdown-item" routerLink="/sites/cities">Cities</a></li>
-            </ul>
-        </div>
-        <div class="dropdown d-inline ms-3 mb-2 color-gray-900 no-underline" (click)="toggleDropdown('items')"
-            [class.show]="openDropdown === 'items'">
-            <a class="dropdown-toggle border-0 bg-transparent" type="button">
-                Items
-            </a>
-            <ul class="dropdown-menu" [class.show]="openDropdown === 'items'">
-                <li><a class="dropdown-item" routerLink="/sites/category">Category</a></li>
-                <li><a class="dropdown-item" routerLink="/sites/product">Product</a></li>
-                <li><a class="dropdown-item" routerLink="/sites/brand">Brand</a></li>
 
-            </ul>
-        </div>
-        <a class="ms-3 color-gray-900 no-underline" routerLink="/sites/discount">Discount</a>
-        <a class="ms-3 color-gray-900 no-underline" routerLink="/salesflow/customers">Customers</a>
-        <a class="ms-3 color-gray-900 no-underline" routerLink="/salesflow/order">Order</a>
-        <a class="ms-3 color-gray-900 no-underline" routerLink="/salesflow/customergroup">CustomerGroup</a>
-        <a class="ms-3 color-gray-900 no-underline" routerLink="/sites/signUpRequest">SignUpRequest</a>
-        <a class="ms-3 color-gray-900 no-underline" routerLink="/salesflow/email">Email</a>
-        <a class="ms-3 color-gray-900 no-underline" routerLink="/sites/ads">Advertisment</a>
-        <div class="dropdown d-inline ms-3 mb-2 color-gray-900 no-underline" (click)="toggleDropdown('settings')"
-            [class.show]="openDropdown === 'settings'">
-            <a class="dropdown-toggle border-0 bg-transparent" type="button">
-                Settings
-            </a>
-            <ul class="dropdown-menu" [class.show]="openDropdown === 'settings'">
-                <li><a class="dropdown-item" routerLink="/salesflow/roles">Roles</a></li>
-                <li><a class="dropdown-item" routerLink="/sites/jobTitle">Employees</a></li>
-            </ul>
-        </div>
+<div class="d-flex ">
+    <!-- Main content -->
 
-    </div>
-</nav>
-
-<div class="mb-5 mt-2 bg-gray-25 container cr5">
+  
+    <!-- Right Navbar -->
+    <nav class="bg-Dark text-white p-3 sidebar-right d-flex flex-column align-items-center">
+      <div class="mb-4 text-center">
+        <h5 class="fw-bold">Rage3ly.com</h5>
+      </div>
+      <div class="nav flex-column w-100 text-center">
+        <a class="nav-link text-white py-2" href="#"><i class="bi bi-phone"></i> الهواتف</a>
+        <a class="nav-link text-white py-2 active active-color"  routerLink="/sites/ads"> ads <img src="assets/images/Icon.png" class="px-1"> </a>
+        <a class="nav-link text-white py-2" href="#"><i class="bi bi-people"></i> العملاء</a>
+        <a class="nav-link text-white py-2" href="#"><i class="bi bi-person-badge"></i> صلاحيات المستخدمين</a>
+        <a class="nav-link text-white py-2" href="#"><i class="bi bi-search"></i> نتائج البحث</a>
+        <a class="nav-link text-white py-2" href="#"><i class="bi bi-bell"></i> إشعارات</a>
+      </div>
+      <div class="mt-auto w-100 text-center">
+        <button class="btn bg-red color-white w-100"> <img src="assets/images/elements.png" class="px-2">تسجيل خروج</button>
+      </div>
+    </nav>
+  </div>
+  <div class="mb-5 mt-2 bg-gray-25 container cr5">
     <router-outlet></router-outlet>
 </div>

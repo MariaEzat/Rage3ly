@@ -479,3 +479,20 @@
   background-color: #9454C6;
 
 }
+
+.color-red{
+  color:#D92D20;
+}
+.bg-red{
+  background-color:#D92D20;
+}
+
+.color-Dark{
+  color:#0B1437;
+}
+.bg-Dark{
+  background-color:#081138;
+}
+.border-color{
+border-color: #535862;
+}
