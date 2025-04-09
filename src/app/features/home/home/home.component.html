@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <title>احمي هاتفك</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="text-white font-sans flex flex-col overflow-auto overflow-x-hidden">
+
+
+
+  <!-- Navbar -->
+  <nav class="flex items-center justify-between px-4 md:px-12 py-4 bg-opacity-30 m-5 rounded-lg h-20 flex-wrap">
+      <div class="flex items-center space-x-4 rtl:space-x-reverse mb-4 md:mb-0">
+          <img src="../../../../../assets/images/BrandIcon.png" class="h-6 w-auto rounded py-1" alt="logo">
+          <span class="md:text-base text-white">رجعهولي.كوم</span>
+      </div>
+      <div class="flex flex-wrap space-x-5 justify-center md:justify-end w-full md:w-auto hidden md:flex">
+          <button class="relative flex items-center space-x-5 mb-4 md:mb-0">
+              <span class="text-white px-5">شركاء نجاحنا</span>
+              <span class="text-white px-5">المميزات</span>
+              <span class="text-white px-5">أراء مستخدمينا</span>
+          </button>
+          <div class="flex space-x-4">
+              <a href="#" class="border border-white px-6 py-3 rounded-full hover:text-white">تحدث مع خبير</a>
+              <a href="#" class="bg-white text-purple-700 px-6 py-3 rounded-full font-semibold hover:text-white">نزل التطبيق الآن</a>
+              <a routerLink="/auth/login" class="border border-white px-6 py-3 rounded-full hover:text-white">
+                تسجيل دخول
+              </a>
+              
+            </div>
+      </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <div class="flex-1 flex items-center justify-center px-4 py-10">
+      <div class="max-w-6xl w-full flex flex-col md:flex-row items-center justify-between space-y-10 md:space-y-0 md:space-x-10 rtl:space-x-reverse">
+          <!-- Text Section -->
+          <div class="md:w-1/2 text-center md:text-right space-y-6">
+              <span class="px-5 py-2 border border-white rounded-full inline-block">نساعدك للحفاظ على هاتفك</span>
+              <h1 class="text-4xl md:text-5xl font-bold leading-snug">
+                  احمي هاتفك من السرقة<br />احفظ حالته الآن
+              </h1>
+              <p class="text-gray-300 text-lg">
+                  تطبيق ذكي لحفظ حالة جهازك، مما يسهل استرجاعه عند الفقدان أو السرقة.
+              </p>
+              <div class="flex flex-col sm:flex-row items-center justify-center md:justify-start gap-4 mt-6">
+                  <a href="#" class="bg-white text-purple-700 px-6 py-3 rounded-full font-semibold hover:text-white">نزل التطبيق الآن</a>
+                  <a href="#" class="border border-white px-6 py-3 rounded-full hover:text-white">تحدث مع خبير</a>
+              </div>
+          </div>
+
+          <!-- Mobile UI Card -->
+          <div class="md:w-1/2">
+              <div class="bg-white text-black rounded-2xl p-4 shadow-xl w-full max-w-md mx-auto text-right border border-gray-200">
+                  <div class="flex items-center justify-between mb-4 rtl:space-x-reverse">
+                      <div class="flex items-center rtl:space-x-reverse">
+                          <img src="../../../../assets/images/ProductIcon.png"  class="h-10 px-1" />
+                          <span class="text-sm font-semibold text-gray-800">ايفون 15 بلس</span>
+                      </div>
+                      <button class="bg-green-500 text-white py-1 px-3 rounded-md text-xs">مفعل</button>
+                  </div>
+
+                  <!-- Two-column layout -->
+                  <div class="grid grid-cols-2 gap-4 text-xs">
+                      <div class="space-y-3">
+                          <div class="flex items-center justify-between">
+                              <div>
+                                  <p class="Gray-600">الاسم</p>
+                                  <p class="text-indigo-600 font-medium">مستخدم جديد</p>
+                              </div>
+                              <i class="fas fa-phone text-gray-400"></i>
+                          </div>
+
+                          <div class="flex items-center justify-between">
+                              <div>
+                                  <p class="Gray-600">رقم IMEI</p>
+                                  <p class="text-indigo-600">0000-0000-0000</p>
+                              </div>
+                              <i class="fas fa-envelope text-gray-400"></i>
+                          </div>
+                      </div>
+
+                      <div class="space-y-3">
+                          <div class="flex items-center justify-between">
+                              <div>
+                                  <p class="Gray-600">رقم الهاتف</p>
+                                  <p class="text-indigo-600 ">000-000-000-00</p>
+                              </div>
+                              <i class="fas fa-user text-gray-400"></i>
+                          </div>
+
+                          <div class="flex items-center justify-between">
+                              <div>
+                                  <p class="Gray-600">البريد الإلكتروني</p>
+                                  <p class="text-indigo-600 break-all ">Newuserraq@gmail.com</p>
+                              </div>
+                              <i class="fas fa-barcode text-gray-400"></i>
+                          </div>
+                      </div>
+                  </div>
+
+                  <div class="mt-4">
+                      <button class="w-full border border-gray-300 rounded-lg py-2 text-center text-xs text-indigo-600 hover:bg-gray-100">
+                          تفاصيل الهاتف
+                      </button>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+
+  <!-- Logos Section -->
+  <div class=" py-8 text-white text-center">
+      <p class="text-lg font-light mb-6 font-bold py-5">موثوق به من قبل الفرق في أكثر من 1000 من المؤسسات الرائدة في العالم</p>
+      <div class="flex flex-wrap justify-center items-center gap-6 md:gap-10 px-4">
+          <img src="../../../../../assets/images/ted.png" alt="ted" class="h-5 md:h-6" />
+          <img src="../../../../../assets/images/lattice.png" alt="lattice" class="h-5 md:h-6" />
+          <img src="../../../../../assets/images/ncr.png" alt="ncr" class="h-5 md:h-6" />
+          <img src="../../../../../assets/images/pacifc.png" alt="Pacific" class="h-5 md:h-6" />
+          <img src="../../../../../assets/images/rakuten.png" alt="rakuten" class="h-5 md:h-6" />
+          <img src="../../../../../assets/images/zenDesk.png" alt="zenDesk" class="h-5 md:h-6" />
+          <img src="../../../../../assets/images/dell.png" alt="Dell" class="h-5 md:h-6" />
+      </div>
+  </div>
+
+  <!-- Features Section -->
+  <section class="bg-[#0B0021] text-white py-16 px-4 text-center">
+      <div class="max-w-6xl mx-auto">
+          <h2 class="text-3xl md:text-4xl font-bold mb-4">مميزات تعمل لاجلك</h2>
+          <p class="text-gray-400 mb-12">اكتشف ميزاتنا الرائعة بنفسك.</p>
+
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-right">
+              <!-- Card 1 -->
+              <div class="custom-card rounded-xl p-6 transition duration-300 border border-purple-900">
+                  <div class="flex justify-start">
+                      <img src="../../../../../assets/images/icon3.png" alt="البحث عن هاتف" />
+                  </div>
+                  <h3 class="text-xl font-semibold mb-2">يساعدك في البحث عن حالة هاتف</h3>
+                  <p class="text-gray-400 text-sm">
+                      تم حماية عدد لا نهائي من الهواتف بكل سهولة، تُتيح لك هذه الميزة تسجيل وتحديث حالة جهازك تحت حساب واحد.
+                  </p>
+              </div>
+
+              <!-- Card 2 -->
+              <div class="custom-card rounded-xl p-6 transition duration-300 border border-purple-900">
+                  <div class="flex justify-start">
+                      <img src="../../../../../assets/images/icon2.png" alt="حماية الهواتف" />
+                  </div>
+                  <h3 class="text-xl font-semibold mb-2">حماية عدد لا نهائي من الهواتف</h3>
+                  <p class="text-gray-400 text-sm">
+                      قم بحماية جميع هواتفك بكل سهولة تحت حساب واحد مع ضمان حفظ بياناتك واسترجاعها في حالة الفقدان أو السرقة.
+                  </p>
+              </div>
+
+              <!-- Card 3 -->
+              <div class="custom-card rounded-xl p-6 transition duration-300 border border-purple-900">
+                  <div class="flex justify-start">
+                      <img src="../../../../../assets/images/icon1.png" alt="تغيير الحالة" class="" />
+                  </div>
+                  <h3 class="text-xl font-semibold mb-2">تغيير حالة الهواتف المسجلة</h3>
+                  <p class="text-gray-400 text-sm">
+                      تم حماية عدد لا نهائي من الهواتف بكل سهولة، تُتيح لك هذه الميزة تسجيل وتحديث حالة جهازك تحت حساب واحد.
+                  </p>
+              </div>
+          </div>
+      </div>
+  </section>
+
+  <!-- Stats Section -->
+  <section class="text-white flex items-center justify-center" style="background: linear-gradient(135deg, #001d28, #1b043f, #04000c); min-height: 460px;">
+    <div class="max-w-6xl mx-auto px-4 w-full">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
+    
+        <!-- Stat 1 -->
+        <div class="space-y-2">
+          <h3 class="text-3xl md:text-4xl font-bold text-purple-200">+2099</h3>
+          <p class="text-white text-lg">مستخدم للتطبيق</p>
+        </div>
+    
+        <!-- Stat 2 -->
+        <div class="space-y-2">
+          <h3 class="text-3xl md:text-4xl font-bold text-purple-200">+4099</h3>
+          <p class="text-white text-lg">الهـواتف المُسجله</p>
+        </div>
+    
+        <!-- Stat 3 -->
+        <div class="space-y-2">
+          <h3 class="text-3xl md:text-4xl font-bold text-purple-200">+1099</h3>
+          <p class="text-white text-lg">الهواتف المرتجعة</p>
+        </div>
+    
+      </div>
+    </div>
+  </section>
+  
+
+  <!-- Testimonials Section -->
+  <section class=" py-16 px-4 text-white text-center">
+      <div class="max-w-7xl mx-auto">
+          <h2 class="text-3xl md:text-4xl font-bold mb-2">آراء مستخدمينا</h2>
+          <p class="text-gray-400 mb-12">آراء أقرب المستخدمين في خدماتنا</p>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 text-right">
+              <!-- Testimonial Card -->
+              <div class=" p-5 rounded-lg shadow-md border border-gray-700">
+                  <div class="flex items-center space-x-3 rtl:space-x-reverse mb-3">
+                      <div class="bg-purple-800 text-white p-2 rounded-full">
+                          <i class="fas fa-user text-xl"></i>
+                      </div>
+                      <div>
+                          <h4 class="font-bold">عبدالرحمن الجمال</h4>
+                          <p class="text-xs text-gray-400">مدير مجموعة شركات وكالات</p>
+                      </div>
+                  </div>
+                  <p class="text-sm text-gray-300 leading-relaxed">
+                      "بقاء في التواصل من خدمة المستخدمين الرائعين وتسهيل على حل المشاكل في أكثر من طريقة. التطبيق ممتاز وبرامج حماية على مختلفة مستويات رائعة"
+                  </p>
+              </div>
+              <!-- Repeat the testimonial card structure for other testimonials -->
+          </div>
+      </div>
+  </section>
+
+  <!-- Footer Section -->
+  <footer class=" text-white py-10 px-4">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-right">
+    
+      <div class="text-center md:text-left space-y-3">
+        <h3 class="text-xl font-bold text-right">رجعهولي.كوم</h3>
+        <p class="text-sm text-gray-400 leading-relaxed text-right">
+          لوريم إيبسوم دولار سيت أميت فيسبيكياتور، تولت إيكتبات تيبسات رويس فيرسوس إنفيرس كورسيس إلأكتروني دروكوم
+          فيسبيكياتور، بتحديث توايم موق نون إنتر لوريم إيبسوماتي.
+        </p>
+      </div>
+  
+      <div></div>
+      <div class="flex flex-col items-center md:items-end justify-end space-y-4">
+        <div>
+          <h3 class="font-semibold mb-4">تحميل التطبيق</h3>
+          <div class="flex justify-center md:justify-end items-center gap-4">
+            <a href="#">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg"
+                alt="Google Play" class="h-10">
+            </a>
+            <a href="#">
+              <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="App Store"
+                class="h-10">
+            </a>
+          </div>
+        </div>
+      </div>
+  
+     
+    </div>
+    <hr class="color-white  m-5">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-right">
+    
+      <div class="text-center md:text-left space-y-3">
+        <p class="text-xl font-bold text-right">الخصوصية | الشروط | حقوق الاستثمار2025</p>
+       
+      </div>
+  
+      <div></div>
+      <div class="flex flex-col items-center md:items-end justify-end space-y-4">
+        <div>
+          <div class="flex justify-center md:justify-end items-center gap-4">
+            <a href="#">
+              <img src="../../../../assets/images/twitter.png"  class="h-10 w-10">
+            </a>
+            <a href="#">
+              <img src="../../../../assets/images/facebook.png"  class="h-10 w-10">
+            </a>
+            <a href="#">
+              <img src="../../../../assets/images/linkedin.png"  class="h-10 w-10">
+            </a>
+          </div>
+        </div>
+      </div>
+      
+     
+    </div>
+  </footer>
+</body>
+
+</html>
