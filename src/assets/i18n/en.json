@@ -251,5 +251,22 @@
       "Upload New Image": "Upload New Image",
       "Error Uploading": "Error Uploading"
     }
+  },
+  "salesflow": {
+    "Customers": {
+      "searchofCustomers":"Search of Customers",
+      "customers": "Customers",
+      "activation": "Activation",
+      "email": "Email",
+      "verifyStatus": "Verify Status",
+      "nationalNumber": "National Number",
+      "mobile": "Mobile",
+      "img": "Img",
+      "action": "Action",
+      "download":"Download",
+      "active": "Active",
+      "disActive": "DisActive",
+      "addNewCustomer":"Add New Customer"
+    }
   }
 }

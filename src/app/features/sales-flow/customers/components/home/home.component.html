@@ -5,34 +5,34 @@
 
       <!-- Search Card -->
       <div class="card p-4 mb-4" style="background-color: #1A1F3766;">
-        <h5 class="mb-3 text-white"> Search of Customers </h5>
+        <h5 class="mb-3 text-white"> {{"salesflow.Customers.searchofCustomers"|translate}} </h5>
         <form [formGroup]="page.searchForm">
           <div class="form-body">
             <div class="row g-2">
               <div class="col-2">
                 <ng-control [form]="page.searchForm" control="Name" [inputClass]="'bg-Dark border-color'"
-                  [labelClass]="'text-white'" label="Name" placeholder="Customer Name">
+                  [labelClass]="'text-white'" label="salesflow.Customers.customers" placeholder="salesflow.Customers.customers">
                 </ng-control>
               </div>
               <div class="col-2">
                 <ng-control [form]="page.searchForm" control="Email" [inputClass]="'bg-Dark border-color'"
-                  [labelClass]="'text-white'" label="Email" placeholder="Email">
+                  [labelClass]="'text-white'" label="salesflow.Customers.email" placeholder="salesflow.Customers.email">
                 </ng-control>
               </div>
               <div class="col-2">
                 <ng-control [form]="page.searchForm" control="NationalNumber" [inputClass]="'bg-Dark border-color'"
-                  [labelClass]="'text-white'" label="National Number" placeholder="National Number">
+                  [labelClass]="'text-white'" label="salesflow.Customers.nationalNumber" placeholder="salesflow.Customers.nationalNumber">
                 </ng-control>
               </div>
               <div class="col-2">
                 <ng-control [form]="page.searchForm" control="Mobile" [inputClass]="'bg-Dark border-color'"
-                  [labelClass]="'text-white'" label="Mobile" placeholder="Mobile">
+                  [labelClass]="'text-white'" label="salesflow.Customers.mobile" placeholder="salesflow.Customers.mobile">
                 </ng-control>
               </div>
               <div class="col-2">
                 <ng-control [type]="controlType.SELECT" [form]="page.searchForm" control="VerifyStatus"
-                  [inputClass]="'bg-Dark border-color text-white'" [labelClass]="'text-white'" label="Verify Status"
-                  placeholder="Verify Status" [items]="verifyStatuslist">
+                  [inputClass]="'bg-Dark border-color text-white'" [labelClass]="'text-white'" label="salesflow.Customers.verifyStatus"
+                  placeholder="salesflow.Customers.verifyStatus" [items]="verifyStatuslist">
                 </ng-control>
               </div>
 
@@ -61,21 +61,19 @@
       <div class="card p-4 border-0 shadow-sm rounded-3" style="background-color: #1A1F3766;">
         <!-- Header -->
         <div class="d-flex justify-content-between align-items-center mb-3">
-          <h5 class="text-white"> Customers </h5>
+          <h5 class="text-white"> {{"salesflow.Customers.customers"|translate}} </h5>
           <div class="d-flex">
-            <!-- <button class="btn btn-primary me-2" (click)="deleteSelectedAds()">Delete</button> -->
-            <!-- <button class="btn btn-primary me-2" (click)="downloadExcel()">Download</button> -->
             <div class="position-relative">
-              <button #downloadButton class="btn btn-primary me-2" (click)="toggleDownloadOptions()">Download</button>
+              <button #downloadButton class="btn btn-primary me-2" (click)="toggleDownloadOptions()">{{"salesflow.Customers.download"|translate}}</button>
 
               <div #downloadOptions *ngIf="showDownloadOptions" class="download-options">
                 <button (click)="downloadExcel()">Excel</button>
                 <button (click)="downloadPDF()">PDF</button>
               </div>
             </div>
-            <button class="btn btn-primary me-2" (click)="activateCustomers()">Active</button>
-            <button class="btn btn-primary me-2" (click)="disActiveCustomers()">DisActive</button>
-            <button class="btn btn-primary me-2" (click)="navigateToCreateCustomer()">Add new Customer</button>
+            <button class="btn btn-primary me-2" (click)="activateCustomers()">{{"salesflow.Customers.active"|translate}}</button>
+            <button class="btn btn-primary me-2" (click)="disActiveCustomers()">{{"salesflow.Customers.disActive"|translate}}</button>
+            <button class="btn btn-primary me-2" (click)="navigateToCreateCustomer()">{{"salesflow.Customers.addNewCustomer"|translate}}</button>
 
           </div>
         </div>
@@ -139,30 +137,5 @@
     </div>
   </div>
 
-  <!-- Confirm Delete Modal -->
-  <ng-template #confirmDeleteTemplate>
-    <div class="modal-content bg-Dark text-white border border-secondary p-4 rounded">
-      <div class="modal-body">
-        <p class="modal-confirm-content mb-2">
-          {{ 'shared.delete-confirmation.message' | translate }}
-          <strong *ngIf="selectedItem">{{ selectedItem.Name }}</strong>
-        </p>
-        <div class="d-flex mt-4">
-          <button type="button" class="btn btn-secondary me-auto" (click)="modalRef.hide()">إلغاء</button>
-          <button type="button" class="btn btn-danger ms-2" (click)="remove(); modalRef.hide()">تأكيد</button>
-        </div>
-      </div>
-    </div>
-  </ng-template>
 
-  <!-- Confirm Bulk Delete -->
-  <ng-template #confirmDeleteTemplates>
-    <div class="modal-body text-center bg-Dark text-white">
-      <p>هل أنت متأكد من حذف الإعلانات المحددة؟</p>
-    </div>
-    <div class="modal-footer">
-      <button class="btn btn-secondary me-auto" (click)="modalRef.hide()">إلغاء</button>
-      <button class="btn btn-danger ms-2" (click)="modalRef.content.onConfirm(); modalRef.hide()">نعم</button>
-    </div>
-  </ng-template>
 </div>

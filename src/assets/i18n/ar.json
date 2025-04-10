@@ -241,5 +241,22 @@
       "Upload New Image": "رفع صورة جديدة",
       "Error Uploading": "خطأ في رفع الصورة"
     }
+  },
+  "salesflow": {
+    "Customers": {
+      "searchofCustomers":"بحث على العملاء",
+      "customers": "العملاء",
+      "activation": "تفعيل العميل ",
+      "email": "البريد الالكتروني",
+      "verifyStatus": "الحالة",
+      "nationalNumber": "الرقم القومى",
+      "mobile": "الموبايل",
+      "img": "الصورة",
+      "action": "الاجراءات",
+      "download":"تنزيل",
+      "active": "تفعيل",
+      "disActive": "الغاء التفعيل",
+      "addNewCustomer":"اضافة عميل"
+    }
   }
 }
