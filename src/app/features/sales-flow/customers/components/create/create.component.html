@@ -3,15 +3,15 @@
 <div class="d-flex justify-content-between align-items-center py-2 ">
   <!-- <img src="/assets/icons/keyboard_backspace.svg" class="pointer"
       routerLink="/salesflow/customers"> -->
-  <a class="mb-0 color-gray-600 ts-3 text-white"> {{(page.isEdit?'shared.edit':'shared.create')|translate}} Customer</a>
+  <a class="mb-0 color-gray-600 ts-3 text-white"> {{(page.isEdit?'shared.edit':'shared.create')|translate}} {{"salesflow.Customers.customer"|translate}}</a>
 
   <div class="d-flex justify-content-between align-items-center py-2">
    
     <button class="btn-primary py-2 px-4 color-gray-25 no-border cr3 ms-auto m-2"
       (click)="navigateToChangePassword(id)" *ngIf="page.isEdit">
-      <span class="rb-btn-text">Change Password</span>
+      <span class="rb-btn-text">{{"salesflow.Customers.changePassword"|translate}} </span>
     </button>
-    <button class="bg-brand-500 py-2 px-4 color-gray-25 no-border cr3 btn-primary" (click)="Save()"
+    <button class="bg-brand-500 py-2 px-4 color-gray-25 no-border cr3 btn-primary mx-2" (click)="Save()"
     [disabled]="!page.isEdit && (page.form?.invalid || page.isSaving|| !validateImages() )">
     <span class="rb-btn-text">{{ (page.isEdit ? 'shared.edit' : 'shared.create') | translate }}</span>
   </button>
@@ -26,11 +26,11 @@
   <form [formGroup]="page.form">
     <div class="row g-3 mb-4">
       <div class="col-6">
-        <ng-control [form]="page.form" control="name" label="Customer Name" placeholder="Ex: Joe" [labelClass]="'text-white'"
+        <ng-control [form]="page.form" control="name" label="salesflow.Customers.customer" placeholder="salesflow.Customers.customer" [labelClass]="'text-white'"
       ></ng-control>
       </div>
       <div class="col-6">
-        <ng-control [form]="page.form" control="nationalNumber" label="National ID" placeholder="Ex: 12345678912345" [labelClass]="'text-white'"
+        <ng-control [form]="page.form" control="nationalNumber" label="salesflow.Customers.nationalNumber" placeholder="Ex: 12345678912345" [labelClass]="'text-white'"
       
           (keypress)="numberOnly($event)"></ng-control>
       </div>
@@ -38,12 +38,12 @@
     </div>
     <div class="row g-3 mb-4">
       <div class="col-6">
-        <ng-control [form]="page.form" control="mobile" label="Mobile" placeholder="Ex: 0123567891" [labelClass]="'text-white'"
+        <ng-control [form]="page.form" control="mobile" label="salesflow.Customers.mobile" placeholder="Ex: 0123567891" [labelClass]="'text-white'"
         [inputClass]="'bg-Dark text-white'"
           (keypress)="numberOnly($event)"></ng-control>
       </div>
       <div class="col-6">
-        <ng-control [form]="page.form" control="email" label="Email" placeholder="Enter Email" [labelClass]="'text-white'"
+        <ng-control [form]="page.form" control="email" label="salesflow.Customers.email" placeholder="salesflow.Customers.email" [labelClass]="'text-white'"
         [inputClass]="'bg-Dark text-white'"></ng-control>
       </div>
        
@@ -53,15 +53,15 @@
     <div class="row g-3 mb-4">
 
       <div class="col-6" *ngIf="!page.isEdit">
-        <ng-control [form]="page.form" control="password" label="Password" placeholder="Enter password"  [labelClass]="'text-white'"
+        <ng-control [form]="page.form" control="password" label="salesflow.Customers.password" placeholder="*********"  [labelClass]="'text-white'"
         [inputClass]="'bg-Dark text-white'"
           [type]="controlType.PASSWORD"></ng-control>
       </div>
       <div class="col-6" *ngIf="!page.isEdit">
-        <ng-control [form]="page.form" control="confirmPassword" label="confirm Password"  [labelClass]="'text-white'"
+        <ng-control [form]="page.form" control="confirmPassword" label="salesflow.Customers.confirmPassword"  [labelClass]="'text-white'"
         [inputClass]="'bg-Dark text-white'"
-          placeholder="confirm your Password" [type]="controlType.PASSWORD" (blur)="confirmPassword()"></ng-control>
-        <p class="text text-danger font-12" *ngIf="!isEqualPassword">Passwords do not match</p>
+          placeholder="*******" [type]="controlType.PASSWORD" (blur)="confirmPassword()"></ng-control>
+        <p class="text text-danger font-12" *ngIf="!isEqualPassword">{{"salesflow.Customers.Passwords do not match"|translate}}</p>
       </div>
       <!-- <div class="col-4" *ngIf="!page.isEdit">
         <ng-control [form]="page.form" label="latitude" control="latitude" [disabled]="!isEditMode"
@@ -91,8 +91,8 @@
           <ng-template #uploadTemplate>
             <label for="fileInput-{{ i }}" class="text-primary cursor-pointer">
               <i class="fa fa-upload fa-2x mb-2 color-brand-500"></i>
-              <p class="text-white" *ngIf="!image.uploaded">Upload New Image</p>
-              <p class="text-danger" *ngIf="image.error">Error Uploading</p>
+              <p class="text-white" *ngIf="!image.uploaded">{{"salesflow.Customers.Upload New Image"|translate}}</p>
+              <p class="text-danger" *ngIf="image.error">{{"salesflow.Customers.Error Uploading"|translate}}</p>
             </label>
             <input #file type="file" id="fileInput-{{ i }}" class="d-none" (change)="onImageUpload(file.files, i)" />
           </ng-template>

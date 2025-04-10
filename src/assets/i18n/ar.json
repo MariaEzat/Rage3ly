@@ -256,16 +256,18 @@
       "addNewEmployee": "اضافة مستخدم جديد",
       "userpermissions": "صلاحيات المستخدم",
       "addNewPermission": "اضافة صلاحيات جديدة",
-      "email":"البريد الالكتروني",
-      "password":"كلمة المرور",
-    "confirmPassword":"تأكيد كلمة المرور" ,
-    "changePassword":"تغيير كلمة المرور" ,
-  "Passwords do not match":"كلمات المرور غير متطابقة",
-"cancel":"الغاء" }
+      "email": "البريد الالكتروني",
+      "password": "كلمة المرور",
+      "confirmPassword": "تأكيد كلمة المرور",
+      "changePassword": "تغيير كلمة المرور",
+      "Passwords do not match": "كلمات المرور غير متطابقة",
+      "cancel": "الغاء"
+    }
   },
   "salesflow": {
     "Customers": {
-      "searchofCustomers":"بحث على العملاء",
+      "searchofCustomers": "بحث على العملاء",
+      "customer": "عميل",
       "customers": "العملاء",
       "activation": "تفعيل العميل ",
       "email": "البريد الالكتروني",
@@ -274,11 +276,17 @@
       "mobile": "الموبايل",
       "img": "الصورة",
       "action": "الاجراءات",
-      "download":"تنزيل",
+      "download": "تنزيل",
       "active": "تفعيل",
       "disActive": "الغاء التفعيل",
-      "addNewCustomer":"اضافة عميل"
+      "addNewCustomer": "اضافة عميل",
+      "password": "كلمة المرور",
+      "confirmPassword": "تأكيد كلمة المرور",
+      "changePassword": "تغيير كلمة المرور",
+      "Passwords do not match": "كلمات المرور غير متطابقة",
+      "cancel": "الغاء",
+      "Upload New Image":"رفع صورة جديدة",
+      "Error Uploading":"خطأ في رفع الصورة"
     }
-       
   }
 }
