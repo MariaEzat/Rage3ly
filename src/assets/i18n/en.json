@@ -221,13 +221,13 @@
     "jumb-forward": "Jump Forward",
     "jumb-back": "Jump Back"
   },
-  "auth":{
-    "login":{
-      "login":"Login",
-      "enterThePhoneNumberandPassword":"Enter The Phone Number and Password",
-      "phoneNumber":"Phone Number",
-      "password":"Password",
-      "forgotPassword?":"Forgot Password ?"
+  "auth": {
+    "login": {
+      "login": "Login",
+      "enterThePhoneNumberandPassword": "Enter The Phone Number and Password",
+      "phoneNumber": "Phone Number",
+      "password": "Password",
+      "forgotPassword?": "Forgot Password ?"
     }
   },
   "sites": {
@@ -250,6 +250,28 @@
       "hyberLink": "Hyber Link",
       "Upload New Image": "Upload New Image",
       "Error Uploading": "Error Uploading"
+    },
+    "employee": {
+      "employee": "employee",
+      "employees": "Employees",
+      "mobile": "Mobile",
+      "role": "Role",
+      "activation": "Activation",
+      "action": "Action",
+      "admin": "Admin",
+      "superAdmin": "Super Admin",
+      "delete": "Delete",
+      "active": "Active",
+      "disActive": "DisActive",
+      "addNewEmployee": "Add New Employee",
+      "userpermissions": "User permissions",
+      "addNewPermission": "Add New Permission",
+      "email": "email",
+      "password": "Password",
+      "confirmPassword": "Confirm Password",
+      "changePassword": "Change Password",
+      "Passwords do not match": "Passwords do not match",
+      "cancel": "Cancel"
     }
   }
 }

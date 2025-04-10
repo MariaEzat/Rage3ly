@@ -1,3 +1,5 @@
+<div class="container py-4 px-3">
+    <div class="card bg-Dark text-white p-4 shadow rounded-4">
 <div class="d-flex justify-content-between align-items-center py-2 ">
     <!-- <img src="../../../../../../assets/icons/keyboard_backspace.png"
             class="pointer text-white" style="width: 24px; height: 24px;" routerLink="/sites/ads"> -->
@@ -17,7 +19,7 @@
 
 <ng-container *ngIf="page.isPageLoaded">
     <form [formGroup]="page.form">
-        <div class="row d-flex align-items-center g-2">
+        <div class="row d-flex align-items-center g-3">
 
             <div class="col-6 text-white mb-1 ">
                 <ng-control [form]="page.form" control="title" placeholder="sites.advertisment.name" label="sites.advertisment.name"
@@ -87,3 +89,5 @@
         </div>
     </form>
 </ng-container>
+    </div>
+</div>
