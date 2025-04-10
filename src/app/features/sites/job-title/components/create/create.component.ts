@@ -64,7 +64,7 @@ export class CreateComponent implements OnInit, OnDestroy {
   createForm() {
     this.page.form = this._sharedService.formBuilder.group({
       name: [this.item.name, [Validators.required, Validators.minLength(2), Validators.maxLength(200)]],
-      email: [this.item.email, [Validators.required, Validators.minLength(2), Validators.maxLength(200)]],
+      email: [this.item.email, [Validators.required,Validators.email]],
       mobile: [this.item.mobile, [Validators.required, Validators.pattern(/^(010|011|012|015)\d{8}$/)]],
       roleId: [this.item.roleId,this.page.isEdit ? []: [Validators.required]],
       // Conditionally apply validation
