@@ -272,11 +272,16 @@
       "changePassword": "Change Password",
       "Passwords do not match": "Passwords do not match",
       "cancel": "Cancel"
+    },
+    "layout": {
+      "adverdisments": "Adverdisments",
+      "clients": "Clients",
+      "users": "Users"
     }
   },
   "salesflow": {
     "Customers": {
-      "searchofCustomers":"Search of Customers",
+      "searchofCustomers": "Search of Customers",
       "customers": "Customers",
       "activation": "Activation",
       "email": "Email",
@@ -285,10 +290,17 @@
       "mobile": "Mobile",
       "img": "Img",
       "action": "Action",
-      "download":"Download",
+      "download": "Download",
       "active": "Active",
       "disActive": "DisActive",
-      "addNewCustomer":"Add New Customer"
+      "addNewCustomer": "Add New Customer",
+      "password": "Password",
+      "confirmPassword": "Confirm Password",
+      "changePassword": "Change Password",
+      "Passwords do not match": "Passwords do not match",
+      "cancel": "Cancel",
+      "Upload New Image": "Upload New Image",
+      "Error Uploading": "Error Uploading"
     }
   }
 }

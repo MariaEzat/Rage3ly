@@ -262,6 +262,11 @@
       "changePassword": "تغيير كلمة المرور",
       "Passwords do not match": "كلمات المرور غير متطابقة",
       "cancel": "الغاء"
+    },
+    "layout":{
+      "adverdisments":"الاعلانات",
+      "clients":"العملاء",
+      "users":"المستخدمين"
     }
   },
   "salesflow": {
