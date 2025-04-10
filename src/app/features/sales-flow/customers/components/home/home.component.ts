@@ -31,9 +31,7 @@ export class HomeComponent extends CrudIndexBaseUtils {
   activation: customerActivateViewModel = { id: '' }
   verifyStatuslist = [
     { id: 1, name: 'Pending' },
-    { id: 2, name: 'Verified' },
-    { id: 3, name: 'Approve' },
-    { id: 4, name: 'Approve' }
+    { id: 2, name: 'Verified' }
 
   ];
 
@@ -84,14 +82,10 @@ export class HomeComponent extends CrudIndexBaseUtils {
       { Name: 'No', Title: '#', Selectable: true, Sortable: false },
       { Name: 'Name', Title: 'Customers', Selectable: false, Sortable: true },
       { Name: 'Activation', Title: 'Activation', Selectable: false, Sortable: true },
-      { Name: 'Client Group Name', Title: 'Client Group Name', Selectable: false, Sortable: true },
       { Name: 'Email', Title: 'Email', Selectable: false, Sortable: true },
       { Name: 'Verify Status', Title: 'Verify Status', Selectable: false, Sortable: true },
       { Name: 'National Number', Title: 'National Number', Selectable: false, Sortable: true },
-      { Name: 'Total Orders', Title: 'Total Orders', Selectable: false, Sortable: true },
       { Name: 'Mobile', Title: 'Mobile', Selectable: false, Sortable: true },
-      { Name: 'Phone', Title: 'Phone ', Selectable: false, Sortable: true },
-      { Name: "Customer Activity", Title: "Customer Activity", Selectable: false, Sortable: true },
       { Name: "Path", Title: "Img", Selectable: false, Sortable: true },
       { Name: 'Action', Title: 'Action', Selectable: false, Sortable: true },
 
@@ -312,14 +306,10 @@ export class HomeComponent extends CrudIndexBaseUtils {
       index + 1,
       item.name,
       item.isActive ? "Active" : "Inactive",
-      item.clientGroupName,
       item.email,
       this.getVerifyStatusName(Number(item.verifyStatus)),
       item.nationalNumber,
-      item.totalOrders,
       item.mobile,
-      item.phone,
-      this.getOrderStatusName(item.clientActivity),
     ]);
 
     // Generate Table with Better Formatting

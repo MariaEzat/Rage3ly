@@ -40,11 +40,38 @@
   background-color: #a4a7ae;
 }
 
+/* .form-group label {
+  color: #d5d7da !important;
+}
+
+.form-control {
+  border-color: #535862 !important;
+  background-color: #060B26 !important;
+  color: #d5d7da !important;
+} */
+
+.form-control {
+  background-color: #060B26 !important;
+  color: #d5d7da !important;
+}
+
+.form-control-no-validate {
+  border-color: #535862 !important;
+  background-color: #060B26 !important;
+  color: #d5d7da !important;
+}
+
+.form-control-with-validate {
+  border-color: #dc3545 !important;
+  background-color: #060B26 !important;
+  color: #d83543 !important; 
+}
+
 .color-gray-300 {
-  color: #d5d7da;
+  color: #d5d7da !important;
 }
 .bg-gray-300 {
-  background-color: #d5d7da;
+  background-color: #d5d7da !important;
 }
 
 .color-gray-200 {
@@ -488,10 +515,10 @@
 }
 
 .color-Dark{
-  color:#0B1437;
+  color:#060B26;
 }
 .bg-Dark{
-  background-color:#081138;
+  background-color:#060B26;
 }
 .border-color{
 border-color: #535862;
