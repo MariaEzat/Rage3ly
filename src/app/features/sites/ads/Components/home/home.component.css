@@ -77,3 +77,8 @@ input::placeholder {
   cursor: pointer;
 }
 
+.border-gray-input {
+  border: 1px solid rgb(190, 32, 32) !important;
+  border-radius: 4px; /* اختياري */
+  color: white;       /* حسب التنسيق */
+}
