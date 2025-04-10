@@ -39,12 +39,12 @@ export class HomeComponent extends CrudIndexBaseUtils {
   initializePage() {
     this.page.columns = [
       { Name: "No", Title: "#", Selectable: true, Sortable: false },
-      { Name: "adName", Title: "Ad Name", Selectable: false, Sortable: true },
-      { Name: "startDate", Title: "Start Date", Selectable: false, Sortable: true },
-      { Name: "endDate", Title: "End Date", Selectable: false, Sortable: true },
-      { Name: "isActive", Title: "Activation", Selectable: false, Sortable: true },
-      { Name: "path", Title: "Image", Selectable: false, Sortable: true },
-      { Name: "Action", Title: "Action", Selectable: false, Sortable: true },
+      { Name: "adName", Title: "sites.advertisment.name", Selectable: false, Sortable: true },
+      { Name: "startDate", Title: "sites.advertisment.startDate", Selectable: false, Sortable: true },
+      { Name: "endDate", Title: "sites.advertisment.endDate", Selectable: false, Sortable: true },
+      { Name: "isActive", Title: "sites.advertisment.activation", Selectable: false, Sortable: true },
+      { Name: "path", Title: "sites.advertisment.image", Selectable: false, Sortable: true },
+      { Name: "Action", Title: "sites.advertisment.action", Selectable: false, Sortable: true },
     ];
     this.createSearchForm();
     this.activatedRoute.queryParams.subscribe(params => {

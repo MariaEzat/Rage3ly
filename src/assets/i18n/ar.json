@@ -38,7 +38,7 @@
     "yes": "نعم",
     "no": "لا",
     "save": "حفظ",
-    "create": "إنشاء خط سير",
+    "create": "إنشاء  ",
     "of": "من",
     "assign": "تعيين",
     "select-all": "اختيار الكل",
@@ -211,13 +211,35 @@
     "jump-forward": "Jump Forward",
     "jump-back": "Jump Back"
   },
-  "auth":{
-    "login":{
-      "login":"تسجيل دخول",
-      "enterThePhoneNumberandPassword":"ادخل رقم التليفون و كلمة المرور",
-      "phoneNumber":"رقم التليفون",
-      "password":"كلمة المرور",
-      "forgotPassword?":"هل نسيت كلمة المرور؟"
+  "auth": {
+    "login": {
+      "login": "تسجيل دخول",
+      "enterThePhoneNumberandPassword": "ادخل رقم التليفون و كلمة المرور",
+      "phoneNumber": "رقم التليفون",
+      "password": "كلمة المرور",
+      "forgotPassword?": "هل نسيت كلمة المرور؟"
+    }
+  },
+  "sites": {
+    "advertisment": {
+      "searchOfAdverdisments": "بحث في الاعلانات",
+      "advertisment": "اعلان",
+      "advertisments": "اعلانات",
+      "startDate": "تاريخ البداية",
+      "endDate": "تاريخ النهاية",
+      "search": "البحث",
+      "name": "اسم الاعلان",
+      "activation": "التفعيل",
+      "image": "الصورة",
+      "action": "الاجراءات",
+      "delete": "حذف",
+      "active": "تفعيل",
+      "disActive": "الغاء التفعيل",
+      "addNewAdvertisment": "اضافة اعلان جديد",
+      "activateAd": "تفعيل الاعلان",
+      "hyberLink": "الرابط",
+      "Upload New Image": "رفع صورة جديدة",
+      "Error Uploading": "خطأ في رفع الصورة"
     }
   }
 }

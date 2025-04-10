@@ -99,7 +99,6 @@ export class CreateComponent implements OnInit, OnDestroy {
   createForm() {
     this.page.form = this._sharedService.formBuilder.group({
       title: [this.item.title, [Validators.required, Validators.minLength(2), Validators.maxLength(200)]],
-      imageTypes:[this.item.imageTypes,Validators.required],
       hyperlink: [this.item.hyperlink],
       startDate: [
         this.item.startDate || new Date(),
@@ -124,7 +123,6 @@ export class CreateComponent implements OnInit, OnDestroy {
     Object.assign(this.item, this.page.form.value);
     this.item.isActive = this.isActivated;
     this.item.paths = this.getUploadedImages(); 
-    this.item.imageTypes = +this.page.form.get('imageTypes')?.value;
     //this.item.paths = this.getUploadedImages();
     // this.item.paths = this.images
     //    .filter((image) => image.uploaded)

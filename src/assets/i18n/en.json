@@ -229,5 +229,27 @@
       "password":"Password",
       "forgotPassword?":"Forgot Password ?"
     }
+  },
+  "sites": {
+    "advertisment": {
+      "searchOfAdverdisments": "Search Of Adverdisments",
+      "advertisment": "Advertisment",
+      "advertisments": "Advertisments",
+      "startDate": "Start Date",
+      "endDate": "End Date",
+      "search": "Search",
+      "name": "Ad Name",
+      "activation": "Activation",
+      "image": "Image",
+      "action": "Action",
+      "delete": "Delete",
+      "active": "Active",
+      "disActive": "DisActive",
+      "addNewAdvertisment": "Add New Advertisment",
+      "activateAd": "Activate Ad",
+      "hyberLink": "Hyber Link",
+      "Upload New Image": "Upload New Image",
+      "Error Uploading": "Error Uploading"
+    }
   }
 }

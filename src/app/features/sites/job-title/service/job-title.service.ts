@@ -16,9 +16,6 @@ export class EmployeeService {
       pageSize = environment.pageSize;
 
     let params = new HttpParams();
-    if (searchViewModel.UserName) {
-      params = params.set("UserName", searchViewModel.UserName);
-    }
     if (searchViewModel.Mobile) {
       params = params.set("Mobile", searchViewModel.Mobile);
     }
@@ -44,7 +41,8 @@ export class EmployeeService {
 
   bulkActivate(ids :string[])
   {
-    return this._apiService.update(`/BulkActivateUserEndPoint/BulkActivateUser`, { ids });
+    return this._apiService.update(`/BulkActivateUserEndPoint/BulkActivateUser
+`, { ids });
   }
 
   bulkDeactivate(ids :string[])
@@ -53,7 +51,8 @@ export class EmployeeService {
   }
 
   updateActivated(id: string) {
-    return this._apiService.update(`/ActivateUserEndPoint/ActivateUser`, id);
+    return this._apiService.update(`/ActivateUserEndPoint/ActivateUser
+`, id);
   }
 
   updateDeactivated(id:string) {

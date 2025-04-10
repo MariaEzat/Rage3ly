@@ -4,22 +4,24 @@
     <div class="container-fluid">
 
       <!-- Search Card -->
+
       <div class="card p-4 mb-4" style="background-color: #1A1F3766;">
-        <h5 class="mb-3 text-white"> Search of Adverdisments </h5>
+        <h5 class="mb-3 text-white">{{"sites.advertisment.searchOfAdverdisments"|translate}} </h5>
         <form [formGroup]="page.searchForm">
           <div class="form-body">
             <div class="row g-2">
               <div class="col-3">
                 <ng-control [form]="page.searchForm" control="Title" [inputClass]="'bg-Dark border-color'"
-                  [labelClass]="'text-white'" label="Adverdisment" placeholder="Adverdisment">
+                  [labelClass]="'text-white'" label="sites.advertisment.name" placeholder="sites.advertisment.name">
                 </ng-control>
               </div>
               <div class="col-3">
-                <ng-control [form]="page.searchForm" control="StartDate" label="StartDate " [inputClass]="'bg-Dark  border-color'"
+                <ng-control [form]="page.searchForm" control="StartDate" label="sites.advertisment.startDate" [inputClass]="'bg-Dark  border-color'"
                   [labelClass]="'text-white'" [type]="page.ControlType.INPUT_DATE"></ng-control>
               </div>
               <div class="col-3">
-                <ng-control [form]="page.searchForm" control="EndDate" label="EndDate " [inputClass]="'bg-Dark border-color'" 
+
+                <ng-control [form]="page.searchForm" control="EndDate" label="sites.advertisment.endDate" [inputClass]="'bg-Dark border-color'" 
                   [labelClass]="'color-gray-300'" [type]="page.ControlType.INPUT_DATE"></ng-control>
               </div>
               <!-- Search Button -->
@@ -41,12 +43,12 @@
       <div class="card p-4 border-0 shadow-sm rounded-3" style="background-color: #1A1F3766;">
         <!-- Header -->
         <div class="d-flex justify-content-between align-items-center mb-3">
-          <h5 class="text-white"> Adverdisments </h5>
+          <h5 class="text-white"> {{"sites.advertisment.advertisments"|translate}} </h5>
           <div class="d-flex">
-            <button class="btn btn-primary me-2" (click)="deleteSelectedAds()">Delete</button>
-            <button class="btn btn-primary me-2" (click)="activateAds()">Active</button>
-            <button class="btn btn-primary me-2" (click)="disActiveAds()">DisActive</button>
-            <button class="btn btn-primary me-2" (click)="navigateToCreateBrand()">Add new Adverdisment</button>
+            <button class="btn btn-primary me-2" (click)="deleteSelectedAds()">{{"sites.advertisment.delete"|translate}}</button>
+            <button class="btn btn-primary me-2" (click)="activateAds()">{{"sites.advertisment.active"|translate}}</button>
+            <button class="btn btn-primary me-2" (click)="disActiveAds()">{{"sites.advertisment.disActive"|translate}}</button>
+            <button class="btn btn-primary me-2" (click)="navigateToCreateBrand()">{{"sites.advertisment.addNewAdvertisment"|translate}}</button>
 
           </div>
         </div>
@@ -95,7 +97,7 @@
                           aria-label="Delete" (click)="showDeleteConfirmation(item)">
                   </button>
                   <button pButton icon="pi pi-pencil" class="p-button-rounded p-button-text p-button-info"
-                          aria-label="Edit" (click)="editCity(item.id)">
+                          aria-label="Edit" (click)="editad(item.id)">
                   </button>
                 </td>
               </tr>
