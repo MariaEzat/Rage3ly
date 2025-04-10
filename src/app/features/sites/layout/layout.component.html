@@ -8,15 +8,14 @@
       <hr />
     </div>
     <div class="nav flex-column w-100 text-end">
-      <a class="nav-link text-white py-2" href="#"><i class="bi bi-phone"></i> الهواتف</a>
 
-      <a class="nav-link text-white py-2" routerLink="/sites/ads" routerLinkActive="active" #rla="routerLinkActive"
+      <a class="nav-link text-white py-2 d-flex flex-row-reverse justify-content-end align-items-center" routerLink="/sites/ads" routerLinkActive="active" #rla="routerLinkActive"
         [routerLinkActiveOptions]="{ exact: true }" [ngClass]="{ 'active-color': rla.isActive }">
         ads
         <img [src]="rla.isActive ? 'assets/images/Icon.png' : 'assets/images/Icon-notActive.png'" class="px-1 nav-icon">
       </a>
 
-      <a class="nav-link text-white py-2" routerLink="/salesflow/customers" routerLinkActive="active"
+      <a class="nav-link text-white py-2 d-flex flex-row-reverse justify-content-end align-items-center" routerLink="/salesflow/customers" routerLinkActive="active"
         #rla="routerLinkActive" [routerLinkActiveOptions]="{ exact: true }"
         [ngClass]="{ 'active-color': rla.isActive }">
         Clients
@@ -24,16 +23,16 @@
           class="px-1 nav-icon">
       </a>
 
-      <a class="nav-link text-white py-2" routerLink="/sites/jobTitle" routerLinkActive="active" #rla="routerLinkActive"
+      <a class="nav-link text-white py-2 d-flex flex-row-reverse justify-content-end align-items-center" routerLink="/sites/jobTitle" routerLinkActive="active" #rla="routerLinkActive"
         [routerLinkActiveOptions]="{ exact: true }" [ngClass]="{ 'active-color': rla.isActive }">
         Users
         <img [src]="rla.isActive ? 'assets/images/IconEmpActive.png' : 'assets/images/IconEmp.png'"
           class="px-1 nav-icon">
       </a>
-
-      <a class="nav-link text-white py-2" href="#"><i class="bi bi-person-badge"></i> صلاحيات المستخدمين</a>
+      <!-- <a class="nav-link text-white py-2" href="#"><i class="bi bi-phone"></i> الهواتف</a> -->
+      <!-- <a class="nav-link text-white py-2" href="#"><i class="bi bi-person-badge"></i> صلاحيات المستخدمين</a>
       <a class="nav-link text-white py-2" href="#"><i class="bi bi-search"></i> نتائج البحث</a>
-      <a class="nav-link text-white py-2" href="#"><i class="bi bi-bell"></i> إشعارات</a>
+      <a class="nav-link text-white py-2" href="#"><i class="bi bi-bell"></i> إشعارات</a> -->
     </div>
     <div class="mt-auto cr5 w-75 text-center bg-red-dark">
       <button class="btn cr5 p-2 color-white w-100">
