@@ -10,7 +10,7 @@ const routes: Routes = [
     path: '',
     component: LayoutComponent,
     children: [
-      { path: '', redirectTo: 'governorates', pathMatch: 'full' },
+      { path: '', redirectTo: 'governorate', pathMatch: 'full' },
       {
         path: 'governorates',
         loadChildren: () =>
@@ -106,6 +106,7 @@ const routes: Routes = [
             (m) => m.EmployeeProfileModule
           ),
       },
+      
     ],
   },
 ];

@@ -1,0 +1,25 @@
+body {
+    background-image: url('../../../../assets/images/FirstSection.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  .Gray-600{
+    color: "#535862";
+  }
+  .custom-card {
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+  }
+  
+  .custom-card:hover {
+    box-shadow: 0 10px 20px #BB9BFF26; 
+    transform: translateY(-4px);
+  }
+  .text-white {
+    color: #ffffff;
+  }
+   body {
+    overflow: auto; 
+  }
+  
+  
