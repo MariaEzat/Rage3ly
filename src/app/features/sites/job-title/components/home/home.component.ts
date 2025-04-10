@@ -43,12 +43,9 @@ export class HomeComponent extends CrudIndexBaseUtils {
     this.page.columns = [
       { Name: "No", Title: "#", Selectable: true, Sortable: false },
       { Name: "Name", Title: "Employee", Selectable: false, Sortable: true },
-      { Name: "UserName", Title: "UserName", Selectable: false, Sortable: true },
       { Name: "Mobile", Title: "Mobile", Selectable: false, Sortable: true },
       { Name: "roleId", Title: "Role", Selectable: false, Sortable: true },
-      { Name: "jobTitle", Title: "Job Title", Selectable: false, Sortable: true },
       { Name: 'Activation', Title: 'Activation', Selectable: false, Sortable: true },
-
       { Name: "Action", Title: "Action", Selectable: false, Sortable: true },
 
     ];
@@ -70,7 +67,6 @@ export class HomeComponent extends CrudIndexBaseUtils {
 
   override createSearchForm() {
     this.page.searchForm = this._sharedService.formBuilder.group({
-      UserName: [this.searchViewModel.UserName],
       Mobile: [this.searchViewModel.Mobile],
 
     });

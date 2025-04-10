@@ -1,10 +1,8 @@
 export interface employeeViewModel {
   id: string; 
   name: string; 
-  userName:string;
   mobile:string;
   roleId:number;
-  jobTitle:string;
   isActive:boolean;
  selected?:boolean;
 }
@@ -12,15 +10,14 @@ export interface employeeViewModel {
 export class employeeCreateViewModel {
   id: string; 
   name: string; 
-  userName:string;
+  email:string;
   mobile:string;
   roleId:number;
   password:string;
   confirmPassword:string;
-  jobTitle:string;
+  verifyStatus :number;
 }
 export class employeeSearchViewModel {
-  UserName: string;
   Mobile:string
 }
 export class changePasswordViewModel {

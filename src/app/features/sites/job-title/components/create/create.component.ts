@@ -30,9 +30,12 @@ export class CreateComponent implements OnInit, OnDestroy {
   RolesEnum = [
     { id: 1, name: 'SuperAdmin' },
     { id: 2, name: 'Admin' },
-    { id: 3, name: 'Company' },
-    { id: 4, name: 'Client' },
+    { id: 3, name: 'Client' },
   ];
+  VerifyStatusList=[
+    {id:1,name:"Pending"},
+    {id:2,name:"Verified"}
+  ]
   ngOnInit(): void {
     this.page.isPageLoaded = false;
     this._activatedRoute.paramMap.subscribe((params) => {
@@ -61,11 +64,9 @@ export class CreateComponent implements OnInit, OnDestroy {
   createForm() {
     this.page.form = this._sharedService.formBuilder.group({
       name: [this.item.name, [Validators.required, Validators.minLength(2), Validators.maxLength(200)]],
-      userName: [this.item.userName, [Validators.required, Validators.minLength(2), Validators.maxLength(200)]],
+      email: [this.item.email, [Validators.required, Validators.minLength(2), Validators.maxLength(200)]],
       mobile: [this.item.mobile, [Validators.required, Validators.pattern(/^(010|011|012|015)\d{8}$/)]],
       roleId: [this.item.roleId,this.page.isEdit ? []: [Validators.required]],
-      jobTitle: [this.item.jobTitle],
-  
       // Conditionally apply validation
       password: [
         this.item.password, 

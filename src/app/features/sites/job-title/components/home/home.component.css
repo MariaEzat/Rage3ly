@@ -1,0 +1,85 @@
+body {
+    background-color: #060B26;
+    color: #fff;
+    font-family: 'Cairo', sans-serif;
+  }
+  
+  .card {
+    background-color: #0B1437;
+    border: none;
+    border-radius: 8px;
+  }
+  
+  .btn-primary {
+    background-color: #4DC3FF;
+    border: none;
+  }
+  
+  .btn-primary:hover {
+    background-color: #35b3f2;
+  }
+  
+  .btn-danger {
+    background-color: #B73C3C;
+    border: none;
+  }
+  
+  .btn-danger:hover {
+    background-color: #a83232;
+  }
+  
+  .table {
+    background-color: transparent;
+    color: #fff;
+  }
+  
+  input,
+  select {
+    background-color: #0B1437;
+    border: 1px solid #4DC3FF;
+    color: #fff;
+  }
+  
+  input::placeholder {
+    color: #ccc;
+  }
+  .border-color{
+    border-color: #535862;
+  }
+  .transparent-table {
+    background-color: transparent;
+    color: white;
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .transparent-table thead {
+    background-color: transparent;
+    color: white;
+  }
+  
+  .transparent-table tbody tr {
+    background-color: transparent;
+  }
+  
+  
+  .transparent-table td,
+  .transparent-table th {
+    background-color: transparent !important; /* نضمن إنه يشيل أي لون تاني */
+    color: white; /* أو أي لون تحبيه للكتابة */
+    border: 1px solid rgba(255, 255, 255, 0.1); /* حد خفيف شفاف */
+  }
+  .transparent-table img {
+    border-radius: 0.5rem;
+  }
+  
+  .transparent-table .pointer {
+    cursor: pointer;
+  }
+  
+  .border-gray-input {
+    border: 1px solid rgb(190, 32, 32) !important;
+    border-radius: 4px; /* اختياري */
+    color: white;       /* حسب التنسيق */
+  }
+  
