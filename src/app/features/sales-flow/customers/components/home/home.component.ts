@@ -46,15 +46,8 @@ export class HomeComponent extends CrudIndexBaseUtils {
       this.showDownloadOptions = false;
     }
   }
-  customerActivity = [
-    { id: 1, name: 'CarWash' },
-    { id: 2, name: 'ServiceStation' },
-    { id: 3, name: 'GasStation' },
-    { id: 4, name: 'Trader' },
-
-  ]
+ 
   status: customerSelectedViewModel[] = [];
-  customerGroups: customerSelectedViewModel[] = [];
   constructor(
     public override _sharedService: SharedService,
     private _pageService: CustomersService,
@@ -72,8 +65,8 @@ export class HomeComponent extends CrudIndexBaseUtils {
 
   getVerifyStatusName(statusId: number): string {
 
-    const status = this.verifyStatuslist.find(s => s.id === statusId);
-    return status ? status.name : 'Unknown';
+    const verifyStatuslist = this.verifyStatuslist.find(s => s.id === statusId);
+    return verifyStatuslist ? verifyStatuslist.name : 'Unknown';
   }
 
   initializePage() {
@@ -93,7 +86,6 @@ export class HomeComponent extends CrudIndexBaseUtils {
     ];
     forkJoin([this._pageService.getStatus(), this._pageService.getClientGroups()]).subscribe((res) => {
       this.status = res[0].data;
-      this.customerGroups = res[1].data;
     });
     this.createSearchForm();
     this.activatedRoute.queryParams.subscribe((params) => {
@@ -112,7 +104,6 @@ export class HomeComponent extends CrudIndexBaseUtils {
       Email: [this.searchViewModel.Email],
       NationalNumber: [this.searchViewModel.NationalNumber],
       VerifyStatus: [this.searchViewModel.VerifyStatus],
-      ClientGroupId: [this.searchViewModel.ClientGroupId],
       Mobile: [this.searchViewModel.Mobile]
 
     });
@@ -213,10 +204,7 @@ export class HomeComponent extends CrudIndexBaseUtils {
   getImageUrl(imagePath: string): string {
     return `${environment.api}/` + imagePath;
   }
-  getOrderStatusName(statusId: number): string {
-    const status = this.customerActivity.find(s => s.id === Number(statusId));
-    return status ? status.name : 'Unknown';
-  }
+  
 
 
 
@@ -290,14 +278,10 @@ export class HomeComponent extends CrudIndexBaseUtils {
         "No",
         "Name",
         "Activation",
-        "Client Group",
         "Email",
         "Verify Status",
         "National Number",
-        "Total Orders",
         "Mobile",
-        "Phone",
-        "Customer Activity",
       ],
     ];
 
@@ -331,14 +315,10 @@ export class HomeComponent extends CrudIndexBaseUtils {
         0: { cellWidth: 10 }, // No
         1: { cellWidth: 30 }, // Name
         2: { cellWidth: 20 }, // Activation
-        3: { cellWidth: 30 }, // Client Group Name
-        4: { cellWidth: 40 }, // Email
-        5: { cellWidth: 20 }, // Verify Status
-        6: { cellWidth: 25 }, // National Number
-        7: { cellWidth: 20 }, // Total Orders
-        8: { cellWidth: 25 }, // Mobile
-        9: { cellWidth: 25 }, // Phone
-        10: { cellWidth: 30 }, // Customer Activity
+        3: { cellWidth: 40 }, // Email
+        4: { cellWidth: 20 }, // Verify Status
+        5: { cellWidth: 25 }, // National Number
+        6: { cellWidth: 25 }, // Mobile
       },
       margin: { top: 20 },
       pageBreak: "auto", // Automatically insert page breaks
