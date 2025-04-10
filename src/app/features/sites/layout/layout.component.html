@@ -9,26 +9,37 @@
     </div>
     <div class="nav flex-column w-100 text-end">
 
-      <a class="nav-link text-white py-2 d-flex flex-row-reverse justify-content-end align-items-center" routerLink="/sites/ads" routerLinkActive="active" #rla="routerLinkActive"
-        [routerLinkActiveOptions]="{ exact: true }" [ngClass]="{ 'active-color': rla.isActive }">
-        {{"sites.layout.adverdisments"|translate }}
-        <img [src]="rla.isActive ? 'assets/images/Icon.png' : 'assets/images/Icon-notActive.png'" class="px-1 nav-icon">
-      </a>
+      <a class="nav-link text-white py-2 d-flex flex-row-reverse justify-content-end align-items-center"
+      routerLink="/sites/ads"
+      routerLinkActive="active"
+      #adsRla="routerLinkActive"
+      [routerLinkActiveOptions]="{ exact: true }"
+      [ngClass]="{ 'active-color': adsRla.isActive }">
+     {{ "sites.layout.adverdisments" | translate }}
+     <img [src]="adsRla.isActive ? 'assets/images/Icon.png' : 'assets/images/Icon-notActive.png'" class="px-1 nav-icon">
+   </a>
 
-      <a class="nav-link text-white py-2 d-flex flex-row-reverse justify-content-end align-items-center" routerLink="/salesflow/customers" routerLinkActive="active"
-        #rla="routerLinkActive" [routerLinkActiveOptions]="{ exact: true }"
-        [ngClass]="{ 'active-color': rla.isActive }">
-        {{"sites.layout.clients"|translate }} 
-        <img [src]="rla.isActive ? 'assets/images/Icon@2x.png' : 'assets/images/Icon-Clients.png'"
-          class="px-1 nav-icon">
-      </a>
+   <!-- Clients -->
+   <a class="nav-link text-white py-2 d-flex flex-row-reverse justify-content-end align-items-center"
+      routerLink="/sites/customers"
+      routerLinkActive="active"
+      #clientsRla="routerLinkActive"
+      [routerLinkActiveOptions]="{ exact: true }"
+      [ngClass]="{ 'active-color': clientsRla.isActive }">
+     {{ "sites.layout.clients" | translate }}
+     <img [src]="clientsRla.isActive ? 'assets/images/Icon@2x.png' : 'assets/images/Icon-Clients.png'" class="px-1 nav-icon">
+   </a>
 
-      <a class="nav-link text-white py-2 d-flex flex-row-reverse justify-content-end align-items-center" routerLink="/sites/jobTitle" routerLinkActive="active" #rla="routerLinkActive"
-        [routerLinkActiveOptions]="{ exact: true }" [ngClass]="{ 'active-color': rla.isActive }">
-        {{"sites.layout.users"|translate }} 
-        <img [src]="rla.isActive ? 'assets/images/IconEmpActive.png' : 'assets/images/IconEmp.png'"
-          class="px-1 nav-icon">
-      </a>
+   <!-- Users -->
+   <a class="nav-link text-white py-2 d-flex flex-row-reverse justify-content-end align-items-center"
+      routerLink="/sites/jobTitle"
+      routerLinkActive="active"
+      #usersRla="routerLinkActive"
+      [routerLinkActiveOptions]="{ exact: true }"
+      [ngClass]="{ 'active-color': usersRla.isActive }">
+     {{ "sites.layout.users" | translate }}
+     <img [src]="usersRla.isActive ? 'assets/images/IconEmpActive.png' : 'assets/images/IconEmp.png'" class="px-1 nav-icon">
+   </a>
       <!-- <a class="nav-link text-white py-2" href="#"><i class="bi bi-phone"></i> الهواتف</a> -->
       <!-- <a class="nav-link text-white py-2" href="#"><i class="bi bi-person-badge"></i> صلاحيات المستخدمين</a>
       <a class="nav-link text-white py-2" href="#"><i class="bi bi-search"></i> نتائج البحث</a>

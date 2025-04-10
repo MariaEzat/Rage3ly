@@ -8,10 +8,9 @@ import { editOrderItemsViewModel, editOrderViewModel, EditShippingAddressViewMod
 import { SharedService } from 'src/app/shared/service/shared.service';
 import { OrderService } from '../../service/order.service';
 import { ControlType } from 'src/app/shared/models/enum/control-type.enum';
-import { customerSelectedViewModel } from '../../../customers/interfaces/customers';
 import { CityService } from 'src/app/features/sites/city/service/city.service';
 import { CompanyService } from 'src/app/features/sites/company/service/company.service';
-import { CustomersService } from '../../../customers/service/customers.service';
+import { CustomersService } from '../../../../sites/customers/service/customers.service';
 import { add } from 'ngx-bootstrap/chronos';
 import { ChangeDetectorRef } from '@angular/core';
 import { environment } from 'src/environments/environment';

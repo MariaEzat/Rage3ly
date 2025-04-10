@@ -18,6 +18,8 @@ const routes: Routes = [
             (m) => m.GovernoratesModule
           ),
       },
+      { path: "customers", loadChildren: () => import('./customers/customers.module').then(m => m.CustomersModule) },
+
       {
         path: 'cities',
         loadChildren: () =>
@@ -63,7 +65,7 @@ const routes: Routes = [
       {
         path: 'customers',
         loadChildren: () =>
-          import('../sales-flow/customers/customers.module').then(
+          import('../sites/customers/customers.module').then(
             (m) => m.CustomersModule
           ),
       },

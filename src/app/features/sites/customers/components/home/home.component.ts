@@ -48,6 +48,8 @@ export class HomeComponent extends CrudIndexBaseUtils {
   }
  
   status: customerSelectedViewModel[] = [];
+  clientGroup: customerSelectedViewModel[] = [];
+
   constructor(
     public override _sharedService: SharedService,
     private _pageService: CustomersService,
@@ -84,9 +86,6 @@ export class HomeComponent extends CrudIndexBaseUtils {
 
 
     ];
-    forkJoin([this._pageService.getStatus(), this._pageService.getClientGroups()]).subscribe((res) => {
-      this.status = res[0].data;
-    });
     this.createSearchForm();
     this.activatedRoute.queryParams.subscribe((params) => {
       this._sharedService.getFilterationFromURL(params, this.page.searchForm);

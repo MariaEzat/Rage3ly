@@ -4,7 +4,7 @@ import { orderSearchViewModel } from 'src/app/features/sales-flow/order/interfac
 import { ApiService } from 'src/app/shared/service/api.service';
 import { environment } from 'src/environments/environment';
 import { searchViewModel, SiteStatisticsViewModel } from '../interface/dashboard';
-import { customerSearchViewModel } from 'src/app/features/sales-flow/customers/interfaces/customers';
+import { customerSearchViewModel } from 'src/app/features/sites/customers/interfaces/customers';
 
 @Injectable({
   providedIn: 'root'

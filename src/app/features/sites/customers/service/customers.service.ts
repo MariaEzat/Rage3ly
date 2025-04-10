@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { ApiService } from 'src/app/shared/service/api.service';
-import { customerGroupSearchViewModel } from '../../customer-group/interfaces/customer-group-view-model';
 import { changePasswordViewModel, customerActivateViewModel, customerCreateViewModel, customerSearchViewModel, customerViewModel } from '../interfaces/customers';
 import { environment } from 'src/environments/environment';
 import { HttpParams } from '@angular/common/http';

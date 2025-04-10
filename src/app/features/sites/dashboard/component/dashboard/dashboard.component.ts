@@ -13,7 +13,7 @@ import { CRUDIndexPage } from 'src/app/shared/models/crud-index.model';
 import { SharedService } from 'src/app/shared/service/shared.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { OrderService } from 'src/app/features/sales-flow/order/service/order.service';
-import { customerViewModel } from 'src/app/features/sales-flow/customers/interfaces/customers';
+import { customerViewModel } from 'src/app/features/sites/customers/interfaces/customers';
 
 
 @Component({
