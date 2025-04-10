@@ -24,9 +24,6 @@ export class CustomersService {
     if (searchViewModel.Email) {
       params = params.set("Email", searchViewModel.Email);
     }
-    if (searchViewModel.ClientGroupId) {
-      params = params.set("ClientGroupId", searchViewModel.ClientGroupId);
-    }
     if (searchViewModel.NationalNumber) {
       params = params.set("NationalNumber", searchViewModel.NationalNumber);
     }
@@ -50,9 +47,7 @@ export class CustomersService {
     if (searchViewModel.Email) {
       params = params.set("Email", searchViewModel.Email);
     }
-    if (searchViewModel.ClientGroupId) {
-      params = params.set("ClientGroupId", searchViewModel.ClientGroupId);
-    }
+   
     if (searchViewModel.NationalNumber) {
       params = params.set("NationalNumber", searchViewModel.NationalNumber);
     }
