@@ -7,15 +7,15 @@
         <p class="color-white mb-4 ">{{"auth.login.enterThePhoneNumberandPassword"|translate}}.</p>
         <form [formGroup]="loginForm">
           <ng-control [form]="loginForm" control="mobile" [inputClass]="'mb-3 bg-Dark border-color'"
-            [labelClass]="loginForm.get('mobile')?.invalid && (loginForm.get('mobile')?.touched || loginForm.get('mobile')?.dirty) ? 'text-danger' : 'text-white'"
+            [labelClass]="loginForm.get('mobile')?.invalid && (loginForm.get('mobile')?.touched || loginForm.get('mobile')?.dirty) ? 'form-control-with-validate' : 'form-control-no-validate'"
             label="auth.login.phoneNumber" placeholder="01-xxx-xxx-xxx" (keypress)="numberOnly($event)">
           </ng-control>
-          <ng-control [form]="loginForm" [inputClass]="'mb-2 bg-Dark border-color'"
-            [labelClass]="loginForm.get('password')?.invalid && (loginForm.get('password')?.touched || loginForm.get('password')?.dirty) ? 'text-danger' : 'text-white'"
+          <ng-control [form]="loginForm" [inputClass]="'mb-2 bg-Dark border-color color-color-gray-300'" 
+            [labelClass]="loginForm.get('password')?.invalid && (loginForm.get('password')?.touched || loginForm.get('password')?.dirty) ? 'form-control-with-validate' : 'form-control-no-validate'"
             control="password" label="auth.login.password" placeholder="********"
             [type]="controlType.PASSWORD"></ng-control>
           <p class="mb-4">
-            <span class="pointer color-brand"
+            <span  class="pointer color-brand"
               routerLink="/auth/phoneforgetpassword">{{"auth.login.forgotPassword?"|translate}}</span>
           </p>
           <button (click)="onSubmit()" class="btn bg-brand w-100 mt-4 text-white"

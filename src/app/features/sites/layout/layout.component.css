@@ -15,8 +15,13 @@
 
 }
 .sidebar-right {
-  border-left: 3px solid rgb(32, 32, 71); /* أو أي لون يناسبك */
+  border-left: 2px solid rgb(65 65 75); /* أو أي لون يناسبك */
 }
 
 
 
+.nav-icon {
+  width: 35px;
+  height: 35px;
+  object-fit: contain; /* يحافظ على نسبة الأبعاد بدون تشويه */
+}

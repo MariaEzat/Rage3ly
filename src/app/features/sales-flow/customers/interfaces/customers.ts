@@ -2,17 +2,15 @@ export interface customerViewModel {
   id:string;
   name:string;
   isActive:boolean;
-  clientGroupName:string;
   email:string;
   verifyStatus:string;
   nationalNumber:string;
-  totalOrders:number;
   path:string;
-  clientActivity:number;
   mobile:number;
-  phone:number;
   selected?: boolean; 
 }
+
+
 export class customerSearchViewModel {
   id:string;
   Name:string;

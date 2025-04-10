@@ -4,7 +4,7 @@
     <div class="container-fluid">
 
       <!-- Search Card -->
-      <div class="card p-4 mb-4" style="background-color: #060c26;">
+      <div class="card p-4 mb-4" style="background-color: #1A1F3766;">
         <h5 class="mb-3 text-white"> Search of Adverdisments </h5>
         <form [formGroup]="page.searchForm">
           <div class="form-body">
@@ -20,7 +20,7 @@
               </div>
               <div class="col-3">
                 <ng-control [form]="page.searchForm" control="EndDate" label="EndDate " [inputClass]="'bg-Dark border-color'" 
-                  [labelClass]="'text-white'" [type]="page.ControlType.INPUT_DATE"></ng-control>
+                  [labelClass]="'color-gray-300'" [type]="page.ControlType.INPUT_DATE"></ng-control>
               </div>
               <!-- Search Button -->
               <div class="col-2 d-flex align-items-end">
@@ -32,17 +32,13 @@
                 </button>
               </div>
 
-
-
-
-
             </div>
           </div>
         </form>
       </div>
 
       <!-- Ads Table Card -->
-      <div class="card p-4 border-0 shadow-sm rounded-3" style="background-color: #060c26;">
+      <div class="card p-4 border-0 shadow-sm rounded-3" style="background-color: #1A1F3766;">
         <!-- Header -->
         <div class="d-flex justify-content-between align-items-center mb-3">
           <h5 class="text-white"> Adverdisments </h5>
