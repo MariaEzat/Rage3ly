@@ -73,14 +73,14 @@ export class HomeComponent extends CrudIndexBaseUtils {
     this.page.columns = [
 
       { Name: 'No', Title: '#', Selectable: true, Sortable: false },
-      { Name: 'Name', Title: 'Customers', Selectable: false, Sortable: true },
-      { Name: 'Activation', Title: 'Activation', Selectable: false, Sortable: true },
-      { Name: 'Email', Title: 'Email', Selectable: false, Sortable: true },
-      { Name: 'Verify Status', Title: 'Verify Status', Selectable: false, Sortable: true },
-      { Name: 'National Number', Title: 'National Number', Selectable: false, Sortable: true },
-      { Name: 'Mobile', Title: 'Mobile', Selectable: false, Sortable: true },
-      { Name: "Path", Title: "Img", Selectable: false, Sortable: true },
-      { Name: 'Action', Title: 'Action', Selectable: false, Sortable: true },
+      { Name: 'Name', Title: 'salesflow.Customers.customers', Selectable: false, Sortable: true },
+      { Name: 'Activation', Title: 'salesflow.Customers.activation', Selectable: false, Sortable: true },
+      { Name: 'Email', Title: 'salesflow.Customers.email', Selectable: false, Sortable: true },
+      { Name: 'Verify Status', Title: 'salesflow.Customers.verifyStatus', Selectable: false, Sortable: true },
+      { Name: 'National Number', Title: 'salesflow.Customers.nationalNumber', Selectable: false, Sortable: true },
+      { Name: 'Mobile', Title: 'salesflow.Customers.mobile', Selectable: false, Sortable: true },
+      { Name: "Path", Title: "salesflow.Customers.img", Selectable: false, Sortable: true },
+      { Name: 'Action', Title: 'salesflow.Customers.action', Selectable: false, Sortable: true },
 
 
     ];
