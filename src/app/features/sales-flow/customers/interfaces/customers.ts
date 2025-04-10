@@ -33,24 +33,11 @@ export class customerCreateViewModel {
   id:string;
   name: string;
   nationalNumber?: string;
-  age?: number;
-  gender?: string;
-  userName: string;
   password: string;
   mobile: string;
-  governorateId: string;
-  cityId: string;
-  street: string;
-  landmark: string;
-  latitude: number;
-  longitude: number;
-  buildingData:string;
   email?: string;
   confirmPassword: string;
-  clientGroupId?: string;
-  phone?:string;
   paths?: string[];
-  clientActivity?:number;
 }
 export class changePasswordViewModel {
   password:string;

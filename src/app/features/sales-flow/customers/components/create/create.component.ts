@@ -60,24 +60,29 @@ export class CreateComponent implements OnInit {
         this.page.isEdit = true;
       }
     });
-    forkJoin([
-      this._cityService.getGovernorates(),
-      this._companyService.getCities(),
-      this._customersService.getClientGroups()
-    ]).subscribe((res) => {
-      this.governorates = res[0].data
-      this.cities = res[1].data
-      this.clientGroups = res[2].data
-      if (this.page.isEdit) {
-        this.getEditableItem();
-      } else {
-        this.createForm();
-      }
-
-
+    if (this.page.isEdit) {
+      this.getEditableItem();
+    } else {
+      this.createForm();
     }
+    // forkJoin([
+    //   this._cityService.getGovernorates(),
+    //   this._companyService.getCities(),
+    //   this._customersService.getClientGroups()
+    // ]).subscribe((res) => {
+    //   this.governorates = res[0].data
+    //   this.cities = res[1].data
+    //   this.clientGroups = res[2].data
+    //   if (this.page.isEdit) {
+    //     this.getEditableItem();
+    //   } else {
+    //     this.createForm();
+    //   }
 
-    )
+
+    // }
+
+    // )
   }
 
 
@@ -108,15 +113,8 @@ export class CreateComponent implements OnInit {
     this.page.form = this._sharedService.formBuilder.group({
       name: [this.item.name, [Validators.required, Validators.minLength(1), Validators.maxLength(100)]],
       nationalNumber: [this.item.nationalNumber, [ Validators.pattern(/^\d{14}$/)]],
-      age: [this.item.age],
-      userName: [this.item.userName, [Validators.required]],
-      gender: [this.item.gender],
       email: [this.item.email, [Validators.email, ]],
       mobile: [this.item.mobile, [Validators.required, , Validators.pattern(/^(010|011|012|015)\d{8}$/)]],
-      phone: [this.item.phone],
-      clientGroupId: [this.item.clientGroupId],
-      clientActivity: [this.item.clientActivity],
-
     });
     this.page.isPageLoaded = true;
 
@@ -129,34 +127,20 @@ export class CreateComponent implements OnInit {
   createForm() {
     this.page.form = this._sharedService.formBuilder.group({
       name: [this.item.name, [Validators.required, Validators.minLength(1), Validators.maxLength(100)]],
+      email: [this.item.email, [Validators.email,Validators.required ]],
       nationalNumber: [
         this.item.nationalNumber,
         [ Validators.pattern(/^\d{14}$/)]
       ],
-      age: [this.item.age],
-      gender: [this.item.gender],
-      userName: [this.item.userName, [Validators.required]],
       password: [
         this.item.password,
         [Validators.required, Validators.minLength(8), Validators.maxLength(100)]
       ],
       mobile: [this.item.mobile, [Validators.required, Validators.pattern(/^(010|011|012|015)\d{8}$/)]],
-      phone: [this.item.phone],
-
-      governorateId: [this.item.governorateId, [Validators.required]],
-      cityId: [this.item.cityId, [Validators.required]],
-      street: [this.item.street, [Validators.required]],
-      landmark: ['', [Validators.required]],
-      latitude: [0],
-      longitude: [0],
-      buildingData: [this.item.buildingData, [Validators.required]],
-      email: [this.item.email, [Validators.email]],
       confirmPassword: [
         this.item.confirmPassword,
         [Validators.required]
       ],
-      clientGroupId: [this.item.clientGroupId],
-      clientActivity: [this.item.clientActivity],
     });
     this.page.isPageLoaded = true;
   }

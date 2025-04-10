@@ -13,3 +13,11 @@
   padding: 10px; /* Add padding for better appearance */
   box-sizing: border-box; /* Ensure padding doesn't overflow */
 }
+.btn-primary {
+  background-color: #4DC3FF;
+  border: none;
+}
+
+.btn-primary:hover {
+  background-color: #35b3f2;
+}
