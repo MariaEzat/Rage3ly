@@ -1,6 +1,7 @@
 <div class="d-flex justify-content-between align-items-center py-2 ">
-    <a class="mb-0 color-gray-600 ts-3 text-white"><img src="/assets/icons/keyboard_backspace.svg"
-            class="pointer text-white" routerLink="/sites/ads">
+    <!-- <img src="../../../../../../assets/icons/keyboard_backspace.png"
+            class="pointer text-white" style="width: 24px; height: 24px;" routerLink="/sites/ads"> -->
+    <a class="mb-0 color-gray-600 ts-3 text-white">
         {{(page.isEdit?'shared.edit':'shared.create')|translate}} Ads</a>
     <button class=" py-2 px-4 color-gray-25 no-border cr3 btn-primary" (click)="Save()"
         [disabled]="!page.isEdit ? (page.form?.invalid || page.isSaving || !validateImages()) : false">
