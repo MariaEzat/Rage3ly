@@ -9,3 +9,6 @@
   .btn-delete:hover {
     background-color: #ff0000 !important;
   }
+  .row .col-6 {
+    margin-bottom: 0.5rem;
+  }
