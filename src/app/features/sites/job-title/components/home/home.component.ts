@@ -30,7 +30,6 @@ export class HomeComponent extends CrudIndexBaseUtils {
   RolesEnum = [
     { id: 1, name: 'SuperAdmin' },
     { id: 2, name: 'Admin' },
-    { id: 3, name: 'Company' },
     { id: 4, name: 'Client' },
   ];
 
@@ -158,6 +157,10 @@ export class HomeComponent extends CrudIndexBaseUtils {
 
  
 
+  getRoleNameById(id: number): string {
+    const role = this.RolesEnum.find(r => r.id === id);
+    return role ? role.name : 'Unknown';
+  }
   
   isAllSelected(): boolean {
     return this.items.every(item => item.selected);
