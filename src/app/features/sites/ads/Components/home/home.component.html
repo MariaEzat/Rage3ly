@@ -1,67 +1,145 @@
-<div class="d-flex min-vh-100 bg-Dark">
-  <!-- Sidebar -->
-
-  <!-- Main Content -->
+<!-- Container -->
+<div class="d-flex min-vh-100 bg-Dark text-white" >
   <div class="flex-grow-1 p-2">
+    <div class="container-fluid">
 
-    <div class="container-fluid ">
-      <!-- Filters Section -->
-      <div class="card p-4 mb-4 " style="background-color: #060c26;">
-        <h5 class="mb-3 text-white">Search in Advertisements</h5>
-        <form class="row g-3">
-          <div class="col-md-4">
-            <label class="form-label text-white">من تاريخ</label>
-            <input type="date" class="form-control" />
-          </div>
-          <div class="col-md-4">
-            
-            <label class="form-label text-white">من تاريخ</label>
-            <input type="date" class="form-control" />
-          </div>
-          <div class="col-md-4">
-            <label class="form-label text-white">إلى تاريخ</label>
-            <input type="date" class="form-control" />
-          </div>
-          <div class="col-md-4 d-flex align-items-end justify-content-between">
-            <button type="submit" class="btn btn-primary">بحث</button>
+      <!-- Search Card -->
+      <div class="card p-4 mb-4" style="background-color: #060c26;">
+        <h5 class="mb-3 text-white"> Search of Adverdisments </h5>
+        <form [formGroup]="page.searchForm">
+          <div class="form-body">
+            <div class="row g-2">
+              <div class="col-3">
+                <ng-control [form]="page.searchForm" control="Title" [inputClass]="'bg-Dark'"
+                  [labelClass]="'text-white'" label="Adverdisment" placeholder="Adverdisment">
+                </ng-control>
+              </div>
+              <div class="col-3">
+                <ng-control [form]="page.searchForm" control="StartDate" label="StartDate " [inputClass]="'bg-Dark'"
+                  [labelClass]="'text-white'" [type]="page.ControlType.INPUT_DATE"></ng-control>
+              </div>
+              <div class="col-3">
+                <ng-control [form]="page.searchForm" control="EndDate" label="EndDate " [inputClass]="'bg-Dark'"
+                  [labelClass]="'text-white'" [type]="page.ControlType.INPUT_DATE"></ng-control>
+              </div>
+              <!-- Search Button -->
+              <div class="col-2 d-flex align-items-end">
+                <button class='color-brand-700 rb-btn  rb-btn-secondary rb-btn-sm  w-100' (click)="search()"
+                  [disabled]="page.searchForm.invalid || page.isSearching">
+                  <i class="uil uil-search"></i>
+                  <span class="rb-btn-text d-md-inline-block">
+                    {{'shared.search'|translate}}</span>
+                </button>
+              </div>
+
+
+
+
+
+            </div>
           </div>
         </form>
       </div>
 
+      <!-- Ads Table Card -->
+      <div class="card p-4 border-0 shadow-sm rounded-3" style="background-color: #060c26;">
+        <!-- Header -->
+        <div class="d-flex justify-content-between align-items-center mb-3">
+          <h5 class="text-white"> Adverdisments </h5>
+          <div class="d-flex">
+            <button class="btn btn-primary me-2" (click)="deleteSelectedAds()">Delete</button>
+            <button class="btn btn-primary me-2" (click)="activateAds()">Active</button>
+            <button class="btn btn-primary me-2" (click)="disActiveAds()">DisActive</button>
+            <button class="btn btn-primary me-2" (click)="navigateToCreateBrand()">Add new Adverdisment</button>
 
-
-      <!-- Table Section -->
-      <div class="card p-3">
-        <!-- Add Button -->
-        <div class="text-end ">
-          <h5 class="mb-3 text-white">الإعلانات الموجودة</h5>
-
-          <button class="btn btn-primary ms-auto">إضافة إعلان جديد</button>
+          </div>
         </div>
-        <table class="table text-center">
-          <thead class="text-white">
-            <tr>
-              <th>#</th>
-              <th>الاعلان</th>
-              <th>تاريخ النشر</th>
-              <th>تاريخ الانتهاء</th>
-              <th>الخيارات</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr *ngFor="let ad of ads; let i = index">
-              <td>{{ i + 1 }}</td>
-              <td>{{ ad.name }}</td>
-              <td>{{ ad.startDate }}</td>
-              <td>{{ ad.endDate }}</td>
-              <td>
-                <button class="btn btn-outline-light btn-sm">تعديل</button>
-                <button class="btn btn-danger btn-sm">حذف</button>
-              </td>
-            </tr>
-          </tbody>
-        </table>
+        
+        <!-- Table -->
+        <div class="table-responsive">
+          <table class="table text-center align-middle transparent-table">
+            <thead>
+              <tr>
+                <th>
+                  <input type="checkbox" (change)="toggleSelectAll($event)" [checked]="isAllSelected()" />
+                </th>
+                <ng-container *ngFor="let colum of page.columns">
+                  <th (click)="onSortClicked(colum)" [class.pointer]="colum.Sortable">
+                    {{ colum.Title | translate }}
+                    <i class="uil uil-sort ms-1" *ngIf="colum.Sortable"
+                       [ngClass]="{
+                         'sort-icon-ase': isColumnAscending(colum),
+                         'sort-icon-des': !isColumnAscending(colum)
+                       }">
+                    </i>
+                  </th>
+                </ng-container>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngIf="items.length === 0">
+                <td colspan="100%">لا توجد إعلانات</td>
+              </tr>
+              <tr *ngFor="let item of items | paginate: page.options; let i = index">
+                <td><input type="checkbox" [(ngModel)]="item.selected" /></td>
+                <td>{{ (page.options.currentPage - 1) * page.options.itemsPerPage + i + 1 }}</td>
+                <td>{{ item.title }}</td>
+                <td>{{ item.startDate | date: 'MMM d, y, h:mm:ss' }}</td>
+                <td>{{ item.endDate | date: 'MMM d, y, h:mm:ss' }}</td>
+                <td>
+                  <p-inputSwitch [(ngModel)]="item.isActive"
+                                 (ngModelChange)="updateActivation(item.id, item.isActive)">
+                  </p-inputSwitch>
+                </td>
+                <td>
+                  <img [src]="getImageUrl(item.path)" style="width: 80px; height: 80px; object-fit: cover;" />
+                </td>
+                <td>
+                  <button pButton icon="pi pi-trash" class="p-button-rounded p-button-text p-button-danger"
+                          aria-label="Delete" (click)="showDeleteConfirmation(item)">
+                  </button>
+                  <button pButton icon="pi pi-pencil" class="p-button-rounded p-button-text p-button-info"
+                          aria-label="Edit" (click)="editCity(item.id)">
+                  </button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          
+        </div>
+        
+
+        <!-- Pagination -->
+        <!-- <ng-pagination [page]="page" (pageSizeChange)="onChangePageSize()" (pageChange)="getNextPrevData($event)">
+        </ng-pagination> -->
       </div>
     </div>
   </div>
+
+  <!-- Confirm Delete Modal -->
+  <ng-template #confirmDeleteTemplate>
+    <div class="modal-content bg-Dark text-white border border-secondary p-4 rounded">
+      <div class="modal-body">
+        <p class="modal-confirm-content mb-2">
+          {{ 'shared.delete-confirmation.message' | translate }}
+          <strong *ngIf="selectedItem">{{ selectedItem.Name }}</strong>
+        </p>
+        <div class="d-flex mt-4">
+          <button type="button" class="btn btn-secondary me-auto" (click)="modalRef.hide()">إلغاء</button>
+          <button type="button" class="btn btn-danger ms-2" (click)="remove(); modalRef.hide()">تأكيد</button>
+        </div>
+      </div>
+    </div>
+  </ng-template>
+
+  <!-- Confirm Bulk Delete -->
+  <ng-template #confirmDeleteTemplates>
+    <div class="modal-body text-center bg-Dark text-white">
+      <p>هل أنت متأكد من حذف الإعلانات المحددة؟</p>
+    </div>
+    <div class="modal-footer">
+      <button class="btn btn-secondary me-auto" (click)="modalRef.hide()">إلغاء</button>
+      <button class="btn btn-danger ms-2" (click)="modalRef.content.onConfirm(); modalRef.hide()">نعم</button>
+    </div>
+  </ng-template>
 </div>

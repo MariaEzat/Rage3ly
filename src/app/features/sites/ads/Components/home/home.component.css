@@ -43,3 +43,37 @@ select {
 input::placeholder {
   color: #ccc;
 }
+.border-color{
+  border-color: #535862;
+}
+.transparent-table {
+  background-color: transparent;
+  color: white;
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.transparent-table thead {
+  background-color: transparent;
+  color: white;
+}
+
+.transparent-table tbody tr {
+  background-color: transparent;
+}
+
+
+.transparent-table td,
+.transparent-table th {
+  background-color: transparent !important; /* نضمن إنه يشيل أي لون تاني */
+  color: white; /* أو أي لون تحبيه للكتابة */
+  border: 1px solid rgba(255, 255, 255, 0.1); /* حد خفيف شفاف */
+}
+.transparent-table img {
+  border-radius: 0.5rem;
+}
+
+.transparent-table .pointer {
+  cursor: pointer;
+}
+

@@ -1,14 +1,15 @@
+import { Title } from 'chart.js';
 export interface adsViewModel {
     id: string; 
     title: string; 
     isActive:boolean;
     selected?: boolean; 
-    imageTypes:number;
-    hyperlink:string;
+    hyperlink?:string;
     startDate:Date;
     endDate:Date;
     path:string;
   }
+  
   export class adsCreateViewModel {
     id: string; 
     title: string;
@@ -21,7 +22,9 @@ export interface adsViewModel {
     path: string;
   }
   export class adsSearchViewModel {
-    Name: string;
+    Title: string;
+    StartDate:Date;
+    EndDate:Date;
   }
   export class adsActivateViewModel{
     id:string;

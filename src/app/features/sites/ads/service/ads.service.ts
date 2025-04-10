@@ -10,11 +10,27 @@ import { adsSearchViewModel, adsViewModel, adsActivateViewModel } from '../inter
 export class AdsService {
 
  constructor(private _apiService: ApiService) { }
- 
+ private formatDate(date: Date): string {
+  const yyyy = date.getFullYear();
+  const mm = (date.getMonth() + 1).toString().padStart(2, '0');
+  const dd = date.getDate().toString().padStart(2, '0');
+  return `${yyyy}-${mm}-${dd}`;
+}
   get(searchViewModel: adsSearchViewModel, orderBy: string, isAscending: boolean, pageIndex: number=1, pageSize: number = 100) {
     if (pageSize == 0)
       pageSize = environment.pageSize;
-    return this._apiService.get(`/GetAllAdvertisementEndpoint/GetList?orderBy=${orderBy}&isAscending=${isAscending}&pageIndex=${pageIndex}&pageSize=${pageSize}`);
+    let params = new HttpParams();
+
+    if (searchViewModel.Title) {
+      params = params.set("Title", searchViewModel.Title);
+    }
+    if (searchViewModel.StartDate) {
+      params = params.set("StartDate", this.formatDate(searchViewModel.StartDate));
+    }
+    if (searchViewModel.EndDate) {
+      params = params.set("EndDate", this.formatDate(searchViewModel.EndDate));
+    }
+    return this._apiService.get(`/GetAllAdvertisementEndpoint/GetList?orderBy=${orderBy}&isAscending=${isAscending}&pageIndex=${pageIndex}&pageSize=${pageSize}`,params);
   }
   getById(ID: string) {
     return this._apiService.get(`/GetAdvertisementByIDEndPoint/GetAdvertisementByID?ID=${ID}`,);

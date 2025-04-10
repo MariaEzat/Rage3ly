@@ -34,6 +34,8 @@ export class HomeComponent extends CrudIndexBaseUtils {
 
   ngOnInit(): void {
     this.initializePage();
+    this.createSearchForm();
+
   }
 
   initializePage() {
