@@ -13,7 +13,6 @@ export interface adsViewModel {
   export class adsCreateViewModel {
     id: string; 
     title: string;
-    imageTypes:number;
     paths:string[];
     isActive:boolean;
     hyperlink:string;

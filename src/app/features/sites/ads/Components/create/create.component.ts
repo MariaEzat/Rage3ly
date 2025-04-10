@@ -123,7 +123,6 @@ export class CreateComponent implements OnInit, OnDestroy {
     Object.assign(this.item, this.page.form.value);
     this.item.isActive = this.isActivated;
     this.item.paths = this.getUploadedImages(); 
-    this.item.imageTypes = +this.page.form.get('imageTypes')?.value;
     //this.item.paths = this.getUploadedImages();
     // this.item.paths = this.images
     //    .filter((image) => image.uploaded)
