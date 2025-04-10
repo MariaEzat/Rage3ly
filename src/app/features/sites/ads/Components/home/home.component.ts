@@ -61,7 +61,10 @@ export class HomeComponent extends CrudIndexBaseUtils {
 
   override createSearchForm() {
     this.page.searchForm = this._sharedService.formBuilder.group({
-      Name: [this.searchViewModel.Name],
+      Title: [this.searchViewModel.Title],
+      StartDate: [this.searchViewModel.StartDate],
+      EndDate: [this.searchViewModel.EndDate],
+
     });
     this.page.isPageLoaded = true;
   }
@@ -70,6 +73,7 @@ export class HomeComponent extends CrudIndexBaseUtils {
     this.page.isSearching = true;
     this.items = [];
     Object.assign(this.searchViewModel, this.page.searchForm.value);
+    console.log(this.searchViewModel)
     this._pageService.get(this.searchViewModel, this.page.orderBy, this.page.isAscending, this.page.options.currentPage, this.page.options.itemsPerPage).subscribe(response => {
       this.page.isSearching = false;
 
