@@ -80,7 +80,8 @@
                   <td>{{ (page.options.currentPage - 1) * page.options.itemsPerPage + i + 1 }}</td>
                   <td>{{ item.name }}</td>
                   <td>{{ item.mobile}}</td>
-                  <td>{{ item.roleId}}</td>
+                  <td>{{ getRoleNameById(item.roleId) }}</td>
+
                   <td>
                     <p-inputSwitch [(ngModel)]="item.isActive"
                                    (ngModelChange)="updateActivation(item.id, item.isActive)">
