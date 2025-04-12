@@ -40,9 +40,8 @@ export class LoginComponent implements OnInit {
         this._sharedService.showToastr(response);
            this.isSubmitting=false
         localStorage.setItem('eToken', response.data.token);
-        this._router.navigate(['/sites/company'], {
-          queryParams: { source: 'login'},
-        });
+        this._router.navigate(['/sites/customers'])
+         
         this.isSubmitting=false
       },
       error: (error) => {

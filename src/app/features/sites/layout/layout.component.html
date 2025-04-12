@@ -21,14 +21,12 @@
 
    <!-- Clients -->
    <a class="nav-link text-white py-2 d-flex flex-row-reverse justify-content-end align-items-center"
-      routerLink="/sites/customers"
-      routerLinkActive="active"
-      #clientsRla="routerLinkActive"
-      [routerLinkActiveOptions]="{ exact: true }"
-      [ngClass]="{ 'active-color': clientsRla.isActive }">
-     {{ "sites.layout.clients" | translate }}
-     <img [src]="clientsRla.isActive ? 'assets/images/Icon@2x.png' : 'assets/images/Icon-Clients.png'" class="px-1 nav-icon">
-   </a>
+   routerLink="/sites/customers" routerLinkActive="active" #clientsRla="routerLinkActive"
+   [ngClass]="{ 'active-color': clientsRla.isActive }">
+   {{ "sites.layout.clients" | translate }}
+   <img [src]="clientsRla.isActive ? 'assets/images/Icon-Clients.png': 'assets/images/Icon@2x.png' "
+       class="px-1 nav-icon">
+</a>
 
    <!-- Users -->
    <a class="nav-link text-white py-2 d-flex flex-row-reverse justify-content-end align-items-center"
