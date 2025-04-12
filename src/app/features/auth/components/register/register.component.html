@@ -3,20 +3,20 @@
   <div class="col-12 col-lg-4 p-0 bg-Dark">
     <div class="d-flex flex-column align-items-center justify-content-center vh-100">
       <div class="w-75">
-        <h1 class="login-title bold pt-3" >Sign Up</h1>
-        <p class="color-white mb-4">Please fill in the following details to create an account.</p>
+        <h1 class="login-title bold pt-3" >{{"auth.register.signUp"|translate}}</h1>
+        <p class="color-white mb-4">{{"auth.register.Please fill in the following details to create an account."|translate}}</p>
 
         <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
           <div class="row mb-2">
             <div class="col-md-6">
-              <ng-control [form]="registerForm" control="nationalNumber" label="National ID" placeholder="Enter your National ID"
+              <ng-control [form]="registerForm" control="nationalNumber" label="auth.register.nationalId" placeholder="auth.register.nationalId"
                 [inputClass]="'mb-2 bg-Dark border-color color-color-gray-300'"
                 [labelClass]="registerForm.get('nationalNumber')?.invalid && (registerForm.get('nationalNumber')?.touched || registerForm.get('nationalNumber')?.dirty) ? 'form-control-with-validate' : 'form-control-no-validate'"
                 (keypress)="numberOnly($event)">
               </ng-control>
             </div>
             <div class="col-md-6">
-              <ng-control [form]="registerForm" control="name" label="Name" placeholder="Enter Your Name"
+              <ng-control [form]="registerForm" control="name" label="auth.register.name" placeholder="auth.register.name"
                 [inputClass]="'mb-2 bg-Dark border-color color-color-gray-300'"
                 [labelClass]="registerForm.get('name')?.invalid && (registerForm.get('name')?.touched || registerForm.get('name')?.dirty) ? 'form-control-with-validate' : 'form-control-no-validate'">
               </ng-control>
@@ -25,13 +25,13 @@
 
           <div class="row mb-2">
             <div class="col-md-6">
-              <ng-control [form]="registerForm" control="email" label="Email" placeholder="Enter your Email"
+              <ng-control [form]="registerForm" control="email" label="auth.register.email" placeholder="auth.register.email"
                 [inputClass]="'mb-2 bg-Dark border-color color-color-gray-300'"
                 [labelClass]="registerForm.get('email')?.invalid && (registerForm.get('email')?.touched || registerForm.get('email')?.dirty) ? 'form-control-with-validate' : 'form-control-no-validate'">
               </ng-control>
             </div>
             <div class="col-md-6">
-              <ng-control [form]="registerForm" control="password" label="Password"
+              <ng-control [form]="registerForm" control="password" label="auth.register.password"
                 [type]="controlType.PASSWORD" placeholder="********"
                 [inputClass]="'mb-2 bg-Dark border-color color-color-gray-300'"
                 [labelClass]="registerForm.get('password')?.invalid && (registerForm.get('password')?.touched || registerForm.get('password')?.dirty) ? 'form-control-with-validate' : 'form-control-no-validate'">
@@ -41,7 +41,7 @@
 
           <div class="row mb-2">
             <div class="col-md-6">
-              <ng-control [form]="registerForm" control="confirmPassword" label="Confirm Password"
+              <ng-control [form]="registerForm" control="confirmPassword" label="auth.register.confirmPassword"
                 [type]="controlType.PASSWORD" placeholder="*******"
                 [inputClass]="'mb-2 bg-Dark border-color color-color-gray-300'"
                 [labelClass]="registerForm.get('confirmPassword')?.invalid && (registerForm.get('confirmPassword')?.touched || registerForm.get('confirmPassword')?.dirty) ? 'form-control-with-validate' : 'form-control-no-validate'"
@@ -52,7 +52,7 @@
               </p>
             </div>
             <div class="col-md-6">
-              <ng-control [form]="registerForm" control="mobile" label="Mobile" placeholder="01-xxx-xxx-xxx"
+              <ng-control [form]="registerForm" control="mobile" label="auth.register.mobile" placeholder="01-xxx-xxx-xxx"
                 [inputClass]="'mb-3 bg-Dark border-color'"
                 [labelClass]="registerForm.get('mobile')?.invalid && (registerForm.get('mobile')?.touched || registerForm.get('mobile')?.dirty) ? 'form-control-with-validate' : 'form-control-no-validate'"
                 (keypress)="numberOnly($event)">
@@ -62,13 +62,13 @@
 
           <button class="btn bg-brand w-100 mt-2 text-white"
             [disabled]="registerForm.invalid || isSubmitting || !isEqualPassword">
-            Sign Up
+            {{"auth.register.signUp"|translate}}
           </button>
         </form>
 
         <p class="text-center mt-3" style=" color: #9454C6">
-          Have An Account?
-          <span class="pointer text-white" routerLink="/auth/login">Login</span>
+          {{"auth.register.haveAnAccount?"|translate}}
+          <span class="pointer text-white" routerLink="/auth/login">  {{"auth.register.login"|translate}}</span>
         </p>
       </div>
     </div>

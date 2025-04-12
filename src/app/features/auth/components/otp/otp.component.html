@@ -3,8 +3,8 @@
   <div class="col-12 col-lg-4 p-0 bg-Dark">
     <div class="d-flex flex-column align-items-center justify-content-center vh-100">
       <div class="w-75">
-        <h1 class="login-title bold">OTP</h1>
-        <p class="color-white mb-4">Please verify your OTP.</p>
+        <h1 class="login-title bold">{{"auth.otp.OTP"|translate}}</h1>
+        <p class="color-white mb-4">{{"auth.otp.Please verify your OTP."|translate}}</p>
 
         <div class="d-flex align-items-center justify-content-center mb-4">
           <ng-otp-input 
@@ -20,14 +20,14 @@
           class="btn bg-brand w-100 btn-lg text-white" 
           (click)="onSubmit()"
           [disabled]="isSubmitting || otp?.length < config.length">
-          Verify OTP
+          {{"auth.otp.verifyOTP"|translate}}
         </button>
 
         <p *ngIf="resendTimer > 0" class="mt-4 " style=" color: #9454C6">
-          Resend OTP in {{ resendTimer }} seconds
+          {{"auth.otp.resendIn"|translate}} {{ resendTimer }} {{"auth.otp.second"|translate}}
         </p>
         <p *ngIf="resendTimer === 0" class="mt-4 text-white pointer" (click)="resendOtp()">
-          Resend OTP
+          {{"auth.otp.resendOTP"|translate}}
         </p>
       </div>
     </div>
