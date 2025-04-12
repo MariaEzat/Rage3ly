@@ -65,36 +65,31 @@ export class CreateComponent implements OnInit, OnDestroy {
       if (params.has('id')) {
         this.id = params.get('id');
         this.page.isEdit = true;
+      }
+    
+      if (params.has('clientId')) {
+        this.clientId = params.get('clientId');
+      }
+      // After both values are captured
+      if (this.page.isEdit) {
+        this.getEditableItem();
+      } else {
+        this.createForm();
+      }
       
-      }
     });
-    this._activatedRoute.paramMap.subscribe((params) => {
-      if (params.has('customerId')) {
-        this.clientId = params.get('customerId');
-        this.page.isEdit = true;
-      }
-    });
-
-    if (this.page.isEdit) {
-      this.getEditableItem();
-    } else {
-      this.createForm();
-    }
+    
   }
 
   getEditableItem() {
     this._mobileService.getById(this.id).subscribe({
       next: (res) => {
         if (res.isSuccess) {
+          console.log(res.data)
           this.item = res.data;
-         // this.isActivated = this.item.isActive;
+         // this.item.clientId = this.clientId; 
+
           this.item.id = this.id;
-          // if (this.item.parentCategoryId) {
-          //   this.isSubCategory = true;
-          //   this.onCreateSubCategory();
-          // } else {
-          //   this.createForm();
-          // }
           this.createForm();
           this.page.isPageLoaded = true;
         }
@@ -114,7 +109,6 @@ export class CreateComponent implements OnInit, OnDestroy {
       number:[this.item.number,[Validators.required,Validators.pattern(/^(010|011|012|015)\d{8}$/)]],
       serialNumber:[this.item.serialNumber,Validators.required],
       brandId:[this.item.brandId,Validators.required],
-      clientId:[this.item.clientId,Validators.required],
       dateOfPurchase:[this.item.dateOfPurchase,Validators.required]
     });
     this.page.isPageLoaded = true;
@@ -124,15 +118,10 @@ export class CreateComponent implements OnInit, OnDestroy {
     if (this.page.isSaving || this.page.form.invalid) return;
     this.page.isSaving = true;
     Object.assign(this.item, this.page.form.value);
-  //  this.item.isActive = this.isActivated;
-    //this.item.paths = this.getUploadedImages();  
-
-    //this.item.paths = this.getUploadedImages();
-    // this.item.paths = this.images
-    //    .filter((image) => image.uploaded)
-    //    .map((image) => image.src);
-    //this.item.paths = this.images.filter((image) => image.uploaded).map((image) => image.src);
-  
+    if (!this.page.isEdit) {
+      this.item.clientId = this.clientId;
+    }
+    
 
     this._mobileService.postOrUpdate(this.item).subscribe({
       next: (res) => {
@@ -140,7 +129,7 @@ export class CreateComponent implements OnInit, OnDestroy {
         this.page.responseViewModel = res;
         this._sharedService.showToastr(res);
         if (res.isSuccess) {
-          this._router.navigate(['/sites/category']);
+          this._router.navigate(['/sites/mobile']);
         }
       },
       error: (err) => {
@@ -161,7 +150,7 @@ export class CreateComponent implements OnInit, OnDestroy {
     return this.Tabs.find((item) => item.isSelected);
   }
   onCancel(): void {
-    this._router.navigate(['/sites/category']);
+    this._router.navigate(['/sites/mobile']);
   }
 
   onReset() {
