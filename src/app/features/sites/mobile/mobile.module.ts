@@ -8,7 +8,10 @@ import { ButtonModule } from 'primeng/button';
 import { DropdownModule } from 'primeng/dropdown';
 import { InputSwitchModule } from 'primeng/inputswitch';
 import { TableModule } from 'primeng/table';
+import { TranslateModule } from '@ngx-translate/core';
+
 import { HomeComponent } from './components/home/home.component';
+
 
 
 const routes: Routes = [
@@ -32,7 +35,8 @@ const routes: Routes = [
     FormsModule,
     RouterModule.forChild(routes),
     ReactiveFormsModule,
-    InputSwitchModule
+    InputSwitchModule,
+    TranslateModule
 
   ]
 })

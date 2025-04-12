@@ -8,6 +8,19 @@ export interface mobileViewModel {
   selected?: boolean;
 }
 
+export class mobileCreateViewModel {
+    id:string;
+    name: string;
+    imeI1: string;
+    imeI2: string;  
+    number: string;
+    mobileModel: string;
+    serialNumber: string;
+    brandId:string;
+    clientId:string;
+    dateOfPurchase:Date;
+  }
+
 export class mobileSearchViewModel {
   SearchText: string;
   PhoneStatus: number;
@@ -19,15 +32,5 @@ export class mobileSelectedViewModel {
 }
 export class mobileActivateViewModel {
   id: string;
-}
-export class mobileCreateViewModel {
-  id: string;
-  name: string;
-  nationalNumber?: string;
-  password: string;
-  mobile: string;
-  email?: string;
-  confirmPassword: string;
-  paths?: string[];
 }
 

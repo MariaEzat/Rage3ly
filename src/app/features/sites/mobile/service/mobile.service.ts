@@ -4,13 +4,25 @@ import { mobileActivateViewModel, mobileCreateViewModel, mobileSearchViewModel, 
 import { HttpParams } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 
+
 @Injectable({
   providedIn: 'root'
 })
 export class MobileService {
   [x: string]: any;
 
-  constructor(private _apiService: ApiService) { }
+
+  constructor(private _apiService:ApiService) { }
+
+  postOrUpdate(body: mobileCreateViewModel) {
+    if (body.id) return this._apiService.update(`/EditPhoneEndPoint/EditPhone`, body)
+    else return this._apiService.post(`/AddPhoneEndPoint/AddPhone`, body)
+  }
+
+
+  getById(ID: string) {
+    return this._apiService.get(`/GetPhoneByIdEndPoint/GetPhoneByID?ID=${ID}`,);
+  }
 
   get(searchViewModel: mobileSearchViewModel, orderBy: string, isAscending: boolean, pageIndex: number, pageSize: number = 0) {
     if (pageSize == 0)
@@ -52,17 +64,7 @@ export class MobileService {
 
   //   return this._apiService.get(`/GetPhonesByAdminEndpoint/GetPhones?orderBy=${orderBy}&pageIndex=${pageIndex}&pageSize=${pageSize}`, params);
   // }
-  getById(ID: string) {
-    return this._apiService.get(`/GetClientByIdEndPoint/GetClientById?ID=${ID}`,);
-  }
-
-
-  postOrUpdate(body: mobileCreateViewModel) {
-    if (body.id) return this._apiService.update(`/EditClientEndpoint/Put`, body)
-    else return this._apiService.post(`/CreateClientEndPoint/Post
-`, body)
-  }
-
+  
 
 
   updateActivated(body: mobileActivateViewModel) {
@@ -93,9 +95,14 @@ export class MobileService {
     }
 
     return this._apiService.get(url);
+
   }
   uploadImage(formData: FormData) {
     return this._apiService.postMedia('/UploadMediaEndPoint/UploadMedia', formData, true);
+  }
+
+  getBrands() {
+    return this._apiService.get('/SelectBrandListEndpoint/SelectBrandList');
   }
 
   // getmobileExcel(searchViewModel: mobileSearchViewModel) {
@@ -133,5 +140,6 @@ export class MobileService {
   }
   remove(body: mobileViewModel) {
     return this._apiService.remove(`/DeletePhoneEndpoint/Delete`, body);
+
   }
 }

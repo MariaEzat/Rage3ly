@@ -1,0 +1,13 @@
+.btn-primary {
+    background-color: #4DC3FF;
+    border: none;
+  }
+  
+  .btn-primary:hover {
+    background-color: #35b3f2;
+  }
+  .btn-orange-border {
+    border: 1px solid #4DC3FF; /* Set the border color to orange */
+    border-radius: 3px; /* Optional: Maintain the cr3 class border-radius */
+    background-color: transparent; /* Optional: If no background is desired */
+  }
