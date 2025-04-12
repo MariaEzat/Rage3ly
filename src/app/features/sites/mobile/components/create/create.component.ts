@@ -70,7 +70,7 @@ export class CreateComponent implements OnInit, OnDestroy {
       if (params.has('clientId')) {
         this.clientId = params.get('clientId');
       }
-      // After both values are captured
+    
       if (this.page.isEdit) {
         this.getEditableItem();
       } else {
@@ -87,8 +87,6 @@ export class CreateComponent implements OnInit, OnDestroy {
         if (res.isSuccess) {
           console.log(res.data)
           this.item = res.data;
-         // this.item.clientId = this.clientId; 
-
           this.item.id = this.id;
           this.createForm();
           this.page.isPageLoaded = true;
