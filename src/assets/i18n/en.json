@@ -297,7 +297,10 @@
       "confirmPassword": "Confirm Password",
       "changePassword": "Change Password",
       "Passwords do not match": "Passwords do not match",
-      "cancel": "Cancel"
+      "cancel": "Cancel",
+      "noEmployees":"No Employees",
+      "cancel":"Cancel",
+      "confirm":"Confirm"
     },
     "layout": {
       "adverdisments": "Adverdisments",
@@ -329,7 +332,9 @@
       "cancel": "Cancel",
       "Upload New Image": "Upload New Image",
       "Error Uploading": "Error Uploading",
-      "addMobile":"Add Mobile"
+      "addMobile":"Add Mobile",
+      "noClients":"No Clients"
+
 
     }
   }

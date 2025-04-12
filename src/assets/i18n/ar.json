@@ -287,7 +287,10 @@
       "confirmPassword": "تأكيد كلمة المرور",
       "changePassword": "تغيير كلمة المرور",
       "Passwords do not match": "كلمات المرور غير متطابقة",
-      "cancel": "الغاء"
+      "cancel": "الغاء",
+      "noEmployees":"لا يوجد موظفين",
+      "cancel":"الغاء",
+      "confirm":"تأكيد"
     },
     "layout":{
       "adverdisments":"الاعلانات",
@@ -320,7 +323,8 @@
       "cancel": "الغاء",
       "Upload New Image": "رفع صورة جديدة",
       "Error Uploading": "خطأ في رفع الصورة",
-      "addMobile":"اضف رقم تليفون"
+      "addMobile":"اضف رقم تليفون",
+      "noClients":"لا يوجد عملاء"
     }
   }
 }
