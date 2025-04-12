@@ -4,8 +4,7 @@ import { SharedService } from 'src/app/shared/service/shared.service';
 import { MobileService } from '../../service/mobile.service';
 import { CRUDCreatePage } from 'src/app/shared/classes/crud-create.model';
 import {
-  mobileCreateViewModel,
-  mobileSelectedItem,
+  mobileCreateViewModel
 } from '../../interfaces/mobile-view-model';
 import { Validators } from '@angular/forms';
 import { forkJoin } from 'rxjs';
@@ -25,7 +24,7 @@ export class CreateComponent implements OnInit, OnDestroy {
   images = [{ uploaded: false, src: null }];
   environment=environment;
   Brandslist: []=[];
-  clientId :string = "7527ce49-0eec-40cc-a9fd-772bf1c853b7";
+  clientId :string = "";
   selectedTab: TabEnum = TabEnum.UserLogin;
   TabEnum = TabEnum;
   Tabs = [
@@ -69,10 +68,16 @@ export class CreateComponent implements OnInit, OnDestroy {
       
       }
     });
+    this._activatedRoute.paramMap.subscribe((params) => {
+      if (params.has('customerId')) {
+        this.clientId = params.get('customerId');
+        this.page.isEdit = true;
+      }
+    });
+
     if (this.page.isEdit) {
       this.getEditableItem();
     } else {
-      this.item.clientId = this.clientId; 
       this.createForm();
     }
   }
@@ -216,5 +221,9 @@ export class CreateComponent implements OnInit, OnDestroy {
 
   getUploadedImages() {
     return this.images.filter(image => image.uploaded).map(image => image.src);
+  }
+
+  numberOnly(event: any) {
+    return this._sharedService.numberOnly(event);
   }
 }

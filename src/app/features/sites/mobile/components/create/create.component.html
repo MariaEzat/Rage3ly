@@ -52,6 +52,7 @@
                               <div class="col-md-6">
                                 <ng-control [form]="page.form" control="number" 
                                             label="Number" 
+                                            (keypress)="numberOnly($event)"
                                             placeholder="Number"
                                             [inputClass]="'mb-2 bg-Dark border-color color-color-gray-300'"
                                             [labelClass]="page.form.get('number')?.invalid && (page.form.get('number')?.touched || page.form.get('number')?.dirty) ? 'form-control-with-validate' : 'form-control-no-validate'"></ng-control>
@@ -69,6 +70,7 @@
                             <ng-control [form]="page.form" control="imeI1" 
                                         label="ImeI1" 
                                         placeholder="ImeI1"
+                                        (keypress)="numberOnly($event)"
                                         [inputClass]="'mb-2 bg-Dark border-color color-color-gray-300'"
                                         [labelClass]="page.form.get('imeI1')?.invalid && (page.form.get('imeI1')?.touched || page.form.get('imeI1')?.dirty) ? 'form-control-with-validate' : 'form-control-no-validate'"></ng-control>
                           </div>
@@ -77,6 +79,7 @@
                             <ng-control [form]="page.form" control="imeI2" 
                                         label="ImeI2" 
                                         placeholder="ImeI2"
+                                        (keypress)="numberOnly($event)"
                                         [inputClass]="'mb-2 bg-Dark border-color color-color-gray-300'"
                                         [labelClass]="page.form.get('imeI2')?.invalid && (page.form.get('imeI2')?.touched || page.form.get('imeI2')?.dirty) ? 'form-control-with-validate' : 'form-control-no-validate'"></ng-control>
                           </div>
@@ -86,6 +89,7 @@
                                 <ng-control [form]="page.form" control="serialNumber" 
                                             label="Serial Number" 
                                             placeholder="Serial Number"
+                                            (keypress)="numberOnly($event)"
                                             [inputClass]="'mb-2 bg-Dark border-color color-color-gray-300'"
                                             [labelClass]="page.form.get('serialNumber')?.invalid && (page.form.get('serialNumber')?.touched || page.form.get('serialNumber')?.dirty) ? 'form-control-with-validate' : 'form-control-no-validate'"></ng-control>
                               </div>
