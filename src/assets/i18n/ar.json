@@ -259,8 +259,14 @@
       "activateAd": "تفعيل الاعلان",
       "hyberLink": "الرابط",
       "Upload New Image": "رفع صورة جديدة",
-      "Error Uploading": "خطأ في رفع الصورة"
-    },
+      "Error Uploading": "خطأ في رفع الصورة",
+      "noAdvertisments":"لا توجد اعلانات",
+     "Are you sure you want to delete the selected ads?":"هل أنت متأكد من حذف الإعلانات المحددة؟",
+     "cancel":"الغاء",
+     "confirm":"تأكيد"
+
+
+        },
     "employee": {
       "employee": "الموظف",
       "employees": "موظفين",
@@ -313,7 +319,8 @@
       "Passwords do not match": "كلمات المرور غير متطابقة",
       "cancel": "الغاء",
       "Upload New Image": "رفع صورة جديدة",
-      "Error Uploading": "خطأ في رفع الصورة"
+      "Error Uploading": "خطأ في رفع الصورة",
+      "addMobile":"اضف رقم تليفون"
     }
   }
 }

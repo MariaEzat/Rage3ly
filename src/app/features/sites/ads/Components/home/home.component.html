@@ -76,7 +76,7 @@
             </thead>
             <tbody>
               <tr *ngIf="items.length === 0">
-                <td colspan="100%">لا توجد إعلانات</td>
+                <td colspan="100%">{{"sites.advertisment.noAdvertisments"|translate}}</td>
               </tr>
               <tr *ngFor="let item of items | paginate: page.options; let i = index">
                 <td><input type="checkbox" [(ngModel)]="item.selected" /></td>
@@ -123,8 +123,8 @@
           <strong *ngIf="selectedItem">{{ selectedItem.Name }}</strong>
         </p>
         <div class="d-flex mt-4">
-          <button type="button" class="btn btn-secondary me-auto" (click)="modalRef.hide()">إلغاء</button>
-          <button type="button" class="btn btn-danger ms-2" (click)="remove(); modalRef.hide()">تأكيد</button>
+          <button type="button" class="btn btn-secondary me-auto" (click)="modalRef.hide()">{{"sites.advertisment.cancel"|translate}}</button>
+          <button type="button" class="btn btn-danger ms-2" (click)="remove(); modalRef.hide()">{{"sites.advertisment.confirm"|translate}}</button>
         </div>
       </div>
     </div>
@@ -133,11 +133,11 @@
   <!-- Confirm Bulk Delete -->
   <ng-template #confirmDeleteTemplates>
     <div class="modal-body text-center bg-Dark text-white">
-      <p>هل أنت متأكد من حذف الإعلانات المحددة؟</p>
+      <p> {{"sites.advertisment.Are you sure you want to delete the selected ads?"|translate}}</p>
     </div>
     <div class="modal-footer">
-      <button class="btn btn-secondary me-auto" (click)="modalRef.hide()">إلغاء</button>
-      <button class="btn btn-danger ms-2" (click)="modalRef.content.onConfirm(); modalRef.hide()">نعم</button>
+      <button class="btn btn-secondary me-auto" (click)="modalRef.hide()">{{"sites.advertisment.cancel"|translate}}</button>
+      <button class="btn btn-danger ms-2" (click)="modalRef.content.onConfirm(); modalRef.hide()">{{"sites.advertisment.confirm"|translate}}</button>
     </div>
   </ng-template>
 </div>

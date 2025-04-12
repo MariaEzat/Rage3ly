@@ -269,7 +269,13 @@
       "activateAd": "Activate Ad",
       "hyberLink": "Hyber Link",
       "Upload New Image": "Upload New Image",
-      "Error Uploading": "Error Uploading"
+      "Error Uploading": "Error Uploading",
+      "noAdvertisments":"No Advertisments",
+      "Are you sure you want to delete the selected ads?":"Are you sure you want to delete the selected ads?",
+      "cancel":"Cancel",
+     "confirm":"Confirm"
+
+
     },
     "employee": {
       "employee": "employee",
@@ -322,7 +328,9 @@
       "Passwords do not match": "Passwords do not match",
       "cancel": "Cancel",
       "Upload New Image": "Upload New Image",
-      "Error Uploading": "Error Uploading"
+      "Error Uploading": "Error Uploading",
+      "addMobile":"Add Mobile"
+
     }
   }
 }
