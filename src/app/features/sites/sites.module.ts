@@ -108,6 +108,13 @@ const routes: Routes = [
             (m) => m.EmployeeProfileModule
           ),
       },
+      {
+        path: 'mobile',
+        loadChildren: () =>
+          import('./mobile/mobile.module').then(
+            (m) => m.MobileModule
+          ),
+      },
       
     ],
   },

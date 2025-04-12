@@ -276,7 +276,8 @@
     "layout": {
       "adverdisments": "Adverdisments",
       "clients": "Clients",
-      "users": "Users"
+      "users": "Users",
+      "mobile":"Mobile"
     }
   },
   "salesflow": {

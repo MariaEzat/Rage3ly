@@ -266,7 +266,8 @@
     "layout":{
       "adverdisments":"الاعلانات",
       "clients":"العملاء",
-      "users":"المستخدمين"
+      "users":"المستخدمين",
+      "mobile":"الموبايل"
     }
   },
   "salesflow": {
