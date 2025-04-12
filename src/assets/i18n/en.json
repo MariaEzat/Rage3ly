@@ -228,6 +228,26 @@
       "phoneNumber": "Phone Number",
       "password": "Password",
       "forgotPassword?": "Forgot Password ?"
+    },
+    "register": {
+      "signUp": "Sign Up",
+      "Please fill in the following details to create an account.": "Please fill in the following details to create an account.",
+      "nationalId": "National Id",
+      "name": "Name",
+      "email": "Email",
+      "password": "Password",
+      "confirmPassword": "Confirm Password",
+      "mobile": "Mobile Number",
+      "haveAnAccount?": "Have An Account?",
+      "login": "Login"
+    },
+    "otp":{
+      "OTP":"OTP",
+      "Please verify your OTP.":"Please verify your OTP.",
+      "verifyOTP":"Verif OTP",
+      "resendOTP":"Resend OTP",
+      "resendIn":"Resend In",
+      "second":"second"
     }
   },
   "sites": {
@@ -282,6 +302,7 @@
   },
   "salesflow": {
     "Customers": {
+      "customer":"Customer",
       "searchofCustomers": "Search of Customers",
       "customers": "Customers",
       "activation": "Activation",

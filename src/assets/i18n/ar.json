@@ -218,6 +218,26 @@
       "phoneNumber": "رقم التليفون",
       "password": "كلمة المرور",
       "forgotPassword?": "هل نسيت كلمة المرور؟"
+    },
+    "register": {
+      "signUp": "انشاء حساب",
+      "Please fill in the following details to create an account.": "يرجى ملء التفاصيل التالية لإنشاء حساب",
+      "nationalId": "الرقم القومى",
+      "name": "الاسم",
+      "email": "البريد الالكتروني",
+      "password": "كلمة المرور",
+      "confirmPassword": "تأكيد كلمة المرور",
+      "mobile": "الموبايل",
+      "haveAnAccount?": "هل لديك حساب ؟",
+      "login": "تسجيل دخول"
+    },
+    "otp":{
+      "OTP":"OTP",
+      "Please verify your OTP.":"تحقق من رمز ال OTP",
+      "verifyOTP":"تحقق",
+      "resendOTP":"اعادة ارسال رمز OTP",
+      "resendIn":"اعادة الارسال خلال",
+      "second":"ثانية"
     }
   },
   "sites": {
@@ -268,6 +288,7 @@
       "clients":"العملاء",
       "users":"المستخدمين",
       "mobile":"الموبايل"
+
     }
   },
   "salesflow": {
@@ -291,8 +312,8 @@
       "changePassword": "تغيير كلمة المرور",
       "Passwords do not match": "كلمات المرور غير متطابقة",
       "cancel": "الغاء",
-      "Upload New Image":"رفع صورة جديدة",
-      "Error Uploading":"خطأ في رفع الصورة"
+      "Upload New Image": "رفع صورة جديدة",
+      "Error Uploading": "خطأ في رفع الصورة"
     }
   }
 }
