@@ -132,12 +132,15 @@
 
   <!-- Confirm Bulk Delete -->
   <ng-template #confirmDeleteTemplates>
-    <div class="modal-body text-center bg-Dark text-white">
-      <p> {{"sites.advertisment.Are you sure you want to delete the selected ads?"|translate}}</p>
+    <div class="modal-content bg-Dark text-white border border-secondary p-4 rounded">
+    <div class="modal-body">
+      <p  class="modal-confirm-content mb-2"> {{"sites.advertisment.Are you sure you want to delete the selected ads?"|translate}}</p>
+      <div class="d-flex mt-4">
+        <button class="btn btn-secondary me-auto" (click)="modalRef.hide()">{{"sites.advertisment.cancel"|translate}}</button>
+        <button class="btn btn-danger ms-2" (click)="modalRef.content.onConfirm(); modalRef.hide()">{{"sites.advertisment.confirm"|translate}}</button>
+      </div>
     </div>
-    <div class="modal-footer">
-      <button class="btn btn-secondary me-auto" (click)="modalRef.hide()">{{"sites.advertisment.cancel"|translate}}</button>
-      <button class="btn btn-danger ms-2" (click)="modalRef.content.onConfirm(); modalRef.hide()">{{"sites.advertisment.confirm"|translate}}</button>
-    </div>
+  </div>
+    
   </ng-template>
 </div>
