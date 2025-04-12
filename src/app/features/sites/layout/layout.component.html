@@ -11,7 +11,7 @@
 
       <a class="nav-link text-white py-2 d-flex flex-row-reverse justify-content-end align-items-center"
         routerLink="/sites/mobile" routerLinkActive="active" #mobileRla="routerLinkActive"
-        [routerLinkActiveOptions]="{ exact: true }" [ngClass]="{ 'active-color': mobileRla.isActive }">
+         [ngClass]="{ 'active-color': mobileRla.isActive }">
         {{ "sites.layout.mobile" | translate }}
         <img [src]="mobileRla.isActive ? 'assets/images/Icon-mobile-Active.png' : 'assets/images/mobile.png'"
           class="px-1 nav-icon">
@@ -19,7 +19,7 @@
 
       <a class="nav-link text-white py-2 d-flex flex-row-reverse justify-content-end align-items-center"
         routerLink="/sites/ads" routerLinkActive="active" #adsRla="routerLinkActive"
-        [routerLinkActiveOptions]="{ exact: true }" [ngClass]="{ 'active-color': adsRla.isActive }">
+         [ngClass]="{ 'active-color': adsRla.isActive }">
         {{ "sites.layout.adverdisments" | translate }}
         <img [src]="adsRla.isActive ? 'assets/images/Icon.png' : 'assets/images/Icon-notActive.png'"
           class="px-1 nav-icon">
@@ -37,7 +37,7 @@
       <!-- Users -->
       <a class="nav-link text-white py-2 d-flex flex-row-reverse justify-content-end align-items-center"
         routerLink="/sites/jobTitle" routerLinkActive="active" #usersRla="routerLinkActive"
-        [routerLinkActiveOptions]="{ exact: true }" [ngClass]="{ 'active-color': usersRla.isActive }">
+       [ngClass]="{ 'active-color': usersRla.isActive }">
         {{ "sites.layout.users" | translate }}
         <img [src]="usersRla.isActive ? 'assets/images/IconEmpActive.png' : 'assets/images/IconEmp.png'"
           class="px-1 nav-icon">

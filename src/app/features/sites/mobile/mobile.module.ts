@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { HomeComponent } from './components/home/home.component';
 import { CreateComponent } from './components/create/create.component';
 import { RouterModule, Routes } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -11,10 +10,13 @@ import { InputSwitchModule } from 'primeng/inputswitch';
 import { TableModule } from 'primeng/table';
 import { TranslateModule } from '@ngx-translate/core';
 
+import { HomeComponent } from './components/home/home.component';
+
+
 
 const routes: Routes = [
   { path: '', component:HomeComponent }, 
-  { path:'create', component: CreateComponent },
+  { path:'create/:id', component: CreateComponent },
   { path:'edit/:id', component: CreateComponent },
 
 

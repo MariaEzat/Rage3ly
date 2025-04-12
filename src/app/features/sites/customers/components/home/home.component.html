@@ -11,7 +11,8 @@
             <div class="row g-2">
               <div class="col-2">
                 <ng-control [form]="page.searchForm" control="Name" [inputClass]="'bg-Dark border-color'"
-                  [labelClass]="'text-white'" label="salesflow.Customers.customers" placeholder="salesflow.Customers.customers">
+                  [labelClass]="'text-white'" label="salesflow.Customers.customers"
+                  placeholder="salesflow.Customers.customers">
                 </ng-control>
               </div>
               <div class="col-2">
@@ -21,18 +22,21 @@
               </div>
               <div class="col-2">
                 <ng-control [form]="page.searchForm" control="NationalNumber" [inputClass]="'bg-Dark border-color'"
-                  [labelClass]="'text-white'" label="salesflow.Customers.nationalNumber" placeholder="salesflow.Customers.nationalNumber">
+                  [labelClass]="'text-white'" label="salesflow.Customers.nationalNumber"
+                  placeholder="salesflow.Customers.nationalNumber">
                 </ng-control>
               </div>
               <div class="col-2">
                 <ng-control [form]="page.searchForm" control="Mobile" [inputClass]="'bg-Dark border-color'"
-                  [labelClass]="'text-white'" label="salesflow.Customers.mobile" placeholder="salesflow.Customers.mobile">
+                  [labelClass]="'text-white'" label="salesflow.Customers.mobile"
+                  placeholder="salesflow.Customers.mobile">
                 </ng-control>
               </div>
               <div class="col-2">
                 <ng-control [type]="controlType.SELECT" [form]="page.searchForm" control="VerifyStatus"
-                  [inputClass]="'bg-Dark border-color text-white'" [labelClass]="'text-white'" label="salesflow.Customers.verifyStatus"
-                  placeholder="salesflow.Customers.verifyStatus" [items]="verifyStatuslist">
+                  [inputClass]="'bg-Dark border-color text-white'" [labelClass]="'text-white'"
+                  label="salesflow.Customers.verifyStatus" placeholder="salesflow.Customers.verifyStatus"
+                  [items]="verifyStatuslist">
                 </ng-control>
               </div>
 
@@ -64,16 +68,20 @@
           <h5 class="text-white"> {{"salesflow.Customers.customers"|translate}} </h5>
           <div class="d-flex">
             <div class="position-relative">
-              <button #downloadButton class="btn btn-primary me-2" (click)="toggleDownloadOptions()">{{"salesflow.Customers.download"|translate}}</button>
+              <button #downloadButton class="btn btn-primary me-2"
+                (click)="toggleDownloadOptions()">{{"salesflow.Customers.download"|translate}}</button>
 
               <div #downloadOptions *ngIf="showDownloadOptions" class="download-options">
                 <button (click)="downloadExcel()">Excel</button>
                 <button (click)="downloadPDF()">PDF</button>
               </div>
             </div>
-            <button class="btn btn-primary me-2" (click)="activateCustomers()">{{"salesflow.Customers.active"|translate}}</button>
-            <button class="btn btn-primary me-2" (click)="disActiveCustomers()">{{"salesflow.Customers.disActive"|translate}}</button>
-            <button class="btn btn-primary me-2" (click)="navigateToCreateCustomer()">{{"salesflow.Customers.addNewCustomer"|translate}}</button>
+            <button class="btn btn-primary me-2"
+              (click)="activateCustomers()">{{"salesflow.Customers.active"|translate}}</button>
+            <button class="btn btn-primary me-2"
+              (click)="disActiveCustomers()">{{"salesflow.Customers.disActive"|translate}}</button>
+            <button class="btn btn-primary me-2"
+              (click)="navigateToCreateCustomer()">{{"salesflow.Customers.addNewCustomer"|translate}}</button>
 
           </div>
         </div>
@@ -116,6 +124,9 @@
                 <td>{{ item.mobile }}</td>
                 <td>
                   <img [src]="getImageUrl(item.path)" style="width: 80px; height: 80px; object-fit: cover;" />
+                </td>
+                <td> <button class="btn btn-primary me-2"
+                    (click)="navigateToCreateMobile(item.id)">{{"salesflow.Customers.addMobile"|translate}}</button>
                 </td>
                 <td>
 

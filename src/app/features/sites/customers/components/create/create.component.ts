@@ -65,25 +65,10 @@ export class CreateComponent implements OnInit {
     } else {
       this.createForm();
     }
-    // forkJoin([
-    //   this._cityService.getGovernorates(),
-    //   this._companyService.getCities(),
-    //   this._customersService.getClientGroups()
-    // ]).subscribe((res) => {
-    //   this.governorates = res[0].data
-    //   this.cities = res[1].data
-    //   this.clientGroups = res[2].data
-    //   if (this.page.isEdit) {
-    //     this.getEditableItem();
-    //   } else {
-    //     this.createForm();
-    //   }
-
-
-    // }
-
-    // )
+  
   }
+
+
 
 
   updateLocation(lat: number, lng: number): void {
