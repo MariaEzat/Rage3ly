@@ -39,7 +39,7 @@ export class LoginComponent implements OnInit {
       next: (response) => {
         this._sharedService.showToastr(response);
            this.isSubmitting=false
-        localStorage.setItem('eToken', response.data.token);
+        localStorage.setItem('token', response.data.token);
         this._router.navigate(['/sites/company'], {
           queryParams: { source: 'login'},
         });

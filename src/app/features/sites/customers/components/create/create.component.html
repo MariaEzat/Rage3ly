@@ -26,11 +26,13 @@
   <form [formGroup]="page.form">
     <div class="row g-3 mb-4">
       <div class="col-6">
-        <ng-control [form]="page.form" control="name" label="salesflow.Customers.customer" placeholder="salesflow.Customers.customer" [labelClass]="'text-white'"
+        <ng-control [form]="page.form" control="name" label="salesflow.Customers.customer" placeholder="salesflow.Customers.customer"  [inputClass]="'mb-2 bg-Dark border-color color-color-gray-300'"
+        [labelClass]="page.form.get('name')?.invalid && (page.form.get('name')?.touched || page.form.get('name')?.dirty) ? 'form-control-with-validate' : 'form-control-no-validate'"
       ></ng-control>
       </div>
       <div class="col-6">
-        <ng-control [form]="page.form" control="nationalNumber" label="salesflow.Customers.nationalNumber" placeholder="Ex: 12345678912345" [labelClass]="'text-white'"
+        <ng-control [form]="page.form" control="nationalNumber" label="salesflow.Customers.nationalNumber" placeholder="Ex: 12345678912345"  [inputClass]="'mb-2 bg-Dark border-color color-color-gray-300'"
+        [labelClass]="page.form.get('nationalNumber')?.invalid && (page.form.get('nationalNumber')?.touched || page.form.get('nationalNumber')?.dirty) ? 'form-control-with-validate' : 'form-control-no-validate'"
       
           (keypress)="numberOnly($event)"></ng-control>
       </div>
@@ -38,13 +40,14 @@
     </div>
     <div class="row g-3 mb-4">
       <div class="col-6">
-        <ng-control [form]="page.form" control="mobile" label="salesflow.Customers.mobile" placeholder="Ex: 0123567891" [labelClass]="'text-white'"
-        [inputClass]="'bg-Dark text-white'"
+        <ng-control [form]="page.form" control="mobile" label="salesflow.Customers.mobile" placeholder="Ex: 0123567891"  [inputClass]="'mb-2 bg-Dark border-color color-color-gray-300'"
+        [labelClass]="page.form.get('mobile')?.invalid && (page.form.get('mobile')?.touched || page.form.get('mobile')?.dirty) ? 'form-control-with-validate' : 'form-control-no-validate'"
+  
           (keypress)="numberOnly($event)"></ng-control>
       </div>
       <div class="col-6">
-        <ng-control [form]="page.form" control="email" label="salesflow.Customers.email" placeholder="salesflow.Customers.email" [labelClass]="'text-white'"
-        [inputClass]="'bg-Dark text-white'"></ng-control>
+        <ng-control [form]="page.form" control="email" label="salesflow.Customers.email" placeholder="salesflow.Customers.email" [inputClass]="'mb-2 bg-Dark border-color color-color-gray-300'"
+        [labelClass]="page.form.get('email')?.invalid && (page.form.get('email')?.touched || page.form.get('email')?.dirty) ? 'form-control-with-validate' : 'form-control-no-validate'"></ng-control>
       </div>
        
 
@@ -53,13 +56,13 @@
     <div class="row g-3 mb-4">
 
       <div class="col-6" *ngIf="!page.isEdit">
-        <ng-control [form]="page.form" control="password" label="salesflow.Customers.password" placeholder="*********"  [labelClass]="'text-white'"
-        [inputClass]="'bg-Dark text-white'"
+        <ng-control [form]="page.form" control="password" label="salesflow.Customers.password" placeholder="*********"  [inputClass]="'mb-2 bg-Dark border-color color-color-gray-300'"
+        [labelClass]="page.form.get('password')?.invalid && (page.form.get('password')?.touched || page.form.get('password')?.dirty) ? 'form-control-with-validate' : 'form-control-no-validate'"
           [type]="controlType.PASSWORD"></ng-control>
       </div>
       <div class="col-6" *ngIf="!page.isEdit">
-        <ng-control [form]="page.form" control="confirmPassword" label="salesflow.Customers.confirmPassword"  [labelClass]="'text-white'"
-        [inputClass]="'bg-Dark text-white'"
+        <ng-control [form]="page.form" control="confirmPassword" label="salesflow.Customers.confirmPassword" [inputClass]="'mb-2 bg-Dark border-color color-color-gray-300'"
+        [labelClass]="page.form.get('confirmPassword')?.invalid && (page.form.get('confirmPassword')?.touched || page.form.get('confirmPassword')?.dirty) ? 'form-control-with-validate' : 'form-control-no-validate'"
           placeholder="*******" [type]="controlType.PASSWORD" (blur)="confirmPassword()"></ng-control>
         <p class="text text-danger font-12" *ngIf="!isEqualPassword">{{"salesflow.Customers.Passwords do not match"|translate}}</p>
       </div>

@@ -28,15 +28,15 @@
             <ng-control [form]="page.form" control="name" 
                         label="sites.employee.employee" 
                         placeholder="sites.employee.employee"
-                        [labelClass]="'text-white'"
-                        [inputClass]="'bg-Dark'"></ng-control>
+                        [inputClass]="'mb-2 bg-Dark border-color color-color-gray-300'"
+                        [labelClass]="page.form.get('name')?.invalid && (page.form.get('name')?.touched || page.form.get('name')?.dirty) ? 'form-control-with-validate' : 'form-control-no-validate'"></ng-control>
           </div>
           <div class="col-md-6">
             <ng-control [form]="page.form" control="email"
                         label="sites.employee.email"
                         placeholder="sites.employee.email"
-                        [labelClass]="'text-white'"
-                        [inputClass]="'bg-Dark'"></ng-control>
+                        [inputClass]="'mb-2 bg-Dark border-color color-color-gray-300'"
+                        [labelClass]="page.form.get('email')?.invalid && (page.form.get('email')?.touched || page.form.get('email')?.dirty) ? 'form-control-with-validate' : 'form-control-no-validate'"></ng-control>
           </div>
         </div>
 
@@ -46,8 +46,8 @@
                         [type]="controlType.PASSWORD"
                         control="password"
                         label="sites.employee.password"
-                        [labelClass]="'text-white'"
-                        [inputClass]="'bg-Dark'"
+                        [inputClass]="'mb-2 bg-Dark border-color color-color-gray-300'"
+                        [labelClass]="page.form.get('password')?.invalid && (page.form.get('password')?.touched || page.form.get('password')?.dirty) ? 'form-control-with-validate' : 'form-control-no-validate'"
                         placeholder="*******"></ng-control>
           </div>
           <div class="col-md-6">
@@ -55,8 +55,8 @@
                         [type]="controlType.PASSWORD"
                         control="confirmPassword"
                         label="sites.employee.confirmPassword"
-                        [labelClass]="'text-white'"
-                        [inputClass]="'bg-Dark text-white'"
+                        [inputClass]="'mb-2 bg-Dark border-color color-color-gray-300'"
+                        [labelClass]="page.form.get('confirmPassword')?.invalid && (page.form.get('confirmPassword')?.touched || page.form.get('confirmPassword')?.dirty) ? 'form-control-with-validate' : 'form-control-no-validate'"
                         placeholder="*******"
                         (blur)="confirmPassword()"></ng-control>
             <p class="text-danger font-12 mt-1" *ngIf="!isEqualPassword">
@@ -72,8 +72,8 @@
                         control="roleId"
                         label="sites.employee.role"
                         placeholder="sites.employee.role"
-                        [labelClass]="'text-white'"
-                        [inputClass]="'bg-Dark text-white'"
+                        [inputClass]="'mb-2 bg-Dark border-color color-color-gray-300'"
+                        [labelClass]="page.form.get('roleId')?.invalid && (page.form.get('roleId')?.touched || page.form.get('roleId')?.dirty) ? 'form-control-with-validate' : 'form-control-no-validate'"
                         [items]="RolesEnum">
             </ng-control>
           </div>
@@ -82,8 +82,8 @@
                         control="mobile"
                         label="sites.employee.mobile"
                         placeholder="sites.employee.mobile"
-                        [labelClass]="'text-white'"
-                        [inputClass]="'bg-Dark text-white'"
+                        [inputClass]="'mb-2 bg-Dark border-color color-color-gray-300'"
+                        [labelClass]="page.form.get('mobile')?.invalid && (page.form.get('mobile')?.touched || page.form.get('mobile')?.dirty) ? 'form-control-with-validate' : 'form-control-no-validate'"
                         (keypress)="numberOnly($event)">
             </ng-control>
           </div>

@@ -76,7 +76,7 @@ export class ChangePasswordComponent implements OnInit {
         this.page.responseViewModel = res;
         this._sharedService.showToastr(res);
         if (res.isSuccess) {
-          this._router.navigate(['/salesflow/customers/edit', this.id]);
+          this._router.navigate(['/sites/customers/edit', this.id]);
         }
       },
       error: (err) => {
@@ -88,7 +88,7 @@ export class ChangePasswordComponent implements OnInit {
   
   
   onCancel(): void {
-    this._router.navigate(['/salesflow/customers/edit', this.id]);
+    this._router.navigate(['/sites/customers/edit', this.id]);
   }
 }
 

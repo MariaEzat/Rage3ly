@@ -159,7 +159,7 @@ export class CreateComponent implements OnInit {
         this.page.responseViewModel = res;
         this._sharedService.showToastr(res);
         if (res.isSuccess) {
-          this._router.navigate(['/salesflow/customers']);
+          this._router.navigate(['/sites/customers']);
         }
       },
       error: (err) => {
@@ -304,13 +304,13 @@ export class CreateComponent implements OnInit {
     }
   }
   changePassword() {
-    this._router.navigate(['/salesflow/customers/changePassword']);
+    this._router.navigate(['/sites/customers/changePassword']);
   }
 
 
   navigateToChangePassword(clientId: string): void {
     if (clientId) {
-      this._router.navigate(['/salesflow/customers/changePassword', clientId]);
+      this._router.navigate(['/sites/customers/changePassword', clientId]);
     } else {
       console.error('Client ID is missing or invalid.');
     }

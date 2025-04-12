@@ -55,7 +55,7 @@ export class OtpComponent {
     });
   }
   getRoleFromToken() {
-    const token = localStorage.getItem('eToken');
+    const token = localStorage.getItem('token');
     if (token) {
       try {
         const decodedToken: any = jwtDecode(token);
@@ -82,7 +82,7 @@ export class OtpComponent {
   onSubmit() {
     if (this.isSubmitting || this.otp.length < this.config.length) return;
     this.isSubmitting = true;
-    const storedToken = localStorage.getItem('rToken');
+    const storedToken = localStorage.getItem('token');
     if (!storedToken) {
       this.isSubmitting = false;
       this._router.navigate(['/auth/register']);
@@ -98,10 +98,10 @@ export class OtpComponent {
       this.isSubmitting = false;
       if (this.source === 'register') {
         setTimeout(() => {
-          this._router.navigate(['/auth/success']); 
+          this._router.navigate(['/salesflow/order']); 
         }, 2000);
       } else if (this.source === 'login') {
-        localStorage.setItem('eToken', response.data.token);
+        localStorage.setItem('token', response.data.token);
         const roleId = response.data.roleId; 
         
         if (roleId === 4) { 
@@ -180,7 +180,7 @@ export class OtpComponent {
     this.authService.resendOtp(body).subscribe({
       next: (response) => {
         this._sharedService.showToastr(response);
-        localStorage.setItem('rToken', response.data.otPtoken);
+        localStorage.setItem('token', response.data.otPtoken);
         this.resendTimer = 60; // Reset timer to 60 seconds
         this.startResendTimer(); // Reset and start timer
       },

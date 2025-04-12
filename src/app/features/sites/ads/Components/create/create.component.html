@@ -23,13 +23,13 @@
 
             <div class="col-6 text-white mb-1 ">
                 <ng-control [form]="page.form" control="title" placeholder="sites.advertisment.name" label="sites.advertisment.name"
-                    class="form-control-lg border-light rounded-3 " [labelClass]="'text-white'"
-                    [inputClass]="'bg-Dark text-white'"></ng-control>
+                    class="form-control-lg border-light rounded-3 " [inputClass]="'mb-2 bg-Dark border-color color-color-gray-300'"
+                    [labelClass]="page.form.get('title')?.invalid && (page.form.get('title')?.touched || page.form.get('title')?.dirty) ? 'form-control-with-validate' : 'form-control-no-validate'"></ng-control>
             </div>
 
             <div class="col-6 mb-1">
-                <ng-control [form]="page.form" control="startDate" label="sites.advertisment.startDate" [labelClass]="'text-white'"
-                    [inputClass]="'bg-Dark text-white'" [type]="page.ControlType.INPUT_DATE"
+                <ng-control [form]="page.form" control="startDate" label="sites.advertisment.startDate"   [inputClass]="'mb-2 bg-Dark border-color color-color-gray-300'"
+                [labelClass]="page.form.get('startDate')?.invalid && (page.form.get('startDate')?.touched || page.form.get('startDate')?.dirty) ? 'form-control-with-validate' : 'form-control-no-validate'" [minDate]=" page.form.get('startDate').value" [type]="page.ControlType.INPUT_DATE"
                     (change)="onChangeStartDate($event)"></ng-control>
                 <div *ngIf="page.form.get('startDate')?.errors?.pastDate" class="text-danger extra-small mt-1">
                     {{ page.form.get('startDate')?.errors?.pastDate }}
@@ -38,7 +38,8 @@
 
             <div class="col-6 mb-1">
                 <ng-control [form]="page.form" control="endDate" label="sites.advertisment.endDate" [type]="page.ControlType.INPUT_DATE"
-                    [labelClass]="'text-white'" [inputClass]="'bg-Dark text-white'" [minDate]=" page.form.get('startDate').value"
+                [inputClass]="'mb-2 bg-Dark border-color color-color-gray-300'"
+                [labelClass]="page.form.get('endDate')?.invalid && (page.form.get('endDate')?.touched || page.form.get('endDate')?.dirty) ? 'form-control-with-validate' : 'form-control-no-validate'" [minDate]=" page.form.get('startDate').value"
                     [diasblePastDate]="true"></ng-control>
                 <div *ngIf="page.form.get('endDate')?.errors?.endDateBeforeStart" class="text-danger extra-small mt-1">
                     {{ page.form.get('endDate')?.errors?.endDateBeforeStart }}
@@ -47,8 +48,7 @@
 
             <div class="col-6 mb-1">
                 <ng-control [form]="page.form" control="hyperlink" placeholder="sites.advertisment.hyberLink" label="sites.advertisment.hyberLink"
-                    [labelClass]="'text-white'" [inputClass]="'bg-Dark text-white'"
-                    class="form-control-lg border-light rounded-3"></ng-control>
+                    [labelClass]="page.form.get('hyperlink')?.invalid && (page.form.get('hyperlink')?.touched || page.form.get('hyperlink')?.dirty) ? 'form-control-with-validate' : 'form-control-no-validate'"></ng-control>
             </div>
         </div>
      

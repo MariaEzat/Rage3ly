@@ -21,7 +21,7 @@ import autoTable from 'jspdf-autotable';
 
 export class HomeComponent extends CrudIndexBaseUtils {
   override page: CRUDIndexPage = new CRUDIndexPage();
-  override pageRoute = '/salesflow/customers';
+  override pageRoute = '/sites/customers';
   override searchViewModel: customerSearchViewModel = new customerSearchViewModel();
   modalRef: BsModalRef;
   override items: customerViewModel[] = [];
@@ -94,7 +94,7 @@ export class HomeComponent extends CrudIndexBaseUtils {
   }
 
   navigateToCreateCustomer() {
-    this._router.navigate(['/salesflow/customers/create']);
+    this._router.navigate(['/sites/customers/create']);
   }
 
   override createSearchForm() {
@@ -158,7 +158,7 @@ export class HomeComponent extends CrudIndexBaseUtils {
   }
 
   editCustomer(id: string) {
-    this._router.navigate(['/salesflow/customers/edit', id]);
+    this._router.navigate(['/sites/customers/edit', id]);
   }
 
   activateCustomers() {

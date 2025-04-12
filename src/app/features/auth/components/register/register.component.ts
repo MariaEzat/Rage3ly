@@ -53,117 +53,22 @@ export class RegisterComponent implements OnInit {
 
   ngOnInit(): void {
     this.initializeForm();
-    this.loadGovernorates();
-    this.loadCities();
-    this.initializeMap();
-
+  
   }
 
-  initializeMap() {
-    // Set default coordinates
-    const defaultLat = 30.0444; // Cairo Latitude
-    const defaultLng = 31.2357; // Cairo Longitude
-  
-    // Initialize the map
-    const map = L.map('map').setView([defaultLat, defaultLng], 13);
-  
-    // Add OpenStreetMap tiles
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-      attribution: '© OpenStreetMap contributors'
-    }).addTo(map);
-  
-    // Define a custom icon for the marker
-    const customIcon = L.icon({
-      iconUrl: 'assets/images/marker.png', // Replace with your custom marker image URL
-      iconSize: [32, 32], // Set the size of the icon
-      iconAnchor: [16, 32], // Anchor the icon at the bottom center
-      popupAnchor: [0, -32], // Adjust the popup position relative to the icon
-    });
-  
-    // Add a marker with the custom icon
-    const marker = L.marker([defaultLat, defaultLng], { icon: customIcon, draggable: true }).addTo(map);
-  
-    // Update form values on marker drag
-    marker.on('dragend', () => {
-      const position = marker.getLatLng();
-      this.registerForm.patchValue({
-        latitude: position.lat.toFixed(6),
-        longitude: position.lng.toFixed(6),
-      });
-    });
-  
-    // Center the map on marker drag
-    map.on('click', (e) => {
-      marker.setLatLng(e.latlng);
-      this.registerForm.patchValue({
-        latitude: e.latlng.lat.toFixed(6),
-        longitude: e.latlng.lng.toFixed(6),
-      });
-    });
-  }
 
 
 initializeForm(): void {
   this.registerForm = this._sharedService.formBuilder.group({
     nationalNumber: ['', [Validators.pattern(/^\d{14}$/)]],
     name: ['', Validators.required],
-    userName: ['', Validators.required],
     password: ['', Validators.required],
     confirmPassword: ['', Validators.required],
     mobile: ['', [Validators.required, Validators.pattern(/^(010|011|012|015)\d{8}$/)]],
-    age: [],
-    gender: [],
-    governorateId: [null, Validators.required],
-    cityId: [null, Validators.required],
-    street: ['', Validators.required],
-    landmark: [''],
-    latitude: [0],
-    longitude: [0],
-    email: ['', [ Validators.email]],
-    phone: [''],
-    clientActivity: [],
-    buildingData: ['', [Validators.required]]
-  });
-}
-loadGovernorates() {
-  this._cityService.getGovernorates().subscribe((res) => {
-    if (res.isSuccess) {
-      this.governorates = res.data;
-    }
+    email: ['', [ Validators.email,Validators.required]],
   });
 }
 
-loadCities(governorateId ?: string) {
-  if (governorateId) {
-    // Load cities for the selected governorate
-    this._companyService.getCities(governorateId).subscribe((res) => {
-      if (res.isSuccess) {
-        this.cities = res.data;
-      } else {
-        this.cities = []; // Reset cities if there's an error
-      }
-    });
-  } else {
-    // Load all cities if no governorate is selected
-    this._companyService.getCities().subscribe((res) => {
-      if (res.isSuccess) {
-        this.cities = res.data;
-      } else {
-        this.cities = []; // Reset cities if there's an error
-      }
-    });
-  }
-}
-
-onGovernorateChange(governorateId: string): void {
-  // Reset the city field when the governorate changes
-  this.registerForm.patchValue({
-    cityId: '', // Clear the city selection
-  });
-
-  // Load cities based on the selected governorate or all cities if no governorate
-  this.loadCities(governorateId);
-}
 
 confirmPassword(): void {
   const password = this.registerForm.get('password')?.value;
@@ -181,13 +86,13 @@ onSubmit(): void {
   this.isSubmitting = true;
 
   const registerData: RegisterViewModel = this.registerForm.value;
-  registerData.paths = this.getUploadedImages();
+ // registerData.paths = this.getUploadedImages();
   this.authService.setRegister(registerData).subscribe({
     next: (response) => {
       this._sharedService.showToastr(response);
 
       if (response.data != null) {
-        localStorage.setItem('rToken', response.data.otPtoken);
+        localStorage.setItem('token', response.data.otPtoken);
         this._router.navigate(['/auth/otp'], {
           queryParams: { source: 'register' },
         });
@@ -207,35 +112,35 @@ numberOnly(event: any) {
   return this._sharedService.numberOnly(event);
 }
 
-onImageUpload(files, index: number): void {
-  if(files.length === 0) {
-  return;
-}
-const file = <File>files[0];
-const formData = new FormData();
-formData.append('Files', file, file.name);  // Use 'Files' as the field name if required by backend
-console.log(formData);
-// Call the service to upload the image, passing the FormData directly
-this.authService.uploadImage(formData).subscribe({
-  next: (res) => {
-    if (res.isSuccess) {
-      console.log(res);
-      //this.images[index] = { uploaded: true, src: res.data.path[index] };
-      this.images[index] = { uploaded: true, src: res.data.path[index] };
+// onImageUpload(files, index: number): void {
+//   if(files.length === 0) {
+//   return;
+// }
+// const file = <File>files[0];
+// const formData = new FormData();
+// formData.append('Files', file, file.name);  // Use 'Files' as the field name if required by backend
+// console.log(formData);
+// // Call the service to upload the image, passing the FormData directly
+// this.authService.uploadImage(formData).subscribe({
+//   next: (res) => {
+//     if (res.isSuccess) {
+//       console.log(res);
+//       //this.images[index] = { uploaded: true, src: res.data.path[index] };
+//       this.images[index] = { uploaded: true, src: res.data.path[index] };
 
-      this._sharedService.showToastr(res);
-    }
-  },
-  error: (err) => {
-    this._sharedService.showToastr(err);
-  },
-});
-  }
-getUploadedImages() {
-  return this.images.filter(image => image.uploaded).map(image => image.src);
-}
-isImageUploaded(): boolean {
-  return this.images.some(image => image.uploaded); // Returns true if at least one image is uploaded
-}
+//       this._sharedService.showToastr(res);
+//     }
+//   },
+//   error: (err) => {
+//     this._sharedService.showToastr(err);
+//   },
+// });
+//   }
+// getUploadedImages() {
+//   return this.images.filter(image => image.uploaded).map(image => image.src);
+// }
+// isImageUploaded(): boolean {
+//   return this.images.some(image => image.uploaded); // Returns true if at least one image is uploaded
+// }
 
 }
