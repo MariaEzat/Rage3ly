@@ -4,11 +4,12 @@ import { HomeComponent } from './components/home/home.component';
 import { CreateComponent } from './components/create/create.component';
 import { RouterModule, Routes } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { SharedModule } from 'primeng/api';
+import { SharedModule } from 'src/app/shared/shared.module';
 import { ButtonModule } from 'primeng/button';
 import { DropdownModule } from 'primeng/dropdown';
 import { InputSwitchModule } from 'primeng/inputswitch';
 import { TableModule } from 'primeng/table';
+import { TranslateModule } from '@ngx-translate/core';
 
 
 const routes: Routes = [
@@ -32,7 +33,8 @@ const routes: Routes = [
     FormsModule,
     RouterModule.forChild(routes),
     ReactiveFormsModule,
-    InputSwitchModule
+    InputSwitchModule,
+    TranslateModule
 
   ]
 })

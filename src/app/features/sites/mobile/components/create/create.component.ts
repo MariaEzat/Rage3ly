@@ -1,10 +1,220 @@
-import { Component } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { SharedService } from 'src/app/shared/service/shared.service';
+import { MobileService } from '../../service/mobile.service';
+import { CRUDCreatePage } from 'src/app/shared/classes/crud-create.model';
+import {
+  mobileCreateViewModel,
+  mobileSelectedItem,
+} from '../../interfaces/mobile-view-model';
+import { Validators } from '@angular/forms';
+import { forkJoin } from 'rxjs';
+import { TabEnum } from '../../interfaces/tab_enum';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-create',
   templateUrl: './create.component.html',
-  styleUrls: ['./create.component.css']
+  styleUrls: ['./create.component.css'],
 })
-export class CreateComponent {
+export class CreateComponent implements OnInit, OnDestroy {
+  page: CRUDCreatePage = new CRUDCreatePage();
+  item: mobileCreateViewModel = new mobileCreateViewModel();
+  id: string;
+  isActivated: boolean = false;
+  images = [{ uploaded: false, src: null }];
+  environment=environment;
+  Brandslist: []=[];
+  clientId :string = "7527ce49-0eec-40cc-a9fd-772bf1c853b7";
+  selectedTab: TabEnum = TabEnum.UserLogin;
+  TabEnum = TabEnum;
+  Tabs = [
+    {
+      ID: 1,
+      name: 'User Login',
+      icon: '/assets/icons/vector.svg',
+      // selectedIcon: '/assets/icons/vector-colored.svg',
+      isSelected: true,
+    },
+    {
+      ID: 2,
+      name: 'Add Phone Data',
+      icon: '/assets/icons/sell.svg',
+      // selectedIcon: '/assets/icons/sell-colored.svg',
+      isSelected: false,
+    },
+    {
+      ID: 3,
+      name: 'Phone Confirmation',
+      icon: '/assets/icons/sell.svg',
+      // selectedIcon: '/assets/icons/sell-colored.svg',
+      isSelected: false,
+    },
+  ];
 
+  constructor(
+    private _sharedService: SharedService,
+    private _mobileService: MobileService,
+    private _activatedRoute: ActivatedRoute,
+    private _router: Router
+  ) { }
+
+  ngOnInit(): void {
+    this.page.isPageLoaded = false;
+    this.onSelectBrand();
+    this._activatedRoute.paramMap.subscribe((params) => {
+      if (params.has('id')) {
+        this.id = params.get('id');
+        this.page.isEdit = true;
+      
+      }
+    });
+    if (this.page.isEdit) {
+      this.getEditableItem();
+    } else {
+      this.item.clientId = this.clientId; 
+      this.createForm();
+    }
+  }
+
+  getEditableItem() {
+    this._mobileService.getById(this.id).subscribe({
+      next: (res) => {
+        if (res.isSuccess) {
+          this.item = res.data;
+         // this.isActivated = this.item.isActive;
+          this.item.id = this.id;
+          // if (this.item.parentCategoryId) {
+          //   this.isSubCategory = true;
+          //   this.onCreateSubCategory();
+          // } else {
+          //   this.createForm();
+          // }
+          this.createForm();
+          this.page.isPageLoaded = true;
+        }
+      },
+      error: (err) => {
+        console.error('Error fetching data:', err);
+        this.page.isPageLoaded = true;
+      },
+    });
+  }
+  createForm() {
+    this.page.form = this._sharedService.formBuilder.group({
+      name: [this.item.name, Validators.required],
+      imeI1:[this.item.imeI1,[Validators.required ,Validators.pattern(/^\d{15}$/)]],
+      imeI2:[this.item.imeI2,[Validators.required,Validators.pattern(/^\d{15}$/)]],
+      mobileModel:[this.item.mobileModel,Validators.required],
+      number:[this.item.number,[Validators.required,Validators.pattern(/^(010|011|012|015)\d{8}$/)]],
+      serialNumber:[this.item.serialNumber,Validators.required],
+      brandId:[this.item.brandId,Validators.required],
+      clientId:[this.item.clientId,Validators.required],
+      dateOfPurchase:[this.item.dateOfPurchase,Validators.required]
+    });
+    this.page.isPageLoaded = true;
+  }
+
+  Save() {
+    if (this.page.isSaving || this.page.form.invalid) return;
+    this.page.isSaving = true;
+    Object.assign(this.item, this.page.form.value);
+  //  this.item.isActive = this.isActivated;
+    //this.item.paths = this.getUploadedImages();  
+
+    //this.item.paths = this.getUploadedImages();
+    // this.item.paths = this.images
+    //    .filter((image) => image.uploaded)
+    //    .map((image) => image.src);
+    //this.item.paths = this.images.filter((image) => image.uploaded).map((image) => image.src);
+  
+
+    this._mobileService.postOrUpdate(this.item).subscribe({
+      next: (res) => {
+        this.page.isSaving = false;
+        this.page.responseViewModel = res;
+        this._sharedService.showToastr(res);
+        if (res.isSuccess) {
+          this._router.navigate(['/sites/category']);
+        }
+      },
+      error: (err) => {
+        this._sharedService.showToastr(err);
+        this.page.isSaving = false;
+      },
+    });
+  }
+
+  switchTab(tabID: number) {
+    this.selectedTab = tabID;
+    this.Tabs.forEach((item) => {
+      item.isSelected = item.ID === tabID;
+    });
+  }
+
+  getSelectedTab() {
+    return this.Tabs.find((item) => item.isSelected);
+  }
+  onCancel(): void {
+    this._router.navigate(['/sites/category']);
+  }
+
+  onReset() {
+    this.page.form.reset();
+    this.isActivated = false;
+  }
+
+  onSelectBrand() {
+    forkJoin([this._mobileService.getBrands()]).subscribe((res) => {
+      const BrandResponse = res[0];
+      if (BrandResponse.isSuccess) {
+        this.Brandslist = BrandResponse.data;
+        this.createForm();
+      }
+    });
+  }
+  ngOnDestroy(): void { }
+  onImageUpload(files, index: number): void {
+    if (files.length === 0) {
+      return;
+    }
+  
+    const file = <File>files[0];
+    const formData = new FormData();
+    formData.append('Files', file, file.name);  // Use 'Files' as the field name if required by backend
+    console.log(formData);
+  
+    // Call the service to upload the image, passing the FormData directly
+    this._mobileService.uploadImage(formData).subscribe({
+      next: (res) => {
+        if (res.isSuccess) {
+          console.log(res);
+          //this.images[index] = { uploaded: true, src: res.data.path[index] };
+          this.images[index] = { uploaded: true, src: res.data.path[index]};
+
+          this._sharedService.showToastr(res);
+          this.addImageBox();
+        }
+      },
+      error: (err) => {
+        this._sharedService.showToastr(err);
+      },
+    });
+  }
+  
+  
+  addNewPhone()
+  {
+
+   this._router.navigateByUrl('/', { skipLocationChange: true }).then(() => {
+    this._router.navigate(['/sites/mobile/create']);
+  });
+  }
+  addImageBox() {
+    this.images.push({ uploaded: false, src: null });
+  }
+
+  getUploadedImages() {
+    return this.images.filter(image => image.uploaded).map(image => image.src);
+  }
 }
