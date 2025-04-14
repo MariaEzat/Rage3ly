@@ -1,93 +1,105 @@
 <div class="container py-4 px-3">
     <div class="card bg-Dark text-white p-4 shadow rounded-4">
-<div class="d-flex justify-content-between align-items-center py-2 ">
-    <!-- <img src="../../../../../../assets/icons/keyboard_backspace.png"
+        <div class="d-flex justify-content-between align-items-center py-2 ">
+            <!-- <img src="../../../../../../assets/icons/keyboard_backspace.png"
             class="pointer text-white" style="width: 24px; height: 24px;" routerLink="/sites/ads"> -->
-    <a class="mb-0 color-gray-600 ts-3 text-white">
-        {{(page.isEdit?'shared.edit':'shared.create')|translate}} {{"sites.advertisment.advertisment"|translate}}</a>
-    <button class=" py-2 px-4 color-gray-25 no-border cr3 btn-primary" (click)="Save()"
-        [disabled]="!page.isEdit ? (page.form?.invalid || page.isSaving || !validateImages()) : false">
-        <span class="rb-btn-text">{{ (page.isEdit ? 'shared.edit' : 'shared.create') | translate }}</span>
-    </button>
+            <a class="mb-0 color-gray-600 ts-3 text-white">
+                {{(page.isEdit?'shared.edit':'shared.create')|translate}}
+                {{"sites.advertisment.advertisment"|translate}}</a>
+            <button class=" py-2 px-4 color-gray-25 no-border cr3 btn-primary" (click)="Save()"
+                [disabled]="!page.isEdit ? (page.form?.invalid || page.isSaving || !validateImages()) : false">
+                <span class="rb-btn-text">{{ (page.isEdit ? 'shared.edit' : 'shared.create') | translate }}</span>
+            </button>
 
-</div>
-<hr />
-<div class="d-flex justify-content-end align-items-start ">
-    <p-inputSwitch [(ngModel)]="isActivated"></p-inputSwitch>
-    <label class="ms-2 text-white">{{"sites.advertisment.activateAd"|translate}}</label>
-</div>
-
-<ng-container *ngIf="page.isPageLoaded">
-    <form [formGroup]="page.form">
-        <div class="row d-flex align-items-center g-3">
-
-            <div class="col-6 text-white mb-1 ">
-                <ng-control [form]="page.form" control="title" placeholder="sites.advertisment.name" label="sites.advertisment.name"
-                    class="form-control-lg border-light rounded-3 " [inputClass]="'mb-2 bg-Dark border-color color-color-gray-300'"
-                    [labelClass]="page.form.get('title')?.invalid && (page.form.get('title')?.touched || page.form.get('title')?.dirty) ? 'form-control-with-validate' : 'form-control-no-validate'"></ng-control>
-            </div>
-
-            <div class="col-6 mb-1">
-                <ng-control [form]="page.form" control="startDate" label="sites.advertisment.startDate"   [inputClass]="'mb-2 bg-Dark border-color color-color-gray-300'"
-                [labelClass]="page.form.get('startDate')?.invalid && (page.form.get('startDate')?.touched || page.form.get('startDate')?.dirty) ? 'form-control-with-validate' : 'form-control-no-validate'" [minDate]=" page.form.get('startDate').value" [type]="page.ControlType.INPUT_DATE"
-                    (change)="onChangeStartDate($event)"></ng-control>
-                <div *ngIf="page.form.get('startDate')?.errors?.pastDate" class="text-danger extra-small mt-1">
-                    {{ page.form.get('startDate')?.errors?.pastDate }}
-                </div>
-            </div>
-
-            <div class="col-6 mb-1">
-                <ng-control [form]="page.form" control="endDate" label="sites.advertisment.endDate" [type]="page.ControlType.INPUT_DATE"
-                [inputClass]="'mb-2 bg-Dark border-color color-color-gray-300'"
-                [labelClass]="page.form.get('endDate')?.invalid && (page.form.get('endDate')?.touched || page.form.get('endDate')?.dirty) ? 'form-control-with-validate' : 'form-control-no-validate'" [minDate]=" page.form.get('startDate').value"
-                    [diasblePastDate]="true"></ng-control>
-                <div *ngIf="page.form.get('endDate')?.errors?.endDateBeforeStart" class="text-danger extra-small mt-1">
-                    {{ page.form.get('endDate')?.errors?.endDateBeforeStart }}
-                </div>
-            </div>
-
-            <div class="col-6 mb-1">
-                <ng-control [form]="page.form" control="hyperlink" placeholder="sites.advertisment.hyberLink" label="sites.advertisment.hyberLink"
-                    [labelClass]="page.form.get('hyperlink')?.invalid && (page.form.get('hyperlink')?.touched || page.form.get('hyperlink')?.dirty) ? 'form-control-with-validate' : 'form-control-no-validate'"></ng-control>
-            </div>
         </div>
-     
+        <hr />
+        <div class="d-flex justify-content-end align-items-start ">
+            <p-inputSwitch [(ngModel)]="isActivated"></p-inputSwitch>
+            <label class="ms-2 text-white">{{"sites.advertisment.activateAd"|translate}}</label>
+        </div>
 
+        <ng-container *ngIf="page.isPageLoaded">
+            <form [formGroup]="page.form">
+                <div class="row d-flex align-items-center g-3">
 
-        <div class="row it">
-            <div class="container py-5">
-                <div class="row g-4 justify-content-center">
-                    <div class="col-12 col-md-3 col-lg-3" *ngFor="let image of images; let i = index">
-                        <div class="border p-3 text-center h-100">
-                            <div *ngIf="image.uploaded; else uploadTemplate">
-                                <img [src]="environment.api+'/'+image.src" alt="Uploaded Image"
-                                    style="width: 200px; height: 200px;" class="img-fluid mb-2 img-thumbnail" />
+                    <div class="col-6 text-white mb-1 ">
+                        <ng-control [form]="page.form" control="title" placeholder="sites.advertisment.name"
+                            label="sites.advertisment.name" class="form-control-lg border-light rounded-3 "
+                            [inputClass]="'mb-2 bg-Dark border-color color-color-gray-300'"
+                            [labelClass]="page.form.get('title')?.invalid && (page.form.get('title')?.touched || page.form.get('title')?.dirty) ? 'form-control-with-validate' : 'form-control-no-validate'"></ng-control>
+                    </div>
 
-                                <div class="d-flex justify-content-center gap-2">
-                                    <button pButton class=" btn btn-delete ms-2" (click)="replaceImage(i)">
-                                        <img src="/assets/images/delete-white.svg" class="icon-size">
-                                    </button>
-                                </div>
-                            </div>
-                            <ng-template #uploadTemplate>
-                                <label for="fileInput-{{ i }}" class="text-primary cursor-pointer">
-                                    <i class="fa fa-upload fa-2x mb-2 color-brand-500"></i>
-                                    <p class="color-brand-500 text-white" *ngIf="!image.uploaded">{{"sites.advertisment.Upload New Image"|translate}}</p>
-                                    <p class="text-danger" *ngIf="image.error">{{"sites.advertisment.Error Uploading"|translate}}</p>
-                                </label>
-                                <input #file type="file" id="fileInput-{{ i }}" class="d-none"
-                                    (change)="onImageUpload(file.files, i)" />
-                            </ng-template>
-
+                    <div class="col-6 mb-1">
+                        <ng-control [form]="page.form" control="startDate" label="sites.advertisment.startDate"
+                            [inputClass]="'mb-2 bg-Dark border-color color-color-gray-300'"
+                            [labelClass]="page.form.get('startDate')?.invalid && (page.form.get('startDate')?.touched || page.form.get('startDate')?.dirty) ? 'form-control-with-validate' : 'form-control-no-validate'"
+                            [minDate]=" page.form.get('startDate').value" [type]="page.ControlType.INPUT_DATE"
+                            (change)="onChangeStartDate($event)" [diasblePastDate]="true"></ng-control>
+                        <div *ngIf="page.form.get('startDate')?.errors?.pastDate" class="text-danger extra-small mt-1">
+                            {{ page.form.get('startDate')?.errors?.pastDate }}
                         </div>
                     </div>
+
+                    <div class="col-6 mb-1">
+                        <ng-control [form]="page.form" control="endDate" label="sites.advertisment.endDate"
+                            [type]="page.ControlType.INPUT_DATE"
+                            [inputClass]="'mb-2 bg-Dark border-color color-color-gray-300'"
+                            [labelClass]="page.form.get('endDate')?.invalid && (page.form.get('endDate')?.touched || page.form.get('endDate')?.dirty) ? 'form-control-with-validate' : 'form-control-no-validate'"
+                            [minDate]="getMinEndDate()"
+                            [diasblePastDate]="true">
+                        </ng-control>
+                        <div *ngIf="page.form.get('endDate')?.errors?.endDateBeforeStart"
+                            class="text-danger extra-small mt-1">
+                            {{ page.form.get('endDate')?.errors?.endDateBeforeStart }}
+                        </div>
+                    </div>
+
+
+                    <div class="col-6 mb-1">
+                        <ng-control [form]="page.form" control="hyperlink" placeholder="sites.advertisment.hyberLink"
+                            label="sites.advertisment.hyberLink"
+                            [labelClass]="page.form.get('hyperlink')?.invalid && (page.form.get('hyperlink')?.touched || page.form.get('hyperlink')?.dirty) ? 'form-control-with-validate' : 'form-control-no-validate'"></ng-control>
+                    </div>
                 </div>
-            </div>
 
 
 
-        </div>
-    </form>
-</ng-container>
+                <div class="row it">
+                    <div class="container py-5">
+                        <div class="row g-4 justify-content-center">
+                            <div class="col-12 col-md-3 col-lg-3" *ngFor="let image of images; let i = index">
+                                <div class="border p-3 text-center h-100">
+                                    <div *ngIf="image.uploaded; else uploadTemplate">
+                                        <img [src]="environment.api+'/'+image.src" alt="Uploaded Image"
+                                            style="width: 200px; height: 200px;" class="img-fluid mb-2 img-thumbnail" />
+
+                                        <div class="d-flex justify-content-center gap-2">
+                                            <button pButton class=" btn btn-delete ms-2" (click)="replaceImage(i)">
+                                                <img src="/assets/images/delete-white.svg" class="icon-size">
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <ng-template #uploadTemplate>
+                                        <label for="fileInput-{{ i }}" class="text-primary cursor-pointer">
+                                            <i class="fa fa-upload fa-2x mb-2 color-brand-500"></i>
+                                            <p class="color-brand-500 text-white" *ngIf="!image.uploaded">
+                                                {{"sites.advertisment.Upload New Image"|translate}}</p>
+                                            <p class="text-danger" *ngIf="image.error">{{"sites.advertisment.Error
+                                                Uploading"|translate}}</p>
+                                        </label>
+                                        <input #file type="file" id="fileInput-{{ i }}" class="d-none"
+                                            (change)="onImageUpload(file.files, i)" />
+                                    </ng-template>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                </div>
+            </form>
+        </ng-container>
     </div>
 </div>

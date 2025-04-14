@@ -50,6 +50,7 @@ export class CreateComponent implements OnInit, OnDestroy {
       this.getEditableItem();
     } else {
       this.createForm();
+      this.onChangeStartDate(null);
     }
   }
   //Region:If Edit page
@@ -65,7 +66,7 @@ export class CreateComponent implements OnInit, OnDestroy {
         }
 
         this.createForm();
-
+        this.onChangeStartDate(null);
       }
     });
   }
@@ -80,8 +81,8 @@ export class CreateComponent implements OnInit, OnDestroy {
     today.setHours(0, 0, 0, 0);
     selectedDate.setHours(0, 0, 0, 0);
 
-    if (selectedDate < today) {
-      return { pastDate: 'Please select today or a future date.' };
+    if (selectedDate <= today) {
+      return { pastDate: 'Please select  future date.' };
     }
 
     return null;
@@ -89,19 +90,55 @@ export class CreateComponent implements OnInit, OnDestroy {
   endDateValidator(control: AbstractControl): ValidationErrors | null {
     const startDate = this.page.form?.get('startDate')?.value;
     const endDate = control.value;
-
+  
     if (startDate && endDate && new Date(endDate) <= new Date(startDate)) {
       return { endDateBeforeStart: 'End date must be after start date' };
     }
     return null;
   }
-
+  
+  onChangeStartDate(event: any): void {
+    const startDate = this.page.form?.get('startDate')?.value;
+    const endDateControl = this.page.form?.get('endDate');
+  
+    if (!startDate || !endDateControl) return;
+  
+    const endDate = endDateControl.value;
+  
+    // Reset time for accurate comparison
+    const start = new Date(startDate);
+    const end = new Date(endDate);
+    start.setHours(0, 0, 0, 0);
+    end.setHours(0, 0, 0, 0);
+  
+    if (start.getTime() === end.getTime()) {
+      endDateControl.disable(); // Disable endDate field
+    } else {
+      endDateControl.enable();  // Enable endDate field
+    }
+  
+    endDateControl.updateValueAndValidity();
+  }
+  
+  getMinEndDate(): Date {
+    const startDate = this.page.form?.get('startDate')?.value;
+    const minDate = startDate ? new Date(startDate) : new Date();
+  
+    // Always move +1 day to ensure even today is excluded
+    minDate.setDate(minDate.getDate() + 1);
+    return minDate;
+  }
+  
+  
   createForm() {
+    const tomorrow = new Date();
+    tomorrow.setDate(tomorrow.getDate() + 1); 
+    
     this.page.form = this._sharedService.formBuilder.group({
-      title: [this.item.title, [Validators.required, Validators.minLength(2), Validators.maxLength(200)]],
+      title: [this.item.title, [Validators.required, Validators.minLength(5), Validators.maxLength(200)]],
       hyperlink: [this.item.hyperlink],
       startDate: [
-        this.item.startDate || new Date(),
+        this.item.startDate || tomorrow,
         [
           Validators.required,
           this.validatePastDate

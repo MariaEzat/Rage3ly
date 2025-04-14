@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { jwtDecode } from 'jwt-decode';
+
 import { FormGroup, Validators } from '@angular/forms';
 import { AuthserviceService } from 'src/app/features/auth/service/authservice.service'; // Adjust the path as necessary
 import { LoginViewModel } from 'src/app/features/auth/interfaces/authviewmodel';
@@ -31,28 +33,66 @@ export class LoginComponent implements OnInit {
       password: ['', Validators.required],
     });
   }
+  // onSubmit(): void {
+  //   if (!this.loginForm.valid ||this.isSubmitting) return;
+  //   this.isSubmitting=true;
+  //   const loginData: LoginViewModel = this.loginForm.value;
+  //   this.authService.setLogin(loginData).subscribe({
+  //     next: (response) => {
+  //       this._sharedService.showToastr(response);
+  //          this.isSubmitting=false
+
+  //       localStorage.setItem('token', response.data.token);
+  //       this._router.navigate(['/sites/company'], {
+  //         queryParams: { source: 'login'},
+  //       });
+
+  //       this.isSubmitting=false
+  //     },
+  //     error: (error) => {
+  //       this._sharedService.showToastr(error);
+  //       this.isSubmitting=false
+  //     },
+  //   });
+  // }
   onSubmit(): void {
-    if (!this.loginForm.valid ||this.isSubmitting) return;
-    this.isSubmitting=true;
+    if (!this.loginForm.valid || this.isSubmitting) return;
+    this.isSubmitting = true;
+  
     const loginData: LoginViewModel = this.loginForm.value;
+  
     this.authService.setLogin(loginData).subscribe({
       next: (response) => {
         this._sharedService.showToastr(response);
-           this.isSubmitting=false
-
-        localStorage.setItem('token', response.data.token);
-        this._router.navigate(['/sites/company'], {
-          queryParams: { source: 'login'},
-        });
-
-        this.isSubmitting=false
+        this.isSubmitting = false;
+  
+        const token = response.data.token;
+        localStorage.setItem('token', token);
+  
+        const decodedToken: any = jwtDecode(token);
+        const roleId = decodedToken.RoleID;
+  
+        localStorage.setItem('roleId', roleId);
+  
+        
+        if (roleId === 'Admin') {
+          this._router.navigate(['/sites/customers'], {
+            queryParams: { source: 'login' },
+          });
+        } else if (roleId === 'Client') {
+          this._router.navigate(['/salesflow/order'], {
+            queryParams: { source: 'login' },
+          });
+        } 
       },
       error: (error) => {
         this._sharedService.showToastr(error);
-        this.isSubmitting=false
+        this.isSubmitting = false;
       },
     });
   }
+  
+  
   numberOnly(event: any) {
     return this._sharedService.numberOnly(event);
   }
