@@ -64,6 +64,7 @@ export class LoginComponent implements OnInit {
     this.authService.setLogin(loginData).subscribe({
       next: (response) => {
         this._sharedService.showToastr(response);
+
         this.isSubmitting = false;
   
         const token = response.data.token;
@@ -84,6 +85,7 @@ export class LoginComponent implements OnInit {
             queryParams: { source: 'login' },
           });
         } 
+
       },
       error: (error) => {
         this._sharedService.showToastr(error);

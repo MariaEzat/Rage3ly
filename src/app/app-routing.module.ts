@@ -6,7 +6,7 @@ import { CommonModule } from '@angular/common';
 import { SharedModule } from './shared/shared.module';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'home', pathMatch: 'full' },
+  { path: '', redirectTo: 'auth/login', pathMatch: 'full' },
   {
     path: 'home',
     loadChildren: () =>
