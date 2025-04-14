@@ -310,7 +310,16 @@
       "confirm": "تأكيد",
       "brand":"الماركة",
       "Phone added successfully":"تم اضافة الموبايل بنجاح",
-      "Add new phone":"اضافة موبايل"
+      "Add new phone":"اضافة موبايل",
+      "UserLogin":"تسجيل دخول المستخدم",
+      "AddPhoneData":"اضافة بيانات الهاتف",
+      "PhoneConfirmation":"تأكيد الهاتف",
+      "name":"اسم الموبايل",
+      "number":"رقم الموبايل",
+      "ImeI1":"ImeI1",
+      "ImeI2":"ImeI1",
+      "serialNumber":"رقم سري",
+      "dateOfPurchase":"تاريخ الشراء"
     }
   },
   "salesflow": {

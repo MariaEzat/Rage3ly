@@ -320,7 +320,16 @@
       "confirm": "Confirm",
       "brand":"Brand",
       "Phone added successfully":"Phone added successfully",
-      "Add new phone":"اضافة موبايل "
+      "Add new phone":"Add new phone",
+      "UserLogin":"User Login",
+      "AddPhoneData":"Add Phone Data",
+      "PhoneConfirmation":"Phone Confirmation",
+      "name":"Name",
+      "number":"Number",
+      "ImeI1":"ImeI1",
+      "ImeI2":"ImeI1",
+      "serialNumber":"Serial Number",
+      "dateOfPurchase":"Date Of Purchase"
 
     }
   },

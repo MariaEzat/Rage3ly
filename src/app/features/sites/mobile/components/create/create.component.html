@@ -43,17 +43,17 @@
                         <div class="row g-3">
                             <div class="col-md-6">
                                 <ng-control [form]="page.form" control="name" 
-                                            label="Name" 
-                                            placeholder="Name"
+                                            label="sites.mobile.name" 
+                                            placeholder="sites.mobile.name"
                                             [inputClass]="'mb-2 bg-Dark border-color color-color-gray-300'"
                                             [labelClass]="page.form.get('name')?.invalid && (page.form.get('name')?.touched || page.form.get('name')?.dirty) ? 'form-control-with-validate' : 'form-control-no-validate'"></ng-control>
                               </div>
 
                               <div class="col-md-6">
                                 <ng-control [form]="page.form" control="number" 
-                                            label="Number" 
+                                            label="sites.mobile.number" 
                                             (keypress)="numberOnly($event)"
-                                            placeholder="Number"
+                                            placeholder="sites.mobile.number"
                                             [inputClass]="'mb-2 bg-Dark border-color color-color-gray-300'"
                                             [labelClass]="page.form.get('number')?.invalid && (page.form.get('number')?.touched || page.form.get('number')?.dirty) ? 'form-control-with-validate' : 'form-control-no-validate'"></ng-control>
                               </div>
@@ -68,8 +68,8 @@
                         <div class="row g-3">
                         <div class="col-md-6">
                             <ng-control [form]="page.form" control="imeI1" 
-                                        label="ImeI1" 
-                                        placeholder="ImeI1"
+                                        label="sites.mobile.ImeI1" 
+                                        placeholder="sites.mobile.ImeI1"
                                         (keypress)="numberOnly($event)"
                                         [inputClass]="'mb-2 bg-Dark border-color color-color-gray-300'"
                                         [labelClass]="page.form.get('imeI1')?.invalid && (page.form.get('imeI1')?.touched || page.form.get('imeI1')?.dirty) ? 'form-control-with-validate' : 'form-control-no-validate'"></ng-control>
@@ -77,8 +77,8 @@
 
                           <div class="col-md-6">
                             <ng-control [form]="page.form" control="imeI2" 
-                                        label="ImeI2" 
-                                        placeholder="ImeI2"
+                                        label="sites.mobile.ImeI2" 
+                                        placeholder="sites.mobile.ImeI2"
                                         (keypress)="numberOnly($event)"
                                         [inputClass]="'mb-2 bg-Dark border-color color-color-gray-300'"
                                         [labelClass]="page.form.get('imeI2')?.invalid && (page.form.get('imeI2')?.touched || page.form.get('imeI2')?.dirty) ? 'form-control-with-validate' : 'form-control-no-validate'"></ng-control>
@@ -87,16 +87,16 @@
                         <div class="row g-3">
                             <div class="col-md-6">
                                 <ng-control [form]="page.form" control="serialNumber" 
-                                            label="Serial Number" 
-                                            placeholder="Serial Number"
+                                            label="sites.mobile.serialNumber" 
+                                            placeholder="sites.mobile.serialNumber"
                                             (keypress)="numberOnly($event)"
                                             [inputClass]="'mb-2 bg-Dark border-color color-color-gray-300'"
                                             [labelClass]="page.form.get('serialNumber')?.invalid && (page.form.get('serialNumber')?.touched || page.form.get('serialNumber')?.dirty) ? 'form-control-with-validate' : 'form-control-no-validate'"></ng-control>
                               </div>
                               <div class="col-md-6">
                                 <ng-control [form]="page.form" control="mobileModel" 
-                                            label="Mobile Model" 
-                                            placeholder="Mobile Model"
+                                            label="sites.mobile.mobileModel" 
+                                            placeholder="sites.mobile.mobileModel"
                                             [inputClass]="'mb-2 bg-Dark border-color color-color-gray-300'"
                                             [labelClass]="page.form.get('mobileModel')?.invalid && (page.form.get('mobileModel')?.touched || page.form.get('mobileModel')?.dirty) ? 'form-control-with-validate' : 'form-control-no-validate'"></ng-control>
                               </div>
@@ -124,7 +124,7 @@
                             </div>
                         
                             <div class="col-md-6">
-                                <ng-control [form]="page.form" control="dateOfPurchase" label="Date Of Purchase"
+                                <ng-control [form]="page.form" control="dateOfPurchase" label="sites.mobile.dateOfPurchase"
                                     [inputClass]="'mb-2 bg-Dark border-color color-color-gray-300'"
                                     [labelClass]="page.form.get('dateOfPurchase')?.invalid && (page.form.get('dateOfPurchase')?.touched || page.form.get('dateOfPurchase')?.dirty) ? 'form-control-with-validate' : 'form-control-no-validate'"
                                     [type]="page.ControlType.INPUT_DATE">
