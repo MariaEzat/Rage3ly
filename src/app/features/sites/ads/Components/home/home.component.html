@@ -10,16 +10,16 @@
         <form [formGroup]="page.searchForm">
           <div class="form-body">
             <div class="row g-2">
-              <div class="col-3">
+              <div class="col-2">
                 <ng-control [form]="page.searchForm" control="Title" [inputClass]="'bg-Dark border-color'"
                   [labelClass]="'text-white'" label="sites.advertisment.name" placeholder="sites.advertisment.name">
                 </ng-control>
               </div>
-              <div class="col-3">
+              <div class="col-2">
                 <ng-control [form]="page.searchForm" control="StartDate" label="sites.advertisment.startDate" [inputClass]="'bg-Dark  border-color'"
                   [labelClass]="'text-white'" [type]="page.ControlType.INPUT_DATE"></ng-control>
               </div>
-              <div class="col-3">
+              <div class="col-2">
 
                 <ng-control [form]="page.searchForm" control="EndDate" label="sites.advertisment.endDate" [inputClass]="'bg-Dark border-color'" 
                   [labelClass]="'color-gray-300'" [type]="page.ControlType.INPUT_DATE"></ng-control>

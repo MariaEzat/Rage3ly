@@ -41,7 +41,7 @@ export class LoginComponent implements OnInit {
            this.isSubmitting=false
 
         localStorage.setItem('token', response.data.token);
-        this._router.navigate(['/sites/company'], {
+        this._router.navigate(['/sites/ads'], {
           queryParams: { source: 'login'},
         });
 
