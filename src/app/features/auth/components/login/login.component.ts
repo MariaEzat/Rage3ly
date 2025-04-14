@@ -68,7 +68,7 @@ export class LoginComponent implements OnInit {
         this.isSubmitting = false;
   
         const token = response.data.token;
-        localStorage.setItem('token', token);
+        localStorage.setItem('eToken', token);
   
         const decodedToken: any = jwtDecode(token);
         const roleId = decodedToken.RoleID;
@@ -76,7 +76,7 @@ export class LoginComponent implements OnInit {
         localStorage.setItem('roleId', roleId);
   
         
-        if (roleId === 'Admin') {
+        if (roleId === 'Admin' ||'SuperAdmin') {
           this._router.navigate(['/sites/customers'], {
             queryParams: { source: 'login' },
           });
