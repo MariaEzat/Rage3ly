@@ -217,7 +217,9 @@
       "enterThePhoneNumberandPassword": "ادخل رقم التليفون و كلمة المرور",
       "phoneNumber": "رقم التليفون",
       "password": "كلمة المرور",
-      "forgotPassword?": "هل نسيت كلمة المرور؟"
+      "forgotPassword?": "هل نسيت كلمة المرور؟",
+      "haveNotAnAccount?": "هل ليس لديك حساب ؟",
+      "signUp":"انشاء حساب"
     },
     "register": {
       "signUp": "انشاء حساب",
@@ -287,7 +289,6 @@
       "Passwords do not match": "كلمات المرور غير متطابقة",
       "cancel": "الغاء",
       "noEmployees": "لا يوجد موظفين",
-      "cancel": "الغاء",
       "confirm": "تأكيد"
     },
     "layout": {

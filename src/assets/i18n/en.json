@@ -227,7 +227,10 @@
       "enterThePhoneNumberandPassword": "Enter The Phone Number and Password",
       "phoneNumber": "Phone Number",
       "password": "Password",
-      "forgotPassword?": "Forgot Password ?"
+      "forgotPassword?": "Forgot Password ?",
+      "haveNotAnAccount?": "Don't have an account?",
+      "signUp":"Sign Up"
+
     },
     "register": {
       "signUp": "Sign Up",
@@ -318,19 +321,18 @@
       "Are you sure you want to delete the selected Mobiles": "Are you sure you want to delete the selected Mobiles?",
       "cancel": "Cancel",
       "confirm": "Confirm",
-      "brand":"Brand",
-      "Phone added successfully":"Phone added successfully",
-      "Add new phone":"Add new phone",
-      "UserLogin":"User Login",
-      "AddPhoneData":"Add Phone Data",
-      "PhoneConfirmation":"Phone Confirmation",
-      "name":"Name",
-      "number":"Number",
-      "ImeI1":"ImeI1",
-      "ImeI2":"ImeI1",
-      "serialNumber":"Serial Number",
-      "dateOfPurchase":"Date Of Purchase"
-
+      "brand": "Brand",
+      "Phone added successfully": "Phone added successfully",
+      "Add new phone": "Add new phone",
+      "UserLogin": "User Login",
+      "AddPhoneData": "Add Phone Data",
+      "PhoneConfirmation": "Phone Confirmation",
+      "name": "Name",
+      "number": "Number",
+      "ImeI1": "ImeI1",
+      "ImeI2": "ImeI1",
+      "serialNumber": "Serial Number",
+      "dateOfPurchase": "Date Of Purchase"
     }
   },
   "salesflow": {
