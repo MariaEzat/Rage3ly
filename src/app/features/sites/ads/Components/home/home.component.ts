@@ -75,10 +75,15 @@ export class HomeComponent extends CrudIndexBaseUtils {
     Object.assign(this.searchViewModel, this.page.searchForm.value);
     console.log(this.searchViewModel)
     this._pageService.get(this.searchViewModel, this.page.orderBy, this.page.isAscending, this.page.options.currentPage, this.page.options.itemsPerPage).subscribe(response => {
-      this.page.isSearching = false;
+      console.log(response)
 
+      this.page.isSearching = false;
+      if( response.message = "Unauthorize Access "){
+        this._router.navigate(['/auth/login'])
+       }
 
       if (response.isSuccess) {
+        
         console.log(response)
         this.page.isAllSelected = false;
         this.confingPagination(response)

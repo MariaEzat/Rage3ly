@@ -16,20 +16,20 @@ import { NgControlComponent } from "../../../../shared/components/ng-control/ng-
 })
 export class LoginComponent implements OnInit {
   loginForm: FormGroup;
-  isSubmitting=false;
+  isSubmitting = false;
   controlType = ControlType;
   constructor(
     private authService: AuthserviceService,
     private _sharedService: SharedService,
     private _router: Router
-  ) {}
+  ) { }
 
   ngOnInit(): void {
     this.initializeForm();
   }
   initializeForm(): void {
     this.loginForm = this._sharedService.formBuilder.group({
-      mobile: ['', [Validators.required , Validators.pattern(/^(010|011|012|015)\d{8}$/)]],
+      mobile: ['', [Validators.required, Validators.pattern(/^(010|011|012|015)\d{8}$/)]],
       password: ['', Validators.required],
     });
   }
@@ -58,25 +58,28 @@ export class LoginComponent implements OnInit {
   onSubmit(): void {
     if (!this.loginForm.valid || this.isSubmitting) return;
     this.isSubmitting = true;
-  
+
     const loginData: LoginViewModel = this.loginForm.value;
-  
+
     this.authService.setLogin(loginData).subscribe({
       next: (response) => {
         this._sharedService.showToastr(response);
+       if( response.data.message = "Unauthorize Access "){
+        this._router.navigate(['/auth/login'])
 
+       }
         this.isSubmitting = false;
-  
+
         const token = response.data.token;
         localStorage.setItem('eToken', token);
-  
+
         const decodedToken: any = jwtDecode(token);
         const roleId = decodedToken.RoleID;
-  
+
         localStorage.setItem('roleId', roleId);
-  
-        
-        if (roleId === 'Admin' ||'SuperAdmin') {
+
+
+        if (roleId === 'Admin' || 'SuperAdmin') {
           this._router.navigate(['/sites/customers'], {
             queryParams: { source: 'login' },
           });
@@ -84,7 +87,7 @@ export class LoginComponent implements OnInit {
           this._router.navigate(['/salesflow/order'], {
             queryParams: { source: 'login' },
           });
-        } 
+        }
 
       },
       error: (error) => {
@@ -93,8 +96,8 @@ export class LoginComponent implements OnInit {
       },
     });
   }
-  
-  
+
+
   numberOnly(event: any) {
     return this._sharedService.numberOnly(event);
   }
