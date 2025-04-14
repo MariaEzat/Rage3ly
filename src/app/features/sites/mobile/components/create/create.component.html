@@ -4,10 +4,10 @@
 
             <!-- <img src="/assets/icons/keyboard_backspace.svg" class="pointer"
         routerLink="/sites/product"> -->
-            <p class="mb-0 text-white ts-3"> {{(page.isEdit?'shared.edit':'shared.create')|translate}} Mobile</p>
+            <p class="mb-0 text-white ts-3"> {{(page.isEdit?'shared.edit':'shared.create')|translate}} {{"sites.mobile.mobile"|translate}}</p>
             <div class="d-flex justify-content-end gap-0">
                 <button type="button" class=" py-2 m-1 px-4  cr3 btn-orange-border btn-primary "
-                    (click)="onCancel()">Cancel</button>
+                    (click)="onCancel()">{{"sites.mobile.cancel"|translate}}</button>
                 <!-- <button type="button" class="bg-brand-50 py-2 px-4 color-brand-500 no-border cr3 mx-1"
         (click)="onReset()">Reset</button> -->
                 <button class="btn btn-primary py-2 px-4 m-1 no-border cr3" (click)="Save()"
@@ -115,10 +115,10 @@
                               </div> -->
                             <div class="col-md-6">
                                 <label [class.text-danger]="page.form.get('brandId')?.invalid && (page.form.get('brandId')?.dirty || page.form.get('brandId')?.touched)">
-                                    Brand
+                                    {{"sites.mobile.brand"|translate}}
                                 </label>
                                 <select formControlName="brandId" class="form-control mb-2 text-sm bg-Dark border-color color-color-gray-300">
-                                    <option value="" disabled selected>Select Brand</option>
+                                    <option value="" disabled selected> {{"sites.mobile.brand"|translate}}</option>
                                     <option *ngFor="let brand of Brandslist" [value]="brand.id">{{ brand.name }}</option>
                                 </select>
                             </div>
@@ -164,8 +164,8 @@
                             <div class="d-flex justify-content-center align-items-center mb-3">
                               <img src="../../../../../../assets/images/add-circle-half-dot.png" alt="Success Icon" style="width: 50px; height: 50px;" />
                             </div>
-                            <p class="text-white fs-6 mb-4">Phone added successfully</p>
-                            <button type="button" class="btn btn-primary px-5 py-2 rounded-pill text-white" (click)="addNewPhone()">Add new phone</button>
+                            <p class="text-white fs-6 mb-4">{{"sites.mobile.Phone added successfully"|translate}}</p>
+                            <button type="button" class="btn btn-primary px-5 py-2 rounded-pill text-white" (click)="addNewPhone()">{{"sites.mobile.Add new phone"|translate}}</button>
                           </div>
                 </div>
 

@@ -241,13 +241,13 @@
       "haveAnAccount?": "Have An Account?",
       "login": "Login"
     },
-    "otp":{
-      "OTP":"OTP",
-      "Please verify your OTP.":"Please verify your OTP.",
-      "verifyOTP":"Verif OTP",
-      "resendOTP":"Resend OTP",
-      "resendIn":"Resend In",
-      "second":"second"
+    "otp": {
+      "OTP": "OTP",
+      "Please verify your OTP.": "Please verify your OTP.",
+      "verifyOTP": "Verif OTP",
+      "resendOTP": "Resend OTP",
+      "resendIn": "Resend In",
+      "second": "second"
     }
   },
   "sites": {
@@ -270,12 +270,10 @@
       "hyberLink": "Hyber Link",
       "Upload New Image": "Upload New Image",
       "Error Uploading": "Error Uploading",
-      "noAdvertisments":"No Advertisments",
-      "Are you sure you want to delete the selected ads?":"Are you sure you want to delete the selected ads?",
-      "cancel":"Cancel",
-     "confirm":"Confirm"
-
-
+      "noAdvertisments": "No Advertisments",
+      "Are you sure you want to delete the selected ads?": "Are you sure you want to delete the selected ads?",
+      "cancel": "Cancel",
+      "confirm": "Confirm"
     },
     "employee": {
       "employee": "employee",
@@ -298,20 +296,37 @@
       "changePassword": "Change Password",
       "Passwords do not match": "Passwords do not match",
       "cancel": "Cancel",
-      "noEmployees":"No Employees",
-      "cancel":"Cancel",
-      "confirm":"Confirm"
+      "noEmployees": "No Employees",
+      "cancel": "Cancel",
+      "confirm": "Confirm"
     },
     "layout": {
       "adverdisments": "Adverdisments",
       "clients": "Clients",
       "users": "Users",
-      "mobile":"Mobile"
+      "mobile": "Mobile"
+    },
+    "mobile": {
+      "userName": "User Name",
+      "mobileModel": " Mobile Model",
+      "phoneStatus": "Phone Status",
+      "action": "Action",
+      "Search of Mobile": "Search of Mobile",
+      "ClientEmail": "ClientEmail",
+      "mobile": "Mobile",
+      "No Phones": "No Phones",
+      "Are you sure you want to delete the selected Mobiles": "Are you sure you want to delete the selected Mobiles?",
+      "cancel": "Cancel",
+      "confirm": "Confirm",
+      "brand":"Brand",
+      "Phone added successfully":"Phone added successfully",
+      "Add new phone":"اضافة موبايل "
+
     }
   },
   "salesflow": {
     "Customers": {
-      "customer":"Customer",
+      "customer": "Customer",
       "searchofCustomers": "Search of Customers",
       "customers": "Customers",
       "activation": "Activation",
@@ -332,10 +347,8 @@
       "cancel": "Cancel",
       "Upload New Image": "Upload New Image",
       "Error Uploading": "Error Uploading",
-      "addMobile":"Add Mobile",
-      "noClients":"No Clients"
-
-
+      "addMobile": "Add Mobile",
+      "noClients": "No Clients"
     }
   }
 }

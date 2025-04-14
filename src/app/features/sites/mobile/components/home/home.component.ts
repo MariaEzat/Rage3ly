@@ -73,12 +73,12 @@ export class HomeComponent extends CrudIndexBaseUtils {
     this.page.columns = [
 
       { Name: 'No', Title: '#', Selectable: true, Sortable: false },
-      { Name: 'User Name', Title: 'User Name', Selectable: false, Sortable: true },
-      { Name: 'Mobile Model', Title: 'Mobile Model', Selectable: false, Sortable: true },
+      { Name: 'User Name', Title: 'sites.mobile.userName', Selectable: false, Sortable: true },
+      { Name: 'Mobile Model', Title: 'sites.mobile.mobileModel', Selectable: false, Sortable: true },
       { Name: 'IMEI1', Title: 'IMEI1', Selectable: false, Sortable: true },
       { Name: 'IMEI2', Title: 'IMEI2', Selectable: false, Sortable: true },
-      { Name: 'Phone Status', Title: 'Phone Status', Selectable: false, Sortable: true },
-      { Name: 'Action', Title: 'salesflow.Customers.action', Selectable: false, Sortable: true },
+      { Name: 'Phone Status', Title: 'sites.mobile.phoneStatus', Selectable: false, Sortable: true },
+      { Name: 'Action', Title: 'sites.mobile.action', Selectable: false, Sortable: true },
 
          
     ];

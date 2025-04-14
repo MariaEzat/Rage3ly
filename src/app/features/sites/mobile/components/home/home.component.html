@@ -5,22 +5,22 @@
 
       <!-- Search Card -->
       <div class="card p-4 mb-4" style="background-color: #1A1F3766;">
-        <h5 class="mb-3 text-white">Search of Mobile </h5>
+        <h5 class="mb-3 text-white">{{"sites.mobile.Search of Mobile"|translate}} </h5>
         <form [formGroup]="page.searchForm">
           <div class="form-body">
             <div class="row g-2">
               <div class="col-4">
                 <ng-control [form]="page.searchForm" control="SearchText" [inputClass]="'bg-Dark border-color'"
-                  [labelClass]="'text-white'" label="UserName, ClientEmail, IMEI1 or IMEI2"
-                  placeholder="UserName, ClientEmail, IMEI1 or IMEI2">
+                  [labelClass]="'text-white'" [label]="( 'sites.mobile.userName' |translate ) + ', ' + 
+           ( 'sites.mobile.ClientEmail' |translate  ) + ', IMEI1 or IMEI2'" [placeholder]="( 'sites.mobile.userName'|translate ) + ', ' + 
+                  ( 'sites.mobile.ClientEmail'|translate  ) + ', IMEI1 or IMEI2'">
                 </ng-control>
               </div>
-              
+
               <div class="col-4">
                 <ng-control [type]="controlType.SELECT" [form]="page.searchForm" control="PhoneStatus"
-                  [inputClass]="'bg-Dark border-color text-white'" [labelClass]="'text-white'"
-                  label="phoneStatus" placeholder="phoneStatus"
-                  [items]="PhoneStatus">
+                  [inputClass]="'bg-Dark border-color text-white'" [labelClass]="'text-white'" label="sites.mobile.phoneStatus"
+                  placeholder="sites.mobile.phoneStatus" [items]="PhoneStatus">
                 </ng-control>
               </div>
 
@@ -49,7 +49,7 @@
       <div class="card p-4 border-0 shadow-sm rounded-3" style="background-color: #1A1F3766;">
         <!-- Header -->
         <div class="d-flex justify-content-between align-items-center mb-3">
-          <h5 class="text-white">Mobile </h5>
+          <h5 class="text-white">{{"sites.mobile.mobile"|translate}} </h5>
           <div class="d-flex">
             <!-- <div class="position-relative">
               <button #downloadButton class="btn btn-primary me-2"
@@ -61,9 +61,10 @@
               </div>
             </div> -->
 
-            
 
-            <button class="btn btn-primary me-2" (click)="deleteSelectedPhones()">{{"sites.advertisment.delete"|translate}}</button>
+
+            <button class="btn btn-primary me-2"
+              (click)="deleteSelectedPhones()">{{"sites.advertisment.delete"|translate}}</button>
 
 
           </div>
@@ -91,7 +92,7 @@
             </thead>
             <tbody>
               <tr *ngIf="items.length === 0">
-                <td colspan="100%"> No Phones </td>
+                <td colspan="100%"> {{"sites.mobile.No Phones"|translate}} </td>
               </tr>
               <tr *ngFor="let item of items | paginate: page.options; let i = index">
                 <td><input type="checkbox" [(ngModel)]="item.selected" /></td>
@@ -106,14 +107,13 @@
                 <td>{{ getPhoneStatusName(item.phoneStatus) }}</td>
 
                 <td>
-                  <button pButton icon="pi pi-trash"
-                  class="p-button-rounded p-button-text p-button-danger p-0 pointer" aria-label="Delete"
-                  (click)="showDeleteConfirmation(item)">
-              </button>
+                  <button pButton icon="pi pi-trash" class="p-button-rounded p-button-text p-button-danger p-0 pointer"
+                    aria-label="Delete" (click)="showDeleteConfirmation(item)">
+                  </button>
                   <button pButton icon="pi pi-pencil" class="p-button-rounded p-button-text p-button-info"
                     aria-label="Edit" (click)="editPhone(item.id)">
                   </button>
-                  
+
 
                 </td>
               </tr>
@@ -141,8 +141,8 @@
         <strong *ngIf="selectedItem">{{ selectedItem.Name }}</strong>
       </p>
       <div class="d-flex mt-4">
-        <button type="button" class="btn btn-secondary me-auto" (click)="modalRef.hide()">Cancel</button>
-        <button type="button" class="btn btn-danger ms-2" (click)="remove(); modalRef.hide()">Confirm</button>
+        <button type="button" class="btn btn-secondary me-auto" (click)="modalRef.hide()">{{"sites.mobile.cancel"|translate}}</button>
+        <button type="button" class="btn btn-danger ms-2" (click)="remove(); modalRef.hide()">{{"sites.mobile.confirm"|translate}}</button>
       </div>
     </div>
   </div>
@@ -153,13 +153,13 @@
 
 <ng-template #confirmDeleteTemplates>
   <div class="modal-content bg-Dark text-white border border-secondary p-4 rounded">
-  <div class="modal-body">
-    <p  class="modal-confirm-content mb-2">Are you sure you want to delete the selected mobiles?</p>
-    <div class="d-flex mt-4">
-      <button class="btn btn-secondary me-auto" (click)="modalRef.hide()">Cancel</button>
-      <button class="btn btn-danger ms-2" (click)="modalRef.content.onConfirm(); modalRef.hide()">Confirm</button>
+    <div class="modal-body">
+      <p class="modal-confirm-content mb-2">{{"sites.mobile.Are you sure you want to delete the selected Mobiles?"|translate}}</p>
+      <div class="d-flex mt-4">
+        <button class="btn btn-secondary me-auto" (click)="modalRef.hide()">{{"sites.mobile.cancel"|translate}}</button>
+        <button class="btn btn-danger ms-2" (click)="modalRef.content.onConfirm(); modalRef.hide()">{{"sites.mobile.confirm"|translate}}</button>
+      </div>
     </div>
   </div>
-</div>
-  
+
 </ng-template>

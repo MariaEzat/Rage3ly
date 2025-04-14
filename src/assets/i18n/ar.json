@@ -231,13 +231,13 @@
       "haveAnAccount?": "هل لديك حساب ؟",
       "login": "تسجيل دخول"
     },
-    "otp":{
-      "OTP":"OTP",
-      "Please verify your OTP.":"تحقق من رمز ال OTP",
-      "verifyOTP":"تحقق",
-      "resendOTP":"اعادة ارسال رمز OTP",
-      "resendIn":"اعادة الارسال خلال",
-      "second":"ثانية"
+    "otp": {
+      "OTP": "OTP",
+      "Please verify your OTP.": "تحقق من رمز ال OTP",
+      "verifyOTP": "تحقق",
+      "resendOTP": "اعادة ارسال رمز OTP",
+      "resendIn": "اعادة الارسال خلال",
+      "second": "ثانية"
     }
   },
   "sites": {
@@ -260,13 +260,11 @@
       "hyberLink": "الرابط",
       "Upload New Image": "رفع صورة جديدة",
       "Error Uploading": "خطأ في رفع الصورة",
-      "noAdvertisments":"لا توجد اعلانات",
-     "Are you sure you want to delete the selected ads?":"هل أنت متأكد من حذف الإعلانات المحددة؟",
-     "cancel":"الغاء",
-     "confirm":"تأكيد"
-
-
-        },
+      "noAdvertisments": "لا توجد اعلانات",
+      "Are you sure you want to delete the selected ads?": "هل أنت متأكد من حذف الإعلانات المحددة؟",
+      "cancel": "الغاء",
+      "confirm": "تأكيد"
+    },
     "employee": {
       "employee": "الموظف",
       "employees": "موظفين",
@@ -288,16 +286,31 @@
       "changePassword": "تغيير كلمة المرور",
       "Passwords do not match": "كلمات المرور غير متطابقة",
       "cancel": "الغاء",
-      "noEmployees":"لا يوجد موظفين",
-      "cancel":"الغاء",
-      "confirm":"تأكيد"
+      "noEmployees": "لا يوجد موظفين",
+      "cancel": "الغاء",
+      "confirm": "تأكيد"
     },
-    "layout":{
-      "adverdisments":"الاعلانات",
-      "clients":"العملاء",
-      "users":"المستخدمين",
-      "mobile":"الموبايل"
-
+    "layout": {
+      "adverdisments": "الاعلانات",
+      "clients": "العملاء",
+      "users": "المستخدمين",
+      "mobile": "الموبايل"
+    },
+    "mobile": {
+      "userName": "اسم المستخدم",
+      "mobileModel": "موديل الموبايل",
+      "phoneStatus": "حالة الموبايل",
+      "action": "الاجراءات",
+      "Search of Mobile": "بحث بالموبايل",
+      "ClientEmail": "ايميل العميل",
+      "mobile": "الموبايل",
+      "No Phones": "لا توجد موبايلات",
+      "Are you sure you want to delete the selected Mobiles?": "هل أنت متأكد من حذف الموبايلات المحددة؟",
+      "cancel": "الغاء",
+      "confirm": "تأكيد",
+      "brand":"الماركة",
+      "Phone added successfully":"تم اضافة الموبايل بنجاح",
+      "Add new phone":"اضافة موبايل"
     }
   },
   "salesflow": {
@@ -323,8 +336,8 @@
       "cancel": "الغاء",
       "Upload New Image": "رفع صورة جديدة",
       "Error Uploading": "خطأ في رفع الصورة",
-      "addMobile":"اضف رقم تليفون",
-      "noClients":"لا يوجد عملاء"
+      "addMobile": "اضف رقم تليفون",
+      "noClients": "لا يوجد عملاء"
     }
   }
 }

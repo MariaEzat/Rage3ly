@@ -32,6 +32,7 @@ const routes: Routes = [
     TableModule,
     SharedModule,
     ButtonModule,
+    TranslateModule,
     FormsModule,
     RouterModule.forChild(routes),
     ReactiveFormsModule,
