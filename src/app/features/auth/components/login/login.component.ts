@@ -118,8 +118,6 @@ export class LoginComponent implements OnInit {
         const roleId = decodedToken?.RoleID;
         localStorage.setItem('roleId', roleId);
   
-        
-  
         if (roleId === 'Admin' || roleId === 'SuperAdmin') {
           this._sharedService.showToastr(response);
 
