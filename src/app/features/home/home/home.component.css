@@ -21,5 +21,13 @@ body {
    body {
     overflow: auto; 
   }
-  
-  
+  .gradient-border
+  {
+  border-width: 5px; border-color:rgba(109, 40, 217, var(--tw-text-opacity)); border-style: solid !important
+
+  }
+
+  .border-thin{
+    border-width: 2px; border-color:rgba(109, 40, 217, var(--tw-text-opacity)); border-style: solid !important
+  }
+ 
