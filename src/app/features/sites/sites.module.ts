@@ -4,6 +4,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { LayoutComponent } from './layout/layout.component';
 import { TableSkeltonComponent } from 'src/app/shared/components/table-skelton/table-skelton.component';
+import { AuthGuard } from 'src/app/shared/guards/auth.guard';
 
 const routes: Routes = [
   {
@@ -35,11 +36,7 @@ const routes: Routes = [
         loadChildren: () =>
           import('./brand/brand.module').then((m) => m.BrandModule),
       },
-      {
-        path: 'discount',
-        loadChildren: () =>
-          import('./discount/discount.module').then((m) => m.DiscountModule),
-      },
+      
       {
         path: 'product',
         loadChildren: () =>
@@ -93,9 +90,10 @@ const routes: Routes = [
       },
       {
         path: 'ads',
+        canActivate: [AuthGuard],
         loadChildren: () =>
           import('../sites/ads/ads.module').then((m) => m.AdsModule),
-      },
+      },      
       {
         path: 'jobTitle',
         loadChildren: () =>

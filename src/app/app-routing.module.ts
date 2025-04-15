@@ -4,6 +4,8 @@ import { MainLayoutComponent } from './shared/components/main-layout/main-layout
 import { LayoutComponent } from './shared/components/layout/layout.component';
 import { CommonModule } from '@angular/common';
 import { SharedModule } from './shared/shared.module';
+import { NotfoundComponent } from './features/not-found/component/notfound/notfound.component';
+import { AuthGuard } from './shared/guards/auth.guard';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -34,6 +36,7 @@ const routes: Routes = [
   {
     path: 'sites',
     component: MainLayoutComponent,
+    canActivate: [AuthGuard],
     children: [
       {
         path: '',
@@ -42,6 +45,12 @@ const routes: Routes = [
       },
     ],
   },
+  {
+    path: '**',
+    component: NotfoundComponent,
+ 
+  },
+
   {
     path: 'salesflow',
     component: MainLayoutComponent,

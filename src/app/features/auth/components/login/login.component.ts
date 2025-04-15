@@ -55,6 +55,47 @@ export class LoginComponent implements OnInit {
   //     },
   //   });
   // }
+  // onSubmit(): void {
+  //   if (!this.loginForm.valid || this.isSubmitting) return;
+  //   this.isSubmitting = true;
+
+  //   const loginData: LoginViewModel = this.loginForm.value;
+
+  //   this.authService.setLogin(loginData).subscribe({
+  //     next: (response) => {
+
+  //       this._sharedService.showToastr(response);
+
+  //       this.isSubmitting = false;
+
+  //       const token = response.data.token;
+  //       localStorage.setItem('eToken', token);
+
+  //       const decodedToken: any = jwtDecode(token);
+  //       const roleId = decodedToken.RoleID;
+
+  //       localStorage.setItem('roleId', roleId);
+
+
+  //       if (roleId == 'Admin' || 'SuperAdmin') {
+  //         this._sharedService.showToastr(response);
+
+  //         this._router.navigate(['/sites/customers'], {
+  //           queryParams: { source: 'login' },
+
+  //         });
+  //       } else {
+  //         this._router.navigate(['/**'])
+
+  //       }
+
+  //     },
+  //     error: (error) => {
+  //       this._sharedService.showToastr(error);
+  //       this.isSubmitting = false;
+  //     },
+  //   });
+  // }
   onSubmit(): void {
     if (!this.loginForm.valid || this.isSubmitting) return;
     this.isSubmitting = true;
@@ -63,11 +104,8 @@ export class LoginComponent implements OnInit {
 
     this.authService.setLogin(loginData).subscribe({
       next: (response) => {
-        this._sharedService.showToastr(response);
-       if( response.data.message = "Unauthorize Access "){
-        this._router.navigate(['/auth/login'])
+        this._sharedService.showToastr(response)
 
-       }
         this.isSubmitting = false;
 
         const token = response.data.token;
@@ -75,23 +113,21 @@ export class LoginComponent implements OnInit {
 
         const decodedToken: any = jwtDecode(token);
         const roleId = decodedToken.RoleID;
-
         localStorage.setItem('roleId', roleId);
+    
 
+        if (roleId === 'Admin' || roleId === 'SuperAdmin') {
 
-        if (roleId === 'Admin' || 'SuperAdmin') {
           this._router.navigate(['/sites/customers'], {
             queryParams: { source: 'login' },
           });
-        } else if (roleId === 'Client') {
-          this._router.navigate(['/salesflow/order'], {
-            queryParams: { source: 'login' },
-          });
+        } else {
+          this._router.navigate(['/**']);
         }
 
       },
       error: (error) => {
-        this._sharedService.showToastr(error);
+        this._sharedService.showToastr(error)
         this.isSubmitting = false;
       },
     });
