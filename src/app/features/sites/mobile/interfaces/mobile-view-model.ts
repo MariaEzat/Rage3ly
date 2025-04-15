@@ -19,6 +19,7 @@ export class mobileCreateViewModel {
     brandId:string;
     clientId:string;
     dateOfPurchase:Date;
+    paths?:string[];
   }
 
 export class mobileSearchViewModel {
