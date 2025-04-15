@@ -307,7 +307,8 @@
       "adverdisments": "Adverdisments",
       "clients": "Clients",
       "users": "Users",
-      "mobile": "Mobile"
+      "mobile": "Mobile",
+      "signOut":"Sign Out"
     },
     "mobile": {
       "userName": "User Name",

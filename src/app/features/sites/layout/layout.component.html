@@ -48,10 +48,11 @@
       <a class="nav-link text-white py-2" href="#"><i class="bi bi-bell"></i> إشعارات</a> -->
     </div>
     <div class="mt-auto cr5 w-75 text-center bg-red-dark">
-      <button class="btn cr5 p-2 color-white w-100">
-        <img src="assets/images/elements.png" class="px-2"> تسجيل خروج
+      <button class="btn cr5 p-2 color-white w-100" (click)="logout()">
+        <img src="assets/images/elements.png" class="px-2">   {{ "sites.layout.signOut" | translate }}
       </button>
     </div>
+    
   </nav>
 
   <!-- Main Layout (Top Navbar + Page Content) -->

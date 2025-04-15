@@ -1,4 +1,5 @@
 import { Component, HostListener } from '@angular/core';
+import { Router } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 
 @Component({
@@ -8,6 +9,7 @@ import { TranslateService } from '@ngx-translate/core';
 })
 export class LayoutComponent {
   openDropdown: string | null = null;
+  constructor(private router: Router) {}
 
   toggleDropdown(menu: string) {
     this.openDropdown = this.openDropdown === menu ? null : menu;
@@ -19,5 +21,9 @@ export class LayoutComponent {
     if (!clickedElement.closest('.dropdown')) {
       this.openDropdown = null;
     }
+  }
+  logout() {
+    localStorage.clear(); // أو localStorage.removeItem('eToken');
+    this.router.navigate(['/auth/login']);
   }
 }

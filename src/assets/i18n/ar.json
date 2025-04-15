@@ -295,7 +295,8 @@
       "adverdisments": "الاعلانات",
       "clients": "العملاء",
       "users": "المستخدمين",
-      "mobile": "الموبايل"
+      "mobile": "الموبايل",
+      "signOut":"تسجيل خروج"
     },
     "mobile": {
       "userName": "اسم المستخدم",
