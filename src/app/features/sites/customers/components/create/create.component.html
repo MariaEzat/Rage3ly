@@ -66,24 +66,12 @@
           placeholder="*******" [type]="controlType.PASSWORD" (blur)="confirmPassword()"></ng-control>
         <p class="text text-danger font-12" *ngIf="!isEqualPassword">{{"salesflow.Customers.Passwords do not match"|translate}}</p>
       </div>
-      <!-- <div class="col-4" *ngIf="!page.isEdit">
-        <ng-control [form]="page.form" label="latitude" control="latitude" [disabled]="!isEditMode"
-          placeholder="Enter latitude">
-        </ng-control>
-      </div> -->
+     
 
     </div>
 
-    <div class="row g-3 mb-4" *ngIf="!page.isEdit">
-      <!-- <div class="col-4">
-        <ng-control [form]="page.form" label="longitude" control="longitude" [disabled]="!isEditMode"
-          placeholder="Enter longitude">
-        </ng-control>
-      </div> -->
-
-
-    </div>
-    <div class="row g-3 mb-4" style="display: flex; justify-content: center;" >
+    
+    <div class="row g-3 mb-4" style="display: flex; justify-content: center;"*ngIf="!page.isEdit" >
 
       <div class="col-4 col-md-4 col-lg-4 mt-5 h-100" *ngFor="let image of images; let i = index">
 
