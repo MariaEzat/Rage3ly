@@ -99,24 +99,29 @@ export class LoginComponent implements OnInit {
   onSubmit(): void {
     if (!this.loginForm.valid || this.isSubmitting) return;
     this.isSubmitting = true;
-
+  
     const loginData: LoginViewModel = this.loginForm.value;
-
+  
     this.authService.setLogin(loginData).subscribe({
       next: (response) => {
-        this._sharedService.showToastr(response)
-
         this.isSubmitting = false;
-
-        const token = response.data.token;
+  
+        const token = response.data?.token;
+        if (!token) {
+          this._sharedService.showToastr(response);
+          return;
+        }
+  
         localStorage.setItem('eToken', token);
-
+  
         const decodedToken: any = jwtDecode(token);
-        const roleId = decodedToken.RoleID;
+        const roleId = decodedToken?.RoleID;
         localStorage.setItem('roleId', roleId);
-    
-
+  
+        
+  
         if (roleId === 'Admin' || roleId === 'SuperAdmin') {
+          this._sharedService.showToastr(response);
 
           this._router.navigate(['/sites/customers'], {
             queryParams: { source: 'login' },
@@ -124,14 +129,19 @@ export class LoginComponent implements OnInit {
         } else {
           this._router.navigate(['/**']);
         }
-
       },
       error: (error) => {
-        this._sharedService.showToastr(error)
         this.isSubmitting = false;
+  
+        // ✅ استخراج رسالة الخطأ بشكل آمن
+        const message =
+          error?.error?.message || 'حدث خطأ أثناء تسجيل الدخول';
+  
+        this._sharedService.showToastr(error);
       },
     });
   }
+  
 
 
   numberOnly(event: any) {
