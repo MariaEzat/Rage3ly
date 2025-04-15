@@ -7,6 +7,7 @@ import { BsModalRef } from 'ngx-bootstrap/modal';
 import { environment } from 'src/environments/environment';
 import { adsActivateViewModel, adsSearchViewModel, adsViewModel } from '../../interfaces/ads';
 import { AdsService } from '../../service/ads.service';
+
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -78,9 +79,9 @@ export class HomeComponent extends CrudIndexBaseUtils {
       console.log(response)
 
       this.page.isSearching = false;
-      if( response.message = "Unauthorize Access "){
-        this._router.navigate(['/auth/login'])
-       }
+      // if( response.message = "Unauthorize Access "){
+      //   this._router.navigate(['/auth/login'])
+      //  }
 
       if (response.isSuccess) {
         

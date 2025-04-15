@@ -9,14 +9,14 @@ import { ButtonModule } from 'primeng/button';
 import { DropdownModule } from 'primeng/dropdown';
 import { InputSwitchModule } from 'primeng/inputswitch';
 import { TableModule } from 'primeng/table';
+import { AuthGuard } from '../../../shared/guards/auth.guard';
 
 
 
 const routes: Routes = [
-  { path: '', component:HomeComponent }, 
-  { path:'create', component: CreateComponent },
-  { path:'edit/:id', component: CreateComponent },
-
+  { path: '', component:HomeComponent,canActivate: [AuthGuard] }, 
+  { path:'create', component: CreateComponent ,canActivate: [AuthGuard]},
+  { path:'edit/:id', component: CreateComponent, canActivate: [AuthGuard] }
 
 ];
 @NgModule({

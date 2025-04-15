@@ -65,4 +65,10 @@ export class AuthserviceService {
   uploadImage(formData: FormData) {
     return this._apiService.postMedia('/UploadMediaEndPoint/UploadMedia', formData, true);
   }
+
+  isLoggedIn(): boolean {
+    const token = localStorage.getItem('etoken');
+    return !!token;
+  }
+  
 }
