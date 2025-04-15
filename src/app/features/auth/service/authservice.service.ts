@@ -67,8 +67,19 @@ export class AuthserviceService {
   }
 
   isLoggedIn(): boolean {
-    const token = localStorage.getItem('etoken');
-    return !!token;
+    const token = localStorage.getItem('eToken');
+    if (!token) return false;
+  
+    try {
+      const payload = JSON.parse(atob(token.split('.')[1]));
+      const role = payload?.RoleID;
+  
+      return role === 'Admin' || role === 'SuperAdmin';
+    } catch (e) {
+      console.error('Invalid token format', e);
+      return false;
+    }
   }
+  
   
 }
