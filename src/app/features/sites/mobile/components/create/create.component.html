@@ -57,8 +57,7 @@
                                             [inputClass]="'mb-2 bg-Dark border-color color-color-gray-300'"
                                             [labelClass]="page.form.get('number')?.invalid && (page.form.get('number')?.touched || page.form.get('number')?.dirty) ? 'form-control-with-validate' : 'form-control-no-validate'"></ng-control>
                               </div>
-                       
-                           
+                    
                         </div>
                     </form>
                 </div>
@@ -131,34 +130,38 @@
                                 </ng-control>
                             </div>
                         </div>
-                        
+                        <div class="row g-4 justify-content-center m-3">
+                            <div *ngFor="let image of images; let i = index" class="col-12 col-md-4 col-lg-4">
+                              <div class="border p-3 text-center h-100">
+                                <div *ngIf="image.uploaded; else uploadTemplate" class="text-center">
+                                  <img [src]="environment.api + '/' + image.src" alt="Uploaded Image"
+                                    style="width: 200px; height: 200px;" class="img-fluid mb-2 img-thumbnail" />
+                                  <div class="d-flex justify-content-center gap-2">
+                                    <button class="btn btn-delete ms-2" (click)="replaceImage(i)">
+                                      <img src="/assets/images/delete-white.svg" class="icon-size" />
+                                    </button>
+                                  </div>
+                                </div>
+                                <ng-template #uploadTemplate>
+                                  <label for="fileInput-{{i}}" class="text-primary cursor-pointer">
+                                    <i class="fa fa-upload fa-2x mb-2 color-brand-500"></i>
+                                    <p class="color-brand-500 text-white">
+                                      {{"sites.advertisment.Upload New Image" | translate}}
+                                    </p>
+                                  </label>
+                                  <input #file type="file" id="fileInput-{{i}}" class="d-none" (change)="onImageUpload(file.files, i)" />
+                                </ng-template>
+                              </div>
+                            </div>
+                          </div>
+                          
+                          
+                          
                     </form>
                 </div>
 
                 <div *ngIf="selectedTab === TabEnum.PhoneConfirmation" class="tab-content mt-3 bg-Dark rounded-4 p-3">
-                    <!-- <div class="container py-5">
-                        <div class="row g-4">
-                            <div class="col-12 col-md-3 col-lg-3" *ngFor="let image of images; let i = index">
-                                <div class="border p-3 text-center h-100">
-                                    <div *ngIf="image.uploaded; else uploadTemplate">
-                                        <img [src]="environment.api+'/'+image.src" alt="Uploaded Image"
-                                            class="img-fluid mb-2 img-thumbnail" />
-                                    </div>
-                                    <ng-template #uploadTemplate>
-                                        <label for="fileInput-{{ i }}" class="text-primary cursor-pointer">
-                                            <i class="fa fa-upload fa-2x mb-2 color-brand-500"></i>
-                                            <p class="color-brand-500" *ngIf="!image.uploaded">Upload New Image</p>
-                                            <p class="text-danger" *ngIf="image.error">Error Uploading</p>
-                                        </label>
-                                        <input #file type="file" id="fileInput-{{ i }}" class="d-none"
-                                            (change)="onImageUpload(file.files, i)" />
-                                    </ng-template>
-                                </div>
-                            </div>
-                        </div>
-                    </div> -->
-              
-              
+                 
                     <div class="text-center p-5 rounded-4" style="background-color: #0D1028;">
                         <div class="text-center p-5 rounded-4" style="background-color: #0D1028;">
                             <div class="d-flex justify-content-center align-items-center mb-3">

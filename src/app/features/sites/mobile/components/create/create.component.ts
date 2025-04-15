@@ -22,7 +22,8 @@ export class CreateComponent implements OnInit, OnDestroy {
   item: mobileCreateViewModel = new mobileCreateViewModel();
   id: string;
   isActivated: boolean = false;
-  images = [{ uploaded: false, src: null }];
+  images = [{ uploaded: false, src: null }, { uploaded: false, src: null }];
+
   environment = environment;
   Brandslist: [] = [];
   clientId: string = "";
@@ -117,6 +118,18 @@ export class CreateComponent implements OnInit, OnDestroy {
           console.log(res.data)
           this.item = res.data;
           this.item.id = this.id;
+          this.item.paths = res.data.media?.map((m) => m.path) || [];
+
+          
+          this.images = [];
+
+          for (let i = 0; i < 2; i++) {
+            const path = this.item.paths[i];
+            this.images.push({
+              uploaded: !!path,
+              src: path || null
+            });
+          }
           this.createForm();
           this.page.isPageLoaded = true;
         }
@@ -136,7 +149,8 @@ export class CreateComponent implements OnInit, OnDestroy {
       number: [this.item.number, [Validators.required, Validators.pattern(/^(010|011|012|015)\d{8}$/)]],
       serialNumber: [this.item.serialNumber, Validators.required],
       brandId: [this.item.brandId, Validators.required],
-      dateOfPurchase: [this.item.dateOfPurchase, Validators.required]
+      dateOfPurchase: [this.item.dateOfPurchase, Validators.required],
+      paths: [this.item.paths],
     });
     this.page.isPageLoaded = true;
   }
@@ -145,6 +159,8 @@ export class CreateComponent implements OnInit, OnDestroy {
     if (this.page.isSaving || this.page.form.invalid) return;
     this.page.isSaving = true;
     Object.assign(this.item, this.page.form.value);
+    this.item.paths = this.getUploadedImages();
+    this.item.paths = this.images.filter((image) => image.uploaded).map((image) => image.src);
     if (!this.page.isEdit) {
       this.item.clientId = this.clientId;
     }
@@ -195,6 +211,7 @@ export class CreateComponent implements OnInit, OnDestroy {
     });
   }
   ngOnDestroy(): void { }
+
   onImageUpload(files, index: number): void {
     if (files.length === 0) {
       return;
@@ -202,19 +219,15 @@ export class CreateComponent implements OnInit, OnDestroy {
 
     const file = <File>files[0];
     const formData = new FormData();
-    formData.append('Files', file, file.name);  // Use 'Files' as the field name if required by backend
-    console.log(formData);
+    formData.append('Files', file, file.name);
 
-    // Call the service to upload the image, passing the FormData directly
     this._mobileService.uploadImage(formData).subscribe({
       next: (res) => {
         if (res.isSuccess) {
-          console.log(res);
-          //this.images[index] = { uploaded: true, src: res.data.path[index] };
-          this.images[index] = { uploaded: true, src: res.data.path[index] };
+          // this.images[index] = { uploaded: true, src: res.data.path[index] };
+          this.images[index] = { uploaded: true, src: res.data.path[0] };
 
           this._sharedService.showToastr(res);
-          this.addImageBox();
         }
       },
       error: (err) => {
@@ -223,6 +236,9 @@ export class CreateComponent implements OnInit, OnDestroy {
     });
   }
 
+  replaceImage(index: number): void {
+    this.images[index] = { src: '', uploaded: false };
+  }
 
   addNewPhone() {
     this._router.navigateByUrl('/', { skipLocationChange: true }).then(() => {
@@ -237,7 +253,10 @@ export class CreateComponent implements OnInit, OnDestroy {
     return this.images.filter(image => image.uploaded).map(image => image.src);
   }
 
+
   numberOnly(event: any) {
     return this._sharedService.numberOnly(event);
   }
+
+
 }
