@@ -4,7 +4,10 @@ import { RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
    {path: '', redirectTo: 'home', pathMatch: 'full'},
   {
-    path: 'sites', loadChildren: () => import('./features/sites/sites.module').then(m => m.SitesModule)
+    path: 'sites', loadChildren: () => import('../src/app/features/sites/sites.module').then(m => m.SitesModule)
+  },
+  {
+    path: 'website', loadChildren: () => import('../src/app/features/website/website.module').then(m => m.WebsiteModule)
   }
 ];
 
