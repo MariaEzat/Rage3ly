@@ -1,4 +1,4 @@
-import { Component, Inject } from '@angular/core';
+import { Component, ElementRef, HostListener, Inject, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 import { WebsiteService } from 'src/app/features/website/services/website.service';
@@ -23,6 +23,21 @@ export class MainLayoutComponent {
     this.currentLang = this.localizationService.getLanguage();
     // this.setDirection(this.currentLang);
   }
+
+  @ViewChild('langButton', { static: false }) langButton!: ElementRef;
+@ViewChild('langDropdown', { static: false }) langDropdown!: ElementRef;
+@HostListener('document:click', ['$event'])
+onClickOutside(event: MouseEvent): void {
+  const target = event.target as HTMLElement;
+
+  const clickedInsideButton = this.langButton?.nativeElement.contains(target);
+  const clickedInsideDropdown = this.langDropdown?.nativeElement.contains(target);
+
+  if (!clickedInsideButton && !clickedInsideDropdown) {
+    this.showLangOptions = false;
+  }
+}
+
   RolesEnum = [
     { id: 1, name: 'SuperAdmin' },
     { id: 2, name: 'Admin' },

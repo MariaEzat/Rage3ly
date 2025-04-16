@@ -10,19 +10,21 @@
             <small class="ts color-white">{{ userRole }}</small>
           </div>
         </div>
-        
+
         <!-- Language Switcher -->
         <div class="dropdown ms-3 position-relative">
-          <button class="btn btn-outline-light dropdown-toggle d-flex align-items-center" type="button" (click)="toggleLangOptions()">
+          <button #langButton
+            class="btn btn-outline-light dropdown-toggle d-flex align-items-center rounded-pill px-3 py-1" type="button"
+            (click)="toggleLangOptions()">
             🌐 <span class="ms-2">{{ currentLang.toUpperCase() }}</span>
           </button>
-        
-          <!-- Dropdown menu -->
-          <div class="dropdown-menu show position-absolute end-0 mt-2" *ngIf="showLangOptions" style="z-index: 9999;">
-            <a class="dropdown-item d-flex align-items-center" (click)="changeLang('en')">
+
+          <div #langDropdown class="dropdown-menu show custom-lang-dropdown position-absolute end-0 mt-2"
+            *ngIf="showLangOptions">
+            <a class="dropdown-item lang-option text-white" (click)="changeLang('en')">
               <span class="me-2">🇺🇸</span> English
             </a>
-            <a class="dropdown-item d-flex align-items-center" (click)="changeLang('ar')">
+            <a class="dropdown-item lang-option text-white" (click)="changeLang('ar')">
               <span class="me-2">🇸🇦</span> العربية
             </a>
           </div>
@@ -31,7 +33,7 @@
     </div>
   </div>
 
-  <div class="main-page">
+  <div class="main-page ">
     <router-outlet></router-outlet>
   </div>
 </div>
