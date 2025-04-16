@@ -1,0 +1,144 @@
+<div class="min-vh-100 bg-Dark text-white">
+    <div class="container pt-5 py-2 " *ngIf="!loading; else loadingTemplate">
+        <div class="row justify-content-center align-items-center g-4">
+
+         
+            <div class="col-md-6 col-lg-5 position-relative">
+                <input type="text" class="form-control ps-5" placeholder="...بحث عن هاتف"
+                    style="background-color: #2c2c2c; color: white; font-size: large;" />
+                <img src="../../../../../../assets/images/search.png" alt="Search Icon"
+                    style="position: absolute; left: 15px; top: 50%; transform: translateY(-50%); width: 20px; height: 20px; opacity: 0.7;" />
+            </div>
+
+         
+            <div class="col-md-6 col-lg-5 text-end">
+                <div class="mb-2 d-flex justify-content-end align-items-center gap-2">
+                    <img src="../../../../../../assets/images/sun.png" style="width: 18px;" />
+                    <h3 class="m-0" style="color: #bfaeff;">محمد حسين</h3>
+                    <h3 class="m-0">صباح الخير</h3>
+                </div>
+                <div class="d-flex justify-content-end align-items-center gap-2" style="color: #b8a8ff;">
+                    <img src="../../../../../../assets/images/address.png" style="width: 16px;" />
+                    <h5 class="m-0">لا يوجد عنوان</h5>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+    <div class="container pb-5 py-4" *ngIf="!loading; else loadingTemplate">
+        <div class="row g-4 justify-content-center">
+      
+          <div class="col-md-6 col-lg-5" *ngFor="let mobile of mobiles">
+            <div class="p-4 rounded bg-white text-dark shadow" style="border-radius: 1rem;">
+              <div class="d-flex justify-content-between align-items-center mb-3">
+                <span class="bg-success text-white px-3 py-1 rounded small">
+                  {{ mobile.phoneStatus === 1 ? 'مفعل' : 'غير مفعل' }}
+                </span>
+                <div class="d-flex align-items-center">
+                  <span class="fw-semibold">{{ mobile.mobileModel }}</span>
+                  <img src="../../../../assets/images/ProductIcon.png" class="me-2" style="height: 32px;" />
+                </div>
+              </div>
+      
+              <div class="row g-3 text-sm">
+                <div class="col-6">
+                  <div>
+                    <p class="text-muted mb-1">Name</p>
+                    <p class="text-primary fw-medium">{{ mobile.clientName }}</p>
+                  </div>
+                  <div>
+                    <p class="text-muted mb-1">IMEI Number</p>
+                    <p class="text-primary fw-medium">{{ mobile.iMEI1 }}</p>
+                  </div>
+                </div>
+      
+                <div class="col-6">
+                  <div>
+                    <p class="text-muted mb-1">Mobile Number</p>
+                    <p class="text-primary fw-medium">{{ mobile.number }}</p>
+                  </div>
+                  <div>
+                    <p class="text-muted mb-1">E-mail</p>
+                    <p class="text-primary fw-medium">{{ mobile.email }}</p>
+                  </div>
+                </div>
+              </div>
+      
+              <div class="mt-4">
+                <button class="btn btn-outline-secondary w-100 text-purple-700">
+                  Details
+                </button>
+              </div>
+            </div>
+          </div>
+      
+        </div>
+      </div>
+      
+    <ng-template #loadingTemplate>
+        <div class="text-center text-muted py-5">...جارٍ التحميل</div>
+      </ng-template>
+</div>
+
+<!-- 
+<div class="min-vh-100 bg-Dark text-white">
+    <div class="row g-4 justify-content-center">
+      <ng-container *ngIf="!loading; else loadingTemplate">
+        <div *ngFor="let mobile of mobiles" class="col-md-6 col-lg-5">
+          <div class="p-4 rounded bg-white text-dark shadow" style="border-radius: 1rem;">
+            <div class="d-flex justify-content-between align-items-center mb-3">
+              <span
+                class="px-3 py-1 rounded small"
+                [class.bg-success]="mobile.phoneStatus === 1"
+                [class.bg-secondary]="mobile.phoneStatus !== 1"
+                style="color: white"
+              >
+                {{ mobile.phoneStatus === 1 ? 'مفعل' : 'غير مفعل' }}
+              </span>
+              <div class="d-flex align-items-center">
+                <span class="fw-semibold">{{ mobile.mobileModel }}</span>
+                <img src="../../../../assets/images/ProductIcon.png" class="me-2" style="height: 32px;" />
+              </div>
+            </div>
+  
+            <div class="row g-3 text-sm">
+              <div class="col-6">
+                <div>
+                  <p class="text-muted mb-1">Name</p>
+                  <p class="text-primary fw-medium">{{ mobile.clientName }}</p>
+                </div>
+                <div>
+                  <p class="text-muted mb-1">IMEI Number</p>
+                  <p class="text-primary fw-medium">{{ mobile.iMEI1 }}</p>
+                </div>
+              </div>
+  
+              <div class="col-6">
+                <div>
+                  <p class="text-muted mb-1">Mobile Number</p>
+                  <p class="text-primary fw-medium">{{ mobile.number }}</p>
+                </div>
+                <div>
+                  <p class="text-muted mb-1">E-mail</p>
+                  <p class="text-primary fw-medium">{{ mobile.email }}</p>
+                </div>
+              </div>
+            </div>
+  
+            <div class="mt-4">
+              <button class="btn btn-outline-secondary w-100 text-purple-700">
+                تفاصيل الهاتف
+              </button>
+            </div>
+          </div>
+        </div>
+      </ng-container>
+  
+      <ng-template #loadingTemplate>
+        <div class="text-center text-muted py-5">...جارٍ التحميل</div>
+      </ng-template>
+    </div>
+  </div> -->
+  

@@ -46,6 +46,11 @@ const routes: Routes = [
     ],
   },
   {
+    path: 'website',
+    loadChildren: () =>
+      import('../../src/app/features/website/website.module').then((m) => m.WebsiteModule),
+  },
+  {
     path: '**',
     component: NotfoundComponent,
  
