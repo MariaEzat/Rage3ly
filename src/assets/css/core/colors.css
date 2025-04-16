@@ -523,3 +523,15 @@
 .border-color{
 border-color: #535862;
 }
+
+.ng-value-label{
+  color:white
+}
+input[type="text"]{
+  color:white
+}
+
+.ng-dropdown-panel .ng-option:hover{
+  background-color: #31314a  !important;
+  color: white !important;
+}
