@@ -1,10 +1,14 @@
 <div class="container py-4 px-3">
     <div class="card bg-Dark text-white p-4 shadow rounded-4">
         <div class="d-flex justify-content-between align-items-center py-2 ">
-
-            <!-- <img src="/assets/icons/keyboard_backspace.svg" class="pointer"
-        routerLink="/sites/product"> -->
-            <p class="mb-0 text-white ts-3"> {{(page.isEdit?'shared.edit':'shared.create')|translate}} {{"sites.mobile.mobile"|translate}}</p>
+          <a class="mb-2 color-gray-800 ts-3 text-white" >
+            <img src="../assets/images/expand_more.jpeg" style="width:20px; height:20px;" class="mr-2 pointer" 
+              [routerLink]="page.isEdit ? '/sites/mobile' : '/sites/customers'">
+            {{ (page.isEdit ? 'shared.edit' : 'shared.create') | translate }} 
+            {{"sites.mobile.mobile" | translate}}
+          </a>
+          
+           
             <div class="d-flex justify-content-end gap-0">
                 <button type="button" class=" py-2 m-1 px-4  cr3 btn-orange-border btn-primary "
                     (click)="onCancel()">{{"sites.mobile.cancel"|translate}}</button>

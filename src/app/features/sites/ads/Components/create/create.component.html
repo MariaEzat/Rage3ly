@@ -1,11 +1,13 @@
 <div class="container py-4 px-3">
     <div class="card bg-Dark text-white p-4 shadow rounded-4">
         <div class="d-flex justify-content-between align-items-center py-2 ">
-            <!-- <img src="../../../../../../assets/icons/keyboard_backspace.png"
-            class="pointer text-white" style="width: 24px; height: 24px;" routerLink="/sites/ads"> -->
-            <a class="mb-0 color-gray-600 ts-3 text-white">
+
+            <a class="mb-2 color-gray-800 ts-3 text-white">
+                <img src="../assets/images/expand_more.jpeg" style="width:20px; height:20px;" class="mr-2 pointer"
+                    routerLink="/sites/ads">
                 {{(page.isEdit?'shared.edit':'shared.create')|translate}}
-                {{"sites.advertisment.advertisment"|translate}}</a>
+                {{"sites.advertisment.advertisment"|translate}}
+            </a>
             <button class=" py-2 px-4 color-gray-25 no-border cr3 btn-primary" (click)="Save()"
                 [disabled]="!page.isEdit ? (page.form?.invalid || page.isSaving || !validateImages()) : false">
                 <span class="rb-btn-text">{{ (page.isEdit ? 'shared.edit' : 'shared.create') | translate }}</span>
@@ -45,8 +47,7 @@
                             [type]="page.ControlType.INPUT_DATE"
                             [inputClass]="'mb-2 bg-Dark border-color color-color-gray-300'"
                             [labelClass]="page.form.get('endDate')?.invalid && (page.form.get('endDate')?.touched || page.form.get('endDate')?.dirty) ? 'form-control-with-validate' : 'form-control-no-validate'"
-                            [minDate]="getMinEndDate()"
-                            [diasblePastDate]="true">
+                            [minDate]="getMinEndDate()" [diasblePastDate]="true">
                         </ng-control>
                         <div *ngIf="page.form.get('endDate')?.errors?.endDateBeforeStart"
                             class="text-danger extra-small mt-1">
