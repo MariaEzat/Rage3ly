@@ -47,18 +47,7 @@ const routes: Routes = [
         loadChildren: () =>
           import('./category/category.module').then((m) => m.CategoryModule),
       },
-      {
-        path: 'dashboard',
-        loadChildren: () =>
-          import('./dashboard/dashboard.module').then((m) => m.DashboardModule),
-      },
-      {
-        path: 'customergroup',
-        loadChildren: () =>
-          import('../sales-flow/customer-group/customer-group.module').then(
-            (m) => m.CustomerGroupModule
-          ),
-      },
+     
       {
         path: 'customers',
         loadChildren: () =>
@@ -66,21 +55,7 @@ const routes: Routes = [
             (m) => m.CustomersModule
           ),
       },
-      {
-        path: 'order',
-        loadChildren: () =>
-          import('../sales-flow/order/order.module').then((m) => m.OrderModule),
-      },
-      {
-        path: 'email',
-        loadChildren: () =>
-          import('../sales-flow/email/email.module').then((m) => m.EmailModule),
-      },
-      {
-        path: 'role',
-        loadChildren: () =>
-          import('../sales-flow/roles/roles.module').then((m) => m.RolesModule),
-      },
+      
       {
         path: 'signUpRequest',
         loadChildren: () =>

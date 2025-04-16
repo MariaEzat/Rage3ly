@@ -51,19 +51,7 @@ const routes: Routes = [
  
   },
 
-  {
-    path: 'salesflow',
-    component: MainLayoutComponent,
-    children: [
-      {
-        path: '',
-        loadChildren: () =>
-          import('./features/sales-flow/sales-flow.module').then(
-            (m) => m.SalesFlowModule
-          ),
-      },
-    ],
-  },
+  
 ];
 
 @NgModule({

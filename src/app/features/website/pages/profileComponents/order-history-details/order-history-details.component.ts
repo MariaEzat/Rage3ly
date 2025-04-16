@@ -4,7 +4,6 @@ import { CrudIndexBaseUtils } from 'src/app/shared/classes/crud-index.utils';
 import { CRUDIndexPage } from 'src/app/shared/models/crud-index.model';
 import { BsModalRef } from 'ngx-bootstrap/modal';
 import { SharedService } from 'src/app/shared/service/shared.service';
-import { OrderService } from 'src/app/features/sales-flow/order/service/order.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { NavigationEnd } from '@angular/router';
 import { environment } from 'src/environments/environment';
