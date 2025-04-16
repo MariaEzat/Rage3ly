@@ -12,8 +12,6 @@
             <div class="d-flex justify-content-end gap-0">
                 <button type="button" class=" py-2 m-1 px-4  cr3 btn-orange-border btn-primary "
                     (click)="onCancel()">{{"sites.mobile.cancel"|translate}}</button>
-                <!-- <button type="button" class="bg-brand-50 py-2 px-4 color-brand-500 no-border cr3 mx-1"
-        (click)="onReset()">Reset</button> -->
                 <button class="btn btn-primary py-2 px-4 m-1 no-border cr3" (click)="Save()"
                     [disabled]="page.form?.invalid || page.isSaving">
                     <span class="rb-btn-text">{{(page.isEdit?'shared.edit':'shared.create')|translate}}</span>
@@ -27,7 +25,6 @@
                 <ul class="nav nav-tabs px-3 p-2 d-flex align-items-center">
                     <li class="nav-item me-1 " *ngFor="let tab of Tabs">
                         <a class="nav-link d-flex align-items-center px-2 py-1 pointer"  [ngStyle]="{'background-color': tab.isSelected ? '#4DC3FF' : 'transparent'}" (click)="switchTab(tab.ID)">
-                            <!-- <img [src]="tab.isSelected ? tab.selectedIcon : tab.icon" alt="tab icon" class="me-2" /> -->
                             {{tab.name}}
                         </a>
                     </li>
@@ -110,12 +107,6 @@
 
                         <div class="row g-3">
 
-                                <!-- <div class="col-6">
-                                <ng-control [type]="controlType.SELECT" [form]="page.form" control="brandId"
-                                  [inputClass]="'bg-Dark border-color text-white'" [labelClass]="'text-white'" label="Brand"
-                                  placeholder="Brand" [items]="Brandslist" >
-                                </ng-control>
-                              </div> -->
                             <div class="col-md-6">
                                 <label [class.text-danger]="page.form.get('brandId')?.invalid && (page.form.get('brandId')?.dirty || page.form.get('brandId')?.touched)">
                                     {{"sites.mobile.brand"|translate}}
