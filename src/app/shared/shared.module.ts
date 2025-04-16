@@ -29,7 +29,6 @@ import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 import { ExtendDatePipe } from './pipes/date.pipe';
 import { DialogModule } from 'primeng/dialog';
 import { ButtonModule } from 'primeng/button';
-import { CartCardComponent } from '../features/website/components/cart-card/cart-card.component';
 import { BadgeModule } from 'primeng/badge';
 import { LottieModule } from 'ngx-lottie';
 
@@ -74,7 +73,6 @@ export function httpLoaderFactory(http: HttpClient) {
     DialogModule,
     ButtonModule,
     BadgeModule,
-    CartCardComponent,
     LottieModule,
   ],
   exports: [

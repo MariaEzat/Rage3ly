@@ -18,9 +18,7 @@ export class NavbarComponent {
     this.cartVisible = true;
   }
 
-  getTotalPrice() {
-    return this.websiteService.productsInCart.reduce((acc, x) => acc + (x.price * x.quantity), 0);
-  }
+ 
   checkout() {
     this.router.navigate(['/tahwesha/checkoput'])
     this.cartVisible = false;
