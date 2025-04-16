@@ -3,9 +3,6 @@ import { FormGroup, Validators } from '@angular/forms';
 import { AuthserviceService } from 'src/app/features/auth/service/authservice.service';
 import { RegisterViewModel } from 'src/app/features/auth/interfaces/authviewmodel';
 import { SharedService } from 'src/app/shared/service/shared.service';
-import { CityService } from 'src/app/features/sites/city/service/city.service';
-import { CompanyService } from 'src/app/features/sites/company/service/company.service';
-import { governorateSelectedItem } from 'src/app/features/sites/city/interfaces/city';
 import { Router } from '@angular/router';
 import { ControlType } from 'src/app/shared/models/enum/control-type.enum';
 import { environment } from 'src/environments/environment';
@@ -22,7 +19,6 @@ export class RegisterComponent implements OnInit {
   registerForm: FormGroup;
   map: L.Map;
   marker: L.Marker;
-  governorates: governorateSelectedItem[] = [];
   isEqualPassword: boolean = true;
   isSubmitting: boolean = false;
   images = [{ uploaded: false, src: null }];
@@ -46,8 +42,6 @@ export class RegisterComponent implements OnInit {
   constructor(
     private authService: AuthserviceService,
     private _sharedService: SharedService,
-    private _cityService: CityService,
-    private _companyService: CompanyService,
     private _router: Router
   ) { }
 
@@ -112,35 +106,6 @@ numberOnly(event: any) {
   return this._sharedService.numberOnly(event);
 }
 
-// onImageUpload(files, index: number): void {
-//   if(files.length === 0) {
-//   return;
-// }
-// const file = <File>files[0];
-// const formData = new FormData();
-// formData.append('Files', file, file.name);  // Use 'Files' as the field name if required by backend
-// console.log(formData);
-// // Call the service to upload the image, passing the FormData directly
-// this.authService.uploadImage(formData).subscribe({
-//   next: (res) => {
-//     if (res.isSuccess) {
-//       console.log(res);
-//       //this.images[index] = { uploaded: true, src: res.data.path[index] };
-//       this.images[index] = { uploaded: true, src: res.data.path[index] };
 
-//       this._sharedService.showToastr(res);
-//     }
-//   },
-//   error: (err) => {
-//     this._sharedService.showToastr(err);
-//   },
-// });
-//   }
-// getUploadedImages() {
-//   return this.images.filter(image => image.uploaded).map(image => image.src);
-// }
-// isImageUploaded(): boolean {
-//   return this.images.some(image => image.uploaded); // Returns true if at least one image is uploaded
-// }
 
 }

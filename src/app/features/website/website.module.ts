@@ -13,17 +13,7 @@ import { OrderDetailsComponent } from './pages/order-details/order-details.compo
 import { DetailsComponent } from './pages/details/details.component';
 import { CartCardComponent } from './components/cart-card/cart-card.component';
 import { WishlistComponent } from './pages/wishlist/wishlist.component';
-import { CheckoputComponent } from './pages/checkoput/checkoput.component';
-import { ProfileComponent } from './pages/profileComponents/profile/profile.component';
-import { ProfileSettingComponent } from './pages/profileComponents/profile-setting/profile-setting.component';
-import { OrderHistoryComponent } from './pages/profileComponents/order-history/order-history.component';
-import { TransactionHistoryComponent } from './pages/profileComponents/transaction-history/transaction-history.component';
-import { NotificationComponent } from './pages/profileComponents/notification/notification.component';
-import { InvoicesComponent } from './pages/profileComponents/invoices/invoices.component';
-import { AddressComponent } from './pages/profileComponents/address/address.component';
-import { ChangePasswordComponent } from './pages/profileComponents/change-password/change-password.component';
-import { NewAddressComponent } from './pages/profileComponents/new-address/new-address.component';
-import { OrderHistoryDetailsComponent } from './pages/profileComponents/order-history-details/order-history-details.component';
+
 import { ShowAllProductsComponent } from './pages/show-all-products/show-all-products.component';
 
 const routes: Routes = [
@@ -34,33 +24,14 @@ const routes: Routes = [
   { path: 'order-details', component: OrderDetailsComponent },
   {path: 'details', component: DetailsComponent},
   {path: 'wishlist', component: WishlistComponent},
-  {path: 'checkoput', component: CheckoputComponent},
-  {path: 'profile', component: ProfileComponent},
-  {path: 'profileSetting', component: ProfileSettingComponent},
-  {path: 'changePassword', component: ChangePasswordComponent},
-  {path: 'orderHistory', component: OrderHistoryComponent},
-  {path: 'transactionHistory', component: TransactionHistoryComponent},
-  {path: 'notification', component: NotificationComponent},
-  {path: 'address', component: AddressComponent},
-  {path: 'invoices', component: InvoicesComponent},
-  {path: 'newAddress', component: NewAddressComponent},
+
   {path: 'showAllProductsComponent', component: ShowAllProductsComponent},
 
-  {path: 'orderHistoryDetails/:orderNumber', component: OrderHistoryDetailsComponent},
 ];
 @NgModule({
   declarations: [
   
-    ProfileComponent,
-       ProfileSettingComponent,
-       OrderHistoryComponent,
-       TransactionHistoryComponent,
-       NotificationComponent,
-       InvoicesComponent,
-       AddressComponent,
-       ChangePasswordComponent,
-       NewAddressComponent,
-       OrderHistoryDetailsComponent,
+  
        ShowAllProductsComponent
   ],
   imports: [
@@ -76,7 +47,6 @@ const routes: Routes = [
     ConfirmationComponent,
     CartCardComponent,
     WishlistComponent,
-    CheckoputComponent,
   ]
 
 })

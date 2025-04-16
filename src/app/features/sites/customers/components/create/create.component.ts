@@ -8,8 +8,7 @@ import { SharedService } from 'src/app/shared/service/shared.service';
 import { ApiService } from 'src/app/shared/service/api.service';
 import { ControlType } from 'src/app/shared/models/enum/control-type.enum';
 import { forkJoin } from 'rxjs';
-import { CityService } from 'src/app/features/sites/city/service/city.service';
-import { CompanyService } from 'src/app/features/sites/company/service/company.service';
+
 import { environment } from 'src/environments/environment';
 import * as L from 'leaflet';
 
@@ -47,7 +46,7 @@ export class CreateComponent implements OnInit {
     { id: 2, name: 'Female' }
   ];
   constructor(private _router: Router, private _customersService: CustomersService, private _sharedService: SharedService,
-    private _activatedRoute: ActivatedRoute, private _apiService: ApiService, private _cityService: CityService, private _companyService: CompanyService
+    private _activatedRoute: ActivatedRoute, private _apiService: ApiService
   ) {
 
   }
