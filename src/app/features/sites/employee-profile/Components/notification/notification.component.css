@@ -1,0 +1,18 @@
+.btn-orange-border {
+    border: 1px solid #4DC3FF; 
+    border-radius: 3px; 
+    background-color: transparent;
+  }
+  .btn-primary {
+    background-color: #4DC3FF;
+    border: none;
+  }
+  
+  .btn-primary:hover {
+    background-color: #35b3f2;
+  }
+  .custom-style
+  {
+    color: #4DC3FF;
+    background-color: #e5eff4;
+  }
