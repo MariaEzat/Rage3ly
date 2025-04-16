@@ -1,24 +1,39 @@
 <div class="main-panel bg-Dark">
-    <div class="navbar bord-bottom py-2 d-flex justify-content-between align-items-center px-4">
-        <div class="w-75 d-flex align-items-center ">
-          <h1 class="m-0 color-white">Hello</h1>
-      
-          <div class="d-flex align-items-center ms-auto ">
-            <div class="d-flex align-items-center  pointer" routerLink="/sites/employeeProfile">
-              <img src="./assets/images/avataaar.png" alt="User Image" class="rounded-circle" width="40" height="40">
-              <div class="ms-2">
-                <span class="ts color-white text-nowrap">{{ userName }}</span><br>
-                <small class="ts color-white">{{ userRole }}</small>
-              </div>
-            </div>
-      
-           
+  <div class="navbar fixed-navbar bord-bottom py-2 d-flex  justify-content-between align-items-center px-4">
+    <div class="w-75 d-flex align-items-center ">
+      <h1 class="m-0 color-white">{{"shared.mainLayout.hello" | translate}}</h1>
+      <div class="d-flex align-items-center ms-auto">
+        <div class="d-flex align-items-center pointer" routerLink="/sites/employeeProfile">
+          <img src="./assets/images/avataaar.png" alt="User Image" class="rounded-circle" width="40" height="40">
+          <div class="ms-2">
+            <span class="ts color-white text-nowrap">{{ userName }}</span><br>
+            <small class="ts color-white">{{ userRole }}</small>
+          </div>
+        </div>
+
+        <!-- Language Switcher -->
+        <div class="dropdown ms-3 position-relative">
+          <button #langButton
+            class="btn btn-outline-light dropdown-toggle d-flex align-items-center rounded-pill px-3 py-1" type="button"
+            (click)="toggleLangOptions()">
+            🌐 <span class="ms-2">{{ currentLang.toUpperCase() }}</span>
+          </button>
+
+          <div #langDropdown class="dropdown-menu show custom-lang-dropdown position-absolute end-0 mt-2"
+            *ngIf="showLangOptions">
+            <a class="dropdown-item lang-option text-white" (click)="changeLang('en')">
+              <span class="me-2">🇺🇸</span> English
+            </a>
+            <a class="dropdown-item lang-option text-white" (click)="changeLang('ar')">
+              <span class="me-2">🇸🇦</span> العربية
+            </a>
           </div>
         </div>
       </div>
-      
-
-    <div class="main-page ">
-        <router-outlet></router-outlet>
     </div>
+  </div>
+
+  <div class="main-page ">
+    <router-outlet></router-outlet>
+  </div>
 </div>

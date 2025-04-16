@@ -9,7 +9,8 @@ import { NotfoundComponent } from './component/notfound/notfound.component';
     NotfoundComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    
   ]
 })
 export class NotFoundModule { }
