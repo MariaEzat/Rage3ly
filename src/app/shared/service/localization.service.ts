@@ -8,6 +8,7 @@ export class LocalizationService {
   savelangLocalStorageKey: string = 'lang'
   constructor(private translate: TranslateService) { }
   setLanguage(lang: string) {
+    
     this.translate.use(lang);
     localStorage.setItem(this.savelangLocalStorageKey, lang.toLowerCase());
   }

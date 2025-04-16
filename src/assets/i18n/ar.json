@@ -106,6 +106,7 @@
       "Excellent-less-than-good": "وقت الطلب الممتاز يجب أن يكون أقل من وقت الطلب الجيد.",
       "invaild-mobile": "يرجى إدخال رقم هاتف صالح",
       "pattern-special-characters": "Password must contain at least one uppercase letter, and one special character."
+      
     },
     "delete-confirmation": {
       "message": "هل أنت متأكد من حذف هذا الصنف",
@@ -209,7 +210,10 @@
     "timestamp": "Timestamp",
     "expired": "Expired",
     "jump-forward": "Jump Forward",
-    "jump-back": "Jump Back"
+    "jump-back": "Jump Back",
+    "mainLayout":{
+      "hello":"اهلا"
+    }
   },
   "auth": {
     "login": {

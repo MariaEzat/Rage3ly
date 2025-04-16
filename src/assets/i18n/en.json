@@ -219,8 +219,10 @@
     "IsDeliverManually": "Deliver Manually",
     "expired": "Expired",
     "jumb-forward": "Jump Forward",
-    "jumb-back": "Jump Back"
-  },
+    "jumb-back": "Jump Back",
+    "mainLayout":{
+      "hello":"Hello"
+    }  },
   "auth": {
     "login": {
       "login": "Login",

@@ -31,6 +31,7 @@ import { DialogModule } from 'primeng/dialog';
 import { ButtonModule } from 'primeng/button';
 import { BadgeModule } from 'primeng/badge';
 import { LottieModule } from 'ngx-lottie';
+import { Dropdown, DropdownModule } from 'primeng/dropdown';
 
 export function httpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -51,6 +52,8 @@ export function httpLoaderFactory(http: HttpClient) {
   ],
   imports: [
     CommonModule,
+    TranslateModule,
+    DropdownModule,
     RouterModule,
     NgSelectModule,
     FormsModule,
@@ -78,6 +81,7 @@ export function httpLoaderFactory(http: HttpClient) {
   exports: [
     NgPaginationComponent,
     NgControlComponent,
+    DropdownModule,
     MainLayoutComponent,
     TranslateModule,
     ReactiveFormsModule,
@@ -105,10 +109,14 @@ export class SharedModule {
   ) {
     //this.translate.use(localizationService.getLanguage());
     //localizationService.setLanguage(localizationService.getLanguage());
-    const lang = 'en';
-    this.translate.use(lang);
-    localizationService.setLanguage(lang);
-    this.setDirection(lang);
+
+    const lang = localizationService.getLanguage();
+this.translate.use(lang);
+this.setDirection(lang);
+    // const lang = 'en';
+    // this.translate.use(lang);
+    // localizationService.setLanguage(lang);
+    // this.setDirection(lang);
 
   }
   setDirection(lang: string) {

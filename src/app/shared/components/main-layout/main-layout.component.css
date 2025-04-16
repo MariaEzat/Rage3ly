@@ -2,3 +2,19 @@
     border-bottom: 2px solid rgb(65 65 75); /* أو أي لون يناسبك */
 
 }
+.dropdown-toggle {
+    background: transparent;
+    border: 1px solid #fff;
+    color: white;
+    padding: 4px 10px;
+    border-radius: 6px;
+  }
+  
+  .dropdown-menu {
+    min-width: 150px;
+  }
+  .fixed-navbar {
+    direction: ltr !important;
+    text-align: left;
+  }
+  
