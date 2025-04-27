@@ -20,4 +20,12 @@
   .btn-primary:hover {
     background-color: #35b3f2;
   }
+  .expand-arrow svg {
+    transition: transform 0.3s;
+    margin-right: 8px;  
+    transform: rotate(180deg); 
+  }
+  .expand-arrow {
+    cursor: pointer; 
+  }
   

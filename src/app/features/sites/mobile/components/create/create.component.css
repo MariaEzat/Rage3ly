@@ -11,3 +11,12 @@
     border-radius: 3px; /* Optional: Maintain the cr3 class border-radius */
     background-color: transparent; /* Optional: If no background is desired */
   }
+  .expand-arrow svg {
+    transition: transform 0.3s;
+    margin-right: 8px;  
+    transform: rotate(180deg); 
+  }
+  .expand-arrow {
+    cursor: pointer; 
+  }
+  

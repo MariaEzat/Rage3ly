@@ -293,7 +293,8 @@
       "Passwords do not match": "كلمات المرور غير متطابقة",
       "cancel": "الغاء",
       "noEmployees": "لا يوجد موظفين",
-      "confirm": "تأكيد"
+      "confirm": "تأكيد",
+       "search in users":"بحث في الموظفين"
     },
     "layout": {
       "adverdisments": "الاعلانات",

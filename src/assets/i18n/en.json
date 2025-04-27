@@ -303,7 +303,8 @@
       "cancel": "Cancel",
       "noEmployees": "No Employees",
       "cancel": "Cancel",
-      "confirm": "Confirm"
+      "confirm": "Confirm",
+       "search in users":"search in users"
     },
     "layout": {
       "adverdisments": "Adverdisments",
@@ -364,6 +365,7 @@
       "Error Uploading": "Error Uploading",
       "addMobile": "Add Mobile",
       "noClients": "No Clients"
+     
     }
   }
 }

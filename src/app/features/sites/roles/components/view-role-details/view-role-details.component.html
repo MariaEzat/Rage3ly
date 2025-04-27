@@ -1,8 +1,16 @@
 <div class="container mt-4">
   <div class="d-flex justify-content-between align-items-center mb-4">
 
-    <h3><img src="../assets/icons/expand_more.png" class="pointer"   routerLink="/salesflow/roles"/> Roles & Permissions</h3>
-
+    <h3 class="mb-2 color-gray-800 ts-3 text-white">
+      <span class="expand-arrow " routerLink="/sites/roles">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="white" stroke-width="2" viewBox="0 0 24 24">
+          <path d="M8 5l8 7-8 7" />
+        </svg>
+      </span>
+      
+      Roles & Permissions
+    </h3>
+    
   </div>
   <hr class="color-gray-200">
   <div>
@@ -26,7 +34,7 @@
 
 
           <div class="col-4 ms-auto d-flex align-items-end">
-            <button class='color-brand-700 rb-btn  rb-btn-secondary rb-btn-sm  w-100' (click)="search()"
+            <button class='color-brand-700 rb-btn  rb-btn-sm  w-100 border-color text-white' (click)="search()"
               [disabled]="page.searchForm.invalid || page.isSearching">
               <i class="uil uil-search"></i>
               <span class="rb-btn-text d-md-inline-block">
@@ -34,22 +42,30 @@
             </button>
           </div>
 
+        
+
+
         </div>
       </div>
     </form> 
   </div>
 
   <div *ngFor="let section of items; let i = index" class="mt-4">
-    <div class="card">
+    <div class="card feature-item">
       <div class=" d-flex justify-content-between align-items-center m-2">
         <div class="form-check form-switch">
           <p-inputSwitch [ngModel]="isSectionActive(section)" (onChange)="toggleSectionFeatures(section)"
             class="form-check-input"></p-inputSwitch>
           <label class="form-check-label px-2">{{ section.sectionName }}</label>
         </div>
-        <button class="btn btn-link p-0 w-7" (click)="onSectionDropdownChange(section, i) ">
-          <img src="../assets/icons/expand_more.png" class="pointer" />
+        <button class="btn btn-link p-0 w-7" (click)="onSectionDropdownChange(section, i)">
+          <span class="expand-arrow">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="white" stroke-width="2" viewBox="0 0 24 24">
+              <path d="M8 5l8 7-8 7" />
+            </svg>
+          </span>
         </button>
+        
         <!-- <select
           class="form-select form-select-sm "
           style="width: 400px;"
@@ -62,11 +78,11 @@
       </div>
 
       <!-- Section Features -->
-      <div class="card-body mx-3" *ngIf="section.showFeatures">
+      <div class="card-body mx-3 feature-item" *ngIf="section.showFeatures">
         <div *ngFor="let feature of section.features" class="d-flex justify-content-between align-items-center mb-3">
           <div class="form-check form-switch">
             <p-inputSwitch [(ngModel)]="feature.isActiveToRole" (onChange)="updateSectionStatus(section,feature)"
-              class="form-check-input"></p-inputSwitch>
+              ></p-inputSwitch>
             <label class="form-check-label px-2">{{ feature.featureName }}</label>
           </div>
          

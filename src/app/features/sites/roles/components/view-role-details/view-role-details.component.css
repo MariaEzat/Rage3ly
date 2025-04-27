@@ -1,0 +1,52 @@
+.feature-item {
+    background-color: #1d223f;
+    padding: 10px 15px;
+    border-radius: 8px;
+    color: white;
+  }
+  
+  .feature-item label {
+    color: white;
+  }
+  .expand-arrow svg {
+    transition: transform 0.3s;
+    margin-right: 8px;  
+    transform: rotate(180deg); 
+  }
+  .expand-arrow {
+    cursor: pointer; 
+  }
+  
+
+  ::ng-deep .p-inputswitch {
+    border: none !important;
+    box-shadow: none !important;
+    outline: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+  
+
+  ::ng-deep .p-inputswitch-slider:before {
+    background: white !important;
+    border: none !important;
+    box-shadow: none !important;
+  }
+  
+
+  ::ng-deep .p-inputswitch.p-inputswitch-checked .p-inputswitch-slider {
+    background: #3bb2d0 !important;
+  }
+  
+
+  ::ng-deep .p-inputswitch.p-focus {
+    box-shadow: none !important;
+  }
+  
+
+  ::ng-deep .form-check-input {
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+  }
+  

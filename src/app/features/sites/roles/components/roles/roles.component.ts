@@ -16,13 +16,12 @@ constructor(private _router:Router,private _roleService:RoleService){}
  RolesEnum = [
   { id: 1, name: 'SuperAdmin' },
   { id: 2, name: 'Admin' },
-  { id: 3, name: 'Company' },
-  { id: 4, name: 'Client' },
+  { id: 3, name: 'Client' },
 ];
 
 viewRoleDetails(id: string){
 
-  this._router.navigate(['/salesflow/roles/roleDetails',id]);
+  this._router.navigate(['/sites/roles/roleDetails',id]);
 
   // this._roleService.getRoleById(id).subscribe({
   //   next: (res) => {
