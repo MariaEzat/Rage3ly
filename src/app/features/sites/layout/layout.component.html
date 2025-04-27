@@ -42,6 +42,13 @@
         <img [src]="usersRla.isActive ? 'assets/images/IconEmpActive.png' : 'assets/images/IconEmp.png'"
           class="px-1 nav-icon">
       </a>
+      <a class="nav-link text-white py-2 d-flex flex-row-reverse justify-content-end align-items-center"
+      routerLink="/sites/roles" routerLinkActive="active" #RolesRla="routerLinkActive"
+     [ngClass]="{ 'active-color': RolesRla.isActive }">
+      {{ "sites.layout.roles" | translate }}
+      <img [src]="RolesRla.isActive ? 'assets/images/rolesActive.png' : 'assets/images/rolesDeactive.png'"
+        class="px-1 nav-icon">
+    </a>
       <!-- <a class="nav-link text-white py-2" href="#"><i class="bi bi-phone"></i> الهواتف</a> -->
       <!-- <a class="nav-link text-white py-2" href="#"><i class="bi bi-person-badge"></i> صلاحيات المستخدمين</a>
       <a class="nav-link text-white py-2" href="#"><i class="bi bi-search"></i> نتائج البحث</a>

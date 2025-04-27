@@ -6,7 +6,7 @@ export class changePasswordViewModel {
   export class profileSettingViewModel {
     id:string;
     name: string;
-    userName: string;
     mobile: string;
-    jobTitle: string;
+    email?: string;
+    path?: string;
   }

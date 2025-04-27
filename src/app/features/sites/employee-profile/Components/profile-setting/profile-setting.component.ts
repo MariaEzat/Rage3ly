@@ -16,13 +16,15 @@ import { EmployeeProfileService } from '../../Service/employee-profile.service';
   styleUrls: ['./profile-setting.component.css']
 })
 export class ProfileSettingComponent {
-page: CRUDCreatePage = new CRUDCreatePage();
+  page: CRUDCreatePage = new CRUDCreatePage();
   item: profileSettingViewModel = new profileSettingViewModel();
   isEqualPassword: boolean = true;
-  id:string;
+  id: string;
   controlType = ControlType;
-  environment = environment;  
-  clientId :string;
+  environment = environment;
+  image: { uploaded: boolean, src: string, error?: string } = { uploaded: false, src: '', error: '' };
+
+  clientId: string;
   customerActivity = [
     { id: 1, name: 'CarWash' },
     { id: 2, name: 'ServiceStation' },
@@ -37,7 +39,7 @@ page: CRUDCreatePage = new CRUDCreatePage();
 
 
 
-constructor(private _router: Router, private _employeeProfile: EmployeeProfileService, private _sharedService: SharedService,
+  constructor(private _router: Router, private _employeeProfile: EmployeeProfileService, private _sharedService: SharedService,
     private _apiService: ApiService, private _activatedRoute: ActivatedRoute
   ) {
 
@@ -60,19 +62,18 @@ constructor(private _router: Router, private _employeeProfile: EmployeeProfileSe
     if (token) {
       try {
         const decodedToken: any = jwtDecode(token); // Decode the token
-        this.clientId = decodedToken.ID; 
+        this.clientId = decodedToken.ID;
       } catch (error) {
       }
     } else {
     }
   }
-  
+
   createForm() {
     this.page.form = this._sharedService.formBuilder.group({
       name: [this.item.name, [Validators.required, Validators.minLength(1), Validators.maxLength(100)]],
-      userName: [this.item.userName, [Validators.required]],
       mobile: [this.item.mobile, [Validators.required, Validators.pattern(/^(010|011|012|015)\d{8}$/)]],
-      jobTitle: [this.item.jobTitle], 
+      email: [this.item.email],
 
     });
     this.page.isPageLoaded = true;
@@ -86,6 +87,16 @@ constructor(private _router: Router, private _employeeProfile: EmployeeProfileSe
           this.item = res.data;
           this.item.id = this.id;
           this.createForm();
+
+
+          this.image = {
+            uploaded: !!this.item.path,
+            src: this.item.path,
+            error: ''
+          };
+
+
+
           this.page.isPageLoaded = true;
         }
       },
@@ -95,12 +106,17 @@ constructor(private _router: Router, private _employeeProfile: EmployeeProfileSe
       }
     });
   }
+
   Save() {
     if (this.page.isSaving || this.page.form.invalid) return;
 
     this.page.isSaving = true;
     Object.assign(this.item, this.page.form.value);
-    this.item.id=this.clientId;
+    this.item.path = this.image.uploaded ? this.image.src : '';
+    this.item.id = this.clientId;
+
+
+    this.item.id = this.clientId;
     console.log(this.item)
     this._employeeProfile.profileSetting(this.item).subscribe({
       next: (res) => {
@@ -117,9 +133,48 @@ constructor(private _router: Router, private _employeeProfile: EmployeeProfileSe
       },
     });
   }
-  
+
   onCancel(): void {
     this._router.navigate(['/sites/employeeProfile']);
   }
+  getImageUrl(imagePath: string): string {
+    return `${environment.api}/` + imagePath;
+  }
+
+  onImageUpload(files, index: number): void {
+    if (files.length === 0) {
+      return;
+    }
+
+    const file = <File>files[0];
+    const formData = new FormData();
+    formData.append('Files', file, file.name);  // Use 'Files' as the field name if required by backend
+    console.log(formData);
+
+    // Call the service to upload the image, passing the FormData directly
+    this._employeeProfile.uploadImage(formData).subscribe({
+      next: (res) => {
+        if (res.isSuccess) {
+          console.log(res);
+          //this.images[index] = { uploaded: true, src: res.data.path[index] };
+          this.image = { uploaded: true, src: res.data.path[0] };
+
+          this._sharedService.showToastr(res);
+        }
+      },
+      error: (err) => {
+        this._sharedService.showToastr(err);
+      },
+    });
+  }
+
+  getUploadedImages() {
+    return this.image.uploaded ? this.image.src : '';
+  }
+  
+  replaceImage(): void {
+    this.image = { uploaded: false, src: '', error: '' };
+  }
+  
 
 }

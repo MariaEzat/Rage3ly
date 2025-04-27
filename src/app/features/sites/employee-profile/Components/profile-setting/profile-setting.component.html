@@ -13,19 +13,54 @@
             [labelClass]="'text-white'" ></ng-control>
           </div>
           <div class="col-6">
-            <ng-control [form]="page.form" control="userName" label="UserName"
-              placeholder="Enter Your UserName" [inputClass]="'bg-Dark border-color'"
+            <ng-control [form]="page.form" control="email" label="Email"
+              placeholder="Enter Your Email" [inputClass]="'bg-Dark border-color'"
               [labelClass]="'text-white'" ></ng-control>
           </div>
         </div>
         <div class="row g-3  m-2" >
           <div class="col-6">
-            <ng-control [form]="page.form" control="mobile" label="Mobile" placeholder="Enter your Mobile" [inputClass]="'bg-Dark border-color'"
+            <ng-control [form]="page.form" control="mobile" label="Mobile" placeholder="Enter your mobile" [inputClass]="'bg-Dark border-color'"
             [labelClass]="'text-white'" ></ng-control>
           </div>
           <div class="col-6">
-            <ng-control [form]="page.form" control="jobTitle" label="jobTitle" placeholder="Enter your jobTitle" [inputClass]="'bg-Dark border-color'"
-            [labelClass]="'text-white'" ></ng-control>
+            
+            <div class="row it">
+              <div class="container py-5">
+                  <div class="row g-4 justify-content-center">
+                      <div class="col-12 col-md-3 col-lg-3" *ngFor="let image of images; let i = index">
+                          <div class="border p-3 text-center h-100">
+                              <div *ngIf="image.uploaded; else uploadTemplate">
+                                  <img [src]="environment.api+'/'+image.src" alt="Uploaded Image"
+                                      style="width: 200px; height: 200px;" class="img-fluid mb-2 img-thumbnail" />
+
+                                  <div class="d-flex justify-content-center gap-2">
+                                      <button pButton class=" btn btn-delete ms-2" (click)="replaceImage(i)">
+                                          <img src="/assets/images/delete-white.svg" class="icon-size">
+                                      </button>
+                                  </div>
+                              </div>
+                              <ng-template #uploadTemplate>
+                                  <label for="fileInput-{{ i }}" class="text-primary cursor-pointer">
+                                      <i class="fa fa-upload fa-2x mb-2 color-brand-500"></i>
+                                      <p class="color-brand-500 text-white" *ngIf="!image.uploaded">
+                                          {{"sites.advertisment.Upload New Image"|translate}}</p>
+                                      <p class="text-danger" *ngIf="image.error">{{"sites.advertisment.Error
+                                          Uploading"|translate}}</p>
+                                  </label>
+                                  <input #file type="file" id="fileInput-{{ i }}" class="d-none"
+                                      (change)="onImageUpload(file.files, i)" />
+                              </ng-template>
+
+                          </div>
+                      </div>
+                  </div>
+              </div>
+
+
+
+          </div>
+          
           </div>
         </div>
   

@@ -310,7 +310,8 @@
       "clients": "Clients",
       "users": "Users",
       "mobile": "Mobile",
-      "signOut":"Sign Out"
+      "signOut":"Sign Out",
+      "roles":"Roles"
     },
     "mobile": {
       "userName": "User Name",

@@ -22,4 +22,7 @@ export class EmployeeProfileService {
    {
      return this._apiService.update(`/ChangeUserPasswordEndPoint/ChangeUserPassword`, body);
    }
+   uploadImage(formData: FormData) {
+    return this._apiService.postMedia('/UploadMediaEndPoint/UploadMedia', formData, true);
+  }
 }

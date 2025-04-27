@@ -48,7 +48,13 @@ const routes: Routes = [
             (m) => m.MobileModule
           ),
       },
-      
+      {
+        path: 'roles',
+        loadChildren: () =>
+          import('./roles/roles.module').then(
+            (m) => m.RolesModule
+          ),
+      },
     ],
   },
 ];
