@@ -83,12 +83,12 @@ export class CreateComponent implements OnInit, OnDestroy {
           icon: '/assets/icons/sell.svg',
           isSelected: false,
         },
-        {
-          ID: 3,
-          name: translations['sites.mobile.PhoneConfirmation'],
-          icon: '/assets/icons/sell.svg',
-          isSelected: false,
-        },
+        // {
+        //   ID: 3,
+        //   name: translations['sites.mobile.PhoneConfirmation'],
+        //   icon: '/assets/icons/sell.svg',
+        //   isSelected: false,
+        // },
       ];
     });
 

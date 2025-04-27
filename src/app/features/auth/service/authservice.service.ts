@@ -54,7 +54,7 @@ export class AuthserviceService {
     return this._apiService.post(`/ResendOTPEndPoint/Post`, body);
   }
   setLogin(userData: LoginViewModel) {
-    return this._apiService.post(`/LoginEndPoint/Post`, userData);
+    return this._apiService.post(`/AdminLoginEndPoint/Post`, userData);
   }
   setPhone(phone:PhoneViewModel){
     return this._apiService.post(`/ResetPasswordOTPEndPoint/ResetPasswordOTP?Mobile=${phone.mobile}`);
