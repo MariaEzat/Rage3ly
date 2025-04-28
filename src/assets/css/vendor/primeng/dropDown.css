@@ -2,3 +2,16 @@
     width: 100%;
 }
 
+.ng-dropdown-panel .ng-option:hover{
+    background-color: #31314a  !important;
+    color: white !important;
+  }
+  .ng-dropdown-panel .ng-option{
+    background-color: #060B26  !important;
+    color: white !important;
+  
+  }
+  .ng-option-label{
+    color: white !important;
+  
+  }

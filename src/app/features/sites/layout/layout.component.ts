@@ -9,6 +9,9 @@ import { TranslateService } from '@ngx-translate/core';
 })
 export class LayoutComponent {
   openDropdown: string | null = null;
+  activeLink: string = '';
+  sidebarVisible: boolean = false;
+
   constructor(private router: Router) {}
 
   toggleDropdown(menu: string) {
@@ -26,4 +29,8 @@ export class LayoutComponent {
     localStorage.clear(); // أو localStorage.removeItem('eToken');
     this.router.navigate(['/auth/login']);
   }
+  setActiveLink(link: string) {
+    this.activeLink = link;
+  }
+  
 }

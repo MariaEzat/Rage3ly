@@ -14,10 +14,10 @@
             [labelClass]="loginForm.get('password')?.invalid && (loginForm.get('password')?.touched || loginForm.get('password')?.dirty) ? 'form-control-with-validate' : 'form-control-no-validate'"
             control="password" label="auth.login.password" placeholder="********"
             [type]="controlType.PASSWORD"></ng-control>
-          <p class="mb-4">
+          <!-- <p class="mb-4">
             <span  class="pointer color-brand"
               routerLink="/auth/phoneforgetpassword">{{"auth.login.forgotPassword?"|translate}}</span>
-          </p>
+          </p> -->
           <button (click)="onSubmit()" class="btn bg-brand w-100 mt-4 text-white"
             [disabled]="loginForm.invalid || isSubmitting">
             {{"auth.login.login"|translate}}
