@@ -1,5 +1,5 @@
 export const environment = {
   production: true,
   pageSize: 50,
-  api:`https://ecommerce.tahwisha.com`
+  api:`https://api.rage3ly.com`
 };
