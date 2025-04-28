@@ -36,9 +36,11 @@ export class customerCreateViewModel {
   nationalNumber?: string;
   password: string;
   mobile: string;
-  email?: string;
+  email: string;
   confirmPassword: string;
   paths?: string[];
+  cityId:string;
+  governorateId:string;
 }
 export class changePasswordViewModel {
   password:string;

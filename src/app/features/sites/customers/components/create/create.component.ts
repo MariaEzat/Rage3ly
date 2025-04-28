@@ -98,6 +98,8 @@ export class CreateComponent implements OnInit {
       name: [this.item.name, [Validators.required, Validators.minLength(1), Validators.maxLength(100)]],
       nationalNumber: [this.item.nationalNumber, [ Validators.pattern(/^\d{14}$/)]],
       email: [this.item.email, [Validators.email, ]],
+      cityId: [this.item.cityId, [Validators.required ]],
+      governorateId: [this.item.governorateId, [Validators.required ]],
       mobile: [this.item.mobile, [Validators.required, , Validators.pattern(/^(010|011|012|015)\d{8}$/)]],
     });
     this.page.isPageLoaded = true;
@@ -112,6 +114,8 @@ export class CreateComponent implements OnInit {
     this.page.form = this._sharedService.formBuilder.group({
       name: [this.item.name, [Validators.required, Validators.minLength(1), Validators.maxLength(100)]],
       email: [this.item.email, [Validators.email,Validators.required ]],
+      cityId: [this.item.cityId, [Validators.required ]],
+      governorateId: [this.item.governorateId, [Validators.email ]],
       nationalNumber: [
         this.item.nationalNumber,
         [ Validators.pattern(/^\d{14}$/)]
