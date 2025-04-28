@@ -29,7 +29,7 @@ export class LoginComponent implements OnInit {
   }
   initializeForm(): void {
     this.loginForm = this._sharedService.formBuilder.group({
-      mobile: ['', [Validators.required, Validators.pattern(/^(010|011|012|015)\d{8}$/)]],
+      mobile: ['', [Validators.required,Validators.pattern(/(^((010|011|012|015)\d{8})$)|(^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$)/)]],
       password: ['', Validators.required],
     });
   }

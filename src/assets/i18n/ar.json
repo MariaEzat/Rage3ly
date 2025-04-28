@@ -219,7 +219,7 @@
     "login": {
       "login": "تسجيل دخول",
       "enterThePhoneNumberandPassword": "ادخل رقم التليفون و كلمة المرور",
-      "phoneNumber": "رقم التليفون",
+      "phoneNumberOrEmail": "رقم التليفون او البريد الالكتروني ",
       "password": "كلمة المرور",
       "forgotPassword?": "هل نسيت كلمة المرور؟",
       "haveNotAnAccount?": "هل ليس لديك حساب ؟",
