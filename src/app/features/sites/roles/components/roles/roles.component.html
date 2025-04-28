@@ -3,26 +3,26 @@
 
     <div class="d-flex justify-content-between align-items-center">
         <p class="mb-2 text-white ts-3 ">
-            Roles & Permissions
+            {{"sites.roles.roles&Permissions"|translate}}
         </p>
     </div>
     <hr class="m-1 color-gray-300 mb-3" />
 
 
-    <div class="card mt-4 border rounded shadow-sm" style="background-color: #1d223f;">
+    <div class="card mt-4 border rounded shadow-sm" style="background-color: #1A1F3766;">
         <div class="card-body">
             <div class="row row-cols-lg-3 g-2">
                 <div class="col">
                     <div class="d-flex align-items-center">
-                        <h5 class="text-white px-2">Roles & Permissions</h5>
-                        <div class="custom-role cr7 px-2 py-1 mb-2 text-white">3 Roles</div>
+                        <h5 class="text-white px-2">  {{"sites.roles.roles&Permissions"|translate}}</h5>
+                        <div class="custom-role cr7 px-2 py-1 mb-2 text-white">3   {{"sites.roles.roles"|translate}}</div>
                     </div>
                 </div>
             </div>
             <hr class="color-gray-300" />
 
             <div class="table-responsive">
-                <table class="table text-start align-middle transparent-table">
+                <table class="table text-start align-middle transparent-table" dir="ltr">
                     <thead>
                         <tr>
                             <th class="text-white " style="width: 70%;"></th>
@@ -31,12 +31,12 @@
                     </thead>
                     <tbody>
                         <tr *ngFor="let role of RolesEnum">
-                            <td class="role text-white">{{ role.name }}</td>
+                            <td class="role text-white">{{ role.name |translate}}</td>
                             <td style="text-align: right;">
                                 <button (click)="viewRoleDetails(role.id)"
                                     class="btn btn-light btn-sm d-flex align-items-center justify-content-center"
                                     style="padding: 4px 10px; border-radius: 6px;">
-                                    <span class="fw-bold text-dark">Role Details</span>
+                                    <span class="fw-bold text-dark">  {{"sites.roles.roleDetails"|translate}}</span>
                                 </button>
 
                             </td>

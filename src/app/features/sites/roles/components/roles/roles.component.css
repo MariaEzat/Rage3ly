@@ -1,7 +1,7 @@
 .custom-role {
     background-color: #1d223f;
     color: white;
-    border: 1px solid white !important;
+    border: 1px solid #535862 !important;
 }
 
 .table thead th {
@@ -10,7 +10,7 @@
   
  
   .table tbody td {
-    background-color: #1d223f; 
+    background-color: #1A1F3766; 
    
   }
   
@@ -23,7 +23,7 @@
   }
   
   .table th {
-    background-color: #1d223f;
+    background-color: #1A1F3766;
     text-align: left;
     font-size: 12px;
     color: #535862;
@@ -36,7 +36,7 @@
   }
   
   .table tbody td:first-child {
-    background-color: #1d223f !important;
+    background-color: #1A1F3766!important;
   }
   .role{
     color: #972ccc;
@@ -45,15 +45,16 @@
 
 
   body {
-    background-color: #060B26;
+    background-color: #1A1F3766;
     color: #fff;
     font-family: 'Cairo', sans-serif;
   }
   
   .card {
-    background-color: #0B1437;
+    background-color: #1A1F3766;
     border: none;
     border-radius: 8px;
+    border: 1px solid #535862;
   }
   
   .btn-primary {
@@ -76,12 +77,12 @@
   
   .table {
     background-color: transparent;
-    color: #fff;
+    color: #535862;
   }
   
   input,
   select {
-    background-color: #0B1437;
+    background-color: #1A1F3766;
     border: 1px solid #4DC3FF;
     color: #fff;
   }
@@ -94,15 +95,16 @@
   }
   .transparent-table {
     background-color: transparent;
-    color: white;
+    color: #535862;
     width: 100%; 
     border-collapse: collapse;
+    
 }
 
   
   .transparent-table thead {
     background-color: transparent;
-    color: white;
+    color: #535862;
   }
   
   .transparent-table tbody tr {
@@ -112,9 +114,9 @@
   
   .transparent-table td,
   .transparent-table th {
-      background-color: #1d223f !important; 
-      color: white;
-      border: 1px solid #1d223f;
+      background-color: #1A1F3766 !important; 
+      color: #535862;
+      border: 1px solid #1A1F3766;
   }
   
   .transparent-table img {
@@ -128,6 +130,6 @@
   .border-gray-input {
     border: 1px solid rgb(190, 32, 32) !important;
     border-radius: 4px; 
-    color: white;      
+    color: #535862;      
   }
   

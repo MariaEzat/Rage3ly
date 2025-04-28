@@ -8,7 +8,7 @@
         </svg>
       </span>
       
-      Roles & Permissions
+      {{"sites.roles.roles&Permissions"|translate}}
     </h3>
     
   </div>
@@ -27,7 +27,10 @@
         <div class="row g-2">
 
           <div class="col-6">
-            <ng-control [form]="page.searchForm" control="FeatureName" label="Feature Name" placeholder="Feature Name">
+            <ng-control [form]="page.searchForm" control="FeatureName" label="sites.roles.featureName" placeholder="sites.roles.featureName"
+            [inputClass]="'mb-2 bg-Dark border-color color-color-gray-300'"
+            [labelClass]="'text-white'"
+            >
             </ng-control>
           </div>
 

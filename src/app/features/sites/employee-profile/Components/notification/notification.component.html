@@ -2,15 +2,20 @@
     <!-- Header -->
     <div class="d-flex justify-content-between align-items-center py-2">
       <a class="mb-2 text-white ts-3">
-        <img src="../assets/images/expand_more.jpeg" style="width:20px; height:20px;" class="pointer mr-2" routerLink="/sites/employeeProfile" /> Notification
+        <span class="expand-arrow " routerLink="/sites/employeeProfile">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="white" stroke-width="2"
+            viewBox="0 0 24 24">
+            <path d="M8 5l8 7-8 7" />
+          </svg>
+        </span> {{"sites.employee-profile.notification"|translate}}
       </a>
     </div>
     <hr class="m-1 color-gray-300 mb-3" />
   
     <!-- Filter Buttons -->
     <div class="d-flex mb-4">
-      <button class="btn btn-primary text-white me-2">All</button>
-      <button class="btn custom-style cr3">Unread</button>
+      <button class="btn btn-primary text-white me-2"> {{"sites.employee-profile.all"|translate}}</button>
+      <button class="btn custom-style cr3"> {{"sites.employee-profile.unread"|translate}}</button>
     </div>
   
     <!-- Notification Cards -->

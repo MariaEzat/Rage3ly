@@ -7,6 +7,7 @@ export interface customerViewModel {
   nationalNumber:string;
   path:string;
   mobile:number;
+  ةobilesCount:number;
   selected?: boolean; 
 }
 

@@ -338,6 +338,32 @@
       "ImeI2": "ImeI1",
       "serialNumber": "Serial Number",
       "dateOfPurchase": "Date Of Purchase"
+    },
+    "employee-profile":{
+      "profileSettings":"Profile Settings",
+      "changePassword":"Change Password",
+      "notification":"Notification",
+      "name":"Name",
+      "email":"Email",
+      "mobile":"Mobile",
+      "cancel":"Cancel",
+      "save":"Save",
+      "password":"Password",
+      "confirmPassword":"Confirm Password",
+      "Passwords do not match":"Passwords do not match",
+      "all":"All",
+      "unread":"Unread"
+      
+    },
+    "roles":{
+      "roles&Permissions":"Roles & Permissions",
+      "role":"Role",
+      "roles":"Roles",
+      "admin":"Admin",
+      "superAdmin":"Super Admin",
+      "client":"Client",
+      "roleDetails":"Role Details",
+      "featureName":"Feature Name"
     }
   },
   "salesflow": {
@@ -364,7 +390,8 @@
       "Upload New Image": "Upload New Image",
       "Error Uploading": "Error Uploading",
       "addMobile": "Add Mobile",
-      "noClients": "No Clients"
+      "noClients": "No Clients",
+      "mobilesCount":"Mobiles Count"
      
     }
   }

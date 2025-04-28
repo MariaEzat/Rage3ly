@@ -16,3 +16,12 @@
     color: #4DC3FF;
     background-color: #e5eff4;
   }
+  .expand-arrow svg {
+    transition: transform 0.3s;
+    margin-right: 8px;  
+    transform: rotate(180deg); 
+  }
+  .expand-arrow {
+    cursor: pointer; 
+  }
+  

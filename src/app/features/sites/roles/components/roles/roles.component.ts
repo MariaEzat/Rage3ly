@@ -14,9 +14,9 @@ export class RolesComponent {
 constructor(private _router:Router,private _roleService:RoleService){}
 
  RolesEnum = [
-  { id: 1, name: 'SuperAdmin' },
-  { id: 2, name: 'Admin' },
-  { id: 3, name: 'Client' },
+  { id: 1, name: 'sites.roles.superAdmin' },
+  { id: 2, name: 'sites.roles.admin' },
+  { id: 3, name: 'sites.roles.client' },
 ];
 
 viewRoleDetails(id: string){
