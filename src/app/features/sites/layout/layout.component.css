@@ -7,23 +7,33 @@
   overflow-y: auto;
   z-index: 1000;
 }
+
 .flex-grow-1 {
   margin-right: 250px; /* match the sidebar width */
 }
-.active-color{
+
+.active-color {
   background-color: #121c5066;
-
-}
-.sidebar-right {
-  border-left: 2px solid rgb(65 65 75); /* أو أي لون يناسبك */
 }
 
+.nav-link {
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease; /* smooth transition for color change */
+}
 
+.nav-link:hover {
+  background-color: #121c5066;  /* Hover background color */
+}
+
+.nav-link:hover img {
+  transform: scale(1.1); /* Zoom in the icon on hover */
+}
 
 .nav-icon {
   width: 35px;
   height: 35px;
-  object-fit: contain; /* يحافظ على نسبة الأبعاد بدون تشويه */
+  object-fit: contain; /* maintains aspect ratio without distortion */
 }
 
-
+.sidebar-right {
+  border-left: 2px solid rgb(65 65 75); /* or any color that suits you */
+}
