@@ -55,6 +55,7 @@
         
         <!-- Table -->
         <div class="table-responsive">
+          <div style="overflow-x: auto">
           <table class="table text-center align-middle transparent-table">
             <thead>
               <tr>
@@ -79,20 +80,19 @@
                 <td colspan="100%">{{"sites.advertisment.noAdvertisments"|translate}}</td>
               </tr>
               <tr *ngFor="let item of items | paginate: page.options; let i = index">
-                <td><input type="checkbox" [(ngModel)]="item.selected" /></td>
-                <td>{{ (page.options.currentPage - 1) * page.options.itemsPerPage + i + 1 }}</td>
-                <td>{{ item.title }}</td>
-                <td>{{ item.startDate | date: 'MMM d, y, h:mm:ss' }}</td>
-                <td>{{ item.endDate | date: 'MMM d, y, h:mm:ss' }}</td>
-                <td>
-                  <p-inputSwitch [(ngModel)]="item.isActive"
-                                 (ngModelChange)="updateActivation(item.id, item.isActive)">
+                <td data-label="Select"><input type="checkbox" [(ngModel)]="item.selected" /></td>
+                <td data-label="No.">{{ (page.options.currentPage - 1) * page.options.itemsPerPage + i + 1 }}</td>
+                <td data-label="{{ 'sites.advertisment.name' | translate }}">{{ item.title }}</td>
+                <td data-label="{{ 'sites.advertisment.startDate' | translate }}">{{ item.startDate | date: 'MMM d, y, h:mm:ss' }}</td>
+                <td data-label="{{ 'sites.advertisment.endDate' | translate }}">{{ item.endDate | date: 'MMM d, y, h:mm:ss' }}</td>
+                <td data-label="Active">
+                  <p-inputSwitch [(ngModel)]="item.isActive" (ngModelChange)="updateActivation(item.id, item.isActive)">
                   </p-inputSwitch>
                 </td>
-                <td>
+                <td data-label="Image">
                   <img [src]="getImageUrl(item.path)" style="width: 80px; height: 80px; object-fit: cover;" />
                 </td>
-                <td>
+                <td data-label="Actions">
                   <button pButton icon="pi pi-trash" class="p-button-rounded p-button-text p-button-danger"
                           aria-label="Delete" (click)="showDeleteConfirmation(item)">
                   </button>
@@ -101,6 +101,7 @@
                   </button>
                 </td>
               </tr>
+              
             </tbody>
           </table>
           
