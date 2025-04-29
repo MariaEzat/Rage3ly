@@ -1,7 +1,13 @@
 <head>
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link href="https://example.com/fonts/zain.css" rel="stylesheet" />
+
 </head>
-<body class="text-white font-sans flex flex-col overflow-auto overflow-x-hidden">
+<div *ngIf="isLoading" class="fixed inset-0 h-100 flex items-center justify-center z-50"  style="background-color: #060B26;">
+  <span class="loader"></span>
+</div>
+
+<body *ngIf="!isLoading" class="app-body text-white font-sans flex flex-col overflow-auto overflow-x-hidden">
 
 
 
@@ -19,7 +25,7 @@
       </div>
       <div class="flex items-center space-x-4 rtl:space-x-reverse mb-4 md:mb-0">
         <img src="../../../../../assets/images/BrandIcon.png" class="h-6 w-auto rounded" alt="logo">
-        <span class="font-bold text-2xl text-white px-2">رجعهولي.كوم </span>
+        <span class="font-bold text-2xl text-white px-2">راجعلي.كوم </span>
     </div>
   </nav>
 
@@ -90,12 +96,12 @@
 
    
       <div class="md:w-1/2 text-end md:text-right space-y-6 mt-10 justify-start ml-10">
-        <span class="px-5 py-2 rounded-full inline-block border-thin">نساعدك للحفاظ على هاتفك</span>
-        <h1 class="text-6xl md:text-7xl font-bold leading-snug">
+        <span class="px-5 py-2 rounded-full inline-block border-thin font-24">نساعدك للحفاظ على هاتفك</span>
+        <h1 class="text-whi font-['Zain']">
           احمي هاتفك من السرقة<br />احفظ حالته الآن
         </h1>
-        <p class="text-gray-300 text-lg">
-          تطبيق ذكي لحفظ حالة جهازك، مما يسهل استرجاعه عند الفقدان أو السرقة.
+        <p class="text-gray font-18">
+          تطبيق ذكي لحفظ حالة جهازك، مما يسهل استرجاعه عند الفقدان أو السرقة
         </p>
         <div class="flex flex-col sm:flex-row items-center justify-center md:justify-end gap-4 mt-6">
           <a href="#" class="bg-white text-purple-700 px-6 py-3 rounded-full font-semibold hover:text-purple-700 gradient-border">نزل التطبيق الآن</a>

@@ -7,5 +7,10 @@ import { Component, ViewEncapsulation } from '@angular/core';
   encapsulation: ViewEncapsulation.None
 })
 export class HomeComponent {
-
+  isLoading = true;
+  ngOnInit() {
+    setTimeout(() => {
+      this.isLoading = false;
+    }, 1000); 
+  }
 }
