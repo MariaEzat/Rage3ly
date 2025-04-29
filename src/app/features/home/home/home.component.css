@@ -3,6 +3,9 @@ body {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    font-family: 'Zain', serif !important
+
+
   }
   .Gray-600{
     color: "#535862";
@@ -97,3 +100,5 @@ body {
     color: linear-gradient( #ECECEC, #ECECEC00);
     font-size: 80px;
   }
+
+  

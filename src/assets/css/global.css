@@ -1,4 +1,4 @@
-@font-face {
+/* @font-face {
   font-family: "AMPLESOFTPRO-MEDIUM";
   src: url(../fonts/IBM_Plex_Sans/IBMPlexSans-Medium.ttf);
 }
@@ -30,7 +30,28 @@
 @font-face {
   font-family: "IBMPlexSans-Bold";
   src: url(../fonts//IBM_Plex_Sans/IBMPlexSans-Bold.ttf);
+} */
+@font-face {
+  font-family: "Zain" !important;
+  src: url('../fonts/Zain/Zain-Regular.ttf') ;
+  font-weight: normal;
+  font-style: normal;
 }
+
+@font-face {
+  font-family: "Zain";
+  src: url('../fonts/Zain/Zain-Bold.ttf') ;
+  font-weight: bold;
+  font-style: normal;
+}
+
+ h1,h2,h3,h4,h5{
+  font-family: 'Zain', serif !important;
+ }
+ p,button,span,nav,div,a {
+  font-family: 'Zain', serif !important;
+  font-size: medium;
+ }
 
 body {
   position: relative;

@@ -1,13 +1,14 @@
 <head>
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-  <link href="https://example.com/fonts/zain.css" rel="stylesheet" />
+
+
 
 </head>
 <div *ngIf="isLoading" class="fixed inset-0 h-100 flex items-center justify-center z-50"  style="background-color: #060B26;">
   <span class="loader"></span>
 </div>
 
-<body *ngIf="!isLoading" class="app-body text-white font-sans flex flex-col overflow-auto overflow-x-hidden">
+<body *ngIf="!isLoading" class="app-body text-white font-sans flex flex-col overflow-auto overflow-x-hidden" lang="rtl">
 
 
 
@@ -97,7 +98,7 @@
    
       <div class="md:w-1/2 text-end md:text-right space-y-6 mt-10 justify-start ml-10">
         <span class="px-5 py-2 rounded-full inline-block border-thin font-24">نساعدك للحفاظ على هاتفك</span>
-        <h1 class="text-whi font-['Zain']">
+        <h1 class="text-whi">
           احمي هاتفك من السرقة<br />احفظ حالته الآن
         </h1>
         <p class="text-gray font-18">
@@ -140,7 +141,7 @@
           <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-right">
               <!-- Card 1 -->
               <div class="custom-card rounded-xl p-6 transition duration-300 border border-purple-900">
-                  <div class="flex justify-start">
+                  <div class="flex justify-end">
                       <img src="../../../../../assets/images/icon3.png" alt="البحث عن هاتف" />
                   </div>
                   <h3 class="text-xl font-semibold mb-2">يساعدك في البحث عن حالة هاتف</h3>
@@ -151,7 +152,7 @@
 
               <!-- Card 2 -->
               <div class="custom-card rounded-xl p-6 transition duration-300 border border-purple-900">
-                  <div class="flex justify-start">
+                  <div class="flex justify-end">
                       <img src="../../../../../assets/images/icon2.png" alt="حماية الهواتف" />
                   </div>
                   <h3 class="text-xl font-semibold mb-2">حماية عدد لا نهائي من الهواتف</h3>
@@ -162,7 +163,7 @@
 
               <!-- Card 3 -->
               <div class="custom-card rounded-xl p-6 transition duration-300 border border-purple-900">
-                  <div class="flex justify-start">
+                  <div class="flex justify-end">
                       <img src="../../../../../assets/images/icon1.png" alt="تغيير الحالة" class="" />
                   </div>
                   <h3 class="text-xl font-semibold mb-2">تغيير حالة الهواتف المسجلة</h3>
