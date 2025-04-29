@@ -29,10 +29,12 @@
   background-color: #ffffff22;
   border-color: #fff;
 }
-
+.nav-link:hover {
+  background-color: #121c5066;
+}
 /* تحسين الـ dropdown */
 .custom-lang-dropdown {
-  background-color: #1e1e2f;
+  background-color: #060B26;
   border: 1px solid #333;
   top: 100%; /* يخليها تبدأ من تحت البوتون */
   left: 0;   /* تخلّيها تحت الزر بالضبط */
@@ -43,6 +45,11 @@
   animation: fadeIn 0.2s ease-in-out;
   z-index: 9999;
 }
+.nav-icon {
+  width: 35px;
+  height: 35px;
+  object-fit: contain; /* maintains aspect ratio without distortion */
+}
 
 .lang-option {
   color: #fff;
@@ -50,9 +57,11 @@
   transition: background-color 0.3s;
   font-size: 14px;
 }
-
+.nav-link:hover img {
+  transform: scale(1.1); /* Zoom in the icon on hover */
+}
 .lang-option:hover {
-  background-color: #2d2d44;
+  background-color: #121c5066;
   color: #fff;
 }
 
@@ -67,3 +76,5 @@
     transform: translateY(0);
   }
 }
+
+
