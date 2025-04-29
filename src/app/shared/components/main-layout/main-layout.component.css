@@ -39,7 +39,9 @@
   top: 100%; /* يخليها تبدأ من تحت البوتون */
   left: 0;   /* تخلّيها تحت الزر بالضبط */
   border-radius: 8px;
-  min-width: 150px;
+  min-width: 200px;
+  max-width: 90vw;
+  width: auto;
   padding: 0.25rem 0;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.25);
   animation: fadeIn 0.2s ease-in-out;

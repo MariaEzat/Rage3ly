@@ -81,3 +81,30 @@ h1,h2,h3,h4,h5{
   font-family: 'Zain', serif !important;
   font-size: 18px;
  }
+ @media (max-width: 990px) {
+  .d-flex {
+    display: block !important; 
+  }
+
+  .sidebar-right {
+    display: none !important; 
+  }
+
+  .flex-grow-1 {
+    margin-right: 0 !important; 
+  }
+}
+
+@media (min-width: 1001px) { 
+  .d-flex {
+    display: flex !important; 
+  }
+
+  .sidebar-right {
+    display: block !important; 
+  }
+
+  .flex-grow-1 {
+    margin-right: 250px; 
+  }
+}
