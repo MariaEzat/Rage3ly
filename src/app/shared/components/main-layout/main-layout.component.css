@@ -67,9 +67,14 @@
   color: #fff;
 }
 .hover:hover {
-  transform: scale(1.15); /* Slight zoom effect */
+  transform: scale(1.00); /* Slight zoom effect */
   transition: all 0.3s ease; /* Smooth transition */
+  background-color: #121c5066;
+
 }
+
+
+
 
 /* Animation */
 @keyframes fadeIn {
@@ -82,5 +87,6 @@
     transform: translateY(0);
   }
 }
+
 
 
