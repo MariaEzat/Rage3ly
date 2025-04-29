@@ -1,7 +1,11 @@
 <head>
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 </head>
-<body class="text-white font-sans flex flex-col overflow-auto overflow-x-hidden">
+<div *ngIf="isLoading" class="fixed inset-0 h-100 flex items-center justify-center z-50"  style="background-color: #060B26;">
+  <span class="loader"></span>
+</div>
+
+<body *ngIf="!isLoading" class="app-body text-white font-sans flex flex-col overflow-auto overflow-x-hidden">
 
 
 
@@ -19,7 +23,7 @@
       </div>
       <div class="flex items-center space-x-4 rtl:space-x-reverse mb-4 md:mb-0">
         <img src="../../../../../assets/images/BrandIcon.png" class="h-6 w-auto rounded" alt="logo">
-        <span class="font-bold text-2xl text-white px-2">رجعهولي.كوم </span>
+        <span class="font-bold text-2xl text-white px-2">راجعلي.كوم </span>
     </div>
   </nav>
 
