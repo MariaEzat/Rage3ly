@@ -132,6 +132,10 @@ body {
     font-size: 0.75rem;
     padding: 0.25rem 0.5rem;
   }
+  .btn-primary:hover {
+    font-size: 0.75rem;
+    padding: 0.25rem 0.5rem;
+  }
 }
 
 
@@ -156,6 +160,10 @@ body {
   }
 
   .btn {
+    font-size: 0.75rem;
+    padding: 0.25rem 0.5rem;
+  }
+  .btn-primary:hover {
     font-size: 0.75rem;
     padding: 0.25rem 0.5rem;
   }
