@@ -11,6 +11,7 @@ export class LayoutComponent {
   openDropdown: string | null = null;
   activeLink: string = '';
   sidebarVisible: boolean = false;
+  sidebarCollapsed = false;
 
   constructor(private router: Router) {}
 
@@ -32,5 +33,6 @@ export class LayoutComponent {
   setActiveLink(link: string) {
     this.activeLink = link;
   }
+  
   
 }

@@ -41,3 +41,35 @@
   transform: scale(1.15); /* Slight zoom effect */
   transition: all 0.3s ease; /* Smooth transition */
 }
+@media (max-width: 768px) {
+  .sidebar-right {
+    position: relative;
+    width: 100%;
+    height: auto;
+    border-left: none;
+    border-top: 2px solid rgb(65 65 75);
+    flex-direction: row;
+    overflow-x: auto;
+  }
+
+  .nav-link {
+    justify-content: center !important;
+    text-align: center;
+    font-size: 0.9rem;
+    flex-direction: column-reverse !important;
+  }
+
+  .nav-icon {
+    width: 25px;
+    height: 25px;
+  }
+
+  .mt-auto.cr5 {
+    margin-top: 1rem;
+    width: 100% !important;
+  }
+
+  .flex-grow-1 {
+    margin-right: 0;
+  }
+}

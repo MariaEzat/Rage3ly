@@ -14,6 +14,8 @@ export class MainLayoutComponent {
 
   currentLang = 'en';
   showLangOptions: boolean = false;
+  showSidebarMenu = false;
+  activeLink: string = '';
 
   constructor(private router: Router, public websiteService: WebsiteService, private translate: TranslateService, private localizationService: LocalizationService, @Inject(DOCUMENT) private document: Document
   ) { this.currentLang = this.localizationService.getLanguage(); }
@@ -84,8 +86,19 @@ onClickOutside(event: MouseEvent): void {
 
   
 
-  toggleLangOptions(): void {
-    this.showLangOptions = !this.showLangOptions; // Toggle dropdown visibility
+  toggleLangOptions() {
+    this.showLangOptions = !this.showLangOptions;
+    if (this.showLangOptions) {
+      this.showSidebarMenu = false; // close sidebar if language menu opens
+    }
+  }
+  
+  // Toggle sidebar menu (mobile)
+  toggleSidebar() {
+    this.showSidebarMenu = !this.showSidebarMenu;
+    if (this.showSidebarMenu) {
+      this.showLangOptions = false; // close language menu if sidebar opens
+    }
   }
 
   changeLang(lang: string): void {
@@ -101,5 +114,10 @@ onClickOutside(event: MouseEvent): void {
     this.document.documentElement.dir = dir;
     this.document.documentElement.lang = lang;
   }
-  
+  sidebarOpen = false;
+
+ 
+  setActiveLink(link: string) {
+    this.activeLink = link;
+  }
 }
