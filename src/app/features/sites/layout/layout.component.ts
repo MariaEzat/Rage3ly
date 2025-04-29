@@ -33,6 +33,9 @@ export class LayoutComponent {
   setActiveLink(link: string) {
     this.activeLink = link;
   }
-  
+  signOut() {
+    localStorage.clear();
+    this.router.navigate(['/auth/login'])
+  }
   
 }

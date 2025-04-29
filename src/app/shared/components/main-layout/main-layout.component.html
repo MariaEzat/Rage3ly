@@ -78,6 +78,11 @@
               <img [src]="RolesRla.isActive ? 'assets/images/rolesActive.png' : 'assets/images/rolesDeactive.png'"
                 class="px-1 nav-icon">
             </a>
+            <a class="mt-auto cr3 w-75 text-center bg-red-dark hover">
+              <button class="btn cr3 p-2 text-white w-100" (click)="logout()">
+                   {{ "sites.layout.signOut" | translate }}
+              </button>
+            </a>
           </div>
         </div>
       </div>

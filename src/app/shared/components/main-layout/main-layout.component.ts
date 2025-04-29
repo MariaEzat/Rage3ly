@@ -48,7 +48,7 @@ onClickOutside(event: MouseEvent): void {
   ];
   userName = '';
   userRole = '';
-  signOut() {
+  logout() {
     localStorage.clear();
     this.router.navigate(['/auth/login'])
   }
