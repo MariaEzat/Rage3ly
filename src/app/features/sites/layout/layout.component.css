@@ -37,3 +37,7 @@
 .sidebar-right {
   border-left: 2px solid rgb(65 65 75); /* or any color that suits you */
 }
+.hover:hover {
+  transform: scale(1.15); /* Slight zoom effect */
+  transition: all 0.3s ease; /* Smooth transition */
+}
