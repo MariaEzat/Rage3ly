@@ -38,3 +38,12 @@
   .text-color {
     color: #4B50B6;
   }
+  h1,h2,h3,h4,h5{
+    font-family: 'Zain', serif !important;
+   }
+  
+   p,span,button,nav,div,a ,label,td,form{
+    font-family: 'Zain', serif !important;
+    font-size: 18px;
+   }
+  

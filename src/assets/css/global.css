@@ -45,13 +45,6 @@
   font-style: normal;
 }
 
- h1,h2,h3,h4,h5{
-  font-family: 'Zain', serif !important;
- }
- p,button,span,nav,div,a {
-  font-family: 'Zain', serif !important;
-  font-size: medium;
- }
 
 body {
   position: relative;
