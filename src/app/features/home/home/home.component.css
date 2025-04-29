@@ -90,4 +90,10 @@ body {
       margin-top: 0;
     }
   }
-  
+  .text-gray {
+    color: #ECECECA6;
+  }
+  .text-whi{
+    color: linear-gradient( #ECECEC, #ECECEC00);
+    font-size: 80px;
+  }
