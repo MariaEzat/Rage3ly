@@ -221,7 +221,9 @@
     "jumb-forward": "Jump Forward",
     "jumb-back": "Jump Back",
     "mainLayout":{
-      "hello":"Hello"
+      "hello":"Hello",
+      "items":"Items"
+
     }  },
   "auth": {
     "login": {

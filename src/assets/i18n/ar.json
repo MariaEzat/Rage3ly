@@ -212,7 +212,8 @@
     "jump-forward": "Jump Forward",
     "jump-back": "Jump Back",
     "mainLayout":{
-      "hello":"اهلا"
+      "hello":"اهلا",
+      "items":"العناصر"
     }
   },
   "auth": {
