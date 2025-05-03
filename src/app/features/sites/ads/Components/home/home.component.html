@@ -54,8 +54,7 @@
         </div>
         
         <!-- Table -->
-        <div class="scrolled">
-          <div style="overflow-x: auto">
+        <div class="scrolled mt-3 h-100">
           <table class="table text-center align-middle transparent-table">
             <thead>
               <tr>
@@ -108,9 +107,9 @@
         </div>
         
 
-        <!-- Pagination -->
-        <!-- <ng-pagination [page]="page" (pageSizeChange)="onChangePageSize()" (pageChange)="getNextPrevData($event)">
-        </ng-pagination> -->
+        <ng-pagination [page]="page" (pageSizeChange)="onChangePageSize()" (pageChange)="getNextPrevData($event)">
+        </ng-pagination>
+       
       </div>
     </div>
   </div>
