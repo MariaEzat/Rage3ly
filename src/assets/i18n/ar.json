@@ -327,7 +327,8 @@
       "ImeI1":"ImeI1",
       "ImeI2":"ImeI1",
       "serialNumber":"رقم سري",
-      "dateOfPurchase":"تاريخ الشراء"
+      "dateOfPurchase":"تاريخ الشراء",
+      "search":"بحث"
     },
     "employee-profile":{
       "profileSettings":"إعدادات الملف الشخصي",
