@@ -60,6 +60,7 @@ body {
 }
 
 img {
+
   user-select: none;
 }
 
@@ -1230,6 +1231,7 @@ input::-webkit-input-placeholder {
   height: 8px;
 }
 
+
 .main-page ::-webkit-scrollbar-track,
 .modal-dialog ::-webkit-scrollbar-track {
   background: #ffffff;
@@ -1258,7 +1260,7 @@ input::-webkit-input-placeholder {
 
 .main-page ::-webkit-scrollbar-thumb:hover,
 .modal-dialog ::-webkit-scrollbar-thumb:hover {
-  background: #611adc;
+  background: #4DC3FF;
 }
 
 .main-header {
@@ -2450,6 +2452,8 @@ a:not([href]):not([tabindex]):focus {
   overflow-x: auto;
   white-space: nowrap;
 }
+
+
 
 .scroll-container {
   display: flex;

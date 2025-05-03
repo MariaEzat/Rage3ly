@@ -12,3 +12,6 @@
     overflow-x: auto;
     white-space: nowrap;
 }
+.scrolled::-webkit-scrollbar {
+    width:  5px;
+  }
