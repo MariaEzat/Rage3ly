@@ -87,9 +87,10 @@
         </div>
 
         <!-- Table -->
-        <div class="table-responsive">
-          <table class="table text-center align-middle transparent-table">
+        <div class=" scolled mt-3 h-100" >
+          <table   class="table text-center align-middle transparent-table" *ngIf="!page.isSearching" >
             <thead>
+              
               <tr>
                 <th>
                   <input type="checkbox" (change)="toggleSelectAll($event)" [checked]="isAllSelected()" />
@@ -110,7 +111,8 @@
               <tr *ngIf="items.length === 0">
                 <td colspan="100%"> {{"salesflow.Customers.noClients"|translate}}  </td>
               </tr>
-              <tr *ngFor="let item of items | paginate: page.options; let i = index">
+              <ng-container *ngFor="let item of items | paginate: page.options; let i = index">
+                <tr>
                 <td><input type="checkbox" [(ngModel)]="item.selected" /></td>
                 <td>{{ (page.options.currentPage - 1) * page.options.itemsPerPage + i + 1 }}</td>
                 <td>{{ item.name }}</td>
@@ -136,6 +138,7 @@
                   </button>
                 </td>
               </tr>
+              </ng-container>
             </tbody>
           </table>
 
