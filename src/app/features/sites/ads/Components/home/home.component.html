@@ -1,6 +1,6 @@
 <!-- Container -->
-<div class="d-flex min-vh-100 bg-Dark text-white" >
-  <div class="flex-grow-1 p-2">
+<div class="d-flex min-vh-100 bg-Dark text-white container-fluid p-md-4" >
+  <div class="flex-grow-1 p-2" style="width: 90%;">
     <div class="container-fluid">
 
       <!-- Search Card -->
@@ -10,23 +10,23 @@
         <form [formGroup]="page.searchForm">
           <div class="form-body">
             <div class="row g-2">
-              <div class="col-2">
+              <div class="col-12 col-md-6 col-lg-2">
                 <ng-control [form]="page.searchForm" control="Title" [inputClass]="'bg-Dark border-color'"
                   [labelClass]="'text-white'" label="sites.advertisment.name" placeholder="sites.advertisment.name">
                 </ng-control>
               </div>
-              <div class="col-2">
+              <div class="col-12 col-md-6 col-lg-2">
                 <ng-control [form]="page.searchForm" control="StartDate" label="sites.advertisment.startDate" [inputClass]="'bg-Dark  border-color'"
                   [labelClass]="'text-white'" [type]="page.ControlType.INPUT_DATE"></ng-control>
               </div>
-              <div class="col-2">
+              <div class="col-12 col-md-6 col-lg-2">
 
                 <ng-control [form]="page.searchForm" control="EndDate" label="sites.advertisment.endDate" [inputClass]="'bg-Dark border-color'" 
                   [labelClass]="'color-gray-300'" [type]="page.ControlType.INPUT_DATE"></ng-control>
               </div>
               <!-- Search Button -->
-              <div class="col-2 d-flex align-items-end">
-                <button class='color-brand-700 rb-btn  rb-btn-sm  w-100 border-color text-white'  (click)="search()"
+              <div class="col-12 col-md-6 col-lg-2 d-flex align-items-end">
+                <button class='color-brand-700 rb-btn  rb-btn-sm  w-100 border-color text-white w-100'  (click)="search()"
                   [disabled]="page.searchForm.invalid || page.isSearching">
                   <i class="uil uil-search"></i>
                   <span class="rb-btn-text d-md-inline-block">
@@ -42,19 +42,38 @@
       <!-- Ads Table Card -->
       <div class="card p-4 border-0 shadow-sm rounded-3" style="background-color: #1A1F3766;">
         <!-- Header -->
-        <div class="d-flex justify-content-between align-items-center mb-3">
-          <h5 class="text-white"> {{"sites.advertisment.advertisments"|translate}} </h5>
-          <div class="d-flex">
-            <button class="btn btn-primary me-2" (click)="deleteSelectedAds()">{{"sites.advertisment.delete"|translate}}</button>
-            <button class="btn btn-primary me-2" (click)="activateAds()">{{"sites.advertisment.active"|translate}}</button>
-            <button class="btn btn-primary me-2" (click)="disActiveAds()">{{"sites.advertisment.disActive"|translate}}</button>
-            <button class="btn btn-primary me-2" (click)="navigateToCreateBrand()">{{"sites.advertisment.addNewAdvertisment"|translate}}</button>
-
+        <div class="d-flex flex-column flex-md-row justify-content-between align-items-start align-items-md-center mb-3 gap-2">
+          <h5 class="text-white mb-0">{{"sites.advertisment.advertisments"|translate}}</h5>
+        
+          <!-- Button Grid -->
+          <div class="row row-cols-2 g-2 g-md-2 text-end text-md-end">
+            <div class="col">
+              <button class="btn btn-primary w-100" (click)="deleteSelectedAds()">
+                {{"sites.advertisment.delete"|translate}}
+              </button>
+            </div>
+            <div class="col">
+              <button class="btn btn-primary w-100" (click)="activateAds()">
+                {{"sites.advertisment.active"|translate}}
+              </button>
+            </div>
+            <div class="col">
+              <button class="btn btn-primary w-100" (click)="disActiveAds()">
+                {{"sites.advertisment.disActive"|translate}}
+              </button>
+            </div>
+            <div class="col">
+              <button class="btn btn-primary w-100" (click)="navigateToCreateBrand()">
+                {{"sites.advertisment.addNewAdvertisment"|translate}}
+              </button>
+            </div>
           </div>
         </div>
         
+        
+        
         <!-- Table -->
-        <div class="scrolled mt-3 h-100">
+        <div class="table-responsive scrolled mt-3 h-100">
           <table class="table text-center align-middle transparent-table">
             <thead>
               <tr>
