@@ -3,3 +3,8 @@
   font-size: 30px;
   color: #9454C6;
 }
+@media (max-width: 365px) {
+  .login-description {
+    font-size: 12px; /* or any size you prefer */
+  }
+}
