@@ -1,5 +1,5 @@
 <!-- Container -->
-<div class="d-flex min-vh-100 bg-Dark text-white">
+<div class="d-flex  min-vh-100 bg-Dark text-white">
   <div class="flex-grow-1 p-2" style="width: 90%;">
     <div class="container-fluid">
 
@@ -9,30 +9,30 @@
         <form [formGroup]="page.searchForm">
           <div class="form-body">
             <div class="row g-2">
-              <div class="col-2">
+              <div class="col-6 col-sm-3 mb-2">
                 <ng-control [form]="page.searchForm" control="Name" [inputClass]="'bg-Dark border-color'"
                   [labelClass]="'text-white'" label="salesflow.Customers.customers"
                   placeholder="salesflow.Customers.customers">
                 </ng-control>
               </div>
-              <div class="col-2">
+              <div class="col-6 col-sm-3 mb-2">
                 <ng-control [form]="page.searchForm" control="Email" [inputClass]="'bg-Dark border-color'"
                   [labelClass]="'text-white'" label="salesflow.Customers.email" placeholder="salesflow.Customers.email">
                 </ng-control>
               </div>
-              <div class="col-2">
+              <div class="col-6 col-sm-3 mb-2">
                 <ng-control [form]="page.searchForm" control="NationalNumber" [inputClass]="'bg-Dark border-color'"
                   [labelClass]="'text-white'" label="salesflow.Customers.nationalNumber"
                   placeholder="salesflow.Customers.nationalNumber">
                 </ng-control>
               </div>
-              <div class="col-2">
+              <div class="col-6 col-sm-3 mb-2">
                 <ng-control [form]="page.searchForm" control="Mobile" [inputClass]="'bg-Dark border-color'"
                   [labelClass]="'text-white'" label="salesflow.Customers.mobile"
                   placeholder="salesflow.Customers.mobile">
                 </ng-control>
               </div>
-              <div class="col-2">
+              <div class="col-6 col-sm-3 mb-2">
                 <ng-control [type]="controlType.SELECT" [form]="page.searchForm" control="VerifyStatus"
                   [inputClass]="'bg-Dark border-color text-white'" [labelClass]="'text-white'"
                   label="salesflow.Customers.verifyStatus" placeholder="salesflow.Customers.verifyStatus"
@@ -42,7 +42,7 @@
 
 
               <!-- Search Button -->
-              <div class="col-2 d-flex align-items-end">
+              <div class="col-6 col-sm-3 mb-2 d-flex flex-wrap gap-2 align-items-end">
                 <button class='color-brand-700 rb-btn  rb-btn-sm  w-100 border-color text-white' (click)="search()"
                   [disabled]="page.searchForm.invalid || page.isSearching">
                   <i class="uil uil-search"></i>
@@ -64,11 +64,11 @@
       <!-- Ads Table Card -->
       <div class="card p-4 border-0 shadow-sm rounded-3" style="background-color: #1A1F3766;">
         <!-- Header -->
-        <div class="d-flex justify-content-between align-items-center mb-3">
+        <div class="d-flex flex-wrap gap-2 justify-content-between align-items-center mb-3">
           <h5 class="text-white"> {{"salesflow.Customers.customers"|translate}} </h5>
-          <div class="d-flex">
+          <div class="d-flex flex-wrap gap-2">
             <div class="position-relative">
-              <button #downloadButton class="btn btn-primary me-2"
+              <button #downloadButton class="btn btn-primary flex-grow-1 flex-sm-grow-0 me-2"
                 (click)="toggleDownloadOptions()">{{"salesflow.Customers.download"|translate}}</button>
 
               <div #downloadOptions *ngIf="showDownloadOptions" class="download-options">
@@ -76,19 +76,19 @@
                 <button (click)="downloadPDF()">PDF</button>
               </div>
             </div>
-            <button class="btn btn-primary me-2"
+            <button class="btn btn-primary flex-grow-1 flex-sm-grow-0 me-2"
               (click)="activateCustomers()">{{"salesflow.Customers.active"|translate}}</button>
-            <button class="btn btn-primary me-2"
+            <button class="btn btn-primary flex-grow-1 flex-sm-grow-0 me-2"
               (click)="disActiveCustomers()">{{"salesflow.Customers.disActive"|translate}}</button>
-            <button class="btn btn-primary me-2"
+            <button class="btn btn-primary flex-grow-1 flex-sm-grow-0 me-2 "
               (click)="navigateToCreateCustomer()">{{"salesflow.Customers.addNewCustomer"|translate}}</button>
 
           </div>
         </div>
 
         <!-- Table -->
-        <div class=" scrolled mt-3 h-100" >
-          <table   class="table text-center align-middle transparent-table" *ngIf="!page.isSearching" >
+        <div class=" scrolled mt-3 h-100 table-responsive" >
+          <table   class="table text-center align-middle transparent-table"  >
             <thead>
               
               <tr>
@@ -111,8 +111,7 @@
               <tr *ngIf="items.length === 0">
                 <td colspan="100%"> {{"salesflow.Customers.noClients"|translate}}  </td>
               </tr>
-              <ng-container *ngFor="let item of items | paginate: page.options; let i = index">
-                <tr>
+              <tr *ngFor="let item of items | paginate: page.options; let i = index">
                 <td><input type="checkbox" [(ngModel)]="item.selected" /></td>
                 <td>{{ (page.options.currentPage - 1) * page.options.itemsPerPage + i + 1 }}</td>
                 <td>{{ item.name }}</td>
@@ -138,7 +137,6 @@
                   </button>
                 </td>
               </tr>
-              </ng-container>
             </tbody>
           </table>
 

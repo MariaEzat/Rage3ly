@@ -139,92 +139,40 @@ h1,h2,h3,h4,h5{
   font-size: 18px;
  }
 
- @media (max-width: 768px) {
-  .sidebar-right {
-    display: none;
-    margin-right: -2rem;
-    font-size: 0.875rem;
-  }
 
-  .card {
-    padding: 2rem;
-    margin-right: -2rem;
-    font-size: 0.875rem; 
-  }
+  
 
+ /* @media (max-width: 992px) {
+  .btn {
+  font-size: 15px;
+  padding: 1px 2px;
+  }
+  
   .transparent-table th,
   .transparent-table td {
-    font-size: 0.625rem; 
-    padding: 0.1rem;
+  font-size: 18px;
+  padding: 2px;
   }
-
-  .btn {
-    font-size: 0.75rem;
-    padding: 0.25rem 0.5rem;
-  }
-  .btn-primary:hover {
-    font-size: 0.75rem;
-    padding: 0.25rem 0.5rem;
-  }
-}
-
-
-
-@media (max-width: 900px) {
-  .sidebar-right {
-    display: none;
-    margin-right: -2rem;
-    font-size: 0.175rem;
-  }
-
+  
   .card {
-    padding: 2rem;
-    margin-right: -2rem;
-    font-size: 0.975rem; 
+  padding: 1rem;
   }
-
-  .transparent-table th,
-  .transparent-table td {
-    font-size: 0.325rem; 
-    padding: 0.1rem;
+  } */
+  
+  @media (max-width: 576px) {
+  h5, .rb-btn-text {
+  font-size: 1rem;
   }
-
-  .btn {
-    font-size: 0.25rem;
-    padding: 0.15rem 0.5rem;
+  
+  .download-options {
+  width: 100%;
+  position: static;
+  margin-left: 0;
+  box-shadow: none;
+  border: none;
   }
-  .btn-primary:hover {
-    font-size: 0.75rem;
-    padding: 0.25rem 0.5rem;
+  
+  .table-responsive {
+  overflow-x: auto;
   }
-}
-
-
-@media (max-width: 300px) {
-  .sidebar-right {
-    display: none;
-    margin-right: -2rem;
-    font-size: 0.175rem;
   }
-
-  .card {
-    padding: 2rem;
-    margin-right: -2rem;
-    font-size: 0.975rem; 
-  }
-
-  .transparent-table th,
-  .transparent-table td {
-    font-size: 0.325rem; 
-    padding: 0.1rem;
-  }
-
-  .btn {
-    font-size: 0.25rem;
-    padding: 0.15rem 0.5rem;
-  }
-  .btn-primary:hover {
-    font-size: 0.75rem;
-    padding: 0.25rem 0.5rem;
-  }
-}
