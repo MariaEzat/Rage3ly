@@ -12,6 +12,12 @@
 
 }
 
+th {
+  vertical-align: middle !important;
+  text-align: center;
+}
+
+
 .download-options button {
   width: 100%;
   padding: 8px 12px;
@@ -31,6 +37,7 @@
   cursor: pointer;
   border-radius: 5px;
 }
+
 .download-options {
   position: absolute;
   top: 100%;
@@ -90,9 +97,11 @@ select {
 input::placeholder {
   color: #ccc;
 }
-.border-color{
+
+.border-color {
   border-color: #535862;
 }
+
 .transparent-table {
   background-color: transparent;
   color: white;
@@ -112,10 +121,14 @@ input::placeholder {
 
 .transparent-table td,
 .transparent-table th {
-  background-color: transparent !important; /* نضمن إنه يشيل أي لون تاني */
-  color: white; /* أو أي لون تحبيه للكتابة */
-  border: 1px solid rgba(255, 255, 255, 0.1); /* حد خفيف شفاف */
+  background-color: transparent !important;
+  /* نضمن إنه يشيل أي لون تاني */
+  color: white;
+  /* أو أي لون تحبيه للكتابة */
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  /* حد خفيف شفاف */
 }
+
 .transparent-table img {
   border-radius: 0.5rem;
 }
@@ -126,84 +139,54 @@ input::placeholder {
 
 .border-gray-input {
   border: 1px solid rgb(190, 32, 32) !important;
-  border-radius: 4px; /* اختياري */
-  color: white;       /* حسب التنسيق */
+  border-radius: 4px;
+  /* اختياري */
+  color: white;
+  /* حسب التنسيق */
 }
 
 
-h1,h2,h3,h4,h5{
+h1,
+h2,
+h3,
+h4,
+h5 {
   font-family: 'Zain', serif !important;
- }
+}
 
- p,span,button,nav,div,a ,label,td,form{
+p,
+span,
+button,
+nav,
+div,
+a,
+label,
+td,
+form {
   font-family: 'Zain', serif !important;
   font-size: 18px;
- }
-
-
-
- @media (max-width: 768px) {
-  .sidebar-right {
-    display: none;
-    margin-right: -2rem;
-    font-size: 0.875rem;
-  }
-
-  .card {
-    padding: 2rem;
-    margin-right: -2rem;
-    font-size: 0.875rem; 
-  }
-
-  .transparent-table th,
-  .transparent-table td {
-    font-size: 0.625rem; 
-    padding: 0.1rem;
-  }
-
-  .btn {
-    font-size: 0.75rem;
-    padding: 0.25rem 0.5rem;
-  }
-  .btn-primary:hover {
-    font-size: 0.75rem;
-    padding: 0.25rem 0.5rem;
-  }
 }
 
 
-
-@media (max-width: 900px) {
-  .sidebar-right {
-    display: none;
-    margin-right: -2rem;
-    font-size: 0.875rem;
+@media (max-width: 576px) {
+  .transparent-table td,
+  .transparent-table th {
+    font-size: 14px;
+    padding: 6px;
   }
 
-  .card {
-    padding: 2rem;
-    margin-right: -2rem;
-    font-size: 0.875rem; 
+  button,
+  .rb-btn-text {
+    font-size: 14px;
+  }
+  .modal-content {
+    padding: 1rem !important;
+  }
+  .form-body, .card, .modal-content {
+    width: 100% !important;
+    padding: 1rem !important;
+    margin: 0 auto;
   }
 
-  .transparent-table th,
-  .transparent-table td {
-    font-size: 0.625rem; 
-    padding: 0.1rem;
-  }
-
-  .btn {
-    font-size: 0.75rem;
-    padding: 0.25rem 0.5rem;
-  }
-  .btn-primary:hover {
-    font-size: 0.75rem;
-    padding: 0.25rem 0.5rem;
-  }
+  
 }
-
-
-
-
-
-
