@@ -62,7 +62,7 @@
                     <input type="checkbox" (change)="toggleSelectAll($event)" [checked]="isAllSelected()" />
                   </th>
                   <ng-container *ngFor="let colum of page.columns">
-                    <th  *ngIf="colum.Name !== 'Mobile'" (click)="onSortClicked(colum)" [class.pointer]="colum.Sortable">
+                    <th  (click)="onSortClicked(colum)" [class.pointer]="colum.Sortable">
                       {{ colum.Title | translate }}
                       <i class="uil uil-sort ms-1" *ngIf="colum.Sortable" [ngClass]="{
                            'sort-icon-ase': isColumnAscending(colum),
