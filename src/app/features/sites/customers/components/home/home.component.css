@@ -112,10 +112,13 @@ input::placeholder {
 
 .transparent-table td,
 .transparent-table th {
-  background-color: transparent !important; /* نضمن إنه يشيل أي لون تاني */
-  color: white; /* أو أي لون تحبيه للكتابة */
-  border: 1px solid rgba(255, 255, 255, 0.1); /* حد خفيف شفاف */
+  background-color: transparent !important;
+  color: white;
+ 
+  border: 1px solid rgba(255, 255, 255, 0.1);
+
 }
+
 .transparent-table img {
   border-radius: 0.5rem;
 }
@@ -123,6 +126,7 @@ input::placeholder {
 .transparent-table .pointer {
   cursor: pointer;
 }
+
 
 .border-gray-input {
   border: 1px solid rgb(190, 32, 32) !important;
@@ -142,23 +146,10 @@ h1,h2,h3,h4,h5{
 
   
 
- /* @media (max-width: 992px) {
-  .btn {
-  font-size: 15px;
-  padding: 1px 2px;
-  }
-  
-  .transparent-table th,
-  .transparent-table td {
-  font-size: 18px;
-  padding: 2px;
-  }
-  
-  .card {
-  padding: 1rem;
-  }
-  } */
-  
+ 
+ 
+
+ 
   @media (max-width: 576px) {
   h5, .rb-btn-text {
   font-size: 1rem;
@@ -175,4 +166,13 @@ h1,h2,h3,h4,h5{
   .table-responsive {
   overflow-x: auto;
   }
+}
+
+
+
+
+@media (min-width: 990px) and (max-width: 1700px) {
+  .chang-width {
+   width: 700px !important;
   }
+}
