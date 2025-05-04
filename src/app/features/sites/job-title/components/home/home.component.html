@@ -82,7 +82,7 @@
           </div>
 
 
-          <div class="scrolled">
+          <div class="scrolled  mt-3 h-100">
             <table class="table text-center align-middle transparent-table">
               <thead>
                 <tr>
@@ -133,3 +133,9 @@
             </table>
 
           </div>
+
+          <ng-pagination [page]="page" (pageSizeChange)="onChangePageSize()" (pageChange)="getNextPrevData($event)">
+          </ng-pagination>
+        </div>
+  </div>
+</div>
