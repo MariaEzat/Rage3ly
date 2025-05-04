@@ -109,62 +109,55 @@ body {
   font-size: 1.125rem; 
 }
 
-@media (max-width: 768px) {
-  .sidebar-right {
-    display: none;
-    margin-right: -2rem;
-    font-size: 0.875rem;
+@media (max-width: 576px) {
+  .transparent-table td,
+  .transparent-table th {
+    font-size: 14px;
+    padding: 6px;
   }
 
-  .card {
-    padding: 2rem;
-    margin-right: -2rem;
-    font-size: 0.875rem; 
+  button,
+  .rb-btn-text {
+    font-size: 14px;
   }
-
-  .transparent-table th,
-  .transparent-table td {
-    font-size: 0.625rem; 
-    padding: 0.1rem;
+  .modal-content {
+    padding: 1rem !important;
   }
 
   .btn {
-    font-size: 0.75rem;
-    padding: 0.25rem 0.5rem;
-  }
-  .btn-primary:hover {
-    font-size: 0.75rem;
-    padding: 0.25rem 0.5rem;
-  }
+    width: 100%;
+    font-size: 10px;
+    margin-bottom: 0.5rem;
+    }
 }
 
 
 
-@media (max-width: 900px) {
-  .sidebar-right {
-    display: none;
-    margin-right: -2rem;
-    font-size: 0.875rem;
+
+@media (min-width: 990px) and (max-width: 1200px) {
+  .container-fluid {
+    padding-left: 1rem;  /* تقليل المسافة من الجهة اليسرى */
+    padding-right: 1rem; /* تقليل المسافة من الجهة اليمنى */
   }
 
-  .card {
-    padding: 2rem;
-    margin-right: -2rem;
-    font-size: 0.875rem; 
+  /* .table-responsive {
+    overflow-x: auto; 
+  } */
+
+  .transparent-table {
+    width: 100%; /* تأكد من أن الجدول لا يتجاوز العرض */
+    table-layout: fixed; /* تأكد من عدم احتلال الجدول مساحة أكبر من اللازم */
   }
 
-  .transparent-table th,
-  .transparent-table td {
-    font-size: 0.625rem; 
-    padding: 0.1rem;
+  /* إذا كان لديك سلايدر داخل container قد يحتاج تعديل الحجم هنا */
+  .slider-container {
+    width: 100%;
+    overflow: hidden;  /* أخفاء العناصر التي تخرج عن العرض المحدد */
   }
 
-  .btn {
-    font-size: 0.75rem;
-    padding: 0.25rem 0.5rem;
-  }
-  .btn-primary:hover {
-    font-size: 0.75rem;
-    padding: 0.25rem 0.5rem;
+  .slider {
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
   }
 }
