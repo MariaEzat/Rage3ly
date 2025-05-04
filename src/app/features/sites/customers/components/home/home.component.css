@@ -8,7 +8,8 @@
   border-radius: 5px;
   overflow: hidden;
   z-index: 1000;
-  margin-left: 7px;
+  margin-left: 0;
+  min-width: 120px;
 
 }
 
@@ -19,6 +20,10 @@
   background: none;
   text-align: left;
   cursor: pointer;
+}
+.fixed-button {
+  flex: 0 0 auto;
+  width: 130px; 
 }
 
 .download-options button:hover {
@@ -144,23 +149,9 @@ h1,h2,h3,h4,h5{
  }
 
 
-  
-
- 
- 
-
- 
   @media (max-width: 576px) {
   h5, .rb-btn-text {
   font-size: 1rem;
-  }
-  
-  .download-options {
-  width: 100%;
-  position: static;
-  margin-left: 0;
-  box-shadow: none;
-  border: none;
   }
   
   .table-responsive {
