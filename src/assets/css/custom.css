@@ -6,18 +6,18 @@
 
 /* ::-webkit-scrollbar-track, */
 .main-panel ::-webkit-scrollbar-track {
-  background: #dadbe2;
+  background: #121c5066;
   border-radius: 10px;
 }
 
 /* ::-webkit-scrollbar-track:hover, */
 .main-panel ::-webkit-scrollbar-track:hover {
-  background: #dadbe2;
+  background: #121c5066;
 }
 
 /* ::-webkit-scrollbar-thumb, */
 .main-panel ::-webkit-scrollbar-thumb {
-  background: #bfc4ce;
+  background: #121c5066;
   border-radius: 10px;
 }
 
@@ -58,6 +58,7 @@ body {
   position: relative;
   overflow-x: hidden;
   overflow-y: hidden;
+  
 }
 
 .main-panel {
