@@ -1,5 +1,5 @@
 <div class="d-flex min-vh-100 bg-Dark text-white">
-  <div class="flex-grow-1 p-2">
+  <div class="flex-grow-1 p-2" style="width: 90%;">
     <div class="container-fluid">
 
       <div class="card p-4 mb-4" style="background-color: #1A1F3766;">
@@ -7,7 +7,7 @@
         <form [formGroup]="page.searchForm">
           <div class="form-body">
             <div class="row g-2">
-              <div class="col-2">
+              <div class="col-12 col-sm-6 col-md-3">
                 <ng-control [form]="page.searchForm" control="Mobile" [inputClass]="'bg-Dark border-color'"
                 [labelClass]="'text-white'" label="sites.employee.mobile"
                 placeholder="salesflow.Customers.mobile">
@@ -16,7 +16,7 @@
 
 
              
-              <div class="col-2 d-flex align-items-end">
+              <div class="col-12 col-sm-6 col-md-3 d-flex align-items-end">
                 <button class='color-brand-700 rb-btn  rb-btn-sm  w-100 border-color text-white' (click)="search()"
                   [disabled]="page.searchForm.invalid || page.isSearching">
                   <i class="uil uil-search"></i>
@@ -35,54 +35,26 @@
 
       </div>
 
-        <div class="d-flex gap-3">
-          <!-- Role 1 -->
-          <!-- <div class="d-flex align-items-center justify-content-between flex-grow-1 px-3 py-2 rounded"
-            style="background-color: #1d223f; height: 72px;">
-
-            <button style="background: none; border: none; padding: 0;">
-              <img src="../../../../../../assets/icons/edit.png" alt="Edit" width="30">
-            </button>
-
-            <div class="d-flex align-items-center gap-2">
-              <span class="text-white">{{"sites.employee.superAdmin"|translate}}</span>
-              <img src="../../../../../../assets/icons/superAdmin.png" alt="Super Admin" width="30">
-            </div>
-          </div> -->
-
-          <!-- Role 2 -->
-          <!-- <div class="d-flex align-items-center justify-content-between flex-grow-1 px-3 py-2 rounded"
-            style="background-color: #1d223f;">
-            <button style="background: none; border: none; padding: 0;">
-              <img src="../../../../../../assets/icons/edit.png" alt="Edit" width="30">
-            </button>
-            <div class="d-flex align-items-center gap-2">
-              <span class="text-white">{{"sites.employee.admin"|translate}}</span>
-              <img src="../../../../../../assets/icons/admin.png" alt="Admin" width="30">
-            </div> -->
-
-
-          </div>
         </div>
 
 
         <div class="card p-4 border-0 shadow-sm rounded-3" style="background-color: #1A1F3766;">
           <!-- Header -->
-          <div class="d-flex justify-content-between align-items-center mb-3">
-            <h5 class="text-white"> {{"sites.employee.employees"|translate}} </h5>
-            <div class="d-flex">
-              <button class="btn btn-primary me-2"
+          <div class="d-flex flex-wrap justify-content-between align-items-center mb-3 gap-2">
+            <h5 class="text-white mb-0"> {{"sites.employee.employees"|translate}} </h5>
+            <div class="d-flex flex-wrap gap-2 w-100 justify-content-end">
+              <button class="btn btn-primary flex-grow-1 flex-sm-grow-0 me-1"
                 (click)="activateCustomers()">{{"sites.employee.active"|translate}}</button>
-              <button class="btn btn-primary me-2"
+              <button class="btn btn-primary flex-grow-1 flex-sm-grow-0 me-1"
                 (click)="disActiveCustomers()">{{"sites.employee.disActive"|translate}}</button>
-              <button class="btn btn-primary me-2"
+              <button class="btn btn-primary flex-grow-1 flex-sm-grow-0 me-1"
                 (click)="navigateToCreateEmployee()">{{"sites.employee.addNewEmployee"|translate}}</button>
 
             </div>
           </div>
 
 
-          <div class="scrolled  mt-3 h-100">
+          <div class="scrolled  mt-3 h-100 ">
             <table class="table text-center align-middle transparent-table">
               <thead>
                 <tr>
@@ -90,7 +62,7 @@
                     <input type="checkbox" (change)="toggleSelectAll($event)" [checked]="isAllSelected()" />
                   </th>
                   <ng-container *ngFor="let colum of page.columns">
-                    <th (click)="onSortClicked(colum)" [class.pointer]="colum.Sortable">
+                    <th  *ngIf="colum.Name !== 'Mobile'" (click)="onSortClicked(colum)" [class.pointer]="colum.Sortable">
                       {{ colum.Title | translate }}
                       <i class="uil uil-sort ms-1" *ngIf="colum.Sortable" [ngClass]="{
                            'sort-icon-ase': isColumnAscending(colum),
@@ -107,9 +79,9 @@
                 </tr>
                 <tr *ngFor="let item of items | paginate: page.options; let i = index">
                   <td><input type="checkbox" [(ngModel)]="item.selected" /></td>
-                  <td>{{ (page.options.currentPage - 1) * page.options.itemsPerPage + i + 1 }}</td>
-                  <td>{{ item.name }}</td>
-                  <td>{{ item.mobile}}</td>
+                  <td data-label="{{'shared.index'|translate}}">{{ (page.options.currentPage - 1) * page.options.itemsPerPage + i + 1 }}</td>
+                  <td data-label="{{'sites.employee.name'|translate}}">{{ item.name }}</td>
+                  <td data-label="{{'sites.employee.mobile'|translate}}">{{ item.mobile}}</td>
                   <td>{{ getRoleNameById(item.roleId) }}</td>
 
                   <td>
