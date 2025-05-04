@@ -58,3 +58,19 @@
     font-size: 18px;
    }
   
+.form-check {
+  display: flex !important;
+  align-items: stretch;
+}
+.form-switch .form-check-input {
+  margin-right: 10px;
+}
+
+
+
+@media (max-width: 576px) {
+ 
+  .feature-item .form-check-label {
+    font-size: 12.5px;
+  }
+}
