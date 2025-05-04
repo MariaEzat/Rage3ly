@@ -68,7 +68,7 @@
           <h5 class="text-white"> {{"salesflow.Customers.customers"|translate}} </h5>
           <div class="d-flex flex-wrap gap-2">
             <div class="position-relative">
-              <button #downloadButton class="btn btn-primary flex-grow-1 flex-sm-grow-0 me-2"
+              <button #downloadButton class="btn btn-primary flex-grow-1 flex-sm-grow-0"
                 (click)="toggleDownloadOptions()">{{"salesflow.Customers.download"|translate}}</button>
 
               <div #downloadOptions *ngIf="showDownloadOptions" class="download-options">
@@ -76,11 +76,11 @@
                 <button (click)="downloadPDF()">PDF</button>
               </div>
             </div>
-            <button class="btn btn-primary flex-grow-1 flex-sm-grow-0 me-2"
+            <button class="btn btn-primary flex-grow-1 flex-sm-grow-0 "
               (click)="activateCustomers()">{{"salesflow.Customers.active"|translate}}</button>
-            <button class="btn btn-primary flex-grow-1 flex-sm-grow-0 me-2"
+            <button class="btn btn-primary flex-grow-1 flex-sm-grow-0 "
               (click)="disActiveCustomers()">{{"salesflow.Customers.disActive"|translate}}</button>
-            <button class="btn btn-primary flex-grow-1 flex-sm-grow-0 me-2 "
+            <button class="btn btn-primary flex-grow-1 flex-sm-grow-0"
               (click)="navigateToCreateCustomer()">{{"salesflow.Customers.addNewCustomer"|translate}}</button>
 
           </div>
