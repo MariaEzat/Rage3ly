@@ -11,7 +11,7 @@ const routes: Routes = [
     path: '',
     component: LayoutComponent,
     children: [
-      { path: '', redirectTo: 'customers', pathMatch: 'full' },
+      { path: '', redirectTo: 'mobile', pathMatch: 'full' },
       
       
      

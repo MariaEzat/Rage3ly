@@ -12,11 +12,11 @@ import { PhoneForgetPasswordComponent } from './components/phone-forget-password
 const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
   { path: 'login', component: LoginComponent },
-  { path: 'register', component: RegisterComponent },
-  { path: 'otp', component: OtpComponent },
-  { path: 'success', component: SuccessComponent },
-  { path: 'forgetpassword', component: ForgetpasswordComponent },
-  { path: 'phoneforgetpassword', component: PhoneForgetPasswordComponent },
+  // { path: 'register', component: RegisterComponent },
+  // { path: 'otp', component: OtpComponent },
+  // { path: 'success', component: SuccessComponent },
+  // { path: 'forgetpassword', component: ForgetpasswordComponent },
+  // { path: 'phoneforgetpassword', component: PhoneForgetPasswordComponent },
 
 
 ];
