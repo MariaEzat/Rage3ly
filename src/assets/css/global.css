@@ -1234,27 +1234,27 @@ input::-webkit-input-placeholder {
 
 .main-page ::-webkit-scrollbar-track,
 .modal-dialog ::-webkit-scrollbar-track {
-  background: #ffffff;
+  background: #1a2a7766;
   border-radius: 10px;
 }
 
 .main-page ::-webkit-scrollbar-track:hover,
 .modal-dialog ::-webkit-scrollbar-track:hover {
-  background: #ffffff;
+  background: #1A1F3766;
 }
 
 .table-scroll::-webkit-scrollbar-track {
-  background: #dadbe2;
+  background: #1A1F3766;
   border-radius: 10px;
 }
 
 .table-scroll::-webkit-scrollbar-track:hover {
-  background: #dadbe2;
+  background: #1A1F3766;
 }
 
 .main-page ::-webkit-scrollbar-thumb,
 .modal-dialog ::-webkit-scrollbar-thumb {
-  background: #d3d3d3;
+  background: #1A1F3766;
   border-radius: 10px;
 }
 
