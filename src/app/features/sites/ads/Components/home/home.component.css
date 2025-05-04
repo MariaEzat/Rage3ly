@@ -134,30 +134,9 @@ body {
 
 
 
-@media (min-width: 990px) and (max-width: 1200px) {
-  .container-fluid {
-    padding-left: 1rem;  /* تقليل المسافة من الجهة اليسرى */
-    padding-right: 1rem; /* تقليل المسافة من الجهة اليمنى */
+ @media (min-width: 990px) and (max-width: 1200px) {
+   .chang-width {
+    width: 700px !important;
+    
   }
-
-  /* .table-responsive {
-    overflow-x: auto; 
-  } */
-
-  .transparent-table {
-    width: 100%; /* تأكد من أن الجدول لا يتجاوز العرض */
-    table-layout: fixed; /* تأكد من عدم احتلال الجدول مساحة أكبر من اللازم */
-  }
-
-  /* إذا كان لديك سلايدر داخل container قد يحتاج تعديل الحجم هنا */
-  .slider-container {
-    width: 100%;
-    overflow: hidden;  /* أخفاء العناصر التي تخرج عن العرض المحدد */
-  }
-
-  .slider {
-    width: 100%;
-    max-width: 100%;
-    margin: 0 auto;
-  }
-}
+} 
