@@ -81,17 +81,14 @@
                       
                       
                       <div class="d-flex w-100 gap-2">
-                        <button class="btn w-50 font-sm btn-success font-sm" >
+                        <button class="btn w-50 font-sm btn-success font-sm" (click)="acceptRequest(mobile.id)" >
                      Accept 
                         </button>
-                        <button class="btn btn-danger text-white w-50 font-sm" >
+                        <button class="btn btn-danger text-white w-50 font-sm" (click)="rejectRequest(mobile)">
                           Reject
                         </button>
                       </div>
 
-                    <!-- <button class="btn btn-outline-light w-100 mt-3">
-                        تفاصيل
-                    </button> -->
                 </div>
             </div>
         </div>

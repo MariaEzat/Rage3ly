@@ -18,11 +18,8 @@ export interface requestToStolenPhone {
     governorateName:string;
 }
 
-export interface acceptRequest {
-    id:string;
-}
-
-export interface rejectRequest {
-    id:string;
-    rejectReason:string;
-}
+export class RejectReasonViewModel {
+    id: string;
+    rejectReason?: string;
+  }
+  
