@@ -25,19 +25,7 @@ const routes: Routes = [
     loadChildren: () =>
       import('./features/auth/auth.module').then((m) => m.AuthModule),
   },
-  {
-    path: 'tahwesha',
-    component: LayoutComponent,
-    children: [
-      {
-        path: '',
-        loadChildren: () =>
-          import('./features/website/website.module').then(
-            (m) => m.WebsiteModule
-          ),
-      },
-    ],
-  },
+
   {
     path: 'sites',
     component: MainLayoutComponent,
@@ -50,11 +38,11 @@ const routes: Routes = [
       },
     ],
   },
-  {
-    path: 'website',
-    loadChildren: () =>
-      import('../../src/app/features/website/website.module').then((m) => m.WebsiteModule),
-  },
+  // {
+  //   path: 'website',
+  //   loadChildren: () =>
+  //     import('../../src/app/features/website/website.module').then((m) => m.WebsiteModule),
+  // },
   {
     path: '**',
     component: NotfoundComponent,
