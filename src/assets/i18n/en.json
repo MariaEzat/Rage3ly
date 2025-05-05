@@ -314,7 +314,8 @@
       "users": "Users",
       "mobile": "Mobile",
       "signOut":"Sign Out",
-      "roles":"Roles"
+      "roles":"Roles",
+      "requests":"Request to stolen phone"
     },
     "mobile": {
       "userName": "User Name",

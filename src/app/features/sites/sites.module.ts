@@ -49,6 +49,13 @@ const routes: Routes = [
           ),
       },
       {
+        path: 'requestToTransferAStolenPhone',
+        loadChildren: () =>
+          import('./request-to-transfer-astolen-phone/request-to-transfer-astolen-phone.module').then(
+            (m) => m.RequestToTransferAStolenPhoneModule
+          ),
+      },
+      {
         path: 'roles',
         loadChildren: () =>
           import('./roles/roles.module').then(

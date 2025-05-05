@@ -33,7 +33,17 @@
         {{ "sites.layout.adverdisments" | translate }}
         <img [src]="adsRla.isActive || activeLink === 'ads' ? 'assets/images/Icon.png' : 'assets/images/Icon-notActive.png'" class="px-1 nav-icon">
       </a>
-
+      <a 
+      class="nav-link text-white py-2 d-flex flex-row-reverse justify-content-end align-items-center"
+      routerLink="/sites/requestToTransferAStolenPhone" 
+      routerLinkActive="active" 
+      #requestsRla="routerLinkActive" 
+      [ngClass]="{ 'active-color': requestsRla.isActive }"
+      (mouseenter)="setActiveLink('requests')" 
+      (mouseleave)="setActiveLink('')">
+      {{ "sites.layout.requests" | translate }}
+      <img [src]="requestsRla.isActive || activeLink === 'requests' ? 'assets/images/Icon.png' : 'assets/images/Icon-notActive.png'" class="px-1 nav-icon">
+    </a>
       <a 
         class="nav-link text-white py-2 d-flex flex-row-reverse justify-content-end align-items-center"
         routerLink="/sites/customers" 
