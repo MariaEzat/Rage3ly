@@ -45,7 +45,7 @@
       <input [class]="'form-control time' + inputClass" type="time" [formControlName]="control"
         *ngIf="type==controlType.INPUT_TIME">
       <!--------------------------------- input select -------------------------------------->
-      <ng-select class="form-control" [ngClass]="inputClass" (change)="onChange($event)"
+      <ng-select class="form-control" [ngClass]="inputClass" (change)="onChange($event)" 
         [items]="items |propertyFilter:{'property':filterProp,'value':filterValue}" [bindLabel]="bindLabel"
         [bindValue]="bindValue" appendTo="body" [formControlName]="control" placeholder="{{placeholder |translate}}"
         *ngIf="type==controlType.SELECT" [clearable]="clearable" [multiple]="multiple" [hideSelected]="hideSelected">

@@ -357,6 +357,29 @@
       "client":"Client",
       "roleDetails":"تفاصيل الدور",
       "featureName":"اسم الميزة"
+    },
+    "requestToStolenPhone" :{
+      "requestToStolenPhone":"طلب إلى هاتف مسروق",
+      "searchOfRequest" :"بحث عن الطلب",
+      "requestStatus" :"حالة الطلب",
+      "approved":"مقبول ",
+      "pending":"قيد الانتظار",
+      "rejected":"مرفوض",
+      "editImageRequest":"طلب تعديل الصورة",
+      "name":"الاسم",
+      "mobile":"رقم الموبايل",
+      "email":"البريد الالكتروني",
+      "IMEInumber":"IMEI رقم",
+      "noPhotos":"لا توجد صور متاحة لهذا الطلب.",
+      "editPicture":"تعديل الصورة",
+      "openPicture":"فتح الصورة",
+      "accept":"قبول" ,
+      "reject":"رفض",
+      "cancel":"الغاء",
+      "rejectReason":"سبب الرفض",
+      "sendFeedback":"إرسال ردود الفعل",
+      "enterRejectionReason":"ادخل سبب الرفض",
+      "loading":".....جاري التحميل"
     }
   },
   "salesflow": {

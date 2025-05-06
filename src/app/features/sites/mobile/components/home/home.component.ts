@@ -6,10 +6,7 @@ import { BsModalRef } from 'ngx-bootstrap/modal';
 import { SharedService } from 'src/app/shared/service/shared.service';
 import { MobileService } from '../../service/mobile.service';
 import { ActivatedRoute, Router } from '@angular/router';
-import { environment } from 'src/environments/environment';
-import { saveAs } from 'file-saver';
-import { jsPDF } from 'jspdf';
-import autoTable from 'jspdf-autotable';
+
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',

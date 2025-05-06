@@ -1,19 +1,59 @@
 <div class="min-vh-100 bg-Dark text-white">
     <div class="container py-4">
+        <div class="card p-4 mb-4" style="background-color: #1A1F3766;">
+            <h5 class="mb-3 text-white">{{"sites.requestToStolenPhone.searchOfRequest"|translate}}</h5>
+            <form [formGroup]="page.searchForm">
+                <div class="form-body">
+                    <div class="row g-2">
+                        <div class="col-12 col-md-6 col-lg-2">
+                            <ng-control [type]="controlType.SELECT" [form]="page.searchForm" control="RequestStatus"
+                                [inputClass]="'bg-Dark border-color text-white'" [labelClass]="'text-white'"
+                                [clearable]="true" label="sites.requestToStolenPhone.requestStatus"
+                                placeholder="sites.requestToStolenPhone.requestStatus" [items]="RequestStatus">
+                            </ng-control>
+                        </div>
+
+
+
+                        <div class="col-12 col-md-6 col-lg-2 d-flex align-items-end">
+                            <button class='color-brand-700 rb-btn  rb-btn-sm  w-100 border-color text-white w-100'
+                                (click)="search()" [disabled]="page.searchForm.invalid || page.isSearching">
+                                <i class="uil uil-search"></i>
+                                <span class="rb-btn-text d-md-inline-block">
+                                    {{'shared.search'|translate}}</span>
+                            </button>
+                        </div>
+
+                    </div>
+                </div>
+            </form>
+
+
+
+
+
+        </div>
+
+
         <div class="row g-4 justify-content-center">
             <div class="col-md-6 col-lg-5" *ngFor="let mobile of mobiles">
-                <div class="card-custom p-4 rounded shadow">
+                <div class="card-custom p-4 rounded shadow w-100 d-flex flex-column h-100">
                     <div class="d-flex justify-content-between align-items-center mb-3">
                         <button class="btn btn-sm" [ngClass]="{
+                                'btn-second': mobile.requestStatus === 1,
                         'btn-success': mobile.requestStatus === 2,
-                        'btn-danger': mobile.requestStatus === 3,
-                        'btn-secondary': mobile.requestStatus === 1
+                        'btn-secondary': mobile.requestStatus === 3,
+                        'btn-danger': mobile.requestStatus === 4
+                    
+                     
                       }">
-                            {{ getStatusName(mobile.requestStatus) }}
+                            {{ getStatusName(mobile.requestStatus)|translate }}
                         </button>
                         <div class="d-flex align-items-center">
-                            <span class="Gray-300 me-2" style="font-size: 18px;">{{ mobile.mobileModel }}</span>
-                            <!-- <img src="../../../../assets/images/ProductIcon.png" style="height: 28px;" /> -->
+                            <span class="Gray-300 me-2" style="font-size: 18px;"> {{mobile.brandName }} {{
+                                mobile.mobileModel }} </span>
+                            <img [src]="'https://api.rage3ly.com/' + mobile.brandPath.path" class="me-2 custom-img"
+                                 />
                         </div>
                     </div>
                     <hr class="Gray-600">
@@ -23,7 +63,7 @@
                                 <img src="../../../../../../assets/icons/Name Icon Container.png" style="height: 35px;"
                                     class="me-2" />
                                 <div>
-                                    <p class="Gray-300 mb-0 font-sm">Name</p>
+                                    <p class="Gray-300 mb-0 font-sm">{{"sites.requestToStolenPhone.name"|translate}}</p>
                                     <p class="font-col mb-0">{{ mobile.clientName }}</p>
                                 </div>
                             </div>
@@ -31,7 +71,8 @@
                                 <img src="../../../../../../assets/icons/IMEI Icon Container.png" style="height: 35px;"
                                     class="me-2" />
                                 <div>
-                                    <p class="Gray-300 mb-1 font-sm">IMEI Number</p>
+                                    <p class="Gray-300 mb-1 font-sm">
+                                        {{"sites.requestToStolenPhone.IMEInumber"|translate}}</p>
                                     <p class="font-col">{{ mobile.imeI1 }}</p>
                                 </div>
                             </div>
@@ -42,7 +83,8 @@
                                 <img src="../../../../../../assets/icons/Phone Icon Container.png" style="height: 35px;"
                                     class="me-2" />
                                 <div>
-                                    <p class="Gray-300 mb-0 font-sm">Mobile Number</p>
+                                    <p class="Gray-300 mb-0 font-sm">{{"sites.requestToStolenPhone.mobile"|translate}}
+                                    </p>
                                     <p class="font-col mb-0">{{ mobile.phoneNumber }}</p>
                                 </div>
                             </div>
@@ -50,44 +92,56 @@
                                 <img src="../../../../../../assets/icons/Email Icon Container.png" style="height: 35px;"
                                     class="me-2" />
                                 <div>
-                                    <p class="Gray-300 mb-0 font-sm">E-mail</p>
+                                    <p class="Gray-300 mb-0 font-sm">{{"sites.requestToStolenPhone.email"|translate}}
+                                    </p>
                                     <p class=" font-col mb-0">{{ mobile.email }}</p>
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                    <div class="border-dashed px-3 rounded my-3" *ngIf="mobile.paths?.length" style="border: 2px dashed #ccc;">
-                        <div *ngFor="let image of mobile.paths" class="mb-3">
-                          <div class="text-end">
-                            <!-- الصورة -->
-                            <p class="Gray-300 mb-1">{{ image.label }}</p>
-                            <img [src]="'https://api.rage3ly.com/' + image.path" 
-                                 style="width: 120px; height: auto;" class="mb-2 py-2" />
-                      
-                            
-                            <div class="d-flex w-100 gap-2">
-                              <button class="btn btn-primary text-white w-50 font-sm" (click)="requestEdit(image.id)">
-                                Edit Picture
-                              </button>
-                              <button class="btn w-50 font-sm btn-orange-border btn-primary font-sm" (click)="openImage(image.path)">
-                                Open Picture
-                                  </button>
+                    <!-- في حالة وجود صور -->
+                    <div class="border-dashed px-3 rounded my-3 img-exist">
+                        <div *ngIf="mobile.paths?.length && mobile.paths.length > 0">
+                            <div *ngFor="let image of mobile.paths" class="mb-3">
+                                <div class="text-end">
+                                    <p class="Gray-300 mb-1">{{ image.label }}</p>
+                                    <img [src]="'https://api.rage3ly.com/' + image.path"
+                                        class="mb-2 py-2 img-directions" />
+
+                                    <div class="d-flex w-100 gap-2">
+                                        <button class="btn btn-primary text-white w-50 font-sm"
+                                            (click)="requestEdit(mobile.id)">
+                                            {{"sites.requestToStolenPhone.editPicture"|translate}}
+                                        </button>
+                                        <button class="btn w-50 font-sm btn-orange-border btn-primary font-sm"
+                                            (click)="openImage(image.path)">
+                                            {{"sites.requestToStolenPhone.openPicture"|translate}}
+                                        </button>
+                                    </div>
+                                </div>
                             </div>
-                          </div>
                         </div>
-                      </div>
-                      
-                      
-                      
-                      <div class="d-flex w-100 gap-2">
-                        <button class="btn w-50 font-sm btn-success font-sm" (click)="acceptRequest(mobile.id)" >
-                     Accept 
+                        <div *ngIf="!mobile.paths || mobile.paths.length === 0"
+                            class="d-flex justify-content-center align-items-center text-white no-photo">
+                            {{"sites.requestToStolenPhone.noPhotos"|translate}}
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+                    <div class="d-flex w-100 gap-2">
+                        <button class="btn w-50 font-sm btn-success font-sm" (click)="acceptRequest(mobile.id)">
+                            {{"sites.requestToStolenPhone.accept"|translate}}
                         </button>
-                        <button class="btn btn-danger text-white w-50 font-sm" (click)="rejectRequest(mobile)">
-                          Reject
+                        <button class="btn btn-danger text-white w-50 font-sm" (click)="showRejectConfirmation(mobile)">
+                            {{"sites.requestToStolenPhone.reject"|translate}}
                         </button>
-                      </div>
+                    </div>
 
                 </div>
             </div>
@@ -95,6 +149,24 @@
     </div>
 
     <ng-template #loadingTemplate>
-        <div class="text-center text-muted py-5">...جارٍ التحميل</div>
+        <div class="text-center text-muted py-5"> {{"sites.requestToStolenPhone.loading"|translate}}</div>
+    </ng-template>
+
+
+    <ng-template #confirmRejectTemplate>
+        <div class="modal-body modal-content text-center bg-Dark no-border" style="border-radius:0px;">
+            <p class="text-white py-2"> {{"sites.requestToStolenPhone.rejectReason"|translate}}</p>
+            <textarea [(ngModel)]="selectedItem.rejectReason" class="form-control" rows="3"
+                [placeholder]="'sites.requestToStolenPhone.enterRejectionReason' | translate">
+          </textarea>
+
+        </div>
+        <div class="modal-footer bg-Dark no-border">
+            <button class="btn cancel-btn me-auto text-white" (click)="modalRef.hide()">
+                {{"sites.requestToStolenPhone.cancel"|translate}}</button>
+            <button class="btn btn-danger ms-2" (click)="rejectRequest(); modalRef.hide()">
+                {{"sites.requestToStolenPhone.sendFeedback"|translate}}
+            </button>
+        </div>
     </ng-template>
 </div>

@@ -369,6 +369,29 @@
       "client":"Client",
       "roleDetails":"Role Details",
       "featureName":"Feature Name"
+    },
+    "requestToStolenPhone" :{
+      "requestToStolenPhone":"Request To Stolen Phone",
+      "searchOfRequest" :"Search Of Request",
+      "requestStatus" :"Request Status",
+      "approved":"Approved",
+      "pending":"Pending",
+      "rejected":"Rejected",
+      "editImageRequest":"EditImageRequest",
+      "name":"Name",
+      "mobile":"Mobile Number",
+      "email":"Email",
+      "IMEInumber":"IMEI Number",
+      "noPhotos":"There are no images available for this request.",
+      "editPicture":"Edit Picture",
+      "openPicture":"Open Picture",
+      "accept":"Accept" ,
+      "reject":"Reject",
+      "cancel":"Cancel",
+      "rejectReason":"Reject Reason",
+      "sendFeedback":"Send Feedback",
+      "enterRejectionReason":"Enter rejection reason",
+      "loading":"Loading..."
     }
   },
   "salesflow": {

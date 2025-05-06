@@ -1,5 +1,5 @@
 export interface requestToStolenPhone {
-    iD:string;
+    id:string;
     phoneId:string;
     phoneNumber:string;
     paths:string[];
@@ -16,6 +16,8 @@ export interface requestToStolenPhone {
     cityName:string;
     governorateId:string;
     governorateName:string;
+    brandName:string;
+    brandPath:string; 
 }
 
 export class RejectReasonViewModel {
@@ -23,3 +25,6 @@ export class RejectReasonViewModel {
     rejectReason?: string;
   }
   
+  export class requestSearchViewModel {
+    RequestStatus:number;
+  }
