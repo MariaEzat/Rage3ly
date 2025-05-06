@@ -58,6 +58,18 @@
       {{ "sites.layout.roles" | translate }}
       <img [src]="RolesRla.isActive || activeLink === 'roles' ? 'assets/images/rolesActive.png' : 'assets/images/rolesDeactive.png'" class="px-1 nav-icon">
     </a>
+
+    <a 
+    class="nav-link text-white py-2 d-flex flex-row-reverse justify-content-end align-items-center"
+    routerLink="/sites/brand" 
+    routerLinkActive="active" 
+    #brandRla="routerLinkActive" 
+    [ngClass]="{ 'active-color': brandRla.isActive }"
+    (mouseenter)="setActiveLink('brand')" 
+    (mouseleave)="setActiveLink('')">
+    {{ "sites.layout.brand" | translate }}
+    <img [src]="brandRla.isActive || activeLink === 'brand' ? 'assets/images/Icon-Clients.png' : 'assets/images/Icon@2x.png'" class="px-1 nav-icon">
+  </a>
     <a 
     class="nav-link text-white py-2 d-flex flex-row-reverse justify-content-end align-items-center"
     routerLink="/sites/ads" 

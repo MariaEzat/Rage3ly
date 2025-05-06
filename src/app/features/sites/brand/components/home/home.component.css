@@ -1,0 +1,139 @@
+
+.btn-danger {
+    background-color: #B73C3C;
+    border: none;
+  }
+  
+  .btn-danger:hover {
+    background-color: #a83232;
+  }
+  
+  .table {
+    background-color: transparent;
+    color: #fff;
+  }
+  
+  input,
+  select {
+    background-color: #0B1437;
+    border: 1px solid #4DC3FF;
+    color: #fff;
+  }
+  
+  input::placeholder {
+    color: #ccc;
+  }
+  .border-color{
+    border-color: #535862;
+  }
+  .transparent-table {
+    background-color: transparent;
+    color: white;
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .transparent-table thead {
+    background-color: transparent;
+    color: white;
+  }
+  
+  .transparent-table tbody tr {
+    background-color: transparent;
+  }
+  
+  
+  .transparent-table td,
+  .transparent-table th {
+    background-color: transparent !important; /* نضمن إنه يشيل أي لون تاني */
+    color: white; /* أو أي لون تحبيه للكتابة */
+    border: 1px solid rgba(255, 255, 255, 0.1); /* حد خفيف شفاف */
+  }
+  .transparent-table img {
+    border-radius: 0.5rem;
+  }
+  
+  .transparent-table .pointer {
+    cursor: pointer;
+  }
+  
+  .border-gray-input {
+    border: 1px solid rgb(190, 32, 32) !important;
+    border-radius: 4px; /* اختياري */
+    color: white;       /* حسب التنسيق */
+  }
+  h1,h2,h3,h4,h5{
+    font-family: 'Zain', serif !important;
+   }
+  
+   p,span,button,nav,div,a ,label,td,form{
+    font-family: 'Zain', serif !important;
+    font-size: 18px;
+   }
+   
+  .table-responsive {
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  .transparent-table {
+    width: 100%;
+    min-width: unset;
+    overflow-x: auto;
+  }
+  
+  
+  body {
+    background-color: #060B26;
+    color: #fff;
+    font-family: 'Cairo', sans-serif;
+    font-size: 1rem; 
+    transition: font-size 0.3s ease; 
+  }
+  
+  .card {
+    background-color: #0B1437;
+    border: none;
+    border-radius: 8px;
+    transition: font-size 0.3s ease; 
+  }
+  
+  .btn-primary {
+    background-color: #4DC3FF;
+    border: none;
+    transition: font-size 0.3s ease; 
+  }
+  
+  .btn-primary:hover {
+    background-color: #35b3f2;
+    font-size: 1.125rem; 
+  }
+  
+  @media (max-width: 576px) {
+    .transparent-table td,
+    .transparent-table th {
+      font-size: 14px;
+      padding: 6px;
+    }
+  
+    button,
+    .rb-btn-text {
+      font-size: 10px;
+    }
+    .modal-content {
+      padding: 1rem !important;
+    }
+  
+   
+  }
+  
+  
+  
+  
+   @media (min-width: 990px) and (max-width: 1200px) {
+     .chang-width {
+      width: 700px !important;
+      
+    }
+  } 
+  

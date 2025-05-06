@@ -68,6 +68,13 @@ const routes: Routes = [
             (m) => m.RolesModule
           ),
       },
+      {
+        path: 'brand',
+        loadChildren: () =>
+          import('./brand/brand.module').then(
+            (m) => m.BrandModule
+          ),
+      },
     ],
   },
 ];
