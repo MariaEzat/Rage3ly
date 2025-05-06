@@ -106,7 +106,6 @@
       "Excellent-less-than-good": "وقت الطلب الممتاز يجب أن يكون أقل من وقت الطلب الجيد.",
       "invaild-mobile": "يرجى إدخال رقم هاتف صالح",
       "pattern-special-characters": "Password must contain at least one uppercase letter, and one special character."
-      
     },
     "delete-confirmation": {
       "message": "هل أنت متأكد من حذف هذا الصنف",
@@ -211,9 +210,9 @@
     "expired": "Expired",
     "jump-forward": "Jump Forward",
     "jump-back": "Jump Back",
-    "mainLayout":{
-      "hello":"اهلا",
-      "items":"العناصر"
+    "mainLayout": {
+      "hello": "اهلا",
+      "items": "العناصر"
     }
   },
   "auth": {
@@ -224,7 +223,7 @@
       "password": "كلمة المرور",
       "forgotPassword?": "هل نسيت كلمة المرور؟",
       "haveNotAnAccount?": "هل ليس لديك حساب ؟",
-      "signUp":"انشاء حساب"
+      "signUp": "انشاء حساب"
     },
     "register": {
       "signUp": "انشاء حساب",
@@ -295,16 +294,17 @@
       "cancel": "الغاء",
       "noEmployees": "لا يوجد موظفين",
       "confirm": "تأكيد",
-       "search in users":"بحث في الموظفين"
+      "search in users": "بحث في الموظفين"
     },
     "layout": {
       "adverdisments": "الاعلانات",
       "clients": "العملاء",
       "users": "المستخدمين",
       "mobile": "الموبايل",
-      "signOut":"تسجيل خروج",
-      "roles":"صلاحيات المستخدمين",
-      "requests":"طلب الهاتف المسروق"
+      "signOut": "تسجيل خروج",
+      "roles": "صلاحيات المستخدمين",
+      "requests": "طلب الهاتف المسروق",
+      "ownership": "نقل الملكية"
     },
     "mobile": {
       "userName": "اسم المستخدم",
@@ -318,68 +318,92 @@
       "Are you sure you want to delete the selected Mobiles?": "هل أنت متأكد من حذف الموبايلات المحددة؟",
       "cancel": "الغاء",
       "confirm": "تأكيد",
-      "brand":"الماركة",
-      "Phone added successfully":"تم اضافة الموبايل بنجاح",
-      "Add new phone":"اضافة موبايل",
-      "UserLogin":"تسجيل دخول المستخدم",
-      "AddPhoneData":"اضافة بيانات الهاتف",
-      "PhoneConfirmation":"تأكيد الهاتف",
-      "name":"اسم الموبايل",
-      "number":"رقم الموبايل",
-      "ImeI1":"ImeI1",
-      "ImeI2":"ImeI1",
-      "serialNumber":"رقم سري",
-      "dateOfPurchase":"تاريخ الشراء",
-      "search":"بحث"
+      "brand": "الماركة",
+      "Phone added successfully": "تم اضافة الموبايل بنجاح",
+      "Add new phone": "اضافة موبايل",
+      "UserLogin": "تسجيل دخول المستخدم",
+      "AddPhoneData": "اضافة بيانات الهاتف",
+      "PhoneConfirmation": "تأكيد الهاتف",
+      "name": "اسم الموبايل",
+      "number": "رقم الموبايل",
+      "ImeI1": "ImeI1",
+      "ImeI2": "ImeI1",
+      "serialNumber": "رقم سري",
+      "dateOfPurchase": "تاريخ الشراء",
+      "search": "بحث"
     },
-    "employee-profile":{
-      "profileSettings":"إعدادات الملف الشخصي",
-      "changePassword":"تغيير كلمة المرور",
-      "notification":"الاشعارات",
-      "name":"الاسم",
-      "email":"البريد الالكتروني",
-      "mobile":"رقم الموبايل",
-      "cancel":"الغاء",
-      "save":"حفظ",
-      "password":"كلمة المرور",
-      "confirmPassword":"تأكيد كلمة المرور",
-      "Passwords do not match":"كلمات المرور غير متطابقة",
-      "all":"الكل",
-      "unread":"الغير مقروء"
-      
+    "employee-profile": {
+      "profileSettings": "إعدادات الملف الشخصي",
+      "changePassword": "تغيير كلمة المرور",
+      "notification": "الاشعارات",
+      "name": "الاسم",
+      "email": "البريد الالكتروني",
+      "mobile": "رقم الموبايل",
+      "cancel": "الغاء",
+      "save": "حفظ",
+      "password": "كلمة المرور",
+      "confirmPassword": "تأكيد كلمة المرور",
+      "Passwords do not match": "كلمات المرور غير متطابقة",
+      "all": "الكل",
+      "unread": "الغير مقروء"
     },
-    "roles":{
-      "roles&Permissions":"الادوار والصلاحيات",
-      "role":"الدور",
-      "roles":"الادوار",
-      "admin":"Admin",
-      "superAdmin":"Super Admin",
-      "client":"Client",
-      "roleDetails":"تفاصيل الدور",
-      "featureName":"اسم الميزة"
+    "roles": {
+      "roles&Permissions": "الادوار والصلاحيات",
+      "role": "الدور",
+      "roles": "الادوار",
+      "admin": "Admin",
+      "superAdmin": "Super Admin",
+      "client": "Client",
+      "roleDetails": "تفاصيل الدور",
+      "featureName": "اسم الميزة"
     },
-    "requestToStolenPhone" :{
-      "requestToStolenPhone":"طلب إلى هاتف مسروق",
-      "searchOfRequest" :"بحث عن الطلب",
-      "requestStatus" :"حالة الطلب",
-      "approved":"مقبول ",
-      "pending":"قيد الانتظار",
-      "rejected":"مرفوض",
-      "editImageRequest":"طلب تعديل الصورة",
-      "name":"الاسم",
-      "mobile":"رقم الموبايل",
-      "email":"البريد الالكتروني",
-      "IMEInumber":"IMEI رقم",
-      "noPhotos":"لا توجد صور متاحة لهذا الطلب.",
-      "editPicture":"تعديل الصورة",
-      "openPicture":"فتح الصورة",
-      "accept":"قبول" ,
-      "reject":"رفض",
-      "cancel":"الغاء",
-      "rejectReason":"سبب الرفض",
-      "sendFeedback":"إرسال ردود الفعل",
-      "enterRejectionReason":"ادخل سبب الرفض",
-      "loading":".....جاري التحميل"
+    "requestToStolenPhone": {
+      "requestToStolenPhone": "طلب إلى هاتف مسروق",
+      "searchOfRequest": "بحث عن الطلب",
+      "requestStatus": "حالة الطلب",
+      "approved": "مقبول ",
+      "pending": "قيد الانتظار",
+      "rejected": "مرفوض",
+      "editImageRequest": "طلب تعديل الصورة",
+      "name": "الاسم",
+      "mobile": "رقم الموبايل",
+      "email": "البريد الالكتروني",
+      "IMEInumber": "IMEI رقم",
+      "noPhotos": "لا توجد صور متاحة لهذا الطلب.",
+      "editPicture": "تعديل الصورة",
+      "openPicture": "فتح الصورة",
+      "accept": "قبول",
+      "reject": "رفض",
+      "cancel": "الغاء",
+      "rejectReason": "سبب الرفض",
+      "sendFeedback": "إرسال ردود الفعل",
+      "enterRejectionReason": "ادخل سبب الرفض",
+      "loading": ".....جاري التحميل"
+    },
+    "ownership": {
+      "ownership": "نقل الملكية",
+      "searchOfOwnership": "بحث عن نقل الملكية",
+      "requestStatus": "حالة الطلب",
+      "approved": "مقبول ",
+      "pending": "قيد الانتظار",
+      "rejected": "مرفوض",
+      "editImageRequest": "طلب تعديل الصورة",
+      "fromClient": "من العميل ",
+      "toClient": "الى العميل",
+      "mobile": "رقم الموبايل",
+      "serialNumber": "الرقم التسلسلي",
+      "clientName": "اسم العميل",
+      "IMEInumber": "IMEI رقم",
+      "noPhotos": "لا توجد صور متاحة لهذا الطلب.",
+      "editPicture": "تعديل الصورة",
+      "openPicture": "فتح الصورة",
+      "accept": "قبول",
+      "reject": "رفض",
+      "cancel": "الغاء",
+      "rejectReason": "سبب الرفض",
+      "sendFeedback": "إرسال ردود الفعل",
+      "enterRejectionReason": "ادخل سبب الرفض",
+       "loading": ".....جاري التحميل"
     }
   },
   "salesflow": {
@@ -407,7 +431,7 @@
       "Error Uploading": "خطأ في رفع الصورة",
       "addMobile": "اضف رقم تليفون",
       "noClients": "لا يوجد عملاء",
-      "mobilesCount":"عدد الهواتف المحمولة"
+      "mobilesCount": "عدد الهواتف المحمولة"
     }
   }
 }

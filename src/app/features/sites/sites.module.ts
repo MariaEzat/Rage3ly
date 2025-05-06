@@ -12,9 +12,9 @@ const routes: Routes = [
     component: LayoutComponent,
     children: [
       { path: '', redirectTo: 'mobile', pathMatch: 'full' },
-      
-      
-     
+
+
+
       {
         path: 'customers',
         loadChildren: () =>
@@ -22,13 +22,13 @@ const routes: Routes = [
             (m) => m.CustomersModule
           ),
       },
-      
+
       {
         path: 'ads',
         canActivate: [AuthGuard],
         loadChildren: () =>
           import('../sites/ads/ads.module').then((m) => m.AdsModule),
-      },      
+      },
       {
         path: 'jobTitle',
         loadChildren: () =>
@@ -54,6 +54,12 @@ const routes: Routes = [
           import('./request-to-transfer-astolen-phone/request-to-transfer-astolen-phone.module').then(
             (m) => m.RequestToTransferAStolenPhoneModule
           ),
+      }, {
+        path: 'transferOfOwnership',
+        loadChildren: () =>
+          import('./transfer-of-ownership/transfer-of-ownership.module').then(
+            (m) => m.TransferOfOwnershipModule
+          ),
       },
       {
         path: 'roles',
@@ -69,4 +75,4 @@ const routes: Routes = [
   declarations: [LayoutComponent],
   imports: [CommonModule, SharedModule, RouterModule.forChild(routes)],
 })
-export class SitesModule {}
+export class SitesModule { }

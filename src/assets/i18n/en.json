@@ -220,11 +220,11 @@
     "expired": "Expired",
     "jumb-forward": "Jump Forward",
     "jumb-back": "Jump Back",
-    "mainLayout":{
-      "hello":"Hello",
-      "items":"Items"
-
-    }  },
+    "mainLayout": {
+      "hello": "Hello",
+      "items": "Items"
+    }
+  },
   "auth": {
     "login": {
       "login": "Login",
@@ -233,8 +233,7 @@
       "password": "Password",
       "forgotPassword?": "Forgot Password ?",
       "haveNotAnAccount?": "Don't have an account?",
-      "signUp":"Sign Up"
-
+      "signUp": "Sign Up"
     },
     "register": {
       "signUp": "Sign Up",
@@ -306,16 +305,17 @@
       "noEmployees": "No Employees",
       "cancel": "Cancel",
       "confirm": "Confirm",
-       "search in users":"search in users"
+      "search in users": "search in users"
     },
     "layout": {
       "adverdisments": "Adverdisments",
       "clients": "Clients",
       "users": "Users",
       "mobile": "Mobile",
-      "signOut":"Sign Out",
-      "roles":"Roles",
-      "requests":"Request to stolen phone"
+      "signOut": "Sign Out",
+      "roles": "Roles",
+      "requests": "Request to stolen phone",
+      "ownership": "Transfer of ownership"
     },
     "mobile": {
       "userName": "User Name",
@@ -341,57 +341,80 @@
       "ImeI2": "ImeI1",
       "serialNumber": "Serial Number",
       "dateOfPurchase": "Date Of Purchase",
-      "search":"Search"
-
+      "search": "Search"
     },
-    "employee-profile":{
-      "profileSettings":"Profile Settings",
-      "changePassword":"Change Password",
-      "notification":"Notification",
-      "name":"Name",
-      "email":"Email",
-      "mobile":"Mobile",
-      "cancel":"Cancel",
-      "save":"Save",
-      "password":"Password",
-      "confirmPassword":"Confirm Password",
-      "Passwords do not match":"Passwords do not match",
-      "all":"All",
-      "unread":"Unread"
-      
+    "employee-profile": {
+      "profileSettings": "Profile Settings",
+      "changePassword": "Change Password",
+      "notification": "Notification",
+      "name": "Name",
+      "email": "Email",
+      "mobile": "Mobile",
+      "cancel": "Cancel",
+      "save": "Save",
+      "password": "Password",
+      "confirmPassword": "Confirm Password",
+      "Passwords do not match": "Passwords do not match",
+      "all": "All",
+      "unread": "Unread"
     },
-    "roles":{
-      "roles&Permissions":"Roles & Permissions",
-      "role":"Role",
-      "roles":"Roles",
-      "admin":"Admin",
-      "superAdmin":"Super Admin",
-      "client":"Client",
-      "roleDetails":"Role Details",
-      "featureName":"Feature Name"
+    "roles": {
+      "roles&Permissions": "Roles & Permissions",
+      "role": "Role",
+      "roles": "Roles",
+      "admin": "Admin",
+      "superAdmin": "Super Admin",
+      "client": "Client",
+      "roleDetails": "Role Details",
+      "featureName": "Feature Name"
     },
-    "requestToStolenPhone" :{
-      "requestToStolenPhone":"Request To Stolen Phone",
-      "searchOfRequest" :"Search Of Request",
-      "requestStatus" :"Request Status",
-      "approved":"Approved",
-      "pending":"Pending",
-      "rejected":"Rejected",
-      "editImageRequest":"EditImageRequest",
-      "name":"Name",
-      "mobile":"Mobile Number",
-      "email":"Email",
-      "IMEInumber":"IMEI Number",
-      "noPhotos":"There are no images available for this request.",
-      "editPicture":"Edit Picture",
-      "openPicture":"Open Picture",
-      "accept":"Accept" ,
-      "reject":"Reject",
-      "cancel":"Cancel",
-      "rejectReason":"Reject Reason",
-      "sendFeedback":"Send Feedback",
-      "enterRejectionReason":"Enter rejection reason",
-      "loading":"Loading..."
+    "requestToStolenPhone": {
+      "requestToStolenPhone": "Request To Stolen Phone",
+      "searchOfRequest": "Search Of Request",
+      "requestStatus": "Request Status",
+      "approved": "Approved",
+      "pending": "Pending",
+      "rejected": "Rejected",
+      "editImageRequest": "EditImageRequest",
+      "name": "Name",
+      "mobile": "Mobile Number",
+      "email": "Email",
+      "IMEInumber": "IMEI Number",
+      "noPhotos": "There are no images available for this request.",
+      "editPicture": "Edit Picture",
+      "openPicture": "Open Picture",
+      "accept": "Accept",
+      "reject": "Reject",
+      "cancel": "Cancel",
+      "rejectReason": "Reject Reason",
+      "sendFeedback": "Send Feedback",
+      "enterRejectionReason": "Enter rejection reason",
+      "loading": "Loading..."
+    },
+    "ownership": {
+      "ownership": "Ownership",
+      "searchOfOwnership": "Search Of Transfer of ownership",
+      "requestStatus": "Request Status",
+      "approved": "Approved",
+      "pending": "Pending",
+      "rejected": "Rejected",
+      "editImageRequest": "EditImageRequest",
+      "fromClient": "From Client",
+      "toClient": "To Client",
+      "mobile": "Mobile",
+      "serialNumber": "Serial Number",
+      "clientName": "Client Name",
+      "IMEInumber": "IMEI Number ",
+      "noPhotos": "There are no images available for this request.",
+      "editPicture": "Edit Picture",
+      "openPicture": "Open Picture",
+      "accept": "Accept",
+      "reject": "Reject",
+      "cancel": "Cancel",
+      "rejectReason": "Reject Reason",
+      "sendFeedback": "Send Feedback",
+      "enterRejectionReason": "Enter rejection reason",
+      "loading": "Loading..."
     }
   },
   "salesflow": {
@@ -419,8 +442,7 @@
       "Error Uploading": "Error Uploading",
       "addMobile": "Add Mobile",
       "noClients": "No Clients",
-      "mobilesCount":"Mobiles Count"
-     
+      "mobilesCount": "Mobiles Count"
     }
   }
 }
