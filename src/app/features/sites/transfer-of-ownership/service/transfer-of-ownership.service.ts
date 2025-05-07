@@ -39,4 +39,8 @@ export class TransferOfOwnershipService {
     return this._apiService.update(`/EditImageStatusTransferOwnershipRequestsEndpoint/EditImageRequestStatus`, { ID });
 
   }
+
+  getById(ID: string) {
+    return this._apiService.get(`/GetClientWithPhoneDetailsEndpoint/GetClientWithPhoneDetails?ID=${ID}`,);
+  }
 }

@@ -1,12 +1,12 @@
 import { Component, ViewChild } from '@angular/core';
 import { RejectReasonViewModel, requestSearchViewModel, TransferOfOwnershipViewModel } from '../../interface/transfer-of-ownership';
-import {TransferOfOwnershipService} from '../../service/transfer-of-ownership.service';
+import { TransferOfOwnershipService } from '../../service/transfer-of-ownership.service';
 import { SharedService } from 'src/app/shared/service/shared.service';
 import { CRUDIndexPage } from 'src/app/shared/models/crud-index.model';
 import { BsModalRef } from 'ngx-bootstrap/modal';
 import { ResponseViewModel } from 'src/app/shared/models/response.model';
 import { ControlType } from 'src/app/shared/models/enum/control-type.enum';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { CrudIndexBaseUtils } from 'src/app/shared/classes/crud-index.utils';
 import { TranslateService } from '@ngx-translate/core';
 
@@ -33,12 +33,12 @@ export class HomeComponent extends CrudIndexBaseUtils {
 
 
   constructor(private _TransferOfOwnershipService: TransferOfOwnershipService, public override _sharedService: SharedService,
-     private activatedRoute: ActivatedRoute,private translate: TranslateService) { super(_sharedService); }
+    private activatedRoute: ActivatedRoute, private translate: TranslateService, private router: Router) { super(_sharedService); }
 
   ngOnInit() {
     this.loadRequestStatus();
     this.initializePage();
-   
+
   }
   loadRequestStatus() {
     this.translate.get([
@@ -167,5 +167,10 @@ export class HomeComponent extends CrudIndexBaseUtils {
       }
     });
   }
+
+  clientDetails(id: string) {
+    this.router.navigate(['/sites/transferOfOwnership/clientDetails', id]);
+  }
   
+
 }
