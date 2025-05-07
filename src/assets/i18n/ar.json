@@ -405,6 +405,21 @@
       "sendFeedback": "إرسال ردود الفعل",
       "enterRejectionReason": "ادخل سبب الرفض",
        "loading": ".....جاري التحميل"
+    },
+    "brands": {
+      "brands": "الماركات",
+      "brand": "ماركة",
+      "delete": "حذف",
+      "action": "الاجراءات",
+      "addNewBrand": "اضافة ماركة جديدة",
+      "cancel": "الغاء",
+      "confirm": "تأكيد",
+      "noBrands" : "لا توجد ماركات",
+      "brandName": "اسم الماركة",
+      "Are you sure you want to delete the selected brands?": "هل أنت متأكد من حذف الماركات المحددة؟",
+      "image": "الصورة",
+      "Upload New Image": "رفع صورة جديدة",
+      "ErrorUploading" : "خطأ في رفع الصورة"
     }
   },
   "salesflow": {

@@ -316,7 +316,7 @@
       "roles": "Roles",
       "requests": "Request to stolen phone",
       "ownership": "Transfer of ownership",
-      "brand":"Brands"
+      "brand": "Brands"
     },
     "mobile": {
       "userName": "User Name",
@@ -416,6 +416,21 @@
       "sendFeedback": "Send Feedback",
       "enterRejectionReason": "Enter rejection reason",
       "loading": "Loading..."
+    },
+    "brands": {
+      "brands": "Brands",
+      "brand": "Brand",
+      "delete": "Delete",
+      "action": "Action",
+      "addNewBrand": "Add New Brand",
+      "cancel": "Cancel",
+      "confirm": "Confirm",
+      "noBrands" : "No Brands",
+      "brandName": "Brand Name",
+      "Are you sure you want to delete the selected brands?": "Are you sure you want to delete the selected brands?",
+      "image": "Image",
+      "Upload New Image": "Upload New Image",
+      "ErrorUploading" : "Error Uploading"
     }
   },
   "salesflow": {

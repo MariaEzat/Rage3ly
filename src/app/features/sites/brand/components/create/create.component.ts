@@ -54,11 +54,15 @@ export class CreateComponent implements OnInit, OnDestroy {
     this._BrandService.getById(this.id).subscribe((res) => {
       if (res.isSuccess) {
         this.item = res.data;
-        if (res.data.path) {
-          this.images = [{ uploaded: true, src: res.data.path }];
+        if (res.data.media && res.data.media.length > 0) {
+          this.images = res.data.media.map((m) => ({
+            uploaded: true,
+            src: m.path
+          }));
         } else {
           this.images = [{ uploaded: false, src: null }];
         }
+        
 
         this.createForm();
       }
