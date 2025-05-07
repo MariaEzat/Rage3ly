@@ -5,7 +5,7 @@
             <form [formGroup]="page.searchForm">
                 <div class="form-body">
                     <div class="row g-2">
-                        <div class="col-6 col-md-6 col-lg-2">
+                        <div class="col-6 col-md-6 col-lg-4">
                             <ng-control [type]="controlType.SELECT" [form]="page.searchForm" control="RequestStatus"
                                 [inputClass]="'bg-Dark border-color text-white'" [labelClass]="'text-white'"
                                 [clearable]="true" label="sites.ownership.requestStatus"
@@ -15,15 +15,15 @@
 
                         </div>
 
-                        <div class="col-6 col-md-6 col-lg-2">
+                        <div class="col-6 col-md-6 col-lg-4">
                             <ng-control [form]="page.searchForm" control="ClientName"
-                                [inputClass]="'bg-Dark border-color'" [labelClass]="'text-white'" label="sites.ownership.clientName"
-                                placeholder="sites.ownership.clientName">
+                                [inputClass]="'bg-Dark border-color'" [labelClass]="'text-white'"
+                                label="sites.ownership.clientName" placeholder="sites.ownership.clientName">
                             </ng-control>
 
                         </div>
 
-                        <div class="col-12 col-md-6 col-lg-2 d-flex align-items-end">
+                        <div class="col-12 col-lg-2  d-flex align-items-end">
                             <button class='color-brand-700 rb-btn  rb-btn-sm  w-100 border-color text-white w-100'
                                 (click)="search()" [disabled]="page.searchForm.invalid || page.isSearching">
                                 <i class="uil uil-search"></i>
@@ -106,16 +106,13 @@
                     <div class="border-dashed px-3 rounded my-3 img-exist">
                         <div *ngIf="mobile.paths?.length && mobile.paths.length > 0">
                             <div *ngFor="let image of mobile.paths" class="mb-3">
-                                <div class="text-end">
+                                <div class="text-center">
                                     <p class="Gray-300 mb-1">{{ image.label }}</p>
                                     <img [src]="'https://api.rage3ly.com/' + image.path"
                                         class="mb-2 py-2 img-directions" />
 
-                                    <div class="d-flex w-100 gap-2">
-                                        <button class="btn btn-primary text-white w-50 font-sm"
-                                            (click)="requestEdit(mobile.id)">
-                                            {{"sites.ownership.editPicture"|translate}}
-                                        </button>
+                                    <div>
+
                                         <button class="btn w-50 font-sm btn-orange-border btn-primary font-sm"
                                             (click)="openImage(image.path)">
                                             {{"sites.ownership.openPicture"|translate}}
@@ -137,10 +134,15 @@
 
 
                     <div class="d-flex w-100 gap-2">
-                        <button class="btn w-50 font-sm btn-success font-sm" (click)="acceptRequest(mobile.id)">
+                        <button class="btn btn-primary text-white w-50 font-sm" [disabled]="mobile.requestStatus !== 1" (click)="requestEdit(mobile.id)"  >
+                            {{"sites.ownership.editPicture"|translate}}
+                        </button>
+                        <button class="btn w-50 font-sm btn-success font-sm" [disabled]="mobile.requestStatus !== 1"
+                            (click)="acceptRequest(mobile.id)">
                             {{"sites.ownership.accept"|translate}}
                         </button>
-                        <button class="btn btn-danger text-white w-50 font-sm" (click)="showRejectConfirmation(mobile)">
+                        <button class="btn btn-danger text-white w-50 font-sm" [disabled]="mobile.requestStatus !== 1"
+                            (click)="showRejectConfirmation(mobile)">
                             {{"sites.ownership.reject"|translate}}
                         </button>
                     </div>
