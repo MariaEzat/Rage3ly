@@ -315,7 +315,8 @@
       "roles": "Roles",
       "requests": "Request to stolen phone",
       "ownership": "Transfer of ownership",
-      "brand": "Brands"
+      "brand": "Brands",
+      "search": "Search"
     },
     "mobile": {
       "userName": "User Name",

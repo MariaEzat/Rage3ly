@@ -9,27 +9,27 @@ import { ButtonModule } from 'primeng/button';
 import { DropdownModule } from 'primeng/dropdown';
 import { InputSwitchModule } from 'primeng/inputswitch';
 import { TableModule } from 'primeng/table';
-
 const routes: Routes = [
   { path: '', component:HomeComponent }, 
 ];
+
 
 @NgModule({
   declarations: [
     HomeComponent
   ],
   imports: [
-    CommonModule,
-     DropdownModule,
-        TableModule,
-        SharedModule,
-        ButtonModule,
-        TranslateModule,
-        FormsModule,
-        RouterModule.forChild(routes),
-        ReactiveFormsModule,
-        InputSwitchModule,
-        TranslateModule
+     CommonModule,
+         DropdownModule,
+            TableModule,
+            SharedModule,
+            ButtonModule,
+            TranslateModule,
+            FormsModule,
+            RouterModule.forChild(routes),
+            ReactiveFormsModule,
+            InputSwitchModule,
+            TranslateModule
   ]
 })
-export class RequestToTransferAStolenPhoneModule { }
+export class SearchModule { }

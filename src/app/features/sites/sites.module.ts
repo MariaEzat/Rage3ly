@@ -75,6 +75,13 @@ const routes: Routes = [
             (m) => m.BrandModule
           ),
       },
+      {
+        path: 'search',
+        loadChildren: () =>
+          import('./search/search.module').then(
+            (m) => m.SearchModule
+          ),
+      },
     ],
   },
 ];
