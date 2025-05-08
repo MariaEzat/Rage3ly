@@ -81,6 +81,17 @@
         {{ "sites.layout.search" | translate }}
         <img [src]="searchRla.isActive || activeLink === 'search' ? 'assets/images/Icon-Clients.png' : 'assets/images/Icon@2x.png'" class="px-1 nav-icon">
       </a>
+      <a 
+      class="nav-link text-white py-2 d-flex flex-row-reverse justify-content-end align-items-center"
+      routerLink="/sites/notification" 
+      routerLinkActive="active" 
+      #notificationRla="routerLinkActive" 
+      [ngClass]="{ 'active-color': notificationRla.isActive }"
+      (mouseenter)="setActiveLink('notification')" 
+      (mouseleave)="setActiveLink('')">
+      {{ "sites.layout.notification" | translate }}
+      <img [src]="notificationRla.isActive || activeLink === 'notification' ? 'assets/images/Icon-mobile-Active.png' : 'assets/images/mobile.png'" class="px-1 nav-icon">
+    </a>
     <a 
     class="nav-link text-white py-2 d-flex flex-row-reverse justify-content-end align-items-center"
     routerLink="/sites/ads" 

@@ -306,7 +306,8 @@
       "requests": "طلب الهاتف المسروق",
       "ownership": "نقل الملكية",
       "brand": "الماركات",
-      "search":"بحث"
+      "search":"بحث",
+      "notification":"الاشعارات"
     },
     "mobile": {
       "userName": "اسم المستخدم",

@@ -316,7 +316,8 @@
       "requests": "Request to stolen phone",
       "ownership": "Transfer of ownership",
       "brand": "Brands",
-      "search": "Search"
+      "search": "Search",
+      "notification":"Notification"
     },
     "mobile": {
       "userName": "User Name",
