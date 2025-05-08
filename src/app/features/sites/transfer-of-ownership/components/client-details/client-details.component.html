@@ -4,32 +4,32 @@
     <div class="card p-4 mb-4" style="background-color: #1A1F3766;">
       <h5 class="mb-3 text-white">Client Details</h5>
       <div class="row g-3">
-        <div class="col-3">
+        <div class="col-6 col-md-3">
           <p class="Gray-300 mb-0 font-sm">Client Name</p>
           <p class="font-col mb-0">{{ client.name }}</p>
         </div>
-        <div class="col-3">
+        <div class="col-6 col-md-3">
           <p class="Gray-300 mb-0 font-sm">Phone</p>
           <p class="font-col mb-0">{{ client.mobile }}</p>
         </div>
-        <div class="col-3">
+        <div class="col-6 col-md-3">
           <p class="Gray-300 mb-0 font-sm">Email</p>
           <p class="font-col mb-0">{{ client.email }}</p>
         </div>
-        <div class="col-3">
+        <div class="col-6 col-md-3">
           <p class="Gray-300 mb-0 font-sm">Created Date</p>
-          <p class="font-col mb-0">{{ client.createdDate | date: 'mediumDate' }}</p>
+          <p class="font-col mb-0 ">{{ client.createdDate | date: 'mediumDate' }}</p>
         </div>
 
-        <div class="col-3">
+        <div class="col-6 col-md-3">
           <p class="Gray-300 mb-0 font-sm">Governorate</p>
           <p class="font-col mb-0">{{ client.governrateName }}</p>
         </div>
-        <div class="col-3">
+        <div class="col-6 col-md-3">
           <p class="Gray-300 mb-0 font-sm">City</p>
           <p class="font-col mb-0">{{ client.cityName }}</p>
         </div>
-        <div class="col-3">
+        <div class="col-6 col-md-3" *ngIf="client.nationalNumber!=null">
           <p class="Gray-300 mb-0 font-sm">National Number</p>
           <p class="font-col mb-0">{{ client.nationalNumber }}</p>
         </div>
@@ -38,7 +38,7 @@
 
 
     <!-- Mobile Devices -->
-    <div class="row g-4 justify-content-center">
+    <div class="row g-4 justify-content-center mb-4">
       <div class="col-md-6 col-lg-5" *ngFor="let mobile of client.phonesDetailsByClientIdDTOs">
         <div class="card-custom p-4 rounded shadow d-flex flex-column h-100">
           <div class="d-flex justify-content-between align-items-center mb-2">
@@ -62,8 +62,8 @@
 
           <hr class="Gray-600" />
 
-          <div class="row g-3 text-sm">
-            <div class="col-6">
+          <div class="row g-3 text-sm ">
+            <div class="col-6 ">
               <div class="d-flex align-items-center mb-2">
                 <div>
                   <p class="Gray-300 mb-0 font-sm">IMEI 1</p>

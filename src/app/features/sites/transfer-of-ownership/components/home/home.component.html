@@ -66,7 +66,7 @@
                                     class="me-2" />
                                 <div>
                                     <p class="Gray-300 mb-0 font-sm">{{"sites.ownership.fromClient"|translate}}</p>
-                                    <p class="font-col mb-0" (click)="clientDetails(mobile.fromClientId)">{{
+                                    <p class="font-col mb-0 clientHover" (click)="clientDetails(mobile.fromClientId)">{{
                                         mobile.fromClientName}}</p>
                                 </div>
                             </div>
@@ -88,7 +88,7 @@
                                 <div>
                                     <p class="Gray-300 mb-0 font-sm">{{"sites.ownership.toClient"|translate}}
                                     </p>
-                                    <p class="font-col mb-0" (click)="clientDetails(mobile.toClientId)">{{
+                                    <p class="font-col mb-0 clientHover" (click)="clientDetails(mobile.toClientId)">{{
                                         mobile.toClientName}}</p>
                                 </div>
                             </div>
