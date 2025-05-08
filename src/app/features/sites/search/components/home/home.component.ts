@@ -30,7 +30,6 @@ export class HomeComponent extends CrudIndexBaseUtils {
   records: number;
   ActionLogType=[
     { id: 0, name: 'All ' },
-
     { id: 1, name: 'Reigester ' },
     { id: 2, name: 'Login' },
     { id: 3, name: 'Search' }
@@ -75,15 +74,16 @@ export class HomeComponent extends CrudIndexBaseUtils {
     this.page.columns = [
 
       { Name: 'No', Title: '#', Selectable: true, Sortable: false },
-      { Name: 'ClientName ', Title: 'ClientName ', Selectable: false, Sortable: true },
-      { Name: 'IP', Title: 'IP', Selectable: false, Sortable: true },
-      { Name: 'Port', Title: 'Port', Selectable: false, Sortable: true },
-      { Name: 'SearchText', Title: 'SearchText', Selectable: false, Sortable: true },
-      { Name: 'LogType', Title: 'LogType', Selectable: false, Sortable: true },
-      { Name: 'PhoneNumber ', Title: 'PhoneNumber ', Selectable: false, Sortable: true },
-      { Name: 'GovernrateName ', Title: 'GovernrateName ', Selectable: false, Sortable: true },
-      { Name: "Latitude & Longitude ", Title: "Latitude & Longitude", Selectable: false, Sortable: true },
-      { Name: 'IMEI', Title: 'IMEI', Selectable: false, Sortable: true },
+      { Name: 'ClientName ', Title: 'sites.search.clientName', Selectable: false, Sortable: true },
+      { Name: 'IP', Title: 'sites.search.ip', Selectable: false, Sortable: true },
+      { Name: 'Port', Title: 'sites.search.port', Selectable: false, Sortable: true },
+      { Name: 'SearchText', Title: 'sites.search.searchText', Selectable: false, Sortable: true },
+      { Name: 'Email', Title: 'sites.search.email', Selectable: false, Sortable: true },
+      { Name: 'phoneNumberOwner ', Title: 'sites.search.phoneNumberOwner', Selectable: false, Sortable: true },
+      { Name: 'phoneNumberSearcher ', Title: 'sites.search.phoneNumberSearcher', Selectable: false, Sortable: true },
+      { Name: 'createdDate ', Title: 'sites.search.createdDate', Selectable: false, Sortable: true },
+      { Name: 'IMEI', Title: 'sites.search.imeI1', Selectable: false, Sortable: true },
+      { Name: "Latitude & Longitude ", Title: "sites.search.Latitude & Longitude", Selectable: false, Sortable: true },
 
 
     ];
@@ -231,7 +231,7 @@ export class HomeComponent extends CrudIndexBaseUtils {
       item.port,
       this.getActionLogTypeName(Number(item.logType)),
       item.searchText,
-      item.phoneNumber,
+      item.phoneNumberOwner,
     ]);
 
     // Generate Table with Better Formatting
@@ -270,7 +270,10 @@ export class HomeComponent extends CrudIndexBaseUtils {
     this.showDownloadOptions = !this.showDownloadOptions;
   }
  
-
+  clientDetails(id: string) {
+    this._router.navigate(['/sites/transferOfOwnership/clientDetails', id]);
+  }
+  
 }
 
 

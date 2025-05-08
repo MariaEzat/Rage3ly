@@ -432,6 +432,27 @@
       "image": "الصورة",
       "Upload New Image": "رفع صورة جديدة",
       "ErrorUploading": "خطأ في رفع الصورة"
+    },
+    "search":{
+      "searchOfSearch": "بحث  في البحث",
+      "ImeIAndSerial":"ImeI والرقم التسلسلي",
+      "emailAndClinetName":"البريد الإلكتروني واسم العميل",
+      "phoneNumber":"رقم هاتف المالك أو الباحث",
+      "from":"من تاريخ",
+      "to":"الي تاريخ",
+      "logType": "نوع السجل",
+      "ip":"IP",
+      "port":"Port Number",
+      "searchText":"نص البحث",
+      "email":"البريد الالكتروني",
+      "phoneNumberOwner":"رقم هاتف المالك",
+      "phoneNumberSearcher":"رقم هاتف الباحث",
+      "createdDate":"تاريخ الانشاء",
+      "latitude":"خط العرض",
+      "longitude":"خط الطول",
+      "imeI1":"IMEI",
+      "clientName":"اسم العميل",
+      "Latitude & Longitude":"خطوط العرض والطول"
     }
   },
   "salesflow": {
