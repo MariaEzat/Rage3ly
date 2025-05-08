@@ -305,7 +305,7 @@
       "roles": "صلاحيات المستخدمين",
       "requests": "طلب الهاتف المسروق",
       "ownership": "نقل الملكية",
-      "brand":"الماركات"
+      "brand": "الماركات"
     },
     "mobile": {
       "userName": "اسم المستخدم",
@@ -404,7 +404,18 @@
       "rejectReason": "سبب الرفض",
       "sendFeedback": "إرسال ردود الفعل",
       "enterRejectionReason": "ادخل سبب الرفض",
-       "loading": ".....جاري التحميل"
+      "loading": ".....جاري التحميل",
+      "clientDetails": "تفاصيل العميل",
+      "email":"البريد الالكتروني",
+      "createdDate":"تاريخ الانشاء",
+      "governorate":"المحافظة",
+      "city":"المدينة",
+      "nationalNumber":"الرقم القومى",
+      "Date of Purchase":"تاريخ الشراء",
+      "brandName":"اسم الماركة",
+      "mobileModel":"موديل الموبايل",
+      "number":"رقم الموبايل",
+      "otherBrand":"ماركات اخرى"
     },
     "brands": {
       "brands": "الماركات",
@@ -414,12 +425,12 @@
       "addNewBrand": "اضافة ماركة جديدة",
       "cancel": "الغاء",
       "confirm": "تأكيد",
-      "noBrands" : "لا توجد ماركات",
+      "noBrands": "لا توجد ماركات",
       "brandName": "اسم الماركة",
       "Are you sure you want to delete the selected brands?": "هل أنت متأكد من حذف الماركات المحددة؟",
       "image": "الصورة",
       "Upload New Image": "رفع صورة جديدة",
-      "ErrorUploading" : "خطأ في رفع الصورة"
+      "ErrorUploading": "خطأ في رفع الصورة"
     }
   },
   "salesflow": {

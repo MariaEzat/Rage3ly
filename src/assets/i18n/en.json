@@ -303,7 +303,6 @@
       "Passwords do not match": "Passwords do not match",
       "cancel": "Cancel",
       "noEmployees": "No Employees",
-      "cancel": "Cancel",
       "confirm": "Confirm",
       "search in users": "search in users"
     },
@@ -415,7 +414,18 @@
       "rejectReason": "Reject Reason",
       "sendFeedback": "Send Feedback",
       "enterRejectionReason": "Enter rejection reason",
-      "loading": "Loading..."
+      "loading": "Loading...",
+      "clientDetails": "Client Details",
+      "email":"Email",
+      "createdDate":"Created Date",
+      "governorate":"Governorate",
+      "city":"City",
+      "nationalNumber":"National Number",
+      "Date of Purchase":"Date of Purchase",
+      "brandName":"Brand Name",
+      "mobileModel":" Mobile Model",
+      "number":"Number",
+      "otherBrand":"Other Brand"
     },
     "brands": {
       "brands": "Brands",

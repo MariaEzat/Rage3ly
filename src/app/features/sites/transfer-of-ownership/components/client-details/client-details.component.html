@@ -2,35 +2,35 @@
   <div class="container py-4">
     <!-- Client Details Card -->
     <div class="card p-4 mb-4" style="background-color: #1A1F3766;">
-      <h5 class="mb-3 text-white">Client Details</h5>
+      <h5 class="mb-3 text-white">{{"sites.ownership.clientDetails" |translate}}</h5>
       <div class="row g-3">
         <div class="col-6 col-md-3">
-          <p class="Gray-300 mb-0 font-sm">Client Name</p>
+          <p class="Gray-300 mb-0 font-sm">{{"sites.ownership.clientName" |translate}}</p>
           <p class="font-col mb-0">{{ client.name }}</p>
         </div>
         <div class="col-6 col-md-3">
-          <p class="Gray-300 mb-0 font-sm">Phone</p>
+          <p class="Gray-300 mb-0 font-sm">{{"sites.ownership.mobile" |translate}}</p>
           <p class="font-col mb-0">{{ client.mobile }}</p>
         </div>
         <div class="col-6 col-md-3">
-          <p class="Gray-300 mb-0 font-sm">Email</p>
+          <p class="Gray-300 mb-0 font-sm">{{"sites.ownership.email" |translate}}</p>
           <p class="font-col mb-0">{{ client.email }}</p>
         </div>
         <div class="col-6 col-md-3">
-          <p class="Gray-300 mb-0 font-sm">Created Date</p>
+          <p class="Gray-300 mb-0 font-sm">{{"sites.ownership.createdDate" |translate}}</p>
           <p class="font-col mb-0 ">{{ client.createdDate | date: 'mediumDate' }}</p>
         </div>
 
         <div class="col-6 col-md-3">
-          <p class="Gray-300 mb-0 font-sm">Governorate</p>
+          <p class="Gray-300 mb-0 font-sm">{{"sites.ownership.governorate" |translate}}</p>
           <p class="font-col mb-0">{{ client.governrateName }}</p>
         </div>
         <div class="col-6 col-md-3">
-          <p class="Gray-300 mb-0 font-sm">City</p>
+          <p class="Gray-300 mb-0 font-sm">{{"sites.ownership.city" |translate}}</p>
           <p class="font-col mb-0">{{ client.cityName }}</p>
         </div>
         <div class="col-6 col-md-3" *ngIf="client.nationalNumber!=null">
-          <p class="Gray-300 mb-0 font-sm">National Number</p>
+          <p class="Gray-300 mb-0 font-sm">{{"sites.ownership.nationalNumber" |translate}}</p>
           <p class="font-col mb-0">{{ client.nationalNumber }}</p>
         </div>
       </div>
@@ -80,13 +80,13 @@
             <div class="col-6">
               <div class="d-flex align-items-center mb-2">
                 <div>
-                  <p class="Gray-300 mb-0 font-sm">Serial Number</p>
+                  <p class="Gray-300 mb-0 font-sm">{{"sites.ownership.serialNumber" |translate}}</p>
                   <p class="font-col mb-0">{{ mobile.serialNumber }}</p>
                 </div>
               </div>
               <div class="d-flex align-items-center">
                 <div>
-                  <p class="Gray-300 mb-0 font-sm">Date of Purchase</p>
+                  <p class="Gray-300 mb-0 font-sm">{{"sites.ownership.Date of Purchase" |translate}}</p>
                   <p class="font-col mb-0">{{ mobile.dateOfPurchase | date: 'mediumDate' }}</p>
                 </div>
               </div>
@@ -96,13 +96,13 @@
 
               <div class="d-flex align-items-center mb-2">
                 <div>
-                  <p class="Gray-300 mb-0 font-sm">Brand Name</p>
+                  <p class="Gray-300 mb-0 font-sm">{{"sites.ownership.brandName" |translate}}</p>
                   <p class="font-col mb-0">{{ mobile.brandName }}</p>
                 </div>
               </div>
               <div class="d-flex align-items-center">
                 <div>
-                  <p class="Gray-300 mb-0 font-sm">Created Date</p>
+                  <p class="Gray-300 mb-0 font-sm">{{"sites.ownership.createdDate" |translate}}</p>
                   <p class="font-col mb-0">{{ mobile.createdDate | date: 'mediumDate' }}</p>
                 </div>
               </div>
@@ -112,13 +112,13 @@
 
               <div class="d-flex align-items-center mb-2">
                 <div>
-                  <p class="Gray-300 mb-0 font-sm">Number</p>
+                  <p class="Gray-300 mb-0 font-sm">{{"sites.ownership.number" |translate}}</p>
                   <p class="font-col mb-0">{{ mobile.number }}</p>
                 </div>
               </div>
               <div class="d-flex align-items-center">
                 <div>
-                  <p class="Gray-300 mb-0 font-sm">Mobile Model</p>
+                  <p class="Gray-300 mb-0 font-sm">{{"sites.ownership.mobileModel" |translate}}</p>
                   <p class="font-col mb-0">{{ mobile.mobileModel}}</p>
                 </div>
               </div>
@@ -127,16 +127,11 @@
             
             <div class="col-6 ">
               
-              <div class="d-flex align-items-center mb-2">
-                <div>
-                  <p class="Gray-300 mb-0 font-sm">Date of Purchase</p>
-                  <p class="font-col mb-0">{{ mobile.dateOfPurchase | date: 'mediumDate' }}</p>
-                </div>
-              </div>
+              
 
               <div class="d-flex align-items-center" *ngIf="mobile.otherBrand!=null">
                 <div>
-                  <p class="Gray-300 mb-0 font-sm">Other Brand</p>
+                  <p class="Gray-300 mb-0 font-sm">{{"sites.ownership.otherBrand" |translate}}Other Brand</p>
                   <p class="font-col mb-0">{{ mobile.otherBrand }}</p>
                 </div>
               </div>
