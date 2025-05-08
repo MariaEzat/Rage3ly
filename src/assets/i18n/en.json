@@ -443,6 +443,27 @@
       "image": "Image",
       "Upload New Image": "Upload New Image",
       "ErrorUploading" : "Error Uploading"
+    },
+    "search":{
+      "searchOfSearch": "Search Of Search",
+      "ImeIAndSerial":"ImeI And Serial",
+      "emailAndClinetName":"Email And Clinet Name",
+      "phoneNumber":"Phone Number Of Owner Or Searcher",
+      "from":"From",
+      "to":"To",
+      "logType": "Log Type",
+      "ip":"IP",
+      "port":"Port Number",
+      "searchText":"Search Text",
+      "email":"Email",
+      "phoneNumberOwner":"Phone Number Of Owner",
+      "phoneNumberSearcher":"Phone Number Of Searcher",
+      "createdDate":"Created Date",
+      "latitude":"Latitude",
+      "longitude":"Longitude",
+      "imeI1":"IMEI",
+      "clientName":"Client Name",
+      "Latitude & Longitude":"Latitude & Longitude"
     }
   },
   "salesflow": {

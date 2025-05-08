@@ -10,9 +10,12 @@ export interface searchViewModel {
     clientName:number;
     phoneId:string;
     IMEI1:string;
-    phoneNumber:string;
+    phoneNumberOwner :string;
+    phoneNumberSearcher :string;
     governrateId:string;
     governrateName:string;
+    email :string;
+    createdDate :Date;
     selected?: boolean; 
   }
   

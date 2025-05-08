@@ -5,34 +5,34 @@
   
         <!-- Search Card -->
         <div class="card p-4 mb-4" style="background-color: #1A1F3766;">
-          <h5 class="mb-3 text-white"> {{"salesflow.Customers.searchofCustomers"|translate}} </h5>
+          <h5 class="mb-3 text-white"> {{"sites.search.searchOfSearch"|translate}} </h5>
           <form [formGroup]="page.searchForm">
             <div class="form-body">
               <div class="row g-2">
                 <div class="col-6 col-sm-2 mb-2">
                   <ng-control [form]="page.searchForm" control="ImeiAndSerial" [inputClass]="'bg-Dark border-color'"
-                    [labelClass]="'text-white'" label="ImeI And Serial"
-                    placeholder="ImeI And Serial">
+                    [labelClass]="'text-white'" label="sites.search.ImeIAndSerial"
+                    placeholder="sites.search.ImeIAndSerial">
                   </ng-control>
                 </div>
                 <div class="col-6 col-sm-2 mb-2">
                   <ng-control [form]="page.searchForm" control="EmailAndClinetName" [inputClass]="'bg-Dark border-color'"
-                    [labelClass]="'text-white'" label="Email And ClinetName" placeholder="Email And ClinetName">
+                    [labelClass]="'text-white'" label="sites.search.emailAndClinetName" placeholder="sites.search.emailAndClinetName">
                   </ng-control>
                 </div>
                 <div class="col-6 col-sm-2 mb-2">
                   <ng-control [form]="page.searchForm" control="PhoneNumber" [inputClass]="'bg-Dark border-color'"
-                    [labelClass]="'text-white'" label="Phone Number"
-                    placeholder="Phone Number">
+                    [labelClass]="'text-white'" label="sites.search.phoneNumber"
+                    placeholder="sites.search.phoneNumber">
                   </ng-control>
                 </div>
                 
                 <div class="col-6 col-sm-2 mb-2">
-                    <ng-control [form]="page.searchForm" control="From" label="From" [inputClass]="'bg-Dark  border-color'"
+                    <ng-control [form]="page.searchForm" control="From" label="sites.search.from" [inputClass]="'bg-Dark  border-color'"
                   [labelClass]="'text-white'" [type]="page.ControlType.INPUT_DATE"></ng-control>
                   </div>
                   <div class="col-6 col-sm-2 mb-2">
-                    <ng-control [form]="page.searchForm" control="To" label="To" [inputClass]="'bg-Dark  border-color'"
+                    <ng-control [form]="page.searchForm" control="To" label="sites.search.to" [inputClass]="'bg-Dark  border-color'"
                   [labelClass]="'text-white'" [type]="page.ControlType.INPUT_DATE"></ng-control>
                   </div>
                 <!-- Search Button -->
@@ -79,7 +79,7 @@
             <div class="col-6 col-sm-3 mb-2">
                 <ng-control [type]="controlType.SELECT" [form]="page.searchForm" control="LogType"
                   [inputClass]="'bg-Dark border-color text-white'" [labelClass]="'text-white'"
-                  label="Log Type" placeholder="Log Type"
+                  label="sites.search.logType" placeholder="sites.search.logType"
                   [items]="ActionLogType">
                 </ng-control>
               </div>
@@ -109,15 +109,17 @@
                 <tr *ngFor="let item of items | paginate: page.options; let i = index">
                   <!-- <td><input type="checkbox" [(ngModel)]="item.selected" /></td> -->
                   <td>{{ (page.options.currentPage - 1) * page.options.itemsPerPage + i + 1 }}</td>
-                  <td>{{ item.clientName }}</td>
+                  <td class="clientHover" (click)="clientDetails(item.clientId)">{{ item.clientName }}</td>
                   <td>{{ item.ip}}</td>
                   <td>{{ item.port }}</td>
                   <td>{{ item.searchText}}</td>
-                  <td>{{ getActionLogTypeName(item.logType)}}</td>
-                  <td>{{ item.phoneNumber}}</td>
-                  <td>{{ item.governrateName}}</td>
-                  <td>{{ item.latitude}} , {{item.longitude}}</td>
+                  <td>{{ item.email}}</td>
+                  <!-- <td>{{ getActionLogTypeName(item.logType)}}</td> -->
+                  <td>{{ item.phoneNumberOwner}}</td>
+                  <td>{{ item.phoneNumberSearcher}}</td>
+                  <td>{{ item.createdDate | date: 'medium'}}</td>
                   <td>{{ item.imeI1}}</td>
+                  <td>{{ item.latitude}} , {{item.longitude}}</td>
                  
                   <!-- <td>
   
