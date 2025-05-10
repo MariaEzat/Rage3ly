@@ -117,11 +117,11 @@
 
       <a class="nav-link text-white py-2 d-flex flex-row-reverse justify-content-end align-items-center"
       routerLink="/sites/retrivedPhones" routerLinkActive="active" #retrivedPhonesRla="routerLinkActive"
-      [ngClass]="{ 'active-color': retrivedPhonesRla.isActive }" (mouseenter)="setActiveLink('dashboard')"
+      [ngClass]="{ 'active-color': retrivedPhonesRla.isActive }" (mouseenter)="setActiveLink('retrivedPhones')"
       (mouseleave)="setActiveLink('')">
       {{ "sites.layout.retrivedPhones" | translate }}
       <img
-        [src]="retrivedPhonesRla.isActive || activeLink === 'dashboard' ? 'assets/images/ActiveDashboard.png' : 'assets/images/DisActiveDashboard.png'"
+        [src]="retrivedPhonesRla.isActive || activeLink === 'retrivedPhones' ? 'assets/images/ActiveDashboard.png' : 'assets/images/DisActiveDashboard.png'"
         class="px-1 nav-icon">
     </a>
 
