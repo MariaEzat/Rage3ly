@@ -115,6 +115,16 @@
           class="px-1 nav-icon">
       </a>
 
+      <a class="nav-link text-white py-2 d-flex flex-row-reverse justify-content-end align-items-center"
+      routerLink="/sites/retrivedPhones" routerLinkActive="active" #retrivedPhonesRla="routerLinkActive"
+      [ngClass]="{ 'active-color': retrivedPhonesRla.isActive }" (mouseenter)="setActiveLink('dashboard')"
+      (mouseleave)="setActiveLink('')">
+      {{ "sites.layout.retrivedPhones" | translate }}
+      <img
+        [src]="retrivedPhonesRla.isActive || activeLink === 'dashboard' ? 'assets/images/ActiveDashboard.png' : 'assets/images/DisActiveDashboard.png'"
+        class="px-1 nav-icon">
+    </a>
+
 
     </div>
     <div class="mt-auto cr5 w-75 text-center bg-red-dark hover">

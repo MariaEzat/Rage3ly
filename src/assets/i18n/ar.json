@@ -309,7 +309,8 @@
       "search":"بحث",
       "notification":"الاشعارات",
       "dashboard":"الاحصائيات",
-      "searchOfStolenPhone":"بحث فى التليفونات المسروقة"
+      "searchOfStolenPhone":"بحث فى التليفونات المسروقة",
+      "retrivedPhones":"التليفونات للى تم استردادها"
     },
     "mobile": {
       "userName": "اسم المستخدم",

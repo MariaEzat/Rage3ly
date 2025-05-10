@@ -319,7 +319,8 @@
       "search": "Search",
       "notification":"Notification",
       "dashboard": "Dashboard",
-      "searchOfStolenPhone":"Search Of Stolen Phone"
+      "searchOfStolenPhone":"Search Of Stolen Phone",
+      "retrivedPhones":"Retrived Phones"
 
     },
     "mobile": {

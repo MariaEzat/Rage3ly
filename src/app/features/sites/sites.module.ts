@@ -96,6 +96,13 @@ const routes: Routes = [
             (m) => m.DashboardModule
           ),
       },
+      {
+        path: 'retrivedPhones',
+        loadChildren: () =>
+          import('./retrieved-phones/retrieved-phones.module').then(
+            (m) => m.RetrievedPhonesModule
+          ),
+      },
     ],
   },
 ];

@@ -130,6 +130,15 @@
                 class="px-1 nav-icon">
             </a>
 
+            <a class="nav-link text-white py-2 d-flex flex-row-reverse justify-content-end align-items-center" style="font-size: 13px;"
+            routerLink="/sites/retrivedPhones" routerLinkActive="active"
+            #retrivedPhonesRla="routerLinkActive" [ngClass]="{ 'active-color': retrivedPhonesRla.isActive }"
+            (click)="toggleSidebar()">
+            {{ "sites.layout.retrivedPhones" | translate }}
+            <img [src]="retrivedPhonesRla.isActive ? 'assets/images/Icon.png' : 'assets/images/Icon-notActive.png'"
+              class="px-1 nav-icon">
+          </a>
+
             <a class="mt-auto cr3 w-75 text-center  ">
               <button class="btn  bg-red-dark cr3 text-white w-100 btn-large-height hover" (click)="logout()">
                 {{ "sites.layout.signOut" | translate }}
