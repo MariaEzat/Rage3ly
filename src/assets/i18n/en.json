@@ -464,7 +464,26 @@
       "imeI1":"IMEI",
       "clientName":"Client Name",
       "Latitude & Longitude":"Latitude & Longitude"
+    },
+    "notification":{
+      "searchOfStolenPhone":"Search Of Stolen Phone",
+      "clientName":"Client Name",
+      "PhoneNumber":"Phone Number",
+      "From":"From Date",
+      "To":"To Date",
+      "There is a search operation for a stolen phone":"There is a search operation for a stolen phone",
+      "brandName":"Brand Name",
+      "latitude":"Latitude",
+      "longitude":"Longitude",
+      "clientNameOwner":"Owner Name",
+      "createdDate":"Created Date",
+      "clientNameSearcher":"Searcher Name",
+      "phoneNumberOwner":"Phone Number Of Owner",
+      "phoneNumberSearcher":"Phone Number Of Searcher",
+      "No Data":"No Data"
+      
     }
+    
   },
   "salesflow": {
     "Customers": {

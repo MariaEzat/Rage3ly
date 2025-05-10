@@ -454,6 +454,24 @@
       "imeI1":"IMEI",
       "clientName":"اسم العميل",
       "Latitude & Longitude":"خطوط العرض والطول"
+    },
+    "notification":{
+      "searchOfStolenPhone":"بحث فى التليفونات المسروقة",
+      "clientName":"اسم العميل",
+      "PhoneNumber":"رقم التليفون",
+      "From":"من تاريخ",
+      "To":"الى تاريخ",
+      "There is a search operation for a stolen phone":"توجد عملية بحث عن هاتف مسروق",
+      "brandName":"اسم الماركة",
+      "latitude":"خط العرض",
+      "longitude":"خط الطول",
+      "clientNameOwner":"العميل المالك",
+      "createdDate":"تاريخ الانشاء",
+      "clientNameSearcher":"اسم الباحث",
+      "phoneNumberOwner":"رقم هاتف المالك",
+      "phoneNumberSearcher":"رقم هاتف الباحث",
+      "No Data":"لا توجد بيانات"
+      
     }
   },
   "salesflow": {
