@@ -308,7 +308,8 @@
       "brand": "الماركات",
       "search":"بحث",
       "notification":"الاشعارات",
-      "dashboard":"الاحصائيات"
+      "dashboard":"الاحصائيات",
+      "searchOfStolenPhone":"بحث فى التليفونات المسروقة"
     },
     "mobile": {
       "userName": "اسم المستخدم",

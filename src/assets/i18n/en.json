@@ -318,7 +318,9 @@
       "brand": "Brands",
       "search": "Search",
       "notification":"Notification",
-      "dashboard": "Dashboard"
+      "dashboard": "Dashboard",
+      "searchOfStolenPhone":"Search Of Stolen Phone"
+
     },
     "mobile": {
       "userName": "User Name",

@@ -1,6 +1,6 @@
 <div class="main-panel bg-Dark">
   <div class="navbar fixed-navbar bord-bottom py-2 d-flex justify-content-between align-items-center px-4">
-    <div class="w-75 d-flex align-items-center px-2" >
+    <div class="w-75 d-flex align-items-center px-2">
       <!-- <h1 class="m-0 color-white">{{"shared.mainLayout.hello" | translate}}</h1> -->
       <div class="d-flex align-items-center ms-auto">
         <div class="d-flex align-items-center pointer" routerLink="/sites/employeeProfile">
@@ -78,12 +78,64 @@
               <img [src]="RolesRla.isActive ? 'assets/images/rolesActive.png' : 'assets/images/rolesDeactive.png'"
                 class="px-1 nav-icon">
             </a>
+            <a class="nav-link text-white py-2 d-flex flex-row-reverse justify-content-end align-items-center"
+              routerLink="/sites/brand" routerLinkActive="active" #BrandRla="routerLinkActive"
+              [ngClass]="{ 'active-color': BrandRla.isActive }" (click)="toggleSidebar()">
+              {{ "sites.layout.brand" | translate }}
+              <img [src]="BrandRla.isActive ? 'assets/images/Icon-Clients.png' : 'assets/images/Icon@2x.png'"
+                class="px-1 nav-icon">
+            </a>
+            <a class="nav-link text-white py-2 d-flex flex-row-reverse justify-content-end align-items-center"
+              routerLink="/sites/search" routerLinkActive="active" #SearchRla="routerLinkActive"
+              [ngClass]="{ 'active-color': SearchRla.isActive }" (click)="toggleSidebar()">
+              {{ "sites.layout.search" | translate }}
+              <img [src]="SearchRla.isActive ? 'assets/icons/ActiveSearch.png' : 'assets/icons/DisactiveSearch.png'"
+                class="px-1 nav-icon">
+            </a>
+
+            <a class="nav-link text-white py-2 d-flex flex-row-reverse justify-content-end align-items-center"
+              routerLink="/sites/dashboard" routerLinkActive="active" #DashboardRla="routerLinkActive"
+              [ngClass]="{ 'active-color': DashboardRla.isActive }" (click)="toggleSidebar()">
+              {{ "sites.layout.dashboard" | translate }}
+              <img
+                [src]="DashboardRla.isActive ? 'assets/images/ActiveDashboard.png' : 'assets/images/DisActiveDashboard.png'"
+                class="px-1 nav-icon">
+
+            </a>
+
+            <a class="nav-link text-white py-2 d-flex flex-row-reverse justify-content-end align-items-center"style="font-size: 13px;"
+              routerLink="/sites/notification" routerLinkActive="active" #searchOfStolenPhoneRla="routerLinkActive"
+              [ngClass]="{ 'active-color': searchOfStolenPhoneRla.isActive }" (click)="toggleSidebar()">
+              {{ "sites.layout.searchOfStolenPhone" | translate }}
+              <img
+                [src]="searchOfStolenPhoneRla.isActive ? 'assets/icons/ActiveSearch.png' : 'assets/icons/DisactiveSearch.png'"
+                class="px-1 nav-icon">
+            </a>
+            <a class="nav-link text-white py-2 d-flex flex-row-reverse justify-content-end align-items-center" style="font-size: 13px;"
+              routerLink="/sites/transferOfOwnership" routerLinkActive="active"
+              #TransferOfOwnershipRla="routerLinkActive" [ngClass]="{ 'active-color': TransferOfOwnershipRla.isActive }"
+              (click)="toggleSidebar()">
+              {{ "sites.layout.ownership" | translate }}
+              <img
+                [src]="TransferOfOwnershipRla.isActive ? 'assets/images/Icon-mobile-Active.png' : 'assets/images/mobile.png'"
+                class="px-1 nav-icon">
+            </a>
+
+            <a class="nav-link text-white py-2 d-flex flex-row-reverse justify-content-end align-items-center" style="font-size: 13px;"
+              routerLink="/sites/requestToTransferAStolenPhone" routerLinkActive="active"
+              #RequestsRla="routerLinkActive" [ngClass]="{ 'active-color': RequestsRla.isActive }"
+              (click)="toggleSidebar()">
+              {{ "sites.layout.requests" | translate }}
+              <img [src]="RequestsRla.isActive ? 'assets/images/Icon.png' : 'assets/images/Icon-notActive.png'"
+                class="px-1 nav-icon">
+            </a>
+
             <a class="mt-auto cr3 w-75 text-center  ">
               <button class="btn  bg-red-dark cr3 text-white w-100 btn-large-height hover" (click)="logout()">
                 {{ "sites.layout.signOut" | translate }}
               </button>
             </a>
-            
+
           </div>
         </div>
       </div>

@@ -75,16 +75,16 @@
         (mouseleave)="setActiveLink('')">
         {{ "sites.layout.dashboard" | translate }}
         <img
-          [src]="notificationRla.isActive || activeLink === 'dashboard' ? 'assets/images/ActiveDashboard.png' : 'assets/images/DisActiveDashboard.png'"
+          [src]="dashboardRla.isActive || activeLink === 'dashboard' ? 'assets/images/ActiveDashboard.png' : 'assets/images/DisActiveDashboard.png'"
           class="px-1 nav-icon">
       </a>
       <a class="nav-link text-white py-2 d-flex flex-row-reverse justify-content-end align-items-center"
         routerLink="/sites/notification" routerLinkActive="active" #notificationRla="routerLinkActive"
         [ngClass]="{ 'active-color': notificationRla.isActive }" (mouseenter)="setActiveLink('notification')"
         (mouseleave)="setActiveLink('')">
-        {{ "sites.layout.notification" | translate }}
+        {{ "sites.layout.searchOfStolenPhone" | translate }}
         <img
-          [src]="notificationRla.isActive || activeLink === 'notification' ? 'assets/images/Icon-mobile-Active.png' : 'assets/images/mobile.png'"
+          [src]="notificationRla.isActive || activeLink === 'notification' ? 'assets/icons/ActiveSearch.png' : 'assets/icons/DisactiveSearch.png'"
           class="px-1 nav-icon">
       </a>
       <a class="nav-link text-white py-2 d-flex flex-row-reverse justify-content-end align-items-center"

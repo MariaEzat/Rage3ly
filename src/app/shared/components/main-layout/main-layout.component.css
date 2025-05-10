@@ -72,6 +72,11 @@
   background-color: #121c5066;
 
 }
+@media (max-width:400px) {
+  .start-50{
+    left: 0% !important;
+  }
+}
 
 
 
