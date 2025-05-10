@@ -53,6 +53,16 @@
   border: none;
   color: #ffffff;
 }
+.btn-yellow{
+  background-color: #96cf10;
+  border: none;
+  color: #ffffff;
+}
+.btn-blue{
+  background-color: #cf1099;
+  border: none;
+  color: #ffffff;
+}
 .Gray-300 {
   color: #D5D7DA;
 }
@@ -103,6 +113,10 @@
   background-color: transparent;
   color: #49A7C9;
 }
+
+
+
+
 @media (max-width: 576px) {
   .card-custom {
     padding: 1rem;

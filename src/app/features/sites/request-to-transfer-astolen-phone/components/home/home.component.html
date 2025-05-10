@@ -36,8 +36,8 @@
                                 'btn-second': mobile.requestStatus === 1,
                         'btn-success': mobile.requestStatus === 2,
                         'btn-secondary': mobile.requestStatus === 3,
-                        'btn-danger': mobile.requestStatus === 4
-                    
+                        'btn-danger': mobile.requestStatus === 4,
+
                      
                       }">
                             {{ getStatusName(mobile.requestStatus)|translate }}
@@ -45,8 +45,7 @@
                         <div class="d-flex align-items-center">
                             <span class="Gray-300 me-2" style="font-size: 18px;"> {{mobile.brandName }} {{
                                 mobile.mobileModel }} </span>
-                            <img [src]="'https://api.rage3ly.com/' + mobile.brandPath.path" class="me-2 custom-img"
-                                 />
+                            <img [src]="'https://api.rage3ly.com/' + mobile.brandPath.path" class="me-2 custom-img" />
                         </div>
                     </div>
                     <hr class="Gray-600">
@@ -57,7 +56,8 @@
                                     class="me-2" />
                                 <div>
                                     <p class="Gray-300 mb-0 font-sm">{{"sites.requestToStolenPhone.name"|translate}}</p>
-                                    <p class="font-col mb-0">{{ mobile.clientName }}</p>
+                                    <p class="font-col mb-0 clientHover" (click)="clientDetails(mobile.clientId)">{{
+                                        mobile.clientName }}</p>
                                 </div>
                             </div>
                             <div class="d-flex align-items-center">
@@ -93,7 +93,7 @@
                         </div>
                     </div>
 
-                    <div class="border-dashed px-3 rounded my-3 img-exist" >
+                    <div class="border-dashed px-3 rounded my-3 img-exist">
                         <div *ngIf="mobile.paths?.length && mobile.paths.length > 0">
                             <div *ngFor="let image of mobile.paths" class="mb-3">
                                 <div class="text-center">
