@@ -89,6 +89,13 @@ const routes: Routes = [
             (m) => m.NotificationsModule
           ),
       },
+      {
+        path: 'dashboard',
+        loadChildren: () =>
+          import('./dashboard/dashboard.module').then(
+            (m) => m.DashboardModule
+          ),
+      },
     ],
   },
 ];

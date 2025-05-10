@@ -317,7 +317,8 @@
       "ownership": "Transfer of ownership",
       "brand": "Brands",
       "search": "Search",
-      "notification":"Notification"
+      "notification":"Notification",
+      "dashboard": "Dashboard"
     },
     "mobile": {
       "userName": "User Name",
