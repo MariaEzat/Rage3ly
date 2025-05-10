@@ -11,6 +11,15 @@
     <div class="nav flex-column w-100 text-end">
 
       <a class="nav-link text-white py-2 d-flex flex-row-reverse justify-content-end align-items-center"
+        routerLink="/sites/dashboard" routerLinkActive="active" #dashboardRla="routerLinkActive"
+        [ngClass]="{ 'active-color': dashboardRla.isActive }" (mouseenter)="setActiveLink('dashboard')"
+        (mouseleave)="setActiveLink('')">
+        {{ "sites.layout.dashboard" | translate }}
+        <img
+          [src]="dashboardRla.isActive || activeLink === 'dashboard' ? 'assets/images/ActiveDashboard.png' : 'assets/images/DisActiveDashboard.png'"
+          class="px-1 nav-icon">
+      </a>
+      <a class="nav-link text-white py-2 d-flex flex-row-reverse justify-content-end align-items-center"
         routerLink="/sites/mobile" routerLinkActive="active" #mobileRla="routerLinkActive"
         [ngClass]="{ 'active-color': mobileRla.isActive }" (mouseenter)="setActiveLink('mobile')"
         (mouseleave)="setActiveLink('')">
@@ -69,15 +78,7 @@
           [src]="searchRla.isActive || activeLink === 'search' ? 'assets/icons/ActiveSearch.png' : 'assets/icons/DisactiveSearch.png'"
           class="px-1 nav-icon">
       </a>
-      <a class="nav-link text-white py-2 d-flex flex-row-reverse justify-content-end align-items-center"
-        routerLink="/sites/dashboard" routerLinkActive="active" #dashboardRla="routerLinkActive"
-        [ngClass]="{ 'active-color': dashboardRla.isActive }" (mouseenter)="setActiveLink('dashboard')"
-        (mouseleave)="setActiveLink('')">
-        {{ "sites.layout.dashboard" | translate }}
-        <img
-          [src]="dashboardRla.isActive || activeLink === 'dashboard' ? 'assets/images/ActiveDashboard.png' : 'assets/images/DisActiveDashboard.png'"
-          class="px-1 nav-icon">
-      </a>
+      
       <a class="nav-link text-white py-2 d-flex flex-row-reverse justify-content-end align-items-center"
         routerLink="/sites/notification" routerLinkActive="active" #notificationRla="routerLinkActive"
         [ngClass]="{ 'active-color': notificationRla.isActive }" (mouseenter)="setActiveLink('notification')"

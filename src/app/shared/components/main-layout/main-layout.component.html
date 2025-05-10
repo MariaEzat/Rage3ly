@@ -43,6 +43,15 @@
           <div class="dropdown-menu show position-absolute start-50 translate-middle-x mt-2 px-2 custom-lang-dropdown"
             *ngIf="showSidebarMenu">
             <a class="nav-link text-white py-2 d-flex flex-row-reverse justify-content-end align-items-center"
+              routerLink="/sites/dashboard" routerLinkActive="active" #DashboardRla="routerLinkActive"
+              [ngClass]="{ 'active-color': DashboardRla.isActive }" (click)="toggleSidebar()">
+              {{ "sites.layout.dashboard" | translate }}
+              <img
+                [src]="DashboardRla.isActive ? 'assets/images/ActiveDashboard.png' : 'assets/images/DisActiveDashboard.png'"
+                class="px-1 nav-icon">
+
+            </a>
+            <a class="nav-link text-white py-2 d-flex flex-row-reverse justify-content-end align-items-center"
               routerLink="/sites/mobile" routerLinkActive="active" #mobileRla="routerLinkActive"
               [ngClass]="{ 'active-color': mobileRla.isActive }" (click)="toggleSidebar()"
               (mouseenter)="setActiveLink('mobile')" (mouseleave)="setActiveLink('')">
@@ -91,16 +100,6 @@
               {{ "sites.layout.search" | translate }}
               <img [src]="SearchRla.isActive ? 'assets/icons/ActiveSearch.png' : 'assets/icons/DisactiveSearch.png'"
                 class="px-1 nav-icon">
-            </a>
-
-            <a class="nav-link text-white py-2 d-flex flex-row-reverse justify-content-end align-items-center"
-              routerLink="/sites/dashboard" routerLinkActive="active" #DashboardRla="routerLinkActive"
-              [ngClass]="{ 'active-color': DashboardRla.isActive }" (click)="toggleSidebar()">
-              {{ "sites.layout.dashboard" | translate }}
-              <img
-                [src]="DashboardRla.isActive ? 'assets/images/ActiveDashboard.png' : 'assets/images/DisActiveDashboard.png'"
-                class="px-1 nav-icon">
-
             </a>
 
             <a class="nav-link text-white py-2 d-flex flex-row-reverse justify-content-end align-items-center"style="font-size: 13px;"

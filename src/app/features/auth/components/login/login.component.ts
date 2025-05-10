@@ -121,7 +121,7 @@ export class LoginComponent implements OnInit {
         if (roleId === 'Admin' || roleId === 'SuperAdmin') {
           this._sharedService.showToastr(response);
 
-          this._router.navigate(['/sites/mobile'], {
+          this._router.navigate(['/sites/dashboard'], {
             queryParams: { source: 'login' },
           });
         } else {
