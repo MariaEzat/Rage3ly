@@ -339,8 +339,8 @@
       "PhoneConfirmation": "Phone Confirmation",
       "name": "Name",
       "number": "Number",
-      "ImeI1": "ImeI1",
-      "ImeI2": "ImeI1",
+      "ImeI1": "IMEI1",
+      "ImeI2": "IMEI2",
       "serialNumber": "Serial Number",
       "dateOfPurchase": "Date Of Purchase",
       "search": "Search"
