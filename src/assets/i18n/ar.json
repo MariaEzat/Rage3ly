@@ -455,6 +455,31 @@
       "imeI1":"IMEI",
       "clientName":"اسم العميل",
       "Latitude & Longitude":"خطوط العرض والطول"
+    },
+    "dashboard":{
+      "governorateCount":"عدد المحافظات",
+      "clientCount":"عدد العملاء",
+      "phoneCount":"عدد الهواتف",
+      "region":"منطقة",
+     "client":"عميل",
+      "phone":"هاتف",
+      "phoneBrandsUsed": "ماركات الهواتف المستخدمة",
+      "percentageOfPhones": "نسبة الهواتف",
+      "numberOfRegisteredPhones": "عدد الهواتف المسجلة",
+      "numberOfStolenPhones": "عدد الهواتف المسروقة",
+      "mostUsedAreasOfTheApplication": "المناطق الأكثر استخداما للتطبيق",
+      "areasOfTelephonesUsed": "مناطق استخدام الهواتف",
+      "returnedPhones": "الهواتف المستردة",
+      "clientName": "اسم العميل",
+      "ip":"IP",
+      "port":"Port رقم",
+      "longitude":"خط الطول",
+      "latitude":"خط العرض",
+      "searchCount": "عدد عمليات البحث",
+      "seeAll": "عرض الكل",
+      "governorateName":"اسم المحافظة",
+        "noData": "لا توجد بيانات",
+        "backToDashboard": "العودة إلى لوحة التحكم"
     }
   },
   "salesflow": {

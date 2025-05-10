@@ -17,7 +17,7 @@ export class HomeComponent extends CrudIndexBaseUtils {
 
 
   override page: CRUDIndexPage = new CRUDIndexPage();
-  override pageRoute = '/sites/ads';
+  override pageRoute = '/sites/brand';
   modalRef: BsModalRef;
   override items: brandViewModel[] = [];
    ads: [] = [];

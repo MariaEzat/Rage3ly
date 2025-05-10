@@ -1,1 +1,145 @@
-<p>dashboard works!</p>
+<div class="dashboard">
+    <div class="top-cards">
+        <div class="card">
+            {{"sites.dashboard.governorateCount"|translate}}<br />
+            <span class="inline-text" style="font-size: 25px;"><strong class="font-color">{{ regionsCount }}</strong>
+                {{"sites.dashboard.region"|translate}}</span>
+        </div>
+        <div class="card">
+            {{"sites.dashboard.clientCount"|translate}} <br />
+            <span class="inline-text" style="font-size: 25px;"><strong class="font-color">{{ usersCount }}</strong>
+                {{"sites.dashboard.client"|translate}}</span>
+        </div>
+        <div class="card">
+            {{"sites.dashboard.phoneCount"|translate}}<br />
+            <span class="inline-text" style="font-size: 25px;"><strong class="font-color">{{ phonesCount }}</strong>
+                {{"sites.dashboard.phone"|translate}}</span>
+        </div>
+        <div class="card">
+            {{"sites.dashboard.returnedPhones"|translate}}<br />
+            <span class="inline-text" style="font-size: 25px;"><strong class="font-color">{{ returnedPhones }}</strong>
+                {{"sites.dashboard.phone"|translate}}</span>
+        </div>
+    </div>
+
+
+    <div class="charts-row">
+        <div class="chart-card">
+            <h4> {{"sites.dashboard.phoneBrandsUsed"|translate}}</h4>
+            <canvas baseChart [data]="brandsBarData" [type]="'bar'" [options]="barOptions"></canvas>
+        </div>
+        <div class="chart-card" style="position: relative;">
+            <h4> {{"sites.dashboard.percentageOfPhones"|translate}}</h4>
+
+
+            <canvas baseChart [data]="phonesDonutData" [type]="'doughnut'" [options]="donutOptions">
+            </canvas>
+
+
+            <div style="
+                  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 48px;
+  font-weight: bold;
+  text-align: center;">
+                {{ stolenPercentage % 1 === 0 ? stolenPercentage : stolenPercentage.toFixed(2) }}
+                %
+            </div>
+
+
+            <div style="display: flex; flex-direction: column; gap: 10px; padding: 10px 20px; text-align: center;">
+                <div style="display: flex; justify-content: space-between;">
+                    <div class="font-color">{{ totalPhones }}</div>
+                    <div style="color: white;">{{"sites.dashboard.numberOfRegisteredPhones"|translate}}</div>
+                </div>
+                <div style="display: flex; justify-content: space-between;">
+                    <div class="font-color">{{ stolenPhones }}</div>
+                    <div style="color: white;">{{"sites.dashboard.numberOfStolenPhones"|translate}}</div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="charts-row">
+        <div class="chart-card" style="position: relative;">
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+              <h4>{{ "sites.dashboard.mostUsedAreasOfTheApplication" | translate }}</h4>
+              <button class="btn btn-primary " (click)="onSeeAllClick()">
+                {{ "sites.dashboard.seeAll" | translate }}
+              </button>
+            </div>
+            <canvas baseChart [data]="topRegionsDonutData" [type]="'doughnut'" [options]="donutOptions"></canvas>
+            <div style="
+              position: absolute;
+              top: 60%;
+              left: 50%;
+              transform: translate(-50%, -50%);
+              color: white;
+              font-size: 48px;
+              font-weight: bold;
+              text-align: center;">
+              {{ totalNumberOfClients }} {{ "sites.dashboard.client" | translate }}
+            </div>
+          </div>
+        <div class="chart-card">
+            <h4>{{"sites.dashboard.areasOfTelephonesUsed"|translate}}</h4>
+            <canvas baseChart [data]="governoratesBarData" [type]="'bar'" [options]="barOptions"></canvas>
+        </div>
+    </div>
+</div>
+
+
+
+
+<!-- Container -->
+<div class="d-flex  min-vh-100  text-white ">
+    <div class="flex-grow-1 p-2 chang-width " style="width: 90%;">
+        <div class="container-fluid">
+
+            <!-- Table -->
+            <div class=" scrolled mt-3 h-100 table-responsive">
+                <table class="table text-center align-middle transparent-table">
+                    <thead>
+
+                        <tr>
+
+                            <ng-container *ngFor="let colum of page.columns">
+                                <th (click)="onSortClicked(colum)" [class.pointer]="colum.Sortable">
+                                    {{ colum.Title | translate }}
+                                    <i class="uil uil-sort ms-1" *ngIf="colum.Sortable" [ngClass]="{
+                           'sort-icon-ase': isColumnAscending(colum),
+                           'sort-icon-des': !isColumnAscending(colum)
+                         }">
+                                    </i>
+                                </th>
+                            </ng-container>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngIf="items.length === 0">
+                            <td colspan="100%"> {{"salesflow.Customers.noClients"|translate}} </td>
+                        </tr>
+                        <tr *ngFor="let item of items | paginate: page.options; let i = index">
+                            <td>{{ (page.options.currentPage - 1) * page.options.itemsPerPage + i + 1 }}</td>
+                            <td>{{ item.clientName }}</td>
+                            <td>{{ item.ip}}</td>
+                            <td>{{ item.port }}</td>
+                            <td>{{ item.latitude}} , {{item.longitude}}</td>
+                            <td>{{ item.searchCount}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+            </div>
+
+
+            <!-- Pagination -->
+            <ng-pagination [page]="page" (pageSizeChange)="onChangePageSize()" (pageChange)="getNextPrevData($event)">
+            </ng-pagination>
+        </div>
+    </div>
+</div>

@@ -465,6 +465,32 @@
       "imeI1":"IMEI",
       "clientName":"Client Name",
       "Latitude & Longitude":"Latitude & Longitude"
+    },
+    "dashboard":{
+      "governorateCount":"Governorate Count",
+      "clientCount":"Client Count",
+      "phoneCount":"Phone Count",
+      "region":"Region",
+     "client":"Client",
+      "phone":"Phone",
+      "phoneBrandsUsed": "Phone brands used",
+      "percentageOfPhones": "Percentage of phones",
+      "numberOfRegisteredPhones": "Number of registered phones",
+      "numberOfStolenPhones": "Number of stolen phones",
+      "mostUsedAreasOfTheApplication": "Most used areas of the application",
+      "areasOfTelephonesUsed": "Areas of telephones used",
+      "returnedPhones": "Returned phones",
+      "clientName": "Client Name",
+      "ip":"IP",
+      "port":"Port Number",
+      "longitude":"Longitude",
+      "latitude":"Latitude",
+      "searchCount":"Search Count",
+      "seeAll": "See All",
+      "governorateName":"Governorate Name",
+      "noData": "No Data",
+      "backToDashboard":"Back To Dashboard"
+      
     }
   },
   "salesflow": {
