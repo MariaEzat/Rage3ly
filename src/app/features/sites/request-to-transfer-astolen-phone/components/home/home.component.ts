@@ -6,7 +6,7 @@ import { CRUDIndexPage } from 'src/app/shared/models/crud-index.model';
 import { BsModalRef } from 'ngx-bootstrap/modal';
 import { ResponseViewModel } from 'src/app/shared/models/response.model';
 import { ControlType } from 'src/app/shared/models/enum/control-type.enum';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { CrudIndexBaseUtils } from 'src/app/shared/classes/crud-index.utils';
 import { TranslateService } from '@ngx-translate/core';
 
@@ -32,7 +32,7 @@ export class HomeComponent extends CrudIndexBaseUtils {
   ];
 
   constructor(private requestService: RequestService, public override _sharedService: SharedService,
-     private activatedRoute: ActivatedRoute,private translate: TranslateService) { super(_sharedService); }
+     private activatedRoute: ActivatedRoute,private translate: TranslateService,private router :Router) { super(_sharedService); }
 
   ngOnInit() {
     this.loadRequestStatus();
@@ -165,6 +165,10 @@ export class HomeComponent extends CrudIndexBaseUtils {
         this._sharedService.showToastr(error);
       }
     });
+  }
+
+  clientDetails(id: string) {
+    this.router.navigate(['/sites/transferOfOwnership/clientDetails', id]);
   }
   
 }

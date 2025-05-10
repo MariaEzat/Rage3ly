@@ -43,15 +43,17 @@
         <div class="card-custom p-4 rounded shadow d-flex flex-column h-100">
           <div class="d-flex justify-content-between align-items-center mb-2">
             <button class="btn btn-sm" [ngClass]="{
-              'btn-second': mobile.phoneStatus === 1,
-      'btn-success': mobile.phoneStatus === 2,
+              'btn-success': mobile.phoneStatus === 1,
+      'btn-second': mobile.phoneStatus === 2,
       'btn-secondary': mobile.phoneStatus === 3,
-      'btn-danger': mobile.phoneStatus === 4
-  
+      'btn-danger': mobile.phoneStatus === 4,
+      'btn-yellow': mobile.phoneStatus === 5,
+      'btn-pink': mobile.phoneStatus === 6,
+
    
     }">
               {{ getStatusName(mobile.phoneStatus)|translate }}
-          </button>
+            </button>
             <div class="d-flex align-items-center">
               <span class="Gray-300 me-2" style="font-size: 18px;">
                 {{ mobile.brandName }} {{ mobile.MobileModel }}
@@ -123,8 +125,8 @@
                 </div>
               </div>
             </div>
-            
-            
+
+
             <div class="col-6 ">
 
 
@@ -135,7 +137,7 @@
                 </div>
               </div>
             </div>
-          
+
           </div>
         </div>
 
@@ -145,7 +147,7 @@
         </div>
       </div>
     </div>
-    
+
   </div>
-  
+
 </div>

@@ -44,10 +44,11 @@
 }
 
 .btn-secondary {
-  background-color: #6a7176;
+  background-color: #35b3f2;
   border: none;
   color: #ffffff;
 }
+
 .btn-second {
   background-color: #6a7176;
   border: none;
@@ -96,7 +97,11 @@
   background-color: #35b3f2;
   color: white;
 }
+.clientHover:hover{
+  color: rgb(172, 138, 220);
+  text-decoration: underline;
 
+}
 .btn-orange-border {
   border: 1px solid #4DC3FF;
   border-radius: 3px;

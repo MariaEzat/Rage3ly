@@ -69,22 +69,22 @@
           [src]="searchRla.isActive || activeLink === 'search' ? 'assets/icons/ActiveSearch.png' : 'assets/icons/DisactiveSearch.png'"
           class="px-1 nav-icon">
       </a>
-      <a class="nav-link text-white py-2 d-flex flex-row-reverse justify-content-end align-items-center"
+      <!-- <a class="nav-link text-white py-2 d-flex flex-row-reverse justify-content-end align-items-center"
         routerLink="/sites/dashboard" routerLinkActive="active" #dashboardRla="routerLinkActive"
         [ngClass]="{ 'active-color': dashboardRla.isActive }" (mouseenter)="setActiveLink('dashboard')"
         (mouseleave)="setActiveLink('')">
         {{ "sites.layout.dashboard" | translate }}
         <img
-          [src]="notificationRla.isActive || activeLink === 'dashboard' ? 'assets/images/ActiveDashboard.png' : 'assets/images/DisActiveDashboard.png'"
+          [src]="dashboardRla.isActive || activeLink === 'dashboard' ? 'assets/images/ActiveDashboard.png' : 'assets/images/DisActiveDashboard.png'"
           class="px-1 nav-icon">
-      </a>
+      </a> -->
       <a class="nav-link text-white py-2 d-flex flex-row-reverse justify-content-end align-items-center"
         routerLink="/sites/notification" routerLinkActive="active" #notificationRla="routerLinkActive"
         [ngClass]="{ 'active-color': notificationRla.isActive }" (mouseenter)="setActiveLink('notification')"
         (mouseleave)="setActiveLink('')">
-        {{ "sites.layout.notification" | translate }}
+        {{ "sites.layout.searchOfStolenPhone" | translate }}
         <img
-          [src]="notificationRla.isActive || activeLink === 'notification' ? 'assets/images/Icon-mobile-Active.png' : 'assets/images/mobile.png'"
+          [src]="notificationRla.isActive || activeLink === 'notification' ? 'assets/icons/ActiveSearch.png' : 'assets/icons/DisactiveSearch.png'"
           class="px-1 nav-icon">
       </a>
       <a class="nav-link text-white py-2 d-flex flex-row-reverse justify-content-end align-items-center"
@@ -114,6 +114,16 @@
           [src]="requestsRla.isActive || activeLink === 'requests' ? 'assets/images/Icon.png' : 'assets/images/Icon-notActive.png'"
           class="px-1 nav-icon">
       </a>
+
+      <a class="nav-link text-white py-2 d-flex flex-row-reverse justify-content-end align-items-center"
+      routerLink="/sites/retrivedPhones" routerLinkActive="active" #retrivedPhonesRla="routerLinkActive"
+      [ngClass]="{ 'active-color': retrivedPhonesRla.isActive }" (mouseenter)="setActiveLink('dashboard')"
+      (mouseleave)="setActiveLink('')">
+      {{ "sites.layout.retrivedPhones" | translate }}
+      <img
+        [src]="retrivedPhonesRla.isActive || activeLink === 'dashboard' ? 'assets/images/ActiveDashboard.png' : 'assets/images/DisActiveDashboard.png'"
+        class="px-1 nav-icon">
+    </a>
 
 
     </div>

@@ -14,19 +14,22 @@ export class ClientDetailsComponent implements OnInit {
   client: ClientDetailsViewModel = new ClientDetailsViewModel();
   mobiles: TransferOfOwnershipViewModel[] = [];
   page: CRUDIndexPage = new CRUDIndexPage();
-id:string;
+  id: string;
   RequestStatus = [
-    { id: 1, name: 'sites.ownership.pending' },
-    { id: 2, name: 'sites.ownership.approved' },
-    { id: 3, name: 'sites.ownership.editImageRequest' },
-    { id: 4, name: 'sites.ownership.rejected' }
+    { id: 1, name: 'Safe' },
+    { id: 2, name: 'PendingUploadImage' },
+    { id: 3, name: 'PendingAdminConfirmation' },
+    { id: 4, name: 'Stolen' },
+    { id: 5, name: 'NotSure' },
+    { id: 6, name: 'UnRegistered' }
+
   ];
 
   constructor(
     private _sharedService: SharedService,
     private _transferService: TransferOfOwnershipService,
     private _activatedRoute: ActivatedRoute,
-  ) {}
+  ) { }
 
   ngOnInit(): void {
     this._activatedRoute.paramMap.subscribe((params) => {
@@ -51,7 +54,7 @@ id:string;
   }
 
 
- 
+
 
   getStatusName(status: number): string {
 
