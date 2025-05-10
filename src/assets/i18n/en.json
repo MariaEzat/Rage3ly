@@ -282,7 +282,7 @@
       "confirm": "Confirm"
     },
     "employee": {
-      "employee": "employee",
+      "employee": "Employee",
       "employees": "Employees",
       "mobile": "Mobile",
       "role": "Role",
@@ -296,7 +296,7 @@
       "addNewEmployee": "Add New Employee",
       "userpermissions": "User permissions",
       "addNewPermission": "Add New Permission",
-      "email": "email",
+      "email": "Email",
       "password": "Password",
       "confirmPassword": "Confirm Password",
       "changePassword": "Change Password",
@@ -317,7 +317,8 @@
       "ownership": "Transfer of ownership",
       "brand": "Brands",
       "search": "Search",
-      "notification":"Notification"
+      "notification":"Notification",
+      "dashboard": "Dashboard"
     },
     "mobile": {
       "userName": "User Name",
@@ -339,8 +340,8 @@
       "PhoneConfirmation": "Phone Confirmation",
       "name": "Name",
       "number": "Number",
-      "ImeI1": "ImeI1",
-      "ImeI2": "ImeI1",
+      "ImeI1": "IMEI1",
+      "ImeI2": "IMEI2",
       "serialNumber": "Serial Number",
       "dateOfPurchase": "Date Of Purchase",
       "search": "Search"

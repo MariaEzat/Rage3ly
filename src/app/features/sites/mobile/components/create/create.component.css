@@ -23,10 +23,11 @@
     font-family: 'Zain', serif !important;
    }
   
-   p,span,button,nav,div,a ,label,td,form{
+   p,span,button,nav,div,a,label,td,form{
     font-family: 'Zain', serif !important;
     font-size: 18px;
    }
   
-
-   
+ .font-big {
+  font-size: 25px;
+ }
