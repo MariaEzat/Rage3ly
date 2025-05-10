@@ -474,7 +474,16 @@
       "phoneNumberOwner":"رقم هاتف المالك",
       "phoneNumberSearcher":"رقم هاتف الباحث",
       "No Data":"لا توجد بيانات"
-      
+    },
+    "retrivedPhones":{
+      "search of retrivePhones":"بحث فى التليفونات التى تم ارجاعها",
+      "from":"من تاريخ",
+      "to":"الي تاريخ",
+      "clientName":"اسم العميل",
+      "mobileModel":"موديل الموبايل",
+      "brandName":"اسم الماركة",
+      "noPhones":"لا توجد تليفونات"
+
     }
   },
   "salesflow": {

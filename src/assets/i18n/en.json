@@ -486,6 +486,15 @@
       "phoneNumberSearcher":"Phone Number Of Searcher",
       "No Data":"No Data"
       
+    },
+    "retrivedPhones":{
+      "search of retrivePhones":"Search Of Retrived Phones",
+      "from":"From date",
+      "to":"To Date",
+      "clientName":"Client Name",
+      "mobileModel":" Mobile Model",
+      "brandName":"Brand Name",
+      "noPhones":"No Phones"
     }
     
   },
