@@ -56,7 +56,7 @@
         (mouseleave)="setActiveLink('')">
         {{ "sites.layout.roles" | translate }}
         <img
-          [src]="RolesRla.isActive || activeLink === 'roles' ? 'assets/images/rolesActive.png' : 'assets/images/rolesDeactive.png'"
+          [src]="RolesRla.isActive || activeLink === 'roles' ? 'assets/images/roleActive.png' : 'assets/images/roleNotActive.png'"
           class="px-1 nav-icon">
       </a>
 
@@ -103,7 +103,7 @@
         (mouseleave)="setActiveLink('')">
         {{ "sites.layout.ownership" | translate }}
         <img
-          [src]="ownershipRla.isActive || activeLink === 'ownership' ? 'assets/images/Icon-mobile-Active.png' : 'assets/images/mobile.png'"
+          [src]="ownershipRla.isActive || activeLink === 'ownership' ? 'assets/images/tranferActive.png' : 'assets/images/transferNotActive.png'"
           class="px-1 nav-icon">
       </a>
       <a class="nav-link text-white py-2 d-flex flex-row-reverse justify-content-end align-items-center"
@@ -112,7 +112,7 @@
         (mouseleave)="setActiveLink('')">
         {{ "sites.layout.requests" | translate }}
         <img
-          [src]="requestsRla.isActive || activeLink === 'requests' ? 'assets/images/Icon.png' : 'assets/images/Icon-notActive.png'"
+          [src]="requestsRla.isActive || activeLink === 'requests' ? 'assets/images/requestActive.png' : 'assets/images/requestNotActive.png'"
           class="px-1 nav-icon">
       </a>
 
@@ -122,7 +122,7 @@
       (mouseleave)="setActiveLink('')">
       {{ "sites.layout.retrivedPhones" | translate }}
       <img
-        [src]="retrivedPhonesRla.isActive || activeLink === 'retrivedPhones' ? 'assets/images/ActiveDashboard.png' : 'assets/images/DisActiveDashboard.png'"
+        [src]="retrivedPhonesRla.isActive || activeLink === 'retrivedPhones' ? 'assets/images/retrivedPhoneActive.png' : 'assets/images/retrivedPhoneNotActive.png'"
         class="px-1 nav-icon">
     </a>
 

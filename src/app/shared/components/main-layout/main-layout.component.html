@@ -84,7 +84,7 @@
               routerLink="/sites/roles" routerLinkActive="active" #RolesRla="routerLinkActive"
               [ngClass]="{ 'active-color': RolesRla.isActive }" (click)="toggleSidebar()">
               {{ "sites.layout.roles" | translate }}
-              <img [src]="RolesRla.isActive ? 'assets/images/rolesActive.png' : 'assets/images/rolesDeactive.png'"
+              <img [src]="RolesRla.isActive ? 'assets/images/roleActive.png' : 'assets/images/roleNotActive.png'"
                 class="px-1 nav-icon">
             </a>
             <a class="nav-link text-white py-2 d-flex flex-row-reverse justify-content-end align-items-center"
@@ -116,7 +116,7 @@
               (click)="toggleSidebar()">
               {{ "sites.layout.ownership" | translate }}
               <img
-                [src]="TransferOfOwnershipRla.isActive ? 'assets/images/Icon-mobile-Active.png' : 'assets/images/mobile.png'"
+                [src]="TransferOfOwnershipRla.isActive ? 'assets/images/tranferActive.png' : 'assets/images/transferNotActive.png'"
                 class="px-1 nav-icon">
             </a>
 
@@ -125,7 +125,7 @@
               #RequestsRla="routerLinkActive" [ngClass]="{ 'active-color': RequestsRla.isActive }"
               (click)="toggleSidebar()">
               {{ "sites.layout.requests" | translate }}
-              <img [src]="RequestsRla.isActive ? 'assets/images/Icon.png' : 'assets/images/Icon-notActive.png'"
+              <img [src]="RequestsRla.isActive ? 'assets/images/requestActive.png' : 'assets/images/requestNotActive.png'"
                 class="px-1 nav-icon">
             </a>
 
@@ -134,7 +134,7 @@
             #retrivedPhonesRla="routerLinkActive" [ngClass]="{ 'active-color': retrivedPhonesRla.isActive }"
             (click)="toggleSidebar()">
             {{ "sites.layout.retrivedPhones" | translate }}
-            <img [src]="retrivedPhonesRla.isActive ? 'assets/images/Icon.png' : 'assets/images/Icon-notActive.png'"
+            <img [src]="retrivedPhonesRla.isActive ? 'assets/images/retrivedPhoneActive.png' : 'assets/images/retrivedPhoneNotActive.png'"
               class="px-1 nav-icon">
           </a>
 
