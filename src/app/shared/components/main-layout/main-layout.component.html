@@ -42,7 +42,7 @@
           <!-- Dropdown Menu (only visible on mobile when showSidebarMenu is true) -->
           <div class="dropdown-menu show position-absolute start-50 translate-middle-x mt-2 px-2 custom-lang-dropdown"
             *ngIf="showSidebarMenu">
-            <a class="nav-link text-white py-2 d-flex flex-row-reverse justify-content-end align-items-center"
+            <a class="nav-link text-white py-2 d-flex flex-row-reverse justify-content-end align-items-center fontStyle"
               routerLink="/sites/dashboard" routerLinkActive="active" #DashboardRla="routerLinkActive"
               [ngClass]="{ 'active-color': DashboardRla.isActive }" (click)="toggleSidebar()">
               {{ "sites.layout.dashboard" | translate }}
@@ -51,7 +51,7 @@
                 class="px-1 nav-icon">
 
             </a>
-            <a class="nav-link text-white py-2 d-flex flex-row-reverse justify-content-end align-items-center"
+            <a class="nav-link text-white py-2 d-flex flex-row-reverse justify-content-end align-items-center fontStyle"
               routerLink="/sites/mobile" routerLinkActive="active" #mobileRla="routerLinkActive"
               [ngClass]="{ 'active-color': mobileRla.isActive }" (click)="toggleSidebar()"
               (mouseenter)="setActiveLink('mobile')" (mouseleave)="setActiveLink('')">
@@ -59,42 +59,42 @@
               <img [src]="mobileRla.isActive ? 'assets/images/Icon-mobile-Active.png' : 'assets/images/mobile.png'"
                 class="px-1 nav-icon">
             </a>
-            <a class="nav-link text-white py-2 d-flex flex-row-reverse justify-content-end align-items-center"
+            <a class="nav-link text-white py-2 d-flex flex-row-reverse justify-content-end align-items-center fontStyle"
               routerLink="/sites/ads" routerLinkActive="active" #adsRla="routerLinkActive"
               [ngClass]="{ 'active-color': adsRla.isActive }" (click)="toggleSidebar()">
               {{ "sites.layout.adverdisments" | translate }}
               <img [src]="adsRla.isActive ? 'assets/images/Icon.png' : 'assets/images/Icon-notActive.png'"
                 class="px-1 nav-icon">
             </a>
-            <a class="nav-link text-white py-2 d-flex flex-row-reverse justify-content-end align-items-center"
+            <a class="nav-link text-white py-2 d-flex flex-row-reverse justify-content-end align-items-center fontStyle"
               routerLink="/sites/customers" routerLinkActive="active" #clientsRla="routerLinkActive"
               [ngClass]="{ 'active-color': clientsRla.isActive }" (click)="toggleSidebar()">
               {{ "sites.layout.clients" | translate }}
               <img [src]="clientsRla.isActive ? 'assets/images/Icon-Clients.png' : 'assets/images/Icon@2x.png'"
                 class="px-1 nav-icon">
             </a>
-            <a class="nav-link text-white py-2 d-flex flex-row-reverse justify-content-end align-items-center"
+            <a class="nav-link text-white py-2 d-flex flex-row-reverse justify-content-end align-items-center fontStyle"
               routerLink="/sites/jobTitle" routerLinkActive="active" #usersRla="routerLinkActive"
               [ngClass]="{ 'active-color': usersRla.isActive }" (click)="toggleSidebar()">
               {{ "sites.layout.users" | translate }}
               <img [src]="usersRla.isActive ? 'assets/images/IconEmpActive.png' : 'assets/images/IconEmp.png'"
                 class="px-1 nav-icon">
             </a>
-            <a class="nav-link text-white py-2 d-flex flex-row-reverse justify-content-end align-items-center"
+            <a class="nav-link text-white py-2 d-flex flex-row-reverse justify-content-end align-items-center fontStyle"
               routerLink="/sites/roles" routerLinkActive="active" #RolesRla="routerLinkActive"
               [ngClass]="{ 'active-color': RolesRla.isActive }" (click)="toggleSidebar()">
               {{ "sites.layout.roles" | translate }}
               <img [src]="RolesRla.isActive ? 'assets/images/roleActive.png' : 'assets/images/roleNotActive.png'"
                 class="px-1 nav-icon">
             </a>
-            <a class="nav-link text-white py-2 d-flex flex-row-reverse justify-content-end align-items-center"
+            <a class="nav-link text-white py-2 d-flex flex-row-reverse justify-content-end align-items-center fontStyle"
               routerLink="/sites/brand" routerLinkActive="active" #BrandRla="routerLinkActive"
               [ngClass]="{ 'active-color': BrandRla.isActive }" (click)="toggleSidebar()">
               {{ "sites.layout.brand" | translate }}
               <img [src]="BrandRla.isActive ? 'assets/images/Icon-Clients.png' : 'assets/images/Icon@2x.png'"
                 class="px-1 nav-icon">
             </a>
-            <a class="nav-link text-white py-2 d-flex flex-row-reverse justify-content-end align-items-center"
+            <a class="nav-link text-white py-2 d-flex flex-row-reverse justify-content-end align-items-center fontStyle"
               routerLink="/sites/search" routerLinkActive="active" #SearchRla="routerLinkActive"
               [ngClass]="{ 'active-color': SearchRla.isActive }" (click)="toggleSidebar()">
               {{ "sites.layout.search" | translate }}
@@ -102,7 +102,7 @@
                 class="px-1 nav-icon">
             </a>
 
-            <a class="nav-link text-white py-2 d-flex flex-row-reverse justify-content-end align-items-center"style="font-size: 13px;"
+            <a class="nav-link text-white py-2 d-flex flex-row-reverse justify-content-end align-items-center fontStyle"
               routerLink="/sites/notification" routerLinkActive="active" #searchOfStolenPhoneRla="routerLinkActive"
               [ngClass]="{ 'active-color': searchOfStolenPhoneRla.isActive }" (click)="toggleSidebar()">
               {{ "sites.layout.searchOfStolenPhone" | translate }}
@@ -110,7 +110,7 @@
                 [src]="searchOfStolenPhoneRla.isActive ? 'assets/icons/ActiveSearch.png' : 'assets/icons/DisactiveSearch.png'"
                 class="px-1 nav-icon">
             </a>
-            <a class="nav-link text-white py-2 d-flex flex-row-reverse justify-content-end align-items-center" style="font-size: 13px;"
+            <a class="nav-link text-white py-2 d-flex flex-row-reverse justify-content-end align-items-center fontStyle" 
               routerLink="/sites/transferOfOwnership" routerLinkActive="active"
               #TransferOfOwnershipRla="routerLinkActive" [ngClass]="{ 'active-color': TransferOfOwnershipRla.isActive }"
               (click)="toggleSidebar()">
@@ -120,7 +120,7 @@
                 class="px-1 nav-icon">
             </a>
 
-            <a class="nav-link text-white py-2 d-flex flex-row-reverse justify-content-end align-items-center" style="font-size: 13px;"
+            <a class="nav-link text-white py-2 d-flex flex-row-reverse justify-content-end align-items-center fontStyle"
               routerLink="/sites/requestToTransferAStolenPhone" routerLinkActive="active"
               #RequestsRla="routerLinkActive" [ngClass]="{ 'active-color': RequestsRla.isActive }"
               (click)="toggleSidebar()">
@@ -129,7 +129,7 @@
                 class="px-1 nav-icon">
             </a>
 
-            <a class="nav-link text-white py-2 d-flex flex-row-reverse justify-content-end align-items-center" style="font-size: 13px;"
+            <a class="nav-link text-white py-2 d-flex flex-row-reverse justify-content-end align-items-center fontStyle" 
             routerLink="/sites/retrivedPhones" routerLinkActive="active"
             #retrivedPhonesRla="routerLinkActive" [ngClass]="{ 'active-color': retrivedPhonesRla.isActive }"
             (click)="toggleSidebar()">
