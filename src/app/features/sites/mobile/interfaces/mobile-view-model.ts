@@ -10,7 +10,6 @@ export interface mobileViewModel {
 
 export class mobileCreateViewModel {
     id:string;
-    name: string;
     imeI1: string;
     imeI2: string;  
     number: string;

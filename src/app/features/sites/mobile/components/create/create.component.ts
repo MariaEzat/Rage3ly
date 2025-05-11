@@ -8,7 +8,6 @@ import {
 } from '../../interfaces/mobile-view-model';
 import { Validators } from '@angular/forms';
 import { forkJoin } from 'rxjs';
-import { TabEnum } from '../../interfaces/tab_enum';
 import { environment } from 'src/environments/environment';
 import { TranslateService } from '@ngx-translate/core';
 
@@ -27,32 +26,7 @@ export class CreateComponent implements OnInit, OnDestroy {
   environment = environment;
   Brandslist: [] = [];
   clientId: string = "";
-  selectedTab: TabEnum = TabEnum.UserLogin;
-  TabEnum = TabEnum;
-  // Tabs = [
-  //   {
-  //     ID: 1,
-  //     name: 'User Login',
-  //     icon: '/assets/icons/vector.svg',
-  //     // selectedIcon: '/assets/icons/vector-colored.svg',
-  //     isSelected: true,
-  //   },
-  //   {
-  //     ID: 2,
-  //     name: 'Add Phone Data',
-  //     icon: '/assets/icons/sell.svg',
-  //     // selectedIcon: '/assets/icons/sell-colored.svg',
-  //     isSelected: false,
-  //   },
-  //   {
-  //     ID: 3,
-  //     name: 'Phone Confirmation',
-  //     icon: '/assets/icons/sell.svg',
-  //     // selectedIcon: '/assets/icons/sell-colored.svg',
-  //     isSelected: false,
-  //   },
-  // ];
-  Tabs = [];
+
   constructor(
     private _sharedService: SharedService,
     private _mobileService: MobileService,
@@ -65,32 +39,7 @@ export class CreateComponent implements OnInit, OnDestroy {
     this.page.isPageLoaded = false;
     this.onSelectBrand();
 
-    this.translate.get([
-      'sites.mobile.UserLogin',
-      'sites.mobile.AddPhoneData',
-      'sites.mobile.PhoneConfirmation'
-    ]).subscribe(translations => {
-      this.Tabs = [
-        {
-          ID: 1,
-          name: translations['sites.mobile.UserLogin'],
-          icon: '/assets/icons/vector.svg',
-          isSelected: true,
-        },
-        {
-          ID: 2,
-          name: translations['sites.mobile.AddPhoneData'],
-          icon: '/assets/icons/sell.svg',
-          isSelected: false,
-        },
-        // {
-        //   ID: 3,
-        //   name: translations['sites.mobile.PhoneConfirmation'],
-        //   icon: '/assets/icons/sell.svg',
-        //   isSelected: false,
-        // },
-      ];
-    });
+   
 
     this._activatedRoute.paramMap.subscribe((params) => {
       if (params.has('id')) {
@@ -142,7 +91,6 @@ export class CreateComponent implements OnInit, OnDestroy {
   }
   createForm() {
     this.page.form = this._sharedService.formBuilder.group({
-      name: [this.item.name, Validators.required],
       imeI1: [this.item.imeI1, [Validators.required, Validators.pattern(/^\d{15}$/)]],
       imeI2: [this.item.imeI2, [Validators.required, Validators.pattern(/^\d{15}$/)]],
       mobileModel: [this.item.mobileModel, Validators.required],
@@ -182,16 +130,8 @@ export class CreateComponent implements OnInit, OnDestroy {
     });
   }
 
-  switchTab(tabID: number) {
-    this.selectedTab = tabID;
-    this.Tabs.forEach((item) => {
-      item.isSelected = item.ID === tabID;
-    });
-  }
-
-  getSelectedTab() {
-    return this.Tabs.find((item) => item.isSelected);
-  }
+  
+ 
   onCancel(): void {
     this._router.navigate(['/sites/mobile']);
   }

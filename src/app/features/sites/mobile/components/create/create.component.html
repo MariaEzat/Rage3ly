@@ -2,173 +2,119 @@
   <div class="card bg-Dark text-white p-4 shadow rounded-4">
     <div class="d-flex flex-column flex-sm-row justify-content-between align-items-start py-2">
       <!-- Navigation Link -->
-      <a class="mb-2 color-gray-800 ts-3 text-white text-center text-sm-start font-big" >
+      <a class="mb-2 color-gray-800 ts-3 text-white text-center text-sm-start font-big">
         <span class="expand-arrow" [routerLink]="page.isEdit ? '/sites/mobile' : '/sites/customers'">
-          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="white" stroke-width="2" viewBox="0 0 24 24">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="white" stroke-width="2"
+            viewBox="0 0 24 24">
             <path d="M8 5l8 7-8 7" />
           </svg>
         </span>
         {{ (page.isEdit ? 'shared.edit' : 'shared.create') | translate }}
         {{"sites.mobile.mobile" | translate}}
       </a>
-      
+
       <!-- Buttons Container -->
       <div class="d-flex flex-column justify-content-center gap-2">
         <div class="d-flex justify-content-between w-100">
           <button type="button" class="btn py-2 m-1 px-4 cr3 btn-orange-border btn-primary"
-                  (click)="onCancel()">{{"sites.mobile.cancel"|translate}}</button>
+            (click)="onCancel()">{{"sites.mobile.cancel"|translate}}</button>
           <button class="btn btn-primary py-2 px-4 m-1 no-border cr3" (click)="Save()"
-                  [disabled]="page.form?.invalid || page.isSaving">
+            [disabled]="page.form?.invalid || page.isSaving">
             <span class="rb-btn-text">{{(page.isEdit ? 'shared.edit' : 'shared.create') | translate}}</span>
           </button>
         </div>
       </div>
     </div>
-    
+
 
     <hr />
     <div class="pb-2">
-      <div class="border mb-2">
-        <ul class="nav nav-tabs px-3 p-2 d-flex align-items-center">
-          <li class="nav-item me-1 " *ngFor="let tab of Tabs">
-            <a class="nav-link d-flex align-items-center px-2 py-1 pointer"
-              [ngStyle]="{'background-color': tab.isSelected ? '#4DC3FF' : 'transparent'}" (click)="switchTab(tab.ID)">
-              {{tab.name}}
-            </a>
-          </li>
-          <!-- <div class="d-flex align-items-center ms-auto">
-          <p-inputSwitch [(ngModel)]="isActivated"></p-inputSwitch>
-          <label class="ms-2">
-            Activate Mobile
-          </label>
-  
-        </div> -->
-        </ul>
+      <div class=" mb-2">
+        <form [formGroup]="page.form">
+          <div class="row g-2">
+            <div class="col-sm-6">
+              <ng-control [form]="page.form" control="imeI1" label="sites.mobile.ImeI1" placeholder="sites.mobile.ImeI1"
+                (keypress)="numberOnly($event)" [inputClass]="'mb-2 bg-Dark border-color color-color-gray-300'"
+                [labelClass]="page.form.get('imeI1')?.invalid && (page.form.get('imeI1')?.touched || page.form.get('imeI1')?.dirty) ? 'form-control-with-validate' : 'form-control-no-validate'"></ng-control>
+            </div>
 
+            <div class="col-sm-6">
+              <ng-control [form]="page.form" control="imeI2" label="sites.mobile.ImeI2" placeholder="sites.mobile.ImeI2"
+                (keypress)="numberOnly($event)" [inputClass]="'mb-2 bg-Dark border-color color-color-gray-300'"
+                [labelClass]="page.form.get('imeI2')?.invalid && (page.form.get('imeI2')?.touched || page.form.get('imeI2')?.dirty) ? 'form-control-with-validate' : 'form-control-no-validate'"></ng-control>
+            </div>
+          </div>
+          <div class="row g-2">
+            <div class="col-sm-6">
+              <ng-control [form]="page.form" control="serialNumber" label="sites.mobile.serialNumber"
+                placeholder="sites.mobile.serialNumber" (keypress)="numberOnly($event)"
+                [inputClass]="'mb-2 bg-Dark border-color color-color-gray-300'"
+                [labelClass]="page.form.get('serialNumber')?.invalid && (page.form.get('serialNumber')?.touched || page.form.get('serialNumber')?.dirty) ? 'form-control-with-validate' : 'form-control-no-validate'"></ng-control>
+            </div>
+            <div class="col-sm-6">
+              <ng-control [form]="page.form" control="mobileModel" label="sites.mobile.mobileModel"
+                placeholder="sites.mobile.mobileModel" [inputClass]="'mb-2 bg-Dark border-color color-color-gray-300'"
+                [labelClass]="page.form.get('mobileModel')?.invalid && (page.form.get('mobileModel')?.touched || page.form.get('mobileModel')?.dirty) ? 'form-control-with-validate' : 'form-control-no-validate'"></ng-control>
+            </div>
 
-        <!-- User Login Tab -->
-        <div *ngIf="selectedTab === TabEnum.UserLogin" class="tab-content mt-3 bg-Dark rounded-4 p-3">
-          <form [formGroup]="page.form">
-            <div class="row g-3">
-              <div class="col-md-6">
-                <ng-control [form]="page.form" control="name" label="sites.mobile.name" placeholder="sites.mobile.name"
-                  [inputClass]="'mb-2 bg-Dark border-color color-color-gray-300'"
-                  [labelClass]="page.form.get('name')?.invalid && (page.form.get('name')?.touched || page.form.get('name')?.dirty) ? 'form-control-with-validate' : 'form-control-no-validate'"></ng-control>
-              </div>
+          </div>
+          <div class="row g-2">
 
-              <div class="col-md-6">
+            <div class="col-sm-6">
+              <label
+                [class.text-danger]="page.form.get('brandId')?.invalid && (page.form.get('brandId')?.dirty || page.form.get('brandId')?.touched)">
+                {{"sites.mobile.brand"|translate}}
+              </label>
+              <select formControlName="brandId"
+                class="form-control mb-2 text-sm bg-Dark border-color color-color-gray-300">
+                <option value="" disabled selected> {{"sites.mobile.brand"|translate}}</option>
+                <option *ngFor="let brand of Brandslist" [value]="brand.id">{{ brand.name }}</option>
+              </select>
+            </div>
+
+            <div class="col-sm-6">
+              <ng-control [form]="page.form" control="dateOfPurchase" label="sites.mobile.dateOfPurchase"
+                [inputClass]="'mb-2 bg-Dark border-color color-color-gray-300'"
+                [labelClass]="page.form.get('dateOfPurchase')?.invalid && (page.form.get('dateOfPurchase')?.touched || page.form.get('dateOfPurchase')?.dirty) ? 'form-control-with-validate' : 'form-control-no-validate'"
+                [type]="page.ControlType.INPUT_DATE">
+              </ng-control>
+            </div>
+          </div>
+          <div class="row g-2">
+               <div class="col-sm-6">
                 <ng-control [form]="page.form" control="number" label="sites.mobile.number"
                   (keypress)="numberOnly($event)" placeholder="sites.mobile.number"
                   [inputClass]="'mb-2 bg-Dark border-color color-color-gray-300'"
                   [labelClass]="page.form.get('number')?.invalid && (page.form.get('number')?.touched || page.form.get('number')?.dirty) ? 'form-control-with-validate' : 'form-control-no-validate'"></ng-control>
               </div>
-
-            </div>
-          </form>
-        </div>
-
-        <div *ngIf="selectedTab === TabEnum.AddPhonedData" class="tab-content mt-3 bg-Dark rounded-4 p-3">
-          <form [formGroup]="page.form">
-            <div class="row g-3">
-              <div class="col-md-6">
-                <ng-control [form]="page.form" control="imeI1" label="sites.mobile.ImeI1"
-                  placeholder="sites.mobile.ImeI1" (keypress)="numberOnly($event)"
-                  [inputClass]="'mb-2 bg-Dark border-color color-color-gray-300'"
-                  [labelClass]="page.form.get('imeI1')?.invalid && (page.form.get('imeI1')?.touched || page.form.get('imeI1')?.dirty) ? 'form-control-with-validate' : 'form-control-no-validate'"></ng-control>
-              </div>
-
-              <div class="col-md-6">
-                <ng-control [form]="page.form" control="imeI2" label="sites.mobile.ImeI2"
-                  placeholder="sites.mobile.ImeI2" (keypress)="numberOnly($event)"
-                  [inputClass]="'mb-2 bg-Dark border-color color-color-gray-300'"
-                  [labelClass]="page.form.get('imeI2')?.invalid && (page.form.get('imeI2')?.touched || page.form.get('imeI2')?.dirty) ? 'form-control-with-validate' : 'form-control-no-validate'"></ng-control>
-              </div>
-            </div>
-            <div class="row g-3">
-              <div class="col-md-6">
-                <ng-control [form]="page.form" control="serialNumber" label="sites.mobile.serialNumber"
-                  placeholder="sites.mobile.serialNumber" (keypress)="numberOnly($event)"
-                  [inputClass]="'mb-2 bg-Dark border-color color-color-gray-300'"
-                  [labelClass]="page.form.get('serialNumber')?.invalid && (page.form.get('serialNumber')?.touched || page.form.get('serialNumber')?.dirty) ? 'form-control-with-validate' : 'form-control-no-validate'"></ng-control>
-              </div>
-              <div class="col-md-6">
-                <ng-control [form]="page.form" control="mobileModel" label="sites.mobile.mobileModel"
-                  placeholder="sites.mobile.mobileModel" [inputClass]="'mb-2 bg-Dark border-color color-color-gray-300'"
-                  [labelClass]="page.form.get('mobileModel')?.invalid && (page.form.get('mobileModel')?.touched || page.form.get('mobileModel')?.dirty) ? 'form-control-with-validate' : 'form-control-no-validate'"></ng-control>
-              </div>
-
-
-            </div>
-
-
-            <div class="row g-3">
-
-              <div class="col-md-6">
-                <label
-                  [class.text-danger]="page.form.get('brandId')?.invalid && (page.form.get('brandId')?.dirty || page.form.get('brandId')?.touched)">
-                  {{"sites.mobile.brand"|translate}}
-                </label>
-                <select formControlName="brandId"
-                  class="form-control mb-2 text-sm bg-Dark border-color color-color-gray-300">
-                  <option value="" disabled selected> {{"sites.mobile.brand"|translate}}</option>
-                  <option *ngFor="let brand of Brandslist" [value]="brand.id">{{ brand.name }}</option>
-                </select>
-              </div>
-
-              <div class="col-md-6">
-                <ng-control [form]="page.form" control="dateOfPurchase" label="sites.mobile.dateOfPurchase"
-                  [inputClass]="'mb-2 bg-Dark border-color color-color-gray-300'"
-                  [labelClass]="page.form.get('dateOfPurchase')?.invalid && (page.form.get('dateOfPurchase')?.touched || page.form.get('dateOfPurchase')?.dirty) ? 'form-control-with-validate' : 'form-control-no-validate'"
-                  [type]="page.ControlType.INPUT_DATE">
-                </ng-control>
-              </div>
-            </div>
-            <div class="row g-4 justify-content-center m-3">
-              <div *ngFor="let image of images; let i = index" class="col-12 col-md-4 col-lg-4">
-                <div class="border p-3 text-center h-100">
-                  <div *ngIf="image.uploaded; else uploadTemplate" class="text-center">
-                    <img [src]="environment.api + '/' + image.src" alt="Uploaded Image"
-                      style="width: 200px; height: 200px;" class="img-fluid mb-2 img-thumbnail" />
-                    <div class="d-flex justify-content-center gap-2">
-                      <button class="btn btn-delete ms-2" (click)="replaceImage(i)">
-                        <img src="/assets/images/delete-white.svg" class="icon-size" />
-                      </button>
-                    </div>
+          </div>
+          <div class="row g-2 justify-content-center m-3">
+            <div *ngFor="let image of images; let i = index" class="col-12 col-sm-4 col-lg-4">
+              <div class="border p-3 text-center h-100">
+                <div *ngIf="image.uploaded; else uploadTemplate" class="text-center">
+                  <img [src]="environment.api + '/' + image.src" alt="Uploaded Image"
+                    style="width: 200px; height: 200px;" class="img-fluid mb-2 img-thumbnail" />
+                  <div class="d-flex justify-content-center gap-2">
+                    <button class="btn btn-delete ms-2" (click)="replaceImage(i)">
+                      <img src="/assets/images/delete-white.svg" class="icon-size" />
+                    </button>
                   </div>
-                  <ng-template #uploadTemplate>
-                    <label for="fileInput-{{i}}" class="text-primary cursor-pointer">
-                      <i class="fa fa-upload fa-2x mb-2 color-brand-500"></i>
-                      <p class="color-brand-500 text-white">
-                        {{"sites.advertisment.Upload New Image" | translate}}
-                      </p>
-                    </label>
-                    <input #file type="file" id="fileInput-{{i}}" class="d-none"
-                      (change)="onImageUpload(file.files, i)" />
-                  </ng-template>
                 </div>
+                <ng-template #uploadTemplate>
+                  <label for="fileInput-{{i}}" class="text-primary cursor-pointer">
+                    <i class="fa fa-upload fa-2x mb-2 color-brand-500"></i>
+                    <p class="color-brand-500 text-white">
+                      {{"sites.advertisment.Upload New Image" | translate}}
+                    </p>
+                  </label>
+                  <input #file type="file" id="fileInput-{{i}}" class="d-none"
+                    (change)="onImageUpload(file.files, i)" />
+                </ng-template>
               </div>
             </div>
+          </div>
 
 
-
-          </form>
-        </div>
-
-        <!-- <div *ngIf="selectedTab === TabEnum.PhoneConfirmation" class="tab-content mt-3 bg-Dark rounded-4 p-3"> -->
-
-        <!-- <div class="text-center p-5 rounded-4" style="background-color: #0D1028;">
-                        <div class="text-center p-5 rounded-4" style="background-color: #0D1028;">
-                            <div class="d-flex justify-content-center align-items-center mb-3">
-                              <img src="../../../../../../assets/images/add-circle-half-dot.png" alt="Success Icon" style="width: 50px; height: 50px;" />
-                            </div>
-                            <p class="text-white fs-6 mb-4">{{"sites.mobile.Phone added successfully"|translate}}</p>
-                            <button type="button" class="btn btn-primary px-5 py-2 rounded-pill text-white" (click)="addNewPhone()">{{"sites.mobile.Add new phone"|translate}}</button>
-                          </div>
-                </div> -->
-
-
-
-
+        </form>
 
       </div>
-    </div>
