@@ -111,7 +111,7 @@ export class DashboardComponent extends CrudIndexBaseUtils {
         datasets: [
           {
             data: data,
-            backgroundColor: ['#EB762C', '#9454C6', '#0075FF', '#49A7C9'],
+            backgroundColor: ['#FF5E5B', '#FFC107','#B771E5','#00C49A'],
             barThickness: 25,
             borderRadius: 5
           }

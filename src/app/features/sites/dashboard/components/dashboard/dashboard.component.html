@@ -26,68 +26,63 @@
     <div class="charts-row">
         <div class="chart-card">
             <h4> {{"sites.dashboard.phoneBrandsUsed"|translate}}</h4>
+             <div class="center-canvas m-3">
             <canvas baseChart [data]="brandsBarData" [type]="'bar'" [options]="barOptions"></canvas>
-        </div>
-        <div class="chart-card" style="position: relative;">
-            <h4> {{"sites.dashboard.percentageOfPhones"|translate}}</h4>
-
-
-            <canvas baseChart [data]="phonesDonutData" [type]="'doughnut'" [options]="donutOptions">
-            </canvas>
-
-
-            <div style="
-                  position: absolute;
-  top: 45%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  color: white;
-  font-size: 48px;
-  font-weight: bold;
-  text-align: center;">
-                {{ stolenPercentage % 1 === 0 ? stolenPercentage : stolenPercentage.toFixed(2) }}
-                %
-            </div>
-
-
-            <div style="display: flex; flex-direction: column; gap: 10px; padding: 10px 20px; text-align: center;">
-                <div style="display: flex; justify-content: space-between;">
-                    <div class="font-color">{{ totalPhones }}</div>
-                    <div style="color: white;">{{"sites.dashboard.numberOfRegisteredPhones"|translate}}</div>
-                </div>
-                <div style="display: flex; justify-content: space-between;">
-                    <div class="font-color">{{ stolenPhones }}</div>
-                    <div style="color: white;">{{"sites.dashboard.numberOfStolenPhones"|translate}}</div>
-                </div>
             </div>
         </div>
+      <div class="chart-card">
+  <h4>{{ "sites.dashboard.percentageOfPhones" | translate }}</h4>
+
+  <div class="center-canvas">
+    <canvas baseChart class="doughnut-canvas" [data]="phonesDonutData" [type]="'doughnut'" [options]="donutOptions"></canvas>
+
+    <div class="center-word">
+      {{ stolenPercentage % 1 === 0 ? stolenPercentage : stolenPercentage.toFixed(2) }}%
+    </div>
+  </div>
+
+
+  <div style="display: flex; flex-direction: column; gap: 10px; padding: 10px 20px;">
+    <div style="display: flex; justify-content: space-between;">
+     
+      <div class="font-color">{{ totalPhones }}</div>
+       <div style="color: white;">{{ "sites.dashboard.numberOfRegisteredPhones" | translate }}</div>
+    </div>
+    <div style="display: flex; justify-content: space-between;">
+          <div class="font-color">{{ stolenPhones }}</div>
+      <div style="color: white;">{{ "sites.dashboard.numberOfStolenPhones" | translate }}</div>
+    
+    </div>
+  </div>
+</div>
+
 
     </div>
 
     <div class="charts-row">
-        <div class="chart-card" style="position: relative;">
-            <div style="display: flex; justify-content: space-between; align-items: center;">
-              <h4>{{ "sites.dashboard.mostUsedAreasOfTheApplication" | translate }}</h4>
-              <button class="btn btn-primary " (click)="onSeeAllClick()">
-                {{ "sites.dashboard.seeAll" | translate }}
-              </button>
-            </div>
-            <canvas baseChart [data]="topRegionsDonutData" [type]="'doughnut'" [options]="donutOptions"></canvas>
-            <div style="
-              position: absolute;
-              top: 60%;
-              left: 50%;
-              transform: translate(-50%, -50%);
-              color: white;
-              font-size: 48px;
-              font-weight: bold;
-              text-align: center;">
-              {{ totalNumberOfClients }} {{ "sites.dashboard.client" | translate }}
-            </div>
-          </div>
+       <div class="chart-card" style="position: relative;">
+  <div style="display: flex; justify-content: space-between; align-items: center;">
+    <h4>{{ "sites.dashboard.mostUsedAreasOfTheApplication" | translate }}</h4>
+    <button class="btn btn-primary" (click)="onSeeAllClick()">
+      {{ "sites.dashboard.seeAll" | translate }}
+    </button>
+  </div>
+
+ 
+  <div class="center-canvas">
+    <canvas baseChart class="doughnut-canvas" [data]="topRegionsDonutData" [type]="'doughnut'" [options]="donutOptions"></canvas>
+
+    <div class="center-word">
+      {{ totalNumberOfClients }} {{ "sites.dashboard.client" | translate }}
+    </div>
+  </div>
+</div>
+
         <div class="chart-card">
             <h4>{{"sites.dashboard.areasOfTelephonesUsed"|translate}}</h4>
+             <div class="center-canvas m-3">
             <canvas baseChart [data]="governoratesBarData" [type]="'bar'" [options]="barOptions"></canvas>
+            </div>
         </div>
     </div>
 </div>
