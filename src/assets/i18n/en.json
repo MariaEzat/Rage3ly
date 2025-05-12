@@ -395,7 +395,10 @@
       "rejectReason": "Reject Reason",
       "sendFeedback": "Send Feedback",
       "enterRejectionReason": "Enter rejection reason",
-      "loading": "Loading..."
+      "loading": "Loading...",
+      "governorate":"Governorate",
+      "city":"City",
+      "street":"Street"
     },
     "ownership": {
       "ownership": "Ownership",

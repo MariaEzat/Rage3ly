@@ -37,7 +37,7 @@
           <p class="Gray-300 mb-0 font-sm">{{"sites.ownership.Img" |translate}}</p>
           <img [src]="getImageUrl(client.path)" style="width: 80px; height: 80px; object-fit: cover;" />
 
-         
+
         </div>
 
       </div>
@@ -49,6 +49,12 @@
       <div class="col-md-6 col-lg-5" *ngFor="let mobile of client.phonesDetailsByClientIdDTOs">
         <div class="card-custom p-4 rounded shadow d-flex flex-column h-100">
           <div class="d-flex justify-content-between align-items-center mb-2">
+            <div class="d-flex align-items-center">
+              <img [src]="'https://api.rage3ly.com/' + mobile.brandPath.path" class="me-2 custom-img" />
+              <span class="Gray-300 me-2" style="font-size: 18px;">
+                {{ mobile.brandName }} {{ mobile.MobileModel }}
+              </span>
+            </div>
             <button class="btn btn-sm" [ngClass]="{
               'btn-success': mobile.phoneStatus === 1,
       'btn-second': mobile.phoneStatus === 2,
@@ -61,12 +67,7 @@
     }">
               {{ getStatusName(mobile.phoneStatus)|translate }}
             </button>
-            <div class="d-flex align-items-center">
-              <span class="Gray-300 me-2" style="font-size: 18px;">
-                {{ mobile.brandName }} {{ mobile.MobileModel }}
-              </span>
-              <img [src]="'https://api.rage3ly.com/' + mobile.brandPath.path" class="me-2 custom-img" />
-            </div>
+
           </div>
 
           <hr class="Gray-600" />

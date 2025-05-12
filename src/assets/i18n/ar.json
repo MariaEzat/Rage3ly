@@ -384,7 +384,10 @@
       "rejectReason": "سبب الرفض",
       "sendFeedback": "إرسال ردود الفعل",
       "enterRejectionReason": "ادخل سبب الرفض",
-      "loading": ".....جاري التحميل"
+      "loading": ".....جاري التحميل",
+      "governorate":"المحافظة",
+      "city":"المدينة",
+      "street":"الشارع"
     },
     "ownership": {
       "ownership": "نقل الملكية",

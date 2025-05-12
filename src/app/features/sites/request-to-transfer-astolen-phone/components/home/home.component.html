@@ -32,6 +32,11 @@
             <div class="col-md-6 col-lg-5" *ngFor="let mobile of mobiles">
                 <div class="card-custom p-4 rounded shadow w-100 d-flex flex-column h-100">
                     <div class="d-flex justify-content-between align-items-center mb-3">
+                        <div class="d-flex align-items-center">
+                            <img [src]="'https://api.rage3ly.com/' + mobile.brandPath.path" class="me-2 custom-img" />
+                            <span class="Gray-300 me-2" style="font-size: 18px;"> {{mobile.brandName }} {{
+                                mobile.mobileModel }} </span>
+                        </div>
                         <button class="btn btn-sm" [ngClass]="{
                                 'btn-second': mobile.requestStatus === 1,
                         'btn-success': mobile.requestStatus === 2,
@@ -42,18 +47,13 @@
                       }">
                             {{ getStatusName(mobile.requestStatus)|translate }}
                         </button>
-                        <div class="d-flex align-items-center">
-                            <span class="Gray-300 me-2" style="font-size: 18px;"> {{mobile.brandName }} {{
-                                mobile.mobileModel }} </span>
-                            <img [src]="'https://api.rage3ly.com/' + mobile.brandPath.path" class="me-2 custom-img" />
-                        </div>
+
                     </div>
                     <hr class="Gray-600">
                     <div class="row g-3 text-sm">
                         <div class="col-6">
                             <div class="d-flex align-items-center mb-2">
-                                <img src="../../../../../../assets/icons/Name Icon Container.png" style="height: 35px;"
-                                    class="me-2" />
+                                <img src="../assets/icons/Name Icon Container.png" style="height: 35px;" class="me-2" />
                                 <div>
                                     <p class="Gray-300 mb-0 font-sm">{{"sites.requestToStolenPhone.name"|translate}}</p>
                                     <p class="font-col mb-0 clientHover" (click)="clientDetails(mobile.clientId)">{{
@@ -61,8 +61,7 @@
                                 </div>
                             </div>
                             <div class="d-flex align-items-center">
-                                <img src="../../../../../../assets/icons/IMEI Icon Container.png" style="height: 35px;"
-                                    class="me-2" />
+                                <img src="../assets/icons/IMEI Icon Container.png" style="height: 35px;" class="me-2" />
                                 <div>
                                     <p class="Gray-300 mb-1 font-sm">
                                         {{"sites.requestToStolenPhone.IMEInumber"|translate}}</p>
@@ -73,7 +72,7 @@
 
                         <div class="col-6">
                             <div class="d-flex align-items-center mb-2">
-                                <img src="../../../../../../assets/icons/Phone Icon Container.png" style="height: 35px;"
+                                <img src="../assets/icons/Phone Icon Container.png" style="height: 35px;"
                                     class="me-2" />
                                 <div>
                                     <p class="Gray-300 mb-0 font-sm">{{"sites.requestToStolenPhone.mobile"|translate}}
@@ -82,7 +81,7 @@
                                 </div>
                             </div>
                             <div class="d-flex align-items-center">
-                                <img src="../../../../../../assets/icons/Email Icon Container.png" style="height: 35px;"
+                                <img src="../assets/icons/Email Icon Container.png" style="height: 35px;"
                                     class="me-2" />
                                 <div>
                                     <p class="Gray-300 mb-0 font-sm">{{"sites.requestToStolenPhone.email"|translate}}
@@ -91,6 +90,39 @@
                                 </div>
                             </div>
                         </div>
+                        <!-- <div class="col-6">
+                            <div class="d-flex align-items-center mb-2">
+                                <img src="../assets/icons/governorateIcon.png" style="height: 35px;"
+                                    class="me-2" />
+                                <div>
+                                    <p class="Gray-300 mb-0 font-sm">{{"sites.requestToStolenPhone.governorate"|translate}}
+                                    </p>
+                                    <p class="font-col mb-0">{{ mobile.governorateName }}</p>
+                                </div>
+                            </div>
+                            <div class="d-flex align-items-center mb-2">
+                                <img src="../assets/icons/streetIcon.png" style="height: 35px;"
+                                    class="me-2" />
+                                <div>
+                                    <p class="Gray-300 mb-0 font-sm">{{"sites.requestToStolenPhone.street"|translate}}
+                                    </p>
+                                    <p class="font-col mb-0">{{ mobile.street }}</p>
+                                </div>
+                            </div>
+                            
+                        </div> -->
+                        <!-- <div class="col-6">
+                            <div class="d-flex align-items-center">
+                                <img src="../assets/icons/cityIcon.png" style="height: 35px;"
+                                    class="me-2" />
+                                <div>
+                                    <p class="Gray-300 mb-0 font-sm">{{"sites.requestToStolenPhone.city"|translate}}
+                                    </p>
+                                    <p class=" font-col mb-0">{{ mobile.cityName }}</p>
+                                </div>
+                            </div>
+                          
+                        </div> -->
                     </div>
 
                     <div class="border-dashed px-3 rounded my-3 img-exist">
