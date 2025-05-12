@@ -1,8 +1,16 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl, Validators, ValidatorFn } from '@angular/forms';
+import {
+  FormGroup,
+  FormControl,
+  Validators,
+  ValidatorFn,
+} from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { CustomersService } from '../../service/customers.service';
-import { customerCreateViewModel, customerSelectedViewModel } from '../../interfaces/customers';
+import {
+  customerCreateViewModel,
+  customerSelectedViewModel,
+} from '../../interfaces/customers';
 import { CRUDCreatePage } from 'src/app/shared/classes/crud-create.model';
 import { SharedService } from 'src/app/shared/service/shared.service';
 import { ApiService } from 'src/app/shared/service/api.service';
@@ -15,7 +23,7 @@ import * as L from 'leaflet';
 @Component({
   selector: 'app-create',
   templateUrl: './create.component.html',
-  styleUrls: ['./create.component.css']
+  styleUrls: ['./create.component.css'],
 })
 export class CreateComponent implements OnInit {
   page: CRUDCreatePage = new CRUDCreatePage();
@@ -39,17 +47,18 @@ export class CreateComponent implements OnInit {
     { id: 2, name: 'ServiceStation' },
     { id: 3, name: 'GasStation' },
     { id: 4, name: 'Trader' },
-
-  ]
+  ];
   genderOptions = [
     { id: 1, name: 'Male' },
-    { id: 2, name: 'Female' }
+    { id: 2, name: 'Female' },
   ];
-  constructor(private _router: Router, private _customersService: CustomersService, private _sharedService: SharedService,
-    private _activatedRoute: ActivatedRoute, private _apiService: ApiService
-  ) {
-
-  }
+  constructor(
+    private _router: Router,
+    private _customersService: CustomersService,
+    private _sharedService: SharedService,
+    private _activatedRoute: ActivatedRoute,
+    private _apiService: ApiService
+  ) {}
 
   ngOnInit(): void {
     this.page.isPageLoaded = false;
@@ -65,18 +74,14 @@ export class CreateComponent implements OnInit {
     ]).subscribe((res) => {
       this.governorates = res[0].data;
       this.cities = res[1].data;
+
       if (this.page.isEdit) {
-        this.getEditableItem();
+        this.getEditableItem(); // خلّي بناء الفورم يتم بعد ما governorates تتحمل
       } else {
         this.createForm();
       }
     });
-    
-  
   }
-
-
-
 
   updateLocation(lat: number, lng: number): void {
     this.page.form.patchValue({
@@ -98,49 +103,69 @@ export class CreateComponent implements OnInit {
       error: (err) => {
         this._sharedService.showToastr(err);
         this.page.isPageLoaded = true;
-      }
+      },
     });
   }
   editeform() {
     this.page.form = this._sharedService.formBuilder.group({
-      name: [this.item.name, [Validators.required, Validators.minLength(1), Validators.maxLength(100)]],
-      nationalNumber: [this.item.nationalNumber, [ Validators.pattern(/^\d{14}$/)]],
-      email: [this.item.email, [Validators.email,Validators.required ]],
-      cityId: [this.item.cityId, [Validators.required ]],
-      governorateId: [this.item.governorateId, [Validators.required ]],
-      mobile: [this.item.mobile, [Validators.required, , Validators.pattern(/^(010|011|012|015)\d{8}$/)]],
+      name: [
+        this.item.name,
+        [
+          Validators.required,
+          Validators.minLength(1),
+          Validators.maxLength(100),
+        ],
+      ],
+      nationalNumber: [
+        this.item.nationalNumber,
+        [Validators.pattern(/^\d{14}$/)],
+      ],
+      email: [this.item.email, [Validators.email, Validators.required]],
+      cityId: [this.item.cityId, [Validators.required]],
+      governorateId: [this.item.governrateId, [Validators.required]],
+      mobile: [
+        this.item.mobile,
+        [Validators.required, , Validators.pattern(/^(010|011|012|015)\d{8}$/)],
+      ],
     });
     this.page.isPageLoaded = true;
-
   }
   validateImages(): boolean {
-    return this.images.some(image => image.uploaded);
-    
-    
+    return this.images.some((image) => image.uploaded);
   }
   createForm() {
     this.page.form = this._sharedService.formBuilder.group({
-      name: [this.item.name, [Validators.required, Validators.minLength(1), Validators.maxLength(100)]],
-      email: [this.item.email, [Validators.email,Validators.required ]],
-      cityId: [this.item.cityId, [Validators.required ]],
-      governorateId: [this.item.governorateId, [Validators.required ]],
+      name: [
+        this.item.name,
+        [
+          Validators.required,
+          Validators.minLength(1),
+          Validators.maxLength(100),
+        ],
+      ],
+      email: [this.item.email, [Validators.email, Validators.required]],
+      cityId: [this.item.cityId, [Validators.required]],
+      governorateId: [this.item.governorateId, [Validators.required]],
       nationalNumber: [
         this.item.nationalNumber,
-        [ Validators.pattern(/^\d{14}$/)]
+        [Validators.pattern(/^\d{14}$/)],
       ],
       password: [
         this.item.password,
-        [Validators.required, Validators.minLength(8), Validators.maxLength(100)]
+        [
+          Validators.required,
+          Validators.minLength(8),
+          Validators.maxLength(100),
+        ],
       ],
-      mobile: [this.item.mobile, [Validators.required, Validators.pattern(/^(010|011|012|015)\d{8}$/)]],
-      confirmPassword: [
-        this.item.confirmPassword,
-        [Validators.required]
+      mobile: [
+        this.item.mobile,
+        [Validators.required, Validators.pattern(/^(010|011|012|015)\d{8}$/)],
       ],
+      confirmPassword: [this.item.confirmPassword, [Validators.required]],
     });
     this.page.isPageLoaded = true;
   }
-
 
   Save() {
     if (this.page.isSaving || this.page.form.invalid) return;
@@ -169,12 +194,12 @@ export class CreateComponent implements OnInit {
     this.page.form.patchValue({
       cityId: null,
     });
-    this.loadCities(governorateId)
+    this.loadCities(governorateId);
   }
 
   loadCities(governorateId?: string) {
     this.cities = [];
-    this._customersService.getCities(governorateId).subscribe(res => {
+    this._customersService.getCities(governorateId).subscribe((res) => {
       if (res.isSuccess) {
         this.cities = res.data;
       } else {
@@ -200,7 +225,7 @@ export class CreateComponent implements OnInit {
 
     const file = <File>files[0];
     const formData = new FormData();
-    formData.append('Files', file, file.name);  // Use 'Files' as the field name if required by backend
+    formData.append('Files', file, file.name); // Use 'Files' as the field name if required by backend
 
     // Call the service to upload the image, passing the FormData directly
     this._customersService.uploadImage(formData).subscribe({
@@ -218,9 +243,10 @@ export class CreateComponent implements OnInit {
     });
   }
 
-
   getUploadedImages() {
-    return this.images.filter(image => image.uploaded).map(image => image.src);
+    return this.images
+      .filter((image) => image.uploaded)
+      .map((image) => image.src);
   }
 
   ngAfterViewInit(): void {
@@ -261,7 +287,8 @@ export class CreateComponent implements OnInit {
 
       // Set up the tile layer (OpenStreetMap tiles)
       L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        attribution:
+          '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
       }).addTo(this.map);
 
       // Define a custom icon for the marker
@@ -273,7 +300,11 @@ export class CreateComponent implements OnInit {
       });
 
       // Create and add a draggable marker with the custom icon at Egypt's coordinates
-      this.marker = L.marker([26.8206, 30.8025], { icon: customIcon, draggable: true }).addTo(this.map)
+      this.marker = L.marker([26.8206, 30.8025], {
+        icon: customIcon,
+        draggable: true,
+      })
+        .addTo(this.map)
         .bindPopup('A sample marker in Egypt')
         .openPopup();
 
@@ -282,7 +313,7 @@ export class CreateComponent implements OnInit {
         const newLatLng = event.target.getLatLng();
         this.page.form.patchValue({
           latitude: newLatLng.lat,
-          longitude: newLatLng.lng
+          longitude: newLatLng.lng,
         });
       });
 
@@ -291,7 +322,7 @@ export class CreateComponent implements OnInit {
         const { lat, lng } = event.latlng;
         this.page.form.patchValue({
           latitude: lat,
-          longitude: lng
+          longitude: lng,
         });
         this.marker.setLatLng([lat, lng]); // Update marker position
       });
@@ -303,7 +334,6 @@ export class CreateComponent implements OnInit {
     this._router.navigate(['/sites/customers/changePassword']);
   }
 
-
   navigateToChangePassword(clientId: string): void {
     if (clientId) {
       this._router.navigate(['/sites/customers/changePassword', clientId]);
@@ -311,7 +341,4 @@ export class CreateComponent implements OnInit {
       console.error('Client ID is missing or invalid.');
     }
   }
-
-
-
 }

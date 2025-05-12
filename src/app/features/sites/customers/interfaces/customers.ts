@@ -41,6 +41,7 @@ export class customerCreateViewModel {
   paths?: string[];
   cityId:string;
   governorateId:string;
+  governrateId:string;
 }
 export class changePasswordViewModel {
   password:string;
