@@ -33,7 +33,7 @@
           <p class="Gray-300 mb-0 font-sm">{{"sites.ownership.nationalNumber" |translate}}</p>
           <p class="font-col mb-0">{{ client.nationalNumber }}</p>
         </div>
-        <div class="col-6 col-md-3" *ngIf="client.path!=null">
+        <div class="col-6 col-md-3" *ngIf="client.path!=null && client.path!='' ">
           <p class="Gray-300 mb-0 font-sm">{{"sites.ownership.Img" |translate}}</p>
           <img [src]="getImageUrl(client.path)" style="width: 80px; height: 80px; object-fit: cover;" />
 
