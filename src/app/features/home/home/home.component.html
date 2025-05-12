@@ -5,12 +5,12 @@
   <span class="loader"></span>
 </div>
 
-<body *ngIf="!isLoading" class="app-body text-white font-sans flex flex-col overflow-auto overflow-x-hidden">
+<body *ngIf="!isLoading" class="app-body text-white font-sans flex flex-col overflow-auto overflow-x-hidden ">
 
 
 
   <!-- Navbar -->
-<nav class="flex items-center justify-between px-4 md:px-12 py-4 bg-opacity-30 m-5 rounded-lg flex-wrap nav-features">
+<nav class="flex items-center justify-between px-4 md:px-12 py-4 bg-opacity-30 mt-5 mx-3 rounded-lg flex-wrap nav-features">
 
  
   <!-- Action Buttons (hidden on small screens) -->
@@ -35,43 +35,34 @@
 
 
   <!-- Hero Section -->
-  <div class="bg-[#0c0021] flex-1 flex items-between justify-center px-4 py-10">
-    <div class="flex flex-col md:flex-row items-center justify-between space-y-10 md:space-y-0 md:space-x-10 rtl:space-x-reverse" style="width: 85%;">
-   
-      <div class="relative text-right rtl mt-20 justify-end">
-        <!-- Main Image -->
-        <img src="../../../../assets/images/Home.png" class="rounded-xl w-70" />
-        
-       
-         <img src="../../../../assets/images/Product Card.png" class="absolute" style="top:40% ;left: 50%;">
-        
-      </div>
+<div class="bg-[#0c0021] flex-1 flex items-center justify-center px-4 py-0 lg:py-10">
+  <div class="flex md:flex-row mobile-column items-center justify-between space-y-10 md:space-y-0 md:space-x-10 rtl:space-x-reverse" style="width: 85%;">
 
-   
-      <div class="md:w-1/2 text-end md:text-right space-y-6 mt-10 justify-start ml-10">
-        <span class="px-5 py-2 rounded-full inline-block border-thin font-24">نساعدك للحفاظ على هاتفك</span>
-        <h1 class="text-whi">
-          احمي هاتفك من السرقة<br />احفظ حالته الآن
-        </h1>
-        <p class="text-gray font-18">
-          تطبيق ذكي لحفظ حالة جهازك، مما يسهل استرجاعه عند الفقدان أو السرقة
-        </p>
-        <div class="flex flex-col sm:flex-row items-center justify-center md:justify-end gap-4 mt-6">
-          <a href="#" class="bg-white text-purple-700 px-6 py-3 rounded-full font-semibold hover:text-purple-700 gradient-border">نزل التطبيق الآن</a>
-          <a href="#" class="border border-white px-6 py-3 rounded-full hover:text-white">تحدث مع خبير</a>
-        </div>
-      </div>
-    
-    
-    
+    <!-- الصورة -->
+    <div class="image-section relative text-right rtl mt-20 justify-end">
+      <img src="../../../../assets/images/Home.png" class="rounded-xl w-70" />
+      <img src="../../../../assets/images/Product Card.png" class="absolute" style="top:40% ;left: 50%;" />
     </div>
+
+    <!-- النص -->
+    <div class="text-section md:w-1/2 text-end md:text-right space-y-6 justify-start ml-10">
+      <span class="px-5 py-2 rounded-full inline-block border-thin font-24 sm-butnn">نساعدك للحفاظ على هاتفك</span>
+      <h1 class="text-whi">احمي هاتفك من السرقة<br />احفظ حالته الآن</h1>
+      <p class="text-gray font-18">تطبيق ذكي لحفظ حالة جهازك، مما يسهل استرجاعه عند الفقدان أو السرقة</p>
+      <div class="flex flex-col sm:flex-row items-center justify-center md:justify-end gap-4 mt-6">
+        <a href="#" class="bg-white text-purple-700 px-6 py-3 rounded-full font-semibold hover:text-purple-700 gradient-border sm-butn">نزل التطبيق الآن</a>
+        <a href="#" class="border border-white px-6 py-3 rounded-full hover:text-white sm-butn">تحدث مع خبير</a>
+      </div>
+    </div>
+
   </div>
-  
+</div>
+
   
 
 
   <!-- Logos Section -->
-  <!-- <div class="bg-[#0c0021]  py-8 text-white text-center">
+  <div class="bg-[#0c0021]  py-8 text-white text-center">
       <p class="text-lg font-light mb-6 font-bold py-5">موثوق به من قبل الفرق في أكثر من 1000 من المؤسسات الرائدة في العالم</p>
       <div class="flex flex-wrap justify-center items-center gap-6 md:gap-10 px-4">
           <img src="../../../../../assets/images/ted.png" alt="ted" class="h-5 md:h-6" />
@@ -82,50 +73,157 @@
           <img src="../../../../../assets/images/zenDesk.png" alt="zenDesk" class="h-5 md:h-6" />
           <img src="../../../../../assets/images/dell.png" alt="Dell" class="h-5 md:h-6" />
       </div>
-  </div> -->
+  </div>
 
   <!-- Features Section -->
   <section class="bg-[#0c0021]  text-white py-16 px-4 text-center">
-      <div class="max-w-6xl mx-auto">
+      <div class=" max-w-7xl mx-auto">
           <h2 class="text-3xl md:text-4xl font-bold mb-4">مميزات تعمل لاجلك</h2>
-          <p class="text-gray-400 mb-12">اكتشف ميزاتنا الرائعة بنفسك.</p>
+          <p class="text-gray-400 mb-20">اكتشف ميزاتنا الرائعة بنفسك</p>
 
-          <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-right">
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-right mt-2">
+            
+
+            
               <!-- Card 1 -->
-              <div class="custom-card rounded-xl p-6 transition duration-300 border border-purple-900">
-                  <div class="flex justify-end">
-                      <img src="../../../../../assets/images/icon3.png" alt="البحث عن هاتف" />
-                  </div>
-                  <h3 class="text-xl font-semibold mb-2">يساعدك في البحث عن حالة هاتف</h3>
-                  <p class="text-gray-400 text-sm">
-                      تم حماية عدد لا نهائي من الهواتف بكل سهولة، تُتيح لك هذه الميزة تسجيل وتحديث حالة جهازك تحت حساب واحد.
-                  </p>
-              </div>
-
-              <!-- Card 2 -->
-              <div class="custom-card rounded-xl p-6 transition duration-300 border border-purple-900">
-                  <div class="flex justify-end">
-                      <img src="../../../../../assets/images/icon2.png" alt="حماية الهواتف" />
-                  </div>
-                  <h3 class="text-xl font-semibold mb-2">حماية عدد لا نهائي من الهواتف</h3>
-                  <p class="text-gray-400 text-sm">
-                      قم بحماية جميع هواتفك بكل سهولة تحت حساب واحد مع ضمان حفظ بياناتك واسترجاعها في حالة الفقدان أو السرقة.
-                  </p>
-              </div>
-
-              <!-- Card 3 -->
-              <div class="custom-card rounded-xl p-6 transition duration-300 border border-purple-900">
+              <div class="custom-card rounded-xl p-6 transition duration-300 border-sm border-purple-900">
                   <div class="flex justify-end">
                       <img src="../../../../../assets/images/icon1.png" alt="تغيير الحالة" class="" />
                   </div>
-                  <h3 class="text-xl font-semibold mb-2">تغيير حالة الهواتف المسجلة</h3>
-                  <p class="text-gray-400 text-sm">
-                      تم حماية عدد لا نهائي من الهواتف بكل سهولة، تُتيح لك هذه الميزة تسجيل وتحديث حالة جهازك تحت حساب واحد.
-                  </p>
+                   <h3 class="text-xl font-semibold mb-2 ft-lg">تسجيل الهاتف المفقود ببيانات دقيقة</h3>
+                 
               </div>
+
+
+               <!-- Card 2 -->
+              <div class="custom-card rounded-xl p-6 transition duration-300 border-sm border-purple-900 ">
+                  <div class="flex justify-end">
+                      <img src="../../../../../assets/images/icon2.png" alt="حماية الهواتف" />
+                  </div>
+                  <h3 class="text-xl font-semibold mb-2 ft-lg">نظام اشعارات تلقائي عند وجود تطابق او ابلاغ</h3>
+                 
+              </div>
+                <!-- Card 3-->
+              <div class="custom-card rounded-xl p-6 transition duration-300 border-sm border-purple-900">
+                  <div class="flex justify-end">
+                      <img src="../../../../../assets/images/icon3.png" alt="البحث عن هاتف" />
+                  </div>
+                 
+                  <h2 class="text-xl font-semibold mb-2 ft-lg">يساعدك في البحث عن حالة هاتف</h2>
+                 
+              </div>
+          </div>
+
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-right mt-4">
+            
+
+            
+            
+
+               <!-- Card 4 -->
+             <div class="custom-card rounded-xl p-6 transition duration-300 border-sm border-purple-900">
+                  <div class="flex justify-end">
+                      <img src="../../../../../assets/images/icon6.png" alt="دعم فني" />
+                  </div>
+                 
+                  <h2 class="text-xl font-semibold mb-2 ft-lg">الدعم الفني المستمر ومتابعة لكل الاستفسارات</h2>
+                 
+              </div>
+                <!-- Card 5-->
+             
+  <div class="custom-card rounded-xl p-6 transition duration-300 border-sm border-purple-900 ">
+                  <div class="flex justify-end">
+                      <img src="../../../../../assets/images/icon5.png" alt="قاعدة بيانات" />
+                  </div>
+                  <h3 class="text-xl font-semibold mb-2 ft-lg">قاعدة بيانات مشتركة بين المستخدمين</h3>
+                 
+              </div>
+                <!-- Card 6 -->
+              <div class="custom-card rounded-xl p-6 transition duration-300 border-sm border-purple-900">
+                  <div class="flex justify-end">
+                      <img src="../../../../../assets/images/icon4.png" alt="وجهة سهلة" class="" />
+                  </div>
+                   <h3 class="text-xl font-semibold mb-2 ft-lg">واجهة سهلة الاستخدام وعملية</h3>
+                 
+              </div>
+
           </div>
       </div>
   </section>
+
+
+
+
+<!-- Features2 Section -->
+ <section class=" text-white py-16 px-4">
+  <div class="max-w-7xl mx-auto rounded-2xl shadow-xl px-6 py-12 text-center bg-col">
+    <h1 class="text-3xl md:text-4xl font-bold mb-4">القيم</h1>
+    <p class="text-gray-400 mb-20">اكتشف قيم الشركة لدينا</p>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <!-- Card -->
+      <div class=" card-col rounded-xl p-8 transition duration-300 ">
+        <div class="flex justify-center mb-4">
+          <div class="bg-opacity-30 rounded-xl p-3 ">
+              <img src="../../../../../assets/images/coop.png" style="width: 100px; height: 100px;" alt="التعاون" />
+          </div>
+        </div>
+        <h3 class="text-xl font-semibold">التعاون</h3>
+      </div>
+
+      <!-- Repeat for other cards -->
+      <div class="card-col  rounded-xl p-8 transition duration-300 ">
+        <div class="flex justify-center mb-4">
+          <div class=" bg-opacity-30 rounded-xl p-3">
+              <img src="../../../../../assets/images/privacy.png" style="width: 100px; height: 100px;" alt="الخصوصية" />
+          </div>
+        </div>
+        <h3 class="text-xl font-semibold">الخصوصية</h3>
+      </div>
+
+      <div class=" card-col  rounded-xl p-8 transition duration-300 ">
+        <div class="flex justify-center mb-4">
+          <div class=" bg-opacity-30 rounded-xl p-3 ">
+            <img src="../../../../../assets/images/aman.png" style="width: 100px; height: 100px;" alt="الأمان" />
+          </div>
+        </div>
+        <h3 class="text-xl font-semibold">الأمان</h3>
+      </div>
+
+      <div class=" card-col  rounded-xl p-8 transition duration-300 ">
+        <div class="flex justify-center mb-4">
+          <div class=" bg-opacity-30 rounded-xl p-3 ">
+                <img src="../../../../../assets/images/trans.png" style="width: 100px; height: 100px;" alt="الشفافية" />
+          </div>
+        </div>
+        <h3 class="text-xl font-semibold">الشفافية</h3>
+      </div>
+
+      <div class=" card-col  rounded-xl p-8 transition duration-300 ">
+        <div class="flex justify-center mb-4">
+          <div class=" bg-opacity-30 rounded-xl p-3 ">
+               <img src="../../../../../assets/images/ibtkar.png" style="width: 100px; height: 100px;" alt="الابتكار" />
+        
+          </div>
+        </div>
+        <h3 class="text-xl font-semibold">الابتكار</h3>
+      </div>
+
+      <div class="card-col  rounded-xl p-8 transition duration-300 ">
+        <div class="flex justify-center mb-4">
+          <div class=" bg-opacity-30 rounded-xl p-3 ">
+               <img src="../../../../../assets/images/ibdaa.png" style="width: 100px; height: 100px;" alt="الإبداع" />
+          </div>
+        </div>
+        <h3 class="text-xl font-semibold">الإبداع</h3>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
 
   <!-- Stats Section -->
   <section  class="bg-[#0c0021] text-white flex items-center justify-center" style="background: linear-gradient(135deg, #001d28, #1b043f, #04000c); min-height: 460px;">
