@@ -420,7 +420,8 @@
       "brandName":"اسم الماركة",
       "mobileModel":"موديل الموبايل",
       "number":"رقم الموبايل",
-      "otherBrand":"ماركات اخرى"
+      "otherBrand":"ماركات اخرى",
+      "Img":"الصورة"
     },
     "brands": {
       "brands": "الماركات",
@@ -536,7 +537,7 @@
       "Error Uploading": "خطأ في رفع الصورة",
       "addMobile": "اضف رقم تليفون",
       "noClients": "لا يوجد عملاء",
-      "mobilesCount": "عدد الهواتف المحمولة"
+      "mobilesCount": "عدد الهواتف"
     }
   }
 }

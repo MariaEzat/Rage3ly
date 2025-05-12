@@ -431,7 +431,8 @@
       "brandName":"Brand Name",
       "mobileModel":" Mobile Model",
       "number":"Number",
-      "otherBrand":"Other Brand"
+      "otherBrand":"Other Brand",
+      "Img":"Img"
     },
     "brands": {
       "brands": "Brands",

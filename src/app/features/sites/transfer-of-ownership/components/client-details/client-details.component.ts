@@ -4,6 +4,7 @@ import { SharedService } from 'src/app/shared/service/shared.service';
 import { TransferOfOwnershipService } from '../../service/transfer-of-ownership.service';
 import { TransferOfOwnershipViewModel, ClientDetailsViewModel } from '../../interface/transfer-of-ownership';
 import { CRUDIndexPage } from 'src/app/shared/models/crud-index.model';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-client-details',
@@ -66,7 +67,7 @@ export class ClientDetailsComponent implements OnInit {
     window.open('https://api.rage3ly.com/' + path, '_blank');
   }
 
-  // clientDetails(id: string): void {
-  //   this._sharedService.navigateWithQueryParams('/clients/details', { ID: id });
-  // }
+   getImageUrl(imagePath: string): string {
+      return `${environment.api}/` + imagePath;
+    }
 }

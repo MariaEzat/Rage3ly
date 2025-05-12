@@ -52,4 +52,5 @@ export class ClientDetailsViewModel {
   cityName: string;
   createdDate: Date;
   phonesDetailsByClientIdDTOs: clientMobileViewModel[];
+  path?:string;
 }

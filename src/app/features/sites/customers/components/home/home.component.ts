@@ -55,7 +55,6 @@ export class HomeComponent extends CrudIndexBaseUtils {
     private _pageService: CustomersService,
     private _router: Router,
     private activatedRoute: ActivatedRoute,
-
   ) {
     super(_sharedService);
   }
@@ -82,7 +81,7 @@ export class HomeComponent extends CrudIndexBaseUtils {
       { Name: 'National Number', Title: 'salesflow.Customers.nationalNumber', Selectable: false, Sortable: true },
       { Name: 'Mobile', Title: 'salesflow.Customers.mobile', Selectable: false, Sortable: true },
       { Name: 'Mobiles Count', Title: 'salesflow.Customers.mobilesCount', Selectable: false, Sortable: true },
-      { Name: "Path", Title: "salesflow.Customers.img", Selectable: false, Sortable: true },
+      // { Name: "Path", Title: "salesflow.Customers.img", Selectable: false, Sortable: true },
       { Name: 'AddMobile', Title: 'salesflow.Customers.addMobile', Selectable: false, Sortable: true },
 
       { Name: 'Action', Title: 'salesflow.Customers.action', Selectable: false, Sortable: true },
@@ -207,7 +206,9 @@ export class HomeComponent extends CrudIndexBaseUtils {
     return `${environment.api}/` + imagePath;
   }
   
-
+clientDetails(id: string) {
+    this._router.navigate(['/sites/transferOfOwnership/clientDetails', id]);
+  }
 
 
   isAllSelected(): boolean {
