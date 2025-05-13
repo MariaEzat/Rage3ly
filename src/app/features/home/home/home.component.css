@@ -19,9 +19,11 @@ body {
 .custom-card {
   transition: box-shadow 0.3s ease, transform 0.3s ease;
 }
+
 .ft-lg {
-font-size: 32px !important;
+  font-size: 32px !important;
 }
+
 .custom-card:hover {
   box-shadow: 0 10px 20px #BB9BFF26;
   transform: translateY(-4px);
@@ -32,21 +34,24 @@ font-size: 32px !important;
 }
 
 .bg-col {
-background-color:  #281B7314 !important;
+  background-color: #281B7314 !important;
 
 }
 
 .card-col {
   background-color: #140c2e !important;
 }
+
 body {
   overflow: auto;
 }
+
 .border-sm {
   border-width: 1px;
   border-color: rgba(109, 40, 217, var(--tw-text-opacity));
   border-style: solid !important
 }
+
 .gradient-border {
   border-width: 5px;
   border-color: rgba(109, 40, 217, var(--tw-text-opacity));
@@ -120,6 +125,26 @@ form {
 }
 
 
+  .border-purple {
+    border-color: #5d5767 !important;
+    border-radius: 16px !important;
+  }
+
+.bg-card {
+  background-color: #170A36;
+}
+.goal-card {
+  width: 424px;
+  height: 208px;
+  margin-inline-start: 40px; 
+}
+
+.timeline-icon {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 3;
+}
 
 @media (max-width: 760px) {
   .nav-features {
@@ -170,23 +195,25 @@ form {
     color: linear-gradient(#ECECEC, #ECECEC00);
     font-size: 14px !important;
   }
-.sm-butnn {
-  font-size: 14px !important;
-  height: 40.81083679199219 !important;
-  width: 192.62167358398438 !important;
-}
 
- .sm-butn {
+  .sm-butnn {
+    font-size: 14px !important;
+    height: 40.81083679199219 !important;
+    width: 192.62167358398438 !important;
+  }
+
+  .sm-butn {
     font-size: 14px !important;
     height: 48px !important;
     width: 130px !important;
-    line-height: 1.5 !important; 
-    padding: 12px 20px; 
+    line-height: 1.5 !important;
+    padding: 12px 20px;
     display: flex;
     align-items: center;
     justify-content: center;
   }
-    .mobile-column .flex {
+
+  .mobile-column .flex {
     flex-direction: row !important;
   }
 }
