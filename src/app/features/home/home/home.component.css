@@ -42,8 +42,23 @@ body {
   background-color: #FFFFFF0A !important;
 }
 
+.word-font 
+{
+font-size: 48px;
+color: #A2A2A2;
+}
+.num-font 
+{
+font-size: 64px;
+color: #C9A6FF;
+}
 body {
   overflow-y: auto;
+}
+.bg-gradiennt {
+  min-height: 460px;
+  background: linear-gradient(80.77deg, rgba(0, 90, 122, 0.2) 26.18%, rgba(111, 70, 175, 0.2) 80.63%, rgba(11, 1, 33, 0.2) 134.19%);
+
 }
 
 .border-sm {
@@ -253,7 +268,16 @@ border-radius: 16px;
     color: linear-gradient(#ECECEC, #ECECEC00);
     font-size: 14px !important;
   }
-
+.word-font 
+{
+font-size: 28px;
+color: #A2A2A2;
+}
+.num-font 
+{
+font-size: 44px;
+color: #C9A6FF;
+}
   .sm-butnn {
     font-size: 14px !important;
     height: 40.81083679199219 !important;
