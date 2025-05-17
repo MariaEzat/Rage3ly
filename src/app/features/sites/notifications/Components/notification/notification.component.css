@@ -130,6 +130,26 @@
 
 }
 
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: 'Zain', serif !important;
+}
+
+p,
+span,
+button,
+nav,
+div,
+a,
+label,
+td,
+form {
+  font-family: 'Zain', serif !important;
+  font-size: 18px;
+}
 
 /* @media (max-width: 400px) {
   .font-sm {
