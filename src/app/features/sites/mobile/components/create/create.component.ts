@@ -95,7 +95,7 @@ export class CreateComponent implements OnInit, OnDestroy {
       imeI2: [this.item.imeI2, [Validators.required, Validators.pattern(/^\d{15}$/)]],
       mobileModel: [this.item.mobileModel, Validators.required],
       number: [this.item.number, [Validators.required, Validators.pattern(/^(010|011|012|015)\d{8}$/)]],
-      serialNumber: [this.item.serialNumber, Validators.required],
+      serialNumber: [this.item.serialNumber,[Validators.required,Validators.minLength(5)] ],
       brandId: [this.item.brandId, Validators.required],
       dateOfPurchase: [this.item.dateOfPurchase, Validators.required],
       paths: [this.item.paths],
