@@ -13,4 +13,13 @@ export class HomeComponent {
       this.isLoading = false;
     }, 1000); 
   }
+
+
+  openWhatsApp() {
+  const phoneNumber = '201000318188'; 
+  const message = encodeURIComponent('أهلاً، أريد الاستفسار عن المنتج.');
+  const url = `https://wa.me/${phoneNumber}?text=${message}`;
+  window.open(url, '_blank');
+}
+
 }
