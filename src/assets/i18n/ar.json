@@ -388,7 +388,8 @@
       "loading": ".....جاري التحميل",
       "governorate":"المحافظة",
       "city":"المدينة",
-      "street":"الشارع"
+      "street":"الشارع",
+      "request":"طلب"
     },
     "ownership": {
       "ownership": "نقل الملكية",
@@ -425,7 +426,8 @@
       "mobileModel":"موديل الموبايل",
       "number":"رقم الموبايل",
       "otherBrand":"ماركات اخرى",
-      "Img":"الصورة"
+      "Img":"الصورة",
+      "transfer": "نقل الملكية"
     },
     "brands": {
       "brands": "الماركات",
@@ -503,7 +505,8 @@
       "clientNameSearcher":"اسم الباحث",
       "phoneNumberOwner":"رقم هاتف المالك",
       "phoneNumberSearcher":"رقم هاتف الباحث",
-      "No Data":"لا توجد بيانات"
+      "No Data":"لا توجد بيانات",
+      "search":"بحث"
     },
     "retrivedPhones":{
       "search of retrivePhones":"بحث فى التليفونات التى تم ارجاعها",
@@ -512,7 +515,8 @@
       "clientName":"اسم العميل",
       "mobileModel":"موديل الموبايل",
       "brandName":"اسم الماركة",
-      "noPhones":"لا توجد تليفونات"
+      "noPhones":"لا توجد تليفونات",
+      "phone":"هاتف"
 
     }
   },

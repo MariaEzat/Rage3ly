@@ -552,3 +552,8 @@ input[type="text"]{
   color: #FFFFFF !important;
   background-color: #31314a !important;
 }
+
+ .totalItems {
+    color: #f2f3fb;
+    background-color: #1e2548;
+  }
