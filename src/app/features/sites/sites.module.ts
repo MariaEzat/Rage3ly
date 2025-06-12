@@ -103,6 +103,13 @@ const routes: Routes = [
             (m) => m.RetrievedPhonesModule
           ),
       },
+      {
+        path: 'email',
+        loadChildren: () =>
+          import('./email/email.module').then(
+            (m) => m.EmailModule
+          ),
+      },
     ],
   },
 ];

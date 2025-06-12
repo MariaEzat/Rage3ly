@@ -544,3 +544,11 @@ input[type="text"]{
   color: white !important;
 
 }
+.p-chips .p-chips-multiple-container{
+  background-color: #060B26 !important;
+}
+
+.p-chips .p-chips-multiple-container .p-chips-token {
+  color: #FFFFFF !important;
+  background-color: #31314a !important;
+}

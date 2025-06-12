@@ -320,7 +320,8 @@
       "notification":"Notification",
       "dashboard": "Dashboard",
       "searchOfStolenPhone":"Search Of Stolen Phone",
-      "retrivedPhones":"Retrived Phones"
+      "retrivedPhones":"Retrived Phones",
+      "email":"Send Email"
 
     },
     "mobile": {
@@ -524,8 +525,7 @@
       "mobileModel":" Mobile Model",
       "brandName":"Brand Name",
       "noPhones":"No Phones"
-    }
-    
+    }     
   },
   "salesflow": {
     "Customers": {
@@ -553,6 +553,20 @@
       "addMobile": "Add Mobile",
       "noClients": "No Clients",
       "mobilesCount": "Mobiles Count"
+    },
+    "Email": {
+      "send E-mail": "Send E-mail",
+      "status": "Status",
+      "comments": "Comments",
+      "reset": "Reset",
+      "to Emails": "To Emails",
+      "press": "Press",
+      "space": "Space",
+      "to add another email": "to add another email",
+      "invalid emails": "Invalid emails",
+      "subject": "Subject",
+      "message Body": "Message Body",
+      "enter Emails": "Enter Emails"
     }
   }
 }

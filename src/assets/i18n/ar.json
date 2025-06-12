@@ -306,11 +306,12 @@
       "requests": "طلب الهاتف المسروق",
       "ownership": "نقل الملكية",
       "brand": "الماركات",
-      "search":"بحث",
+      "search":"بحث عام",
       "notification":"الاشعارات",
       "dashboard":"الاحصائيات",
-      "searchOfStolenPhone":"بحث فى التليفونات المسروقة",
-      "retrivedPhones":"التليفونات للى تم استردادها"
+      "searchOfStolenPhone":"بحث مسروقات",
+      "retrivedPhones":"التليفونات للى تم استردادها",
+      "email":"ارسال ايميل"
     },
     "mobile": {
       "userName": "اسم المستخدم",
@@ -541,6 +542,20 @@
       "addMobile": "اضف رقم تليفون",
       "noClients": "لا يوجد عملاء",
       "mobilesCount": "عدد الهواتف"
+    },
+    "Email": {
+      "send E-mail": "إرسال البريد",
+      "status": "الحالة",
+      "comments": "التعليقات",
+      "reset": "إعادة تعيين",
+      "to Emails": "إلى البريد الإلكتروني",
+      "press": "اضغط",
+      "space": "مسافة",
+      "to add another email": "لإضافة بريد إلكتروني آخر",
+      "invalid emails": "البريد الإلكتروني غير صالح",
+      "subject": "عنوان الرسالة",
+      "message Body": "محتوى الرسالة",
+      "enter Emails": "ادخل الايميلات"
     }
   }
 }

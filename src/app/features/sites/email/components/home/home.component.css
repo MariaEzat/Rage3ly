@@ -1,0 +1,35 @@
+.hover-brand:hover {
+  color: #535862;
+}
+label,small,p,a{
+  color: aliceblue !important;
+}
+.btn-primary {
+  background-color: #4DC3FF;
+  border: none;
+}
+
+.btn-primary:hover {
+  background-color: #35b3f2;
+}
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: 'Zain', serif !important;
+}
+
+p,
+span,
+button,
+nav,
+div,
+a,
+label,
+td,
+form {
+  font-family: 'Zain', serif !important;
+  font-size: 18px;
+}
+

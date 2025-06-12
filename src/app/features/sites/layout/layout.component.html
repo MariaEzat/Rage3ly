@@ -99,19 +99,17 @@
           class="px-1 nav-icon">
       </a>
       <a class="nav-link text-white py-2 d-flex flex-row-reverse justify-content-end align-items-center"
-      routerLink="/sites/transferOfOwnership" routerLinkActive="active" #ownershipRla="routerLinkActive"
-      [ngClass]="{ 'active-color': ownershipRla.isActive && !isClientDetailsActive() }"
-      (mouseenter)="setActiveLink('ownership')" (mouseleave)="setActiveLink('')">
-      
-      {{ "sites.layout.ownership" | translate }}
-      
-      <img
-        [src]="(ownershipRla.isActive && !isClientDetailsActive()) || activeLink === 'ownership' 
+        routerLink="/sites/transferOfOwnership" routerLinkActive="active" #ownershipRla="routerLinkActive"
+        [ngClass]="{ 'active-color': ownershipRla.isActive && !isClientDetailsActive() }"
+        (mouseenter)="setActiveLink('ownership')" (mouseleave)="setActiveLink('')">
+
+        {{ "sites.layout.ownership" | translate }}
+
+        <img [src]="(ownershipRla.isActive && !isClientDetailsActive()) || activeLink === 'ownership' 
                ? 'assets/images/tranferActive.png' 
-               : 'assets/images/transferNotActive.png'"
-        class="px-1 nav-icon">
-    </a>
-    
+               : 'assets/images/transferNotActive.png'" class="px-1 nav-icon">
+      </a>
+
       <a class="nav-link text-white py-2 d-flex flex-row-reverse justify-content-end align-items-center"
         routerLink="/sites/requestToTransferAStolenPhone" routerLinkActive="active" #requestsRla="routerLinkActive"
         [ngClass]="{ 'active-color': requestsRla.isActive }" (mouseenter)="setActiveLink('requests')"
@@ -132,6 +130,15 @@
           class="px-1 nav-icon">
       </a>
 
+      <a class="nav-link text-white py-2 d-flex flex-row-reverse justify-content-end align-items-center"
+        routerLink="/sites/email" routerLinkActive="active" #emailRla="routerLinkActive"
+        [ngClass]="{ 'active-color': emailRla.isActive }" (mouseenter)="setActiveLink('email')"
+        (mouseleave)="setActiveLink('')">
+        {{ "sites.layout.email" | translate }}
+        <img
+          [src]="emailRla.isActive || activeLink === 'email' ? 'assets/images/layoutEmail.png' : 'assets/images/layoutEmailNotActive.png'"
+          class="px-1 nav-icon">
+      </a>
 
     </div>
     <div class="mt-auto cr5 w-75 text-center bg-red-dark hover">

@@ -1,0 +1,102 @@
+<!-- Top Navigation -->
+<div class="d-flex flex-wrap justify-content-between align-items-center py-2 px-3">
+  <a
+    class="mb-2 mb-md-0 color-gray-600 ts-3 text-decoration-none hover-brand d-flex align-items-center"
+    routerLink="/sites/dashboard"
+  >
+    <span
+      class="expand-arrow me-2"
+      [routerLink]="page.isEdit ? '/sites/mobile' : '/sites/customers'"
+    >
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="white" stroke-width="2"
+        viewBox="0 0 24 24">
+        <path d="M8 5l8 7-8 7" />
+      </svg>
+    </span>
+    <span class="text-nowrap">{{ "salesflow.Email.send E-mail" | translate }}</span>
+  </a>
+</div>
+
+<hr />
+
+<!-- Main Form Section -->
+<ng-container *ngIf="page.isPageLoaded">
+  <form [formGroup]="page.form">
+    <div class="card mt-4 border rounded mx-3 mx-md-5" style="background-color: #1A1F3766;">
+      <div class="card-body ">
+        <!-- Title + Buttons Row -->
+        <div class="row align-items-center py-2">
+          <!-- Title -->
+          <div class="col-12 col-md-6 mb-2 mb-md-0">
+            <p class="mb-0">
+              {{ "salesflow.Email.status" | translate }} & {{ "salesflow.Email.comments" | translate }}
+            </p>
+          </div>
+
+          <!-- Buttons -->
+          <div class="col-12 col-md-6 d-flex justify-content-md-end flex-wrap gap-2">
+            <button type="button" class="btn btn-outline-light" (click)="onReset()">
+              {{ "salesflow.Email.reset" | translate }}
+            </button>
+            <button class="btn btn-primary" (click)="Save()" [disabled]="page.form?.invalid">
+              <span class="rb-btn-text">{{ "salesflow.Email.send E-mail" | translate }}</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Email Fields -->
+        <div class="mt-3">
+          <label for="toEmails" class="form-label d-block text-white">
+            {{ "salesflow.Email.to Emails" | translate }}
+            <span class="text-danger">*</span>
+          </label>
+
+          <p-chips
+            formControlName="toEmails"
+            [separator]="' '"
+            [addOnBlur]="true"
+            [placeholder]="'salesflow.Email.enter Emails' | translate"
+          ></p-chips>
+
+          <small class="form-text text-muted">
+            {{ "salesflow.Email.press" | translate }}
+            <strong>{{ "salesflow.Email.space" | translate }}</strong>
+            {{ "salesflow.Email.to add another email" | translate }}
+          </small>
+
+          <!-- Invalid Emails -->
+          <div
+            *ngIf="page.form.get('toEmails').errors?.invalidEmails && page.form.get('toEmails').touched"
+          >
+            <span class="text-danger">
+              {{ "salesflow.Email.invalid emails" | translate }}:
+              {{ page.form.get('toEmails').errors.invalidEmails.value.join(', ') }}
+            </span>
+          </div>
+        </div>
+
+        <!-- Subject Field -->
+        <div class="mt-3">
+          <ng-control
+            [form]="page.form"
+            control="subject"
+            label="salesflow.Email.subject"
+            placeholder="salesflow.Email.subject"
+            [labelClass]="'text-white'"
+          ></ng-control>
+        </div>
+
+        <!-- Body Field -->
+        <div class="my-3">
+          <ng-control
+            [form]="page.form"
+            control="body"
+            label="salesflow.Email.message Body"
+            placeholder="salesflow.Email.message Body"
+            [labelClass]="'text-white'"
+          ></ng-control>
+        </div>
+      </div>
+    </div>
+  </form>
+</ng-container>
