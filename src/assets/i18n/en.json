@@ -398,7 +398,8 @@
       "loading": "Loading...",
       "governorate":"Governorate",
       "city":"City",
-      "street":"Street"
+      "street":"Street",
+      "request": "Request"
     },
     "ownership": {
       "ownership": "Ownership",
@@ -435,7 +436,8 @@
       "mobileModel":" Mobile Model",
       "number":"Number",
       "otherBrand":"Other Brand",
-      "Img":"Img"
+      "Img":"Img",
+      "transfer": "Transfer"
     },
     "brands": {
       "brands": "Brands",
@@ -513,7 +515,8 @@
       "clientNameSearcher":"Searcher Name",
       "phoneNumberOwner":"Phone Number Of Owner",
       "phoneNumberSearcher":"Phone Number Of Searcher",
-      "No Data":"No Data"
+      "No Data":"No Data",
+      "search":"Search"
       
     },
     "retrivedPhones":{
@@ -523,7 +526,8 @@
       "clientName":"Client Name",
       "mobileModel":" Mobile Model",
       "brandName":"Brand Name",
-      "noPhones":"No Phones"
+      "noPhones":"No Phones",
+      "phone":"Phone"
     }
     
   },

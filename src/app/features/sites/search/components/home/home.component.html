@@ -1,64 +1,71 @@
 <!-- Container -->
 <div class="d-flex  min-vh-100 bg-Dark text-white ">
-    <div class="flex-grow-1 p-2 chang-width " style="width: 90%;" >
-      <div class="container-fluid">
-  
-        <!-- Search Card -->
-        <div class="card p-4 mb-4" style="background-color: #1A1F3766;">
+  <div class="flex-grow-1 p-2 chang-width " style="width: 90%;">
+    <div class="container-fluid">
+
+      <!-- Search Card -->
+      <div class="card p-4 mb-4" style="background-color: #1A1F3766;">
+        <div class="d-flex justify-content-between align-items-center mb-3">
           <h5 class="mb-3 text-white"> {{"sites.search.searchOfSearch"|translate}} </h5>
-          <form [formGroup]="page.searchForm">
-            <div class="form-body">
-              <div class="row g-2">
-                <div class="col-12 col-sm-6 col-lg-4 mb-2">
-                  <ng-control [form]="page.searchForm" control="ImeiAndSerial" [inputClass]="'bg-Dark border-color'"
-                    [labelClass]="'text-white'" label="sites.search.ImeIAndSerial"
-                    placeholder="sites.search.ImeIAndSerial">
-                  </ng-control>
-                </div>
-                <div class="col-12 col-sm-6 col-lg-4 mb-2">
-                  <ng-control [form]="page.searchForm" control="EmailAndClinetName" [inputClass]="'bg-Dark border-color'"
-                    [labelClass]="'text-white'" label="sites.search.emailAndClinetName" placeholder="sites.search.emailAndClinetName">
-                  </ng-control>
-                </div>
-                <div class="col-12 col-sm-6 col-lg-4 mb-2">
-                  <ng-control [form]="page.searchForm" control="PhoneNumber" [inputClass]="'bg-Dark border-color'"
-                    [labelClass]="'text-white'" label="sites.search.phoneNumber"
-                    placeholder="sites.search.phoneNumber">
-                  </ng-control>
-                </div>
-                
-                <div class="col-12 col-sm-6 col-lg-4 mb-2">
-                  <ng-control [form]="page.searchForm" control="From" label="sites.search.from" [inputClass]="'bg-Dark  border-color'"
-                  [labelClass]="'text-white'" [type]="page.ControlType.INPUT_DATE"></ng-control>
-                  </div>
-                  <div class="col-12 col-sm-6 col-lg-4 mb-2">
-                    <ng-control [form]="page.searchForm" control="To" label="sites.search.to" [inputClass]="'bg-Dark  border-color'"
-                  [labelClass]="'text-white'" [type]="page.ControlType.INPUT_DATE"></ng-control>
-                  </div>
-                <!-- Search Button -->
-                <div class="col-6 col-sm-2 mb-2 d-flex flex-wrap gap-2 align-items-end">
-                  <button class='color-brand-700 rb-btn  rb-btn-sm  w-100 border-color text-white' (click)="search()"
-                    [disabled]="page.searchForm.invalid || page.isSearching">
-                    <i class="uil uil-search"></i>
-                    <span class="rb-btn-text d-md-inline-block">
-                      {{'shared.search'|translate}}</span>
-                  </button>
-                </div>
-  
-              </div>
-            </div>
-          </form>
-  
-  
-  
-  
-  
+          <div class="totalItems cr7 px-3 py-1 ms-2">{{page.options.totalItems}}
+              {{"salesflow.Customers.customer"|translate}}
+          </div>
         </div>
-  
-        <!-- Ads Table Card -->
-        <div class="card p-4 border-0 shadow-sm rounded-3" style="background-color: #1A1F3766;">
-          <!-- Header -->
-          <!-- <div class="d-flex flex-wrap gap-2 justify-content-between align-items-center mb-3">
+        <form [formGroup]="page.searchForm">
+          <div class="form-body">
+            <div class="row g-2">
+              <div class="col-12 col-sm-6 col-lg-4 mb-2">
+                <ng-control [form]="page.searchForm" control="ImeiAndSerial" [inputClass]="'bg-Dark border-color'"
+                  [labelClass]="'text-white'" label="sites.search.ImeIAndSerial"
+                  placeholder="sites.search.ImeIAndSerial">
+                </ng-control>
+              </div>
+              <div class="col-12 col-sm-6 col-lg-4 mb-2">
+                <ng-control [form]="page.searchForm" control="EmailAndClinetName" [inputClass]="'bg-Dark border-color'"
+                  [labelClass]="'text-white'" label="sites.search.emailAndClinetName"
+                  placeholder="sites.search.emailAndClinetName">
+                </ng-control>
+              </div>
+              <div class="col-12 col-sm-6 col-lg-4 mb-2">
+                <ng-control [form]="page.searchForm" control="PhoneNumber" [inputClass]="'bg-Dark border-color'"
+                  [labelClass]="'text-white'" label="sites.search.phoneNumber" placeholder="sites.search.phoneNumber">
+                </ng-control>
+              </div>
+
+              <div class="col-12 col-sm-6 col-lg-4 mb-2">
+                <ng-control [form]="page.searchForm" control="From" label="sites.search.from"
+                  [inputClass]="'bg-Dark  border-color'" [labelClass]="'text-white'"
+                  [type]="page.ControlType.INPUT_DATE"></ng-control>
+              </div>
+              <div class="col-12 col-sm-6 col-lg-4 mb-2">
+                <ng-control [form]="page.searchForm" control="To" label="sites.search.to"
+                  [inputClass]="'bg-Dark  border-color'" [labelClass]="'text-white'"
+                  [type]="page.ControlType.INPUT_DATE"></ng-control>
+              </div>
+              <!-- Search Button -->
+              <div class="col-6 col-sm-2 mb-2 d-flex flex-wrap gap-2 align-items-end">
+                <button class='color-brand-700 rb-btn  rb-btn-sm  w-100 border-color text-white' (click)="search()"
+                  [disabled]="page.searchForm.invalid || page.isSearching">
+                  <i class="uil uil-search"></i>
+                  <span class="rb-btn-text d-md-inline-block">
+                    {{'shared.search'|translate}}</span>
+                </button>
+              </div>
+
+            </div>
+          </div>
+        </form>
+
+
+
+
+
+      </div>
+
+      <!-- Ads Table Card -->
+      <div class="card p-4 border-0 shadow-sm rounded-3" style="background-color: #1A1F3766;">
+        <!-- Header -->
+        <!-- <div class="d-flex flex-wrap gap-2 justify-content-between align-items-center mb-3">
             <h5 class="text-white"> {{"salesflow.Customers.customers"|translate}} </h5>
             <div class="d-flex flex-wrap gap-2">
               <div class="position-relative ">
@@ -74,72 +81,71 @@
             </div>
           </div>
    -->
-          <!-- Table -->
-          <div class=" scrolled mt-3 h-100 table-responsive" >
-            <div class="col-6 col-sm-4 mb-3">
-                <ng-control [type]="controlType.SELECT" [form]="page.searchForm" control="LogType"
-                  [inputClass]="'bg-Dark border-color text-white'" [labelClass]="'text-white'"
-                  label="sites.search.logType" placeholder="sites.search.logType"
-                  [items]="ActionLogType">
-                </ng-control>
-              </div>
-            <table   class="table text-center align-middle transparent-table"  >
-              <thead>
-                
-                <tr>
-                  <!-- <th>
+        <!-- Table -->
+        <div class=" scrolled mt-3 h-100 table-responsive">
+          <div class="col-6 col-sm-4 mb-3">
+            <ng-control [type]="controlType.SELECT" [form]="page.searchForm" control="LogType"
+              [inputClass]="'bg-Dark border-color text-white'" [labelClass]="'text-white'" label="sites.search.logType"
+              placeholder="sites.search.logType" [items]="ActionLogType">
+            </ng-control>
+          </div>
+          <table class="table text-center align-middle transparent-table">
+            <thead>
+
+              <tr>
+                <!-- <th>
                     <input type="checkbox" (change)="toggleSelectAll($event)" [checked]="isAllSelected()" />
                   </th> -->
-                  <ng-container *ngFor="let colum of page.columns">
-                    <th (click)="onSortClicked(colum)" [class.pointer]="colum.Sortable">
-                      {{ colum.Title | translate }}
-                      <i class="uil uil-sort ms-1" *ngIf="colum.Sortable" [ngClass]="{
+                <ng-container *ngFor="let colum of page.columns">
+                  <th (click)="onSortClicked(colum)" [class.pointer]="colum.Sortable">
+                    {{ colum.Title | translate }}
+                    <i class="uil uil-sort ms-1" *ngIf="colum.Sortable" [ngClass]="{
                            'sort-icon-ase': isColumnAscending(colum),
                            'sort-icon-des': !isColumnAscending(colum)
                          }">
-                      </i>
-                    </th>
-                  </ng-container>
-                </tr>
-              </thead>
-              <tbody>
-                <tr *ngIf="items.length === 0">
-                  <td colspan="100%"> {{"salesflow.Customers.noClients"|translate}}  </td>
-                </tr>
-                <tr *ngFor="let item of items | paginate: page.options; let i = index">
-                  <!-- <td><input type="checkbox" [(ngModel)]="item.selected" /></td> -->
-                  <td>{{ (page.options.currentPage - 1) * page.options.itemsPerPage + i + 1 }}</td>
-                  <td class="clientHover" (click)="clientDetails(item.clientId)">{{ item.clientName }}</td>
-                  <td>{{ item.ip}}</td>
-                  <td>{{ item.port }}</td>
-                  <td>{{ item.searchText}}</td>
-                  <td>{{ item.email}}</td>
-                  <!-- <td>{{ getActionLogTypeName(item.logType)}}</td> -->
-                  <td>{{ item.phoneNumberOwner}}</td>
-                  <td>{{ item.phoneNumberSearcher}}</td>
-                  <td>{{ item.createdDate | date: 'medium'}}</td>
-                  <td>{{ item.imeI1}}</td>
-                  <td>{{ item.latitude}} , {{item.longitude}}</td>
-                 
-                  <!-- <td>
+                    </i>
+                  </th>
+                </ng-container>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngIf="items.length === 0">
+                <td colspan="100%"> {{"salesflow.Customers.noClients"|translate}} </td>
+              </tr>
+              <tr *ngFor="let item of items | paginate: page.options; let i = index">
+                <!-- <td><input type="checkbox" [(ngModel)]="item.selected" /></td> -->
+                <td>{{ (page.options.currentPage - 1) * page.options.itemsPerPage + i + 1 }}</td>
+                <td class="clientHover" (click)="clientDetails(item.clientId)">{{ item.clientName }}</td>
+                <td>{{ item.ip}}</td>
+                <td>{{ item.port }}</td>
+                <td>{{ item.searchText}}</td>
+                <td>{{ item.email}}</td>
+                <!-- <td>{{ getActionLogTypeName(item.logType)}}</td> -->
+                <td>{{ item.phoneNumberOwner}}</td>
+                <td>{{ item.phoneNumberSearcher}}</td>
+                <td>{{ item.createdDate | date: 'medium'}}</td>
+                <td>{{ item.imeI1}}</td>
+                <td>{{ item.latitude}} , {{item.longitude}}</td>
+
+                <!-- <td>
   
                     <button pButton icon="pi pi-pencil" class="p-button-rounded p-button-text p-button-info"
                       aria-label="Edit" (click)="editCustomer(item.id)">
                     </button>
                   </td> -->
-                </tr>
-              </tbody>
-            </table>
-  
-          </div>
-  
-  
-          <!-- Pagination -->
-          <ng-pagination [page]="page" (pageSizeChange)="onChangePageSize()" (pageChange)="getNextPrevData($event)">
-          </ng-pagination>
+              </tr>
+            </tbody>
+          </table>
+
         </div>
+
+
+        <!-- Pagination -->
+        <ng-pagination [page]="page" (pageSizeChange)="onChangePageSize()" (pageChange)="getNextPrevData($event)">
+        </ng-pagination>
       </div>
     </div>
-  
-  
   </div>
+
+
+</div>
