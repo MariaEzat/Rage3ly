@@ -37,5 +37,10 @@ export class LayoutComponent {
     localStorage.clear();
     this.router.navigate(['/auth/login'])
   }
+
+  
+isClientDetailsActive(): boolean {
+  return this.router.url.includes('/sites/transferOfOwnership/clientDetails');
+}
   
 }

@@ -33,12 +33,13 @@
 
       <a class="nav-link text-white py-2 d-flex flex-row-reverse justify-content-end align-items-center"
         routerLink="/sites/customers" routerLinkActive="active" #clientsRla="routerLinkActive"
-        [ngClass]="{ 'active-color': clientsRla.isActive }" (mouseenter)="setActiveLink('customers')"
-        (mouseleave)="setActiveLink('')">
+        [ngClass]="{ 'active-color': clientsRla.isActive || isClientDetailsActive() }"
+        (mouseenter)="setActiveLink('customers')" (mouseleave)="setActiveLink('')">
         {{ "sites.layout.clients" | translate }}
         <img
-          [src]="clientsRla.isActive || activeLink === 'customers' ? 'assets/images/Icon-Clients.png' : 'assets/images/Icon@2x.png'"
+          [src]="(clientsRla.isActive || isClientDetailsActive()) ? 'assets/images/Icon-Clients.png' : 'assets/images/Icon@2x.png'"
           class="px-1 nav-icon">
+
       </a>
 
       <a class="nav-link text-white py-2 d-flex flex-row-reverse justify-content-end align-items-center"
@@ -78,7 +79,7 @@
           [src]="searchRla.isActive || activeLink === 'search' ? 'assets/icons/ActiveSearch.png' : 'assets/icons/DisactiveSearch.png'"
           class="px-1 nav-icon">
       </a>
-      
+
       <a class="nav-link text-white py-2 d-flex flex-row-reverse justify-content-end align-items-center"
         routerLink="/sites/notification" routerLinkActive="active" #notificationRla="routerLinkActive"
         [ngClass]="{ 'active-color': notificationRla.isActive }" (mouseenter)="setActiveLink('notification')"
@@ -98,14 +99,19 @@
           class="px-1 nav-icon">
       </a>
       <a class="nav-link text-white py-2 d-flex flex-row-reverse justify-content-end align-items-center"
-        routerLink="/sites/transferOfOwnership" routerLinkActive="active" #ownershipRla="routerLinkActive"
-        [ngClass]="{ 'active-color': ownershipRla.isActive }" (mouseenter)="setActiveLink('ownership')"
-        (mouseleave)="setActiveLink('')">
-        {{ "sites.layout.ownership" | translate }}
-        <img
-          [src]="ownershipRla.isActive || activeLink === 'ownership' ? 'assets/images/tranferActive.png' : 'assets/images/transferNotActive.png'"
-          class="px-1 nav-icon">
-      </a>
+      routerLink="/sites/transferOfOwnership" routerLinkActive="active" #ownershipRla="routerLinkActive"
+      [ngClass]="{ 'active-color': ownershipRla.isActive && !isClientDetailsActive() }"
+      (mouseenter)="setActiveLink('ownership')" (mouseleave)="setActiveLink('')">
+      
+      {{ "sites.layout.ownership" | translate }}
+      
+      <img
+        [src]="(ownershipRla.isActive && !isClientDetailsActive()) || activeLink === 'ownership' 
+               ? 'assets/images/tranferActive.png' 
+               : 'assets/images/transferNotActive.png'"
+        class="px-1 nav-icon">
+    </a>
+    
       <a class="nav-link text-white py-2 d-flex flex-row-reverse justify-content-end align-items-center"
         routerLink="/sites/requestToTransferAStolenPhone" routerLinkActive="active" #requestsRla="routerLinkActive"
         [ngClass]="{ 'active-color': requestsRla.isActive }" (mouseenter)="setActiveLink('requests')"
@@ -117,14 +123,14 @@
       </a>
 
       <a class="nav-link text-white py-2 d-flex flex-row-reverse justify-content-end align-items-center"
-      routerLink="/sites/retrivedPhones" routerLinkActive="active" #retrivedPhonesRla="routerLinkActive"
-      [ngClass]="{ 'active-color': retrivedPhonesRla.isActive }" (mouseenter)="setActiveLink('retrivedPhones')"
-      (mouseleave)="setActiveLink('')">
-      {{ "sites.layout.retrivedPhones" | translate }}
-      <img
-        [src]="retrivedPhonesRla.isActive || activeLink === 'retrivedPhones' ? 'assets/images/retrivedPhoneActive.png' : 'assets/images/retrivedPhoneNotActive.png'"
-        class="px-1 nav-icon">
-    </a>
+        routerLink="/sites/retrivedPhones" routerLinkActive="active" #retrivedPhonesRla="routerLinkActive"
+        [ngClass]="{ 'active-color': retrivedPhonesRla.isActive }" (mouseenter)="setActiveLink('retrivedPhones')"
+        (mouseleave)="setActiveLink('')">
+        {{ "sites.layout.retrivedPhones" | translate }}
+        <img
+          [src]="retrivedPhonesRla.isActive || activeLink === 'retrivedPhones' ? 'assets/images/retrivedPhoneActive.png' : 'assets/images/retrivedPhoneNotActive.png'"
+          class="px-1 nav-icon">
+      </a>
 
 
     </div>
