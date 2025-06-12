@@ -1,14 +1,14 @@
 import { Data } from "@angular/router";
 
 export interface NotificationViewModel {
-  iP: string;
+  ip: string;
   port: string;
   latitude: string;
   longitude: string;
   clientIdOwner : string;
   clientNameOwner: string;
   clientNameSearcher: string;
-  IMEI1: string;
+  imeI1: string;
   phoneNumberOwner: string;
   phoneNumberSearcher: string;
   brandName: string;
