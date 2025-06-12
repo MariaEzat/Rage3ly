@@ -27,10 +27,11 @@ export class HomeComponent extends CrudIndexBaseUtils {
     { id: 2, name: 'PendingUploadImage' },
     { id: 3, name: 'PendingAdminConfirmation' },
     { id: 4, name: 'Stolen' },
+    { id: 4, name: 'NotSure' },
     { id: 5, name: 'UnRegistered' }
   ];
 
-  
+
 
   // @ViewChild('downloadButton') downloadButton: ElementRef;
   // @ViewChild('downloadOptions') downloadOptions: ElementRef;
@@ -43,7 +44,7 @@ export class HomeComponent extends CrudIndexBaseUtils {
   //     this.showDownloadOptions = false;
   //   }
   // }
- 
+
   status: mobileSelectedViewModel[] = [];
   clientGroup: mobileSelectedViewModel[] = [];
 
@@ -77,7 +78,7 @@ export class HomeComponent extends CrudIndexBaseUtils {
       { Name: 'Phone Status', Title: 'sites.mobile.phoneStatus', Selectable: false, Sortable: true },
       { Name: 'Action', Title: 'sites.mobile.action', Selectable: false, Sortable: true },
 
-         
+
     ];
     this.createSearchForm();
     this.activatedRoute.queryParams.subscribe((params) => {
@@ -91,7 +92,7 @@ export class HomeComponent extends CrudIndexBaseUtils {
     this.page.searchForm = this._sharedService.formBuilder.group({
       SearchText: [this.searchViewModel.SearchText],
       PhoneStatus: [this.searchViewModel.PhoneStatus],
-     });
+    });
     this.page.isPageLoaded = true;
   }
 
