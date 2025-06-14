@@ -199,7 +199,7 @@ export class DashboardComponent extends CrudIndexBaseUtils {
         datasets: [
           {
             data: data,
-            backgroundColor: ['#FF5E5B', '#FFC107','#B771E5','#00C49A'],
+             backgroundColor: ['#EB762C', '#9454C6', '#0075FF', '#49A7C9'],
             barThickness: 25,
             borderRadius: 5
           }
@@ -225,8 +225,8 @@ export class DashboardComponent extends CrudIndexBaseUtils {
           {
             data: data,
             backgroundColor: ['#EB762C', '#9454C6', '#0075FF', '#49A7C9'],
-            barThickness: 25,
-            borderRadius: 5
+            borderColor : ['#EB762C', '#9454C6', '#0075FF', '#49A7C9'],
+            borderWidth: 1
           }
         ]
       };

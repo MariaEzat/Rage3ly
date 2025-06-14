@@ -97,10 +97,21 @@
                 <canvas baseChart [data]="StolenPhonesInCitiesBarData" [type]="'bar'" [options]="barOptions"></canvas>
             </div>
         </div>
-        <div class="chart-card">
-            <h4> {{"sites.dashboard.StatisticsOfStolenPhonesInGovernorates"|translate}}</h4>
-            <div class="center-canvas m-3">
-                <canvas baseChart [data]="StolenPhonesInGovernoratesBarData" [type]="'bar'" [options]="barOptions"></canvas>
+
+
+
+
+
+    <div class="chart-card">
+            <h4>{{ "sites.dashboard.StatisticsOfStolenPhonesInGovernorates" | translate }}</h4>
+
+            <div class="center-canvas">
+                <canvas baseChart class="doughnut-canvas" [data]="StolenPhonesInGovernoratesBarData" [type]="'doughnut'"
+                    [options]="donutOptions"></canvas>
+
+                <!-- <div class="center-word">
+                    {{ stolenPercentage % 1 === 0 ? stolenPercentage : stolenPercentage.toFixed(2) }}%
+                </div> -->
             </div>
         </div>
 
