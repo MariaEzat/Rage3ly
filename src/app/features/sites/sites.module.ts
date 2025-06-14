@@ -96,6 +96,13 @@ const routes: Routes = [
             (m) => m.DashboardModule
           ),
       },
+       {
+        path: 'notifications',
+        loadChildren: () =>
+          import('./notification/notification.module').then(
+            (m) => m.NotificationModule
+          ),
+      },
       {
         path: 'retrivedPhones',
         loadChildren: () =>

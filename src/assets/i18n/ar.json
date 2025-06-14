@@ -518,6 +518,17 @@
       "noPhones":"لا توجد تليفونات",
       "phone":"هاتف"
 
+    } ,
+      "allNotifications":{
+      "notifications":"الاشعارات",
+      "notification":"اشعار",
+      "userName":"اسم المستخدم",
+      "userMobile":"رقم هاتف المستخدم",
+      "title":"العنوان",
+      "body":"المحتوى",
+      "createdDate":"تاريخ الانشاء",
+      "messageStatus":"حالة الرسالة",
+      "noNotifications":"لا يوجد اشعارات"
     }
   },
   "salesflow": {

@@ -322,6 +322,7 @@
       "searchOfStolenPhone":"Search Of Stolen Phone",
       "retrivedPhones":"Retrived Phones",
       "email":"Send Email"
+      
 
     },
     "mobile": {
@@ -529,6 +530,17 @@
       "brandName":"Brand Name",
       "noPhones":"No Phones",
       "phone":"Phone"
+    } ,
+    "allNotifications":{
+      "notifications":"Notifications",
+      "notification":"Notification",
+      "userName":"User Name",
+      "userMobile":"User Mobile",
+      "title":"Title",
+      "body":"Body",
+      "createdDate":"Created Date",
+      "messageStatus":"Message Status",
+      "noNotifications":"No Notifications"
     }
     
   },

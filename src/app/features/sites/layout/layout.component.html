@@ -29,6 +29,16 @@
           class="px-1 nav-icon">
       </a>
 
+       <a class="nav-link text-white py-2 d-flex flex-row-reverse justify-content-end align-items-center"
+        routerLink="/sites/notifications" routerLinkActive="active" #notificationsRla="routerLinkActive"
+        [ngClass]="{ 'active-color': notificationsRla.isActive }" (mouseenter)="setActiveLink('notifications')"
+        (mouseleave)="setActiveLink('')">
+        {{ "sites.layout.notification" | translate }}
+        <img
+          [src]="notificationsRla.isActive || activeLink === 'notifications' ? 'assets/images/Icon-mobile-Active.png' : 'assets/images/notifiNotActive.png'"
+          class="px-1 nav-icon">
+      </a>
+
 
 
       <a class="nav-link text-white py-2 d-flex flex-row-reverse justify-content-end align-items-center"

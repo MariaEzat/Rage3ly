@@ -22,7 +22,7 @@ export interface NotificationViewModel {
 export interface TransferOfOwnershipViewModel {
   id: string;
   fromClientId: string
-  fromClientName: string;
+  fromClientName: string;                                                                            
   toClientId: string
   toClientName: string;
   imeI1: string;
