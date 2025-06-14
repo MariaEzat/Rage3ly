@@ -8,6 +8,7 @@ import { SearchService } from '../../../search/service/search.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { environment } from 'src/environments/environment';
 import { NotificationsService } from '../../service/notifications.service';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-notifications',
@@ -23,11 +24,7 @@ export class NotificationsComponent extends CrudIndexBaseUtils{
   selectedItem: notificationViewModel;
   showDownloadOptions = false;
   records: number;
-  MessageStatus=[
-    { id: 1, name: 'Pending  ' },
-    { id: 2, name: 'Received' },
-    { id: 3, name: 'Read' }
-  ]
+  MessageStatus=[]
   @ViewChild('downloadButton') downloadButton: ElementRef;
   @ViewChild('downloadOptions') downloadOptions: ElementRef;
   @HostListener('document:click', ['$event'])
@@ -48,12 +45,25 @@ export class NotificationsComponent extends CrudIndexBaseUtils{
     private _pageService: NotificationsService,
     private _router: Router,
     private activatedRoute: ActivatedRoute,
+     private translate: TranslateService
 
   ) {
     super(_sharedService);
   }
 
   ngOnInit(): void {
+ this.translate.get([
+      'sites.allNotifications.Pending',
+      'sites.allNotifications.Received',
+      'sites.allNotifications.Read',
+    ]).subscribe(translations => {
+      this.MessageStatus = [
+        { id: 1, name: translations['sites.allNotifications.Pending'] },
+        { id: 2, name: translations['sites.allNotifications.Received'] },
+        { id: 3, name: translations['sites.allNotifications.Read'] },
+      ];
+    });
+
     this.initializePage();
 
   }

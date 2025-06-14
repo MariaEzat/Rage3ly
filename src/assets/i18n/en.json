@@ -542,7 +542,10 @@
       "body":"Body",
       "createdDate":"Created Date",
       "messageStatus":"Message Status",
-      "noNotifications":"No Notifications"
+      "noNotifications":"No Notifications",
+      "Pending":"Pending",
+      "Received":"Received",
+      "Read":"Read"
     }
     
   },

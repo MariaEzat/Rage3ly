@@ -530,7 +530,10 @@
       "body":"المحتوى",
       "createdDate":"تاريخ الانشاء",
       "messageStatus":"حالة الرسالة",
-      "noNotifications":"لا يوجد اشعارات"
+      "noNotifications":"لا يوجد اشعارات",
+       "Pending":"قيد الانتظار",
+      "Received":"تم الاستلام",
+      "Read":"تم القراءة"
     }
   },
   "salesflow": {
