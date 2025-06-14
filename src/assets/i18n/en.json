@@ -500,7 +500,9 @@
       "seeAll": "See All",
       "governorateName":"Governorate Name",
       "noData": "No Data",
-      "backToDashboard":"Back To Dashboard"
+      "backToDashboard":"Back To Dashboard",
+      "StatisticsOfStolenPhonesInCities":"Statistics Of Stolen Phones In Cities",
+      "StatisticsOfStolenPhonesInGovernorates":"Statistics Of Stolen Phones In Governorates"
     },
     "notification":{
       "searchOfStolenPhone":"Search Of Stolen Phone",

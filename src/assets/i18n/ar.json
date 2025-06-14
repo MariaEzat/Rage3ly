@@ -488,7 +488,9 @@
       "seeAll": "عرض الكل",
       "governorateName":"اسم المحافظة",
         "noData": "لا توجد بيانات",
-        "backToDashboard": "العودة إلى لوحة التحكم"
+        "backToDashboard": "العودة إلى لوحة التحكم",
+        "StatisticsOfStolenPhonesInCities":"احصائيات الهواتف المسروقة في المدن ",
+      "StatisticsOfStolenPhonesInGovernorates":"احصائيات الهواتف المسروقة في المحافظات"
       },
     "notification":{
       "searchOfStolenPhone":"بحث فى التليفونات المسروقة",

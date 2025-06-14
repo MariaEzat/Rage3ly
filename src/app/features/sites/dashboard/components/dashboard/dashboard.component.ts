@@ -19,6 +19,8 @@ export class DashboardComponent extends CrudIndexBaseUtils {
   returnedPhones=0;
   brandsBarData: any;
   governoratesBarData: any;
+  StolenPhonesInCitiesBarData: any;
+  StolenPhonesInGovernoratesBarData: any;
   stolenPhoneData: any;
   totalPhones: number = 0;
   stolenPhones: number = 0;
@@ -37,6 +39,8 @@ export class DashboardComponent extends CrudIndexBaseUtils {
     this.getStolenPhoneRatio();
     this.getMostSearchedClients();
     this.getMostUsedGovernoratesRatio();
+    this.getStolenPhonesInCities();
+    this.getStolenPhonesInGovernorates();
   }
   constructor( public override _sharedService: SharedService,  private _router: Router,
       private activatedRoute: ActivatedRoute,
@@ -177,6 +181,57 @@ export class DashboardComponent extends CrudIndexBaseUtils {
         ]
       };
     });
+  }
+
+
+
+
+
+   getStolenPhonesInCities(): void {
+    this._DashboardService.getStolenPhonesInCities().subscribe((res) => {
+      const governorates = res.data;
+
+      const labels = governorates.map(city => city.cityName);
+      const data = governorates.map(city => city.phoneCount);
+
+      this.StolenPhonesInCitiesBarData = {
+        labels: labels,
+        datasets: [
+          {
+            data: data,
+            backgroundColor: ['#FF5E5B', '#FFC107','#B771E5','#00C49A'],
+            barThickness: 25,
+            borderRadius: 5
+          }
+        ]
+      };
+    });
+  }
+
+
+
+
+  getStolenPhonesInGovernorates(): void {
+
+ this._DashboardService.getStolenPhonesInGovernorates().subscribe((res) => {
+      const governorates = res.data;
+
+      const labels = governorates.map(gov => gov.governrateName);
+      const data = governorates.map(gov => gov.stolenPhoneCount);
+
+      this.StolenPhonesInGovernoratesBarData = {
+        labels: labels,
+        datasets: [
+          {
+            data: data,
+            backgroundColor: ['#EB762C', '#9454C6', '#0075FF', '#49A7C9'],
+            barThickness: 25,
+            borderRadius: 5
+          }
+        ]
+      };
+    });
+
   }
   
   donutOptions = {
