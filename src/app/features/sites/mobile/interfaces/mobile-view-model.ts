@@ -2,9 +2,9 @@ export interface mobileViewModel {
   id: string;
   username:string
   mobileModel: string;
-  IMEI1: string;
+  imeI1: string;
   phoneStatus: string;
-  IMEI2: string;
+  imeI2: string;
   selected?: boolean;
 }
 
