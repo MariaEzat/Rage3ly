@@ -83,10 +83,6 @@ export class NotificationsComponent extends CrudIndexBaseUtils{
       { Name: 'title ', Title: 'sites.allNotifications.title', Selectable: false, Sortable: true },
       { Name: 'body ', Title: 'sites.allNotifications.body', Selectable: false, Sortable: true },
       { Name: 'createdDate ', Title: 'sites.search.createdDate', Selectable: false, Sortable: true },
-      { Name: 'messageStatus', Title: 'sites.allNotifications.messageStatus', Selectable: false, Sortable: true },
-   
-
-
     ];
     this.createSearchForm();
     this.activatedRoute.queryParams.subscribe((params) => {

@@ -43,11 +43,11 @@
                   [type]="page.ControlType.INPUT_DATE"></ng-control>
               </div>
 
-               <div class="col-12 col-sm-6 col-lg-4 mb-2"> <ng-control [type]="controlType.SELECT" [form]="page.searchForm"
+               <!-- <div class="col-12 col-sm-6 col-lg-4 mb-2"> <ng-control [type]="controlType.SELECT" [form]="page.searchForm"
                   control="MessageStatus" [inputClass]="'bg-Dark border-color text-white'" [labelClass]="'text-white'"
                   label="sites.allNotifications.messageStatus" placeholder="sites.allNotifications.messageStatus" [items]="MessageStatus">
                 </ng-control>
-              </div>
+              </div> -->
               <!-- Search Button -->
               <div class="col-6 col-sm-2 mb-2 d-flex flex-wrap gap-2 align-items-end">
                 <button class='color-brand-700 rb-btn  rb-btn-sm  w-100 border-color text-white' (click)="search()"
@@ -105,9 +105,6 @@
                 <td>{{ item.title }}</td>
                 <td>{{ item.body}}</td>
                 <td>{{ item.createdDate | date: 'medium'}}</td>
-                <td>{{getMessageStatusName( item.messageStatus)}}</td>
-               
-
               </tr>
             </tbody>
           </table>
