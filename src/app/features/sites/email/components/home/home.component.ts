@@ -5,6 +5,7 @@ import { SharedService } from 'src/app/shared/service/shared.service';
 import { EmailService } from '../../service/email.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AbstractControl, ValidationErrors, ValidatorFn, Validators } from '@angular/forms';
+import { ControlType } from 'src/app/shared/models/enum/control-type.enum';
 
 
 @Component({
@@ -16,6 +17,7 @@ export class HomeComponent implements OnInit, OnDestroy {
   page: CRUDCreatePage = new CRUDCreatePage();
   item: EmailViewModel = new EmailViewModel();
   id: string;
+  controlType = ControlType;
   constructor(
     private _sharedService: SharedService,
     private _emailService: EmailService,

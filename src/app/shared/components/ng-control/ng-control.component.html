@@ -20,6 +20,7 @@
       <input *ngIf="type==controlType.INPUT_COLOR" type="color" [class]="'form-control ' + inputClass"
         placeholder="{{placeholder | translate}}" [formControlName]="control" (blur)="onblur()"
         (keyup)="onKeyup($event)" (change)="onChange($event)" [readonly]="readOnly">
+        
       <!--------------------------------- input number -------------------------------------->
       <input [class]="'form-control ' + inputClass" type="number" placeholder="{{placeholder | translate}}"
         [formControlName]="control" *ngIf=" type==controlType.INPUT_NUMBER" (blur)="onblur()" (keyup)="onKeyup($event)"
@@ -82,7 +83,7 @@
     <!--------------------------------- input text-Area -------------------------------------->
     <textarea *ngIf="type==controlType.TEXTAREA" type="text" [class]="'form-control rb-textarea ' + inputClass"
       placeholder="{{placeholder | translate}}" [formControlName]="control" (blur)="onblur()" (keyup)="onKeyup($event)"
-      (change)="onChange($event)" [readonly]="readOnly" rows="3">
+      (change)="onChange($event)" [readonly]="readOnly" rows="5">
      </textarea>
     <!--------------------------------- input auto complete -------------------------------------->
     <div class="ng-autocomplete" *ngIf="type == controlType.AUTO_COMPLETE">
