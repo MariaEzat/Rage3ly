@@ -239,10 +239,10 @@ p,span,nav,div,a,label,td,form {
 
 @media (max-width: 760px) {
   .nav-features {
-    height: 54px;
+    height: 75px;
     width: auto;
-    padding: 24px 16px;
-    margin-bottom: 20px;
+    padding: 16px 16px;
+    margin-bottom: 16px;
 
   }
 }
