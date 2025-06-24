@@ -25,6 +25,8 @@ import { ApplicationRole } from '../models/enum/application-role';
 export class SharedService {
   private showAlertPopUpSource = new BehaviorSubject<boolean>(false);
   showAlertPopUp$ = this.showAlertPopUpSource.asObservable();
+  private tempClientId: string;
+
   setShowAlertPopUp(value: boolean) {
     this.showAlertPopUpSource.next(value);
   }
@@ -341,6 +343,13 @@ export class SharedService {
   }
 
 
+  setTempClientId(id: string) {
+    this.tempClientId = id;
+  }
+
+  getTempClientId(): string {
+    return this.tempClientId;
+  }
 
 
 }

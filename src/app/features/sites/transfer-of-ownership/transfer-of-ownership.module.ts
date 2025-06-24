@@ -14,7 +14,7 @@ import { ClientDetailsComponent } from './components/client-details/client-detai
 
 const routes: Routes = [
   { path: '', component:HomeComponent }, 
-  { path: 'clientDetails/:id', component:ClientDetailsComponent }, 
+  { path: 'clientDetails', component: ClientDetailsComponent }
 
 
 ];

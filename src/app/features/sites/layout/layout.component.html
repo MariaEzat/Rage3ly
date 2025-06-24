@@ -47,9 +47,11 @@
         (mouseenter)="setActiveLink('customers')" (mouseleave)="setActiveLink('')">
         {{ "sites.layout.clients" | translate }}
         <img
-          [src]="(clientsRla.isActive || isClientDetailsActive()) ? 'assets/images/Icon-Clients.png' : 'assets/images/Icon@2x.png'"
-          class="px-1 nav-icon">
-
+        [src]="(clientsRla.isActive || isClientDetailsActive() || activeLink === 'customers') 
+                ? 'assets/images/Icon-Clients.png' 
+                : 'assets/images/Icon@2x.png'"
+        class="px-1 nav-icon">
+      
       </a>
 
       <a class="nav-link text-white py-2 d-flex flex-row-reverse justify-content-end align-items-center"

@@ -33,12 +33,15 @@ export class ClientDetailsComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this._activatedRoute.paramMap.subscribe((params) => {
-      if (params.has('id')) {
-        this.id = params.get('id');
-      }
-    });
+ 
+
+    this.id = this._sharedService.getTempClientId();
+
+  if (this.id) {
     this.getClientDetailsById(this.id);
+  } else {
+    console.error('No client ID provided');
+  }
   }
 
 

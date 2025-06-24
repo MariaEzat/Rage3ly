@@ -169,8 +169,9 @@ export class HomeComponent extends CrudIndexBaseUtils {
   }
 
   clientDetails(id: string) {
-    this.router.navigate(['/sites/transferOfOwnership/clientDetails', id]);
+    this._sharedService.setTempClientId(id);
+    this.router.navigate(['/sites/transferOfOwnership/clientDetails']);
   }
-  
+
 
 }
