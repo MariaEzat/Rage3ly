@@ -21,7 +21,7 @@ import autoTable from 'jspdf-autotable';
 
 export class HomeComponent extends CrudIndexBaseUtils {
   override page: CRUDIndexPage = new CRUDIndexPage();
-  override pageRoute = '/sites/customers';
+  override pageRoute = '/sites/search';
   override searchViewModel: searchOfSearchViewModel = new searchOfSearchViewModel();
   modalRef: BsModalRef;
   override items: searchViewModel[] = [];

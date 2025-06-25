@@ -1,12 +1,12 @@
 <div class="min-vh-100 bg-Dark text-white">
   <div class="container py-4">
     <div class="card p-4 mb-4" style="background-color: #1A1F3766;">
-        <div class="d-flex justify-content-between align-items-center mb-3">
-      <h5 class="mb-3 text-white">{{"sites.notification.searchOfStolenPhone" |translate}}</h5>
-       <div class="totalItems cr7 px-3 py-1 ms-2">{{page.options.totalItems}}
-                        {{"sites.notification.search"|translate}}
-                    </div>
-                    </div>
+      <div class="d-flex justify-content-between align-items-center mb-3">
+        <h5 class="mb-3 text-white">{{"sites.notification.searchOfStolenPhone" |translate}}</h5>
+        <div class="totalItems cr7 px-3 py-1 ms-2">{{page.options.totalItems}}
+          {{"sites.notification.search"|translate}}
+        </div>
+      </div>
       <form [formGroup]="page.searchForm">
         <div class="form-body">
           <div class="row g-2">
@@ -61,7 +61,8 @@
 
             <div class="d-flex align-items-center">
               <img src="../../../../../../assets/images/notificationn.png" class="me-2 custom-img" />
-              <span class="Gray-300 me-2" style="font-size: 18px;"> {{"sites.notification.There is a search operation for a stolen phone"|translate}}</span>
+              <span class="Gray-300 me-2" style="font-size: 18px;"> {{"sites.notification.There is a search operation
+                for a stolen phone"|translate}}</span>
 
             </div>
           </div>
@@ -71,13 +72,15 @@
               <div class="d-flex align-items-center mb-2">
                 <div>
                   <p class="Gray-300 mb-0 font-sm">{{"sites.notification.brandName"|translate}}</p>
-                  <p class="font-col mb-0 ">{{ notification.brandName != null ? notification.brandName : ('sites.notification.No Data' | translate) }}</p>
+                  <p class="font-col mb-0 ">{{ notification.brandName != null ? notification.brandName :
+                    ('sites.notification.No Data' | translate) }}</p>
                 </div>
               </div>
               <div class="d-flex align-items-center ">
                 <div>
                   <p class="Gray-300 mb-0 font-sm">port</p>
-                  <p class="font-col mb-0 ">{{ notification.port != null ? notification.port : ('sites.notification.No Data' | translate) }}</p>
+                  <p class="font-col mb-0 ">{{ notification.port != null ? notification.port : ('sites.notification.No
+                    Data' | translate) }}</p>
                 </div>
               </div>
             </div>
@@ -86,13 +89,15 @@
               <div class="d-flex align-items-center mb-2">
                 <div>
                   <p class="Gray-300 mb-0 font-sm">{{"sites.notification.latitude"|translate}}</p>
-                  <p class="font-col mb-0 ">{{ notification.latitude != null ? notification.latitude : ('sites.notification.No Data' | translate) }}</p>
+                  <p class="font-col mb-0 ">{{ notification.latitude != null ? notification.latitude :
+                    ('sites.notification.No Data' | translate) }}</p>
                 </div>
               </div>
               <div class="d-flex align-items-center ">
                 <div>
                   <p class="Gray-300 mb-0 font-sm">{{"sites.notification.longitude"|translate}}</p>
-                  <p class="font-col mb-0"> {{ notification.longitude != null ? notification.longitude : ('sites.notification.No Data' | translate) }}</p>
+                  <p class="font-col mb-0"> {{ notification.longitude != null ? notification.longitude :
+                    ('sites.notification.No Data' | translate) }}</p>
                 </div>
               </div>
             </div>
@@ -102,16 +107,18 @@
                 <div>
                   <p class="Gray-300 mb-0 font-sm">{{"sites.notification.clientNameOwner"|translate}}</p>
                   <p class="font-col mb-0 clientHover" (click)="clientDetails(notification.clientIdOwner)">
-                    {{ notification.clientNameOwner != null ? notification.clientNameOwner : ('sites.notification.No Data' | translate) }}</p>
+                    {{ notification.clientNameOwner != null ? notification.clientNameOwner : ('sites.notification.No
+                    Data' | translate) }}</p>
                 </div>
               </div>
               <div class="d-flex align-items-center ">
                 <div>
                   <p class="Gray-300 mb-0 font-sm">{{"sites.notification.createdDate"|translate}}</p>
                   <p class="font-col mb-0">
-                    {{ notification.createdDate ? (notification.createdDate | date: 'mediumDate') : ('sites.notification.No Data' | translate) }}
+                    {{ notification.createdDate ? (notification.createdDate | date: 'mediumDate') :
+                    ('sites.notification.No Data' | translate) }}
                   </p>
-                                  </div>
+                </div>
               </div>
             </div>
             <div class="col-6">
@@ -120,13 +127,15 @@
                 <div>
                   <p class="Gray-300 mb-0 font-sm">{{"sites.notification.clientNameSearcher"|translate}}</p>
                   <p class="font-col mb-0 clientHover" (click)="clientDetails(notification.clientIdSearcher)">
-                    {{ notification.clientNameSearcher != null ? notification.clientNameSearcher : ('sites.notification.No Data' | translate) }}</p>
+                    {{ notification.clientNameSearcher != null ? notification.clientNameSearcher :
+                    ('sites.notification.No Data' | translate) }}</p>
                 </div>
               </div>
-              <div class="d-flex align-items-center " >
+              <div class="d-flex align-items-center ">
                 <div>
                   <p class="Gray-300 mb-0 font-sm">IMEI1</p>
-                  <p class="font-col mb-0 "> {{ notification.imeI1 != null ? notification.imeI1 : ('sites.notification.No Data' | translate) }}</p>
+                  <p class="font-col mb-0 "> {{ notification.imeI1 != null ? notification.imeI1 :
+                    ('sites.notification.No Data' | translate) }}</p>
                 </div>
               </div>
 
@@ -156,7 +165,8 @@
               <div class="d-flex align-items-center mb-2">
                 <div>
                   <p class="Gray-300 mb-0 font-sm">{{"sites.notification.phoneNumberSearcher"|translate}}</p>
-                  <p class="font-col mb-0 ">{{ notification.phoneNumberSearcher != null ? notification.phoneNumberSearcher : ('sites.notification.No Data' | translate) }}</p>
+                  <p class="font-col mb-0 ">{{ notification.phoneNumberSearcher != null ?
+                    notification.phoneNumberSearcher : ('sites.notification.No Data' | translate) }}</p>
                 </div>
               </div>
 

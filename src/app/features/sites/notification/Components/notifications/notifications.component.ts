@@ -17,7 +17,7 @@ import { TranslateService } from '@ngx-translate/core';
 })
 export class NotificationsComponent extends CrudIndexBaseUtils{
  override page: CRUDIndexPage = new CRUDIndexPage();
-  override pageRoute = '/sites/customers';
+  override pageRoute = '/sites/notifications';
   override searchViewModel: searchOfnotificationViewModel = new searchOfnotificationViewModel();
   modalRef: BsModalRef;
   override items: notificationViewModel[] = [];

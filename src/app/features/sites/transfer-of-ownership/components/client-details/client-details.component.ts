@@ -33,7 +33,6 @@ export class ClientDetailsComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
- 
 
     this.id = this._sharedService.getTempClientId();
 
