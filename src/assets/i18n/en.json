@@ -545,7 +545,8 @@
       "noNotifications":"No Notifications",
       "Pending":"Pending",
       "Received":"Received",
-      "Read":"Read"
+      "Read":"Read",
+      "searchOfNotification": "Search Of Notification"
     }
     
   },

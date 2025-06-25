@@ -533,7 +533,8 @@
       "noNotifications":"لا يوجد اشعارات",
        "Pending":"قيد الانتظار",
       "Received":"تم الاستلام",
-      "Read":"تم القراءة"
+      "Read":"تم القراءة",
+      "searchOfNotification": "بحث في الاشعارات"
     }
   },
   "salesflow": {
