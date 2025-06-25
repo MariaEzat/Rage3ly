@@ -190,3 +190,9 @@ form {
 
   
 }
+@media (min-width: 990px) and (max-width: 1200px) {
+  .chang-width {
+   width: 700px !important;
+   
+ }
+}
