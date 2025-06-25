@@ -342,14 +342,4 @@ export class SharedService {
     return true;
   }
 
-
-  setTempClientId(id: string) {
-    this.tempClientId = id;
-  }
-
-  getTempClientId(): string {
-    return this.tempClientId;
-  }
-
-
 }

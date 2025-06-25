@@ -33,9 +33,7 @@ export class ClientDetailsComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-
-    this.id = this._sharedService.getTempClientId();
-
+    this.id = sessionStorage.getItem('clientId');
   if (this.id) {
     this.getClientDetailsById(this.id);
   } else {
