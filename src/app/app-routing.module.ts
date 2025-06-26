@@ -8,11 +8,16 @@ import { NotfoundComponent } from './features/not-found/component/notfound/notfo
 import { AuthGuard } from './shared/guards/auth.guard';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/comingSoon', pathMatch: 'full' },
+  { path: '', redirectTo: '/home', pathMatch: 'full' },
   {
     path: 'home',
     loadChildren: () =>
       import('./features/home/home.module').then((m) => m.HomeModule),
+  },
+  {
+    path: 'privacy',
+    loadChildren: () =>
+      import('./features/privacy/privacy.module').then((m) => m.PrivacyModule),
   },
   {
     path: 'comingSoon',
