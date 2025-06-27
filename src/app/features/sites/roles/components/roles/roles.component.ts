@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { CRUDIndexPage } from 'src/app/shared/models/crud-index.model';
 import { RoleService } from '../../service/role.service';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-roles',
@@ -11,7 +12,7 @@ import { RoleService } from '../../service/role.service';
 export class RolesComponent {
  page: CRUDIndexPage = new CRUDIndexPage();
 
-constructor(private _router:Router,private _roleService:RoleService){}
+constructor(private _router:Router,private _roleService:RoleService,private translate: TranslateService){}
 
  RolesEnum = [
   { id: 1, name: 'sites.roles.superAdmin' },
@@ -26,6 +27,7 @@ viewRoleDetails(id: string){
   // this._roleService.getRoleById(id).subscribe({
   //   next: (res) => {
   //     if (res.isSuccess) {
+
   //       //this.item = res.data;
   //       //this.item.id = this.id;
   //       //this.editeform();
@@ -43,5 +45,11 @@ viewRoleDetails(id: string){
   // this._router.navigate(['/salesflow/roles/roleDetails',id]);
 }
 
+currentLang: string;
 
+
+
+  ngOnInit(): void {
+    this.currentLang = this.translate.currentLang || this.translate.getDefaultLang();
+  }
 }

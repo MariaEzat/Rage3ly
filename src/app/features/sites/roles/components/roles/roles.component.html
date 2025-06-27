@@ -1,4 +1,4 @@
-<div class="container mt-4">
+<div class="container mt-4" [attr.dir]="currentLang === 'ar' ? 'rtl' : 'ltr'">
  
 
     <div class="d-flex justify-content-between align-items-center">
@@ -13,9 +13,10 @@
         <div class="card-body">
             <div class="row row-cols-lg-3 g-2">
                 <div class="col">
-                    <div class="d-flex align-items-center">
+                <div class="d-flex align-items-center gap-2" [ngClass]="{'flex-row-reverse': currentLang === 'ar'}">
+
                         <h5 class="text-white px-2">  {{"sites.roles.roles&Permissions"|translate}}</h5>
-                        <div class="custom-role cr7 px-2 py-1 mb-2 text-white">3   {{"sites.roles.roles"|translate}}</div>
+                        <div class="custom-role cr7 px-2 py-1 mb-0 text-white">3   {{"sites.roles.roles"|translate}}</div>
                     </div>
                 </div>
             </div>
@@ -32,7 +33,7 @@
                     <tbody>
                         <tr *ngFor="let role of RolesEnum">
                             <td class="role text-white font-big">{{ role.name |translate}}</td>
-                            <td style="text-align: right;">
+                          <td [ngClass]="{'text-end': currentLang === 'ar', 'text-start': currentLang !== 'ar'}">
                                 <button (click)="viewRoleDetails(role.id)"
                                     class="btn btn-light btn-sm d-flex align-items-center justify-content-center"
                                     style="padding: 4px 10px; border-radius: 6px;">
