@@ -7,6 +7,7 @@ import { BsModalRef } from 'ngx-bootstrap/modal';
 import { environment } from 'src/environments/environment';
 import { brandViewModel} from '../../interface/brand';
 import { BrandService } from '../../service/brand.service';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-home',
@@ -21,16 +22,17 @@ export class HomeComponent extends CrudIndexBaseUtils {
   modalRef: BsModalRef;
   override items: brandViewModel[] = [];
    ads: [] = [];
-
+currentLang: string = 'en';
   selectedItem: brandViewModel;
   constructor(public override _sharedService: SharedService,
-    private _pageService: BrandService, private _router: Router, private activatedRoute: ActivatedRoute
+    private _pageService: BrandService, private _router: Router, private activatedRoute: ActivatedRoute,private translate: TranslateService
 
   ) {
     super(_sharedService);
   }
 
   ngOnInit(): void {
+      this.currentLang = this.translate.currentLang || this.translate.getDefaultLang();
     this.initializePage();
   }
 

@@ -5,22 +5,34 @@
   
         <div class="card p-4 border-0 shadow-sm rounded-3" style="background-color: #1A1F3766;">
           <!-- Header -->
-          <div class="d-flex flex-wrap gap-2 justify-content-between align-items-center mb-3">
-               <div class="d-flex justify-content-between align-items-center mb-3">
-            <h1 class="text-white">{{"sites.brands.brands"|translate}}</h1>
-           <div class="totalItems cr7 px-3 py-1 ms-2">{{page.options.totalItems}}
-                        {{"sites.brands.brand"|translate}}
-                    </div>
-          </div>
-            <div class="d-flex flex-wrap gap-2">
-              <button class="btn btn-primary flex-grow-1 flex-sm-grow-0" (click)="deleteSelectedbrands()">
-                {{"sites.brands.delete"|translate}}
-              </button>
-              <button class="btn btn-primary flex-grow-1 flex-sm-grow-0" (click)="navigateToCreateBrand()">
-                {{"sites.brands.addNewBrand"|translate}}
-              </button>
-            </div>
-          </div>
+    <div class="d-flex flex-wrap justify-content-between align-items-center gap-3 mb-3">
+
+  <!-- العنوان + العدد -->
+  <div class="d-flex align-items-center"
+       [ngStyle]="{ 'margin-left': currentLang === 'ar' ? 'auto' : '0', 'margin-right': currentLang !== 'ar' ? 'auto' : '0' }"
+       style="gap: 20px;">
+
+    <h1 class="text-white m-0">{{ "sites.brands.brands" | translate }}</h1>
+
+    <div class="totalItems cr7 px-3 py-1">
+      {{ page.options.totalItems }} {{ "sites.brands.brand" | translate }}
+    </div>
+  </div>
+
+  <!-- الأزرار -->
+  <div class="d-flex flex-wrap gap-2">
+    <button class="btn btn-primary flex-grow-1 flex-sm-grow-0" (click)="deleteSelectedbrands()">
+      {{ "sites.brands.delete" | translate }}
+    </button>
+    <button class="btn btn-primary flex-grow-1 flex-sm-grow-0" (click)="navigateToCreateBrand()">
+      {{ "sites.brands.addNewBrand" | translate }}
+    </button>
+  </div>
+
+</div>
+
+
+
           
           
           
