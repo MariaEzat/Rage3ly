@@ -18,6 +18,8 @@ export interface requestToStolenPhone {
     governorateName:string;
     brandName:string;
     brandPath:string; 
+    reportNumber :string;
+    policeDepartment :string;
 }
 
 export class RejectReasonViewModel {
