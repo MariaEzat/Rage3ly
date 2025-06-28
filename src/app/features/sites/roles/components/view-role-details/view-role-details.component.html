@@ -49,28 +49,51 @@
     </form> 
   </div>
 
-  <div *ngFor="let section of items; let i = index" class="mt-4">
-    <div class="card feature-item">
-    <div class="d-flex align-items-center gap-3">
-  <p-inputSwitch [ngModel]="isSectionActive(section)"
-                 (onChange)="toggleSectionFeatures(section)"
-                 >
-  </p-inputSwitch>
-  <label class="form-check-label m-0">{{ section.sectionName }}</label>
-</div>
+ <div *ngFor="let section of items; let i = index" class="mt-4">
+  <div class="card feature-item px-3 py-2">
 
+    <!-- العنوان + السهم + السويتش -->
+    <div class="d-flex align-items-center justify-content-between">
+      <div class="d-flex align-items-center gap-3">
+        <p-inputSwitch [ngModel]="isSectionActive(section)"
+                       (onChange)="toggleSectionFeatures(section)">
+        </p-inputSwitch>
+        <label class="form-check-label m-0">{{ section.sectionName }}</label>
+      </div>
 
-      <!-- Section Features -->
-      <div class="card-body mx-3 feature-item" *ngIf="section.showFeatures">
-        <div *ngFor="let feature of section.features" class="d-flex justify-content-between align-items-center mb-3">
-          <div class="form-check form-switch">
-            <p-inputSwitch [(ngModel)]="feature.isActiveToRole" (onChange)="updateSectionStatus(section,feature)"
-              ></p-inputSwitch>
-            <label class="form-check-label px-2">{{ feature.featureName }}</label>
-          </div>
-         
+      <!-- زر السهم -->
+     <!-- السهم كزر لتوسيع التفاصيل -->
+<button (click)="section.showFeatures = !section.showFeatures"
+        class="btn p-0 m-0"
+        style="background: transparent; border: none;">
+  <svg xmlns="http://www.w3.org/2000/svg"
+       width="20"
+       height="20"
+       fill="none"
+       stroke="white"
+       stroke-width="2"
+       viewBox="0 0 24 24"
+       [style.transform]="section.showFeatures ? 'rotate(90deg)' : 'rotate(0deg)'"
+       style="transition: transform 0.2s ease;">
+    <path d="M8 5l8 7-8 7" />
+  </svg>
+</button>
+
+    </div>
+
+    <!-- تفاصيل features -->
+    <div class="card-body mx-3 feature-item" *ngIf="section.showFeatures">
+      <div *ngFor="let feature of section.features" class="d-flex justify-content-between align-items-center mb-3">
+        <div class="form-check form-switch">
+          <p-inputSwitch [(ngModel)]="feature.isActiveToRole"
+                         (onChange)="updateSectionStatus(section, feature)">
+          </p-inputSwitch>
+          <label class="form-check-label px-2">{{ feature.featureName }}</label>
         </div>
       </div>
     </div>
+
   </div>
+</div>
+
 </div>
