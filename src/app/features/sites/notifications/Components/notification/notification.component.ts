@@ -99,6 +99,13 @@ export class NotificationComponent extends CrudIndexBaseUtils {
   clientDetails(id: string) {
     this.router.navigate(['/sites/transferOfOwnership/clientDetails', id]);
   }
-  
+  changePage(pageNumber: number) {
+    const totalPages = Math.ceil(this.page.options.totalItems / this.page.options.itemsPerPage);
+    if (pageNumber < 1 || pageNumber > totalPages) {
+      return; // ممنوع أرقام خارج المدى
+    }
+    this.page.options.currentPage = pageNumber;
+    this.search();
+  }
 
 }

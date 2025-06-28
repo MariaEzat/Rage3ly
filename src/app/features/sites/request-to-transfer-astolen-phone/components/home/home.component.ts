@@ -32,12 +32,12 @@ export class HomeComponent extends CrudIndexBaseUtils {
   ];
 
   constructor(private requestService: RequestService, public override _sharedService: SharedService,
-     private activatedRoute: ActivatedRoute,private translate: TranslateService,private router :Router) { super(_sharedService); }
+    private activatedRoute: ActivatedRoute, private translate: TranslateService, private router: Router) { super(_sharedService); }
 
   ngOnInit() {
     this.loadRequestStatus();
     this.initializePage();
-   
+
   }
   loadRequestStatus() {
     this.translate.get([
@@ -169,6 +169,17 @@ export class HomeComponent extends CrudIndexBaseUtils {
 
   clientDetails(id: string) {
     sessionStorage.setItem('clientId', id);
-    this.router.navigate(['/sites/transferOfOwnership/clientDetails']);  }
+
+    this.router.navigate(['/sites/transferOfOwnership/clientDetails']);
+  }
+  changePage(pageNumber: number) {
+    const totalPages = Math.ceil(this.page.options.totalItems / this.page.options.itemsPerPage);
+    if (pageNumber < 1 || pageNumber > totalPages) {
+      return; // ممنوع أرقام خارج المدى
+    }
+    this.page.options.currentPage = pageNumber;
+    this.search();
+  }
+ 
   
 }
