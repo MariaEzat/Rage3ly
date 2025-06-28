@@ -1,12 +1,12 @@
 <div class="min-vh-100 bg-Dark text-white">
     <div class="container py-4">
         <div class="card p-4 mb-4" style="background-color: #1A1F3766;">
-             <div class="d-flex justify-content-between align-items-center mb-3">
-            <h5 class="mb-3 text-white">{{"sites.requestToStolenPhone.searchOfRequest"|translate}}</h5>
-             <div class="totalItems cr7 px-3 py-1 ms-2">{{page.options.totalItems}}
-                        {{"sites.requestToStolenPhone.request"|translate}}
-                    </div>
-                    </div>
+            <div class="d-flex justify-content-between align-items-center mb-3">
+                <h5 class="mb-3 text-white">{{"sites.requestToStolenPhone.searchOfRequest"|translate}}</h5>
+                <div class="totalItems cr7 px-3 py-1 ms-2">{{page.options.totalItems}}
+                    {{"sites.requestToStolenPhone.request"|translate}}
+                </div>
+            </div>
             <form [formGroup]="page.searchForm">
                 <div class="form-body">
                     <div class="row g-2">
@@ -34,8 +34,8 @@
             </form>
         </div>
         <div class="row g-4 justify-content-center mb-4">
-           
-              
+
+
             <div class="col-md-6 col-lg-5" *ngFor="let mobile of mobiles">
                 <div class="card-custom p-4 rounded shadow w-100 d-flex flex-column h-100">
                     <div class="d-flex justify-content-between align-items-center mb-3">
@@ -99,56 +99,54 @@
                         </div>
                         <div class="col-6">
                             <div class="d-flex align-items-center mb-2">
-                                <img src="../assets/icons/governorateIcon.png" style="height: 35px;"
-                                    class="me-2" />
+                                <img src="../assets/icons/governorateIcon.png" style="height: 35px;" class="me-2" />
                                 <div>
-                                    <p class="Gray-300 mb-0 font-sm">{{"sites.requestToStolenPhone.governorate"|translate}}
+                                    <p class="Gray-300 mb-0 font-sm">
+                                        {{"sites.requestToStolenPhone.governorate"|translate}}
                                     </p>
                                     <p class="font-col mb-0">{{ mobile.governorateName }}</p>
                                 </div>
                             </div>
                             <div class="d-flex align-items-center mb-2">
-                                <img src="../assets/icons/streetIcon.png" style="height: 35px;"
-                                    class="me-2" />
+                                <img src="../assets/icons/streetIcon.png" style="height: 35px;" class="me-2" />
                                 <div>
                                     <p class="Gray-300 mb-0 font-sm">{{"sites.requestToStolenPhone.street"|translate}}
                                     </p>
                                     <p class="font-col mb-0">{{ mobile.street }}</p>
                                 </div>
                             </div>
-                            
+
                         </div>
                         <div class="col-6">
                             <div class="d-flex align-items-center mb-2">
-                                <img src="../assets/icons/cityIcon.png" style="height: 35px;"
-                                    class="me-2" />
+                                <img src="../assets/icons/cityIcon.png" style="height: 35px;" class="me-2" />
                                 <div>
                                     <p class="Gray-300 mb-0 font-sm">{{"sites.requestToStolenPhone.city"|translate}}
                                     </p>
                                     <p class=" font-col mb-0">{{ mobile.cityName }}</p>
                                 </div>
                             </div>
-                            <div class="d-flex align-items-center mb-2"  *ngIf="mobile.reportNumber">
-                                <img src="../assets/icons/streetIcon.png" style="height: 35px;"
-                                    class="me-2" />
+                            <div class="d-flex align-items-center mb-2" *ngIf="mobile.reportNumber">
+                                <img src="../assets/icons/streetIcon.png" style="height: 35px;" class="me-2" />
                                 <div>
-                                    <p class="Gray-300 mb-0 font-sm">{{"sites.requestToStolenPhone.reportNumber"|translate}}
+                                    <p class="Gray-300 mb-0 font-sm">
+                                        {{"sites.requestToStolenPhone.reportNumber"|translate}}
                                     </p>
-                                    <p class="font-col mb-0">{{ mobile.reportNumber  }}</p>
+                                    <p class="font-col mb-0">{{ mobile.reportNumber }}</p>
                                 </div>
                             </div>
                         </div>
                         <div class="col-6">
-                            <div class="d-flex align-items-center mb-2 "  *ngIf="mobile.policeDepartment">
-                                <img src="../assets/icons/cityIcon.png" style="height: 35px;"
-                                    class="me-2" />
+                            <div class="d-flex align-items-center mb-2 " *ngIf="mobile.policeDepartment">
+                                <img src="../assets/icons/cityIcon.png" style="height: 35px;" class="me-2" />
                                 <div>
-                                    <p class="Gray-300 mb-0 font-sm">{{"sites.requestToStolenPhone.policeDepartment"|translate}}
+                                    <p class="Gray-300 mb-0 font-sm">
+                                        {{"sites.requestToStolenPhone.policeDepartment"|translate}}
                                     </p>
-                                    <p class=" font-col mb-0">{{ mobile.policeDepartment  }}</p>
+                                    <p class=" font-col mb-0">{{ mobile.policeDepartment }}</p>
                                 </div>
                             </div>
-                           
+
                         </div>
                     </div>
 
@@ -199,41 +197,37 @@
 
                 </div>
             </div>
-            <nav *ngIf="page.options.totalItems > page.options.itemsPerPage">
-                <div class="d-flex justify-content-between align-items-center flex-wrap">
-                  
-                  <!-- Prev Button -->
-                  <button 
-                    class="btn btn-outline-light me-2"
-                    [disabled]="page.options.currentPage === 1"
-                    (click)="changePage(page.options.currentPage - 1)">
-                    &laquo; Prev
-                  </button>
-              
-                  <!-- Numbers in Center -->
-                  <ul class="pagination mb-0 justify-content-center flex-wrap">
-                    <li 
-                      *ngFor="let pageNum of [].constructor(Math.ceil(page.options.totalItems / page.options.itemsPerPage)); let idx = index"
-                      class="page-item"
-                      [class.active]="page.options.currentPage === idx + 1">
-                      <button class="page-link" (click)="changePage(idx + 1)">
-                        {{ idx + 1 }}
-                      </button>
-                    </li>
-                  </ul>
-              
-                  <!-- Next Button -->
-                  <button 
-                    class="btn btn-outline-light ms-2"
-                    [disabled]="page.options.currentPage === Math.ceil(page.options.totalItems / page.options.itemsPerPage)"
-                    (click)="changePage(page.options.currentPage + 1)">
-                    Next &raquo;
-                  </button>
-              
+            <nav *ngIf="page.options.totalItems > page.options.itemsPerPage" >
+                <div class="d-flex justify-content-between align-items-center flex-wrap pb-4">
+
+                    <!-- Prev Button -->
+                    <button class="btn btn-outline-light me-2" [disabled]="page.options.currentPage === 1"
+                        (click)="changePage(page.options.currentPage - 1)">
+                        &laquo; Prev
+                    </button>
+
+                    <!-- Numbers in Center -->
+                    <ul class="pagination mb-0 justify-content-center flex-wrap">
+                        <li *ngFor="let _ of totalPagesArray; let idx = index" class="page-item"
+                            [class.active]="page.options.currentPage === idx + 1">
+                            <!-- <button class="page-link" (click)="changePage(idx + 1)">
+                                {{ idx + 1 }}
+                            </button> -->
+                        </li>
+                    </ul>
+
+
+                    <!-- Next Button -->
+                    <button class="btn btn-outline-light ms-2"
+                        [disabled]="page.options.currentPage === totalPagesArray.length"
+                        (click)="changePage(page.options.currentPage + 1)">
+                        Next &raquo;
+                    </button>
+
                 </div>
-              </nav>
-              
-              
+            </nav>
+
+
         </div>
     </div>
 

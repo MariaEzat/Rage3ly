@@ -24,6 +24,7 @@ export class HomeComponent extends CrudIndexBaseUtils {
   override items: requestToStolenPhone[] = [];
   override controlType = ControlType;
   override searchViewModel: requestSearchViewModel = new requestSearchViewModel();
+  
   RequestStatus = [
     { id: 1, name: 'sites.requestToStolenPhone.pending' },
     { id: 2, name: 'sites.requestToStolenPhone.approved' },
@@ -110,7 +111,9 @@ export class HomeComponent extends CrudIndexBaseUtils {
       )
       .subscribe((response) => {
         this.page.isSearching = false;
-
+        this.page.options.totalItems = response.data?.totalItems ?? 0;
+        this.page.options.itemsPerPage = response.data?.itemsPerPage ?? 10;
+        
         if (response.isSuccess) {
           this.page.isAllSelected = false;
           this.confingPagination(response);
@@ -181,5 +184,12 @@ export class HomeComponent extends CrudIndexBaseUtils {
     this.search();
   }
  
+  get totalPagesArray(): number[] {
+    const totalItems = this.page?.options?.totalItems ?? 0;
+    const itemsPerPage = this.page?.options?.itemsPerPage ?? 1; // ما ينفعش يكون صفر
+    const totalPages = Math.ceil(totalItems / itemsPerPage);
+    return Array(totalPages).fill(0);
+  }
+  
   
 }
