@@ -22,7 +22,7 @@
 }
 
 /* ::-webkit-scrollbar-thumb:hover, */
-.main-panel ::-webkit-scrollbar-thumb:hover {
+.main-panel ::-webkit-scrollbar-thumb {
   background: #49A7C9;
 }
 
