@@ -37,6 +37,9 @@ export class CreateComponent implements OnInit, OnDestroy {
     private _activatedRoute: ActivatedRoute,
     private _router: Router
   ) { }
+  formatDateForInput(dateString: string): string {
+    return new Date(dateString).toISOString().split('T')[0];
+  }
 
   ngOnInit(): void {
     this.page.isPageLoaded = false;
@@ -53,12 +56,15 @@ export class CreateComponent implements OnInit, OnDestroy {
       this.onChangeStartDate(null);
     }
   }
+
   //Region:If Edit page
   getEditableItem() {
     this._AdsService.getById(this.id).subscribe((res) => {
       if (res.isSuccess) {
         this.item = res.data;
         this.isActivated = this.item.isActive;
+        this.item.startDate = new Date(this.item.startDate);
+        this.item.endDate = new Date(this.item.endDate);
         if (res.data.path) {
           this.images = [{ uploaded: true, src: res.data.path }];
         } else {
@@ -90,50 +96,50 @@ export class CreateComponent implements OnInit, OnDestroy {
   endDateValidator(control: AbstractControl): ValidationErrors | null {
     const startDate = this.page.form?.get('startDate')?.value;
     const endDate = control.value;
-  
+
     if (startDate && endDate && new Date(endDate) <= new Date(startDate)) {
       return { endDateBeforeStart: 'End date must be after start date' };
     }
     return null;
   }
-  
+
   onChangeStartDate(event: any): void {
     const startDate = this.page.form?.get('startDate')?.value;
     const endDateControl = this.page.form?.get('endDate');
-  
+
     if (!startDate || !endDateControl) return;
-  
+
     const endDate = endDateControl.value;
-  
+
     // Reset time for accurate comparison
     const start = new Date(startDate);
     const end = new Date(endDate);
     start.setHours(0, 0, 0, 0);
     end.setHours(0, 0, 0, 0);
-  
+
     if (start.getTime() === end.getTime()) {
       endDateControl.disable(); // Disable endDate field
     } else {
       endDateControl.enable();  // Enable endDate field
     }
-  
+
     endDateControl.updateValueAndValidity();
   }
-  
+
   getMinEndDate(): Date {
     const startDate = this.page.form?.get('startDate')?.value;
     const minDate = startDate ? new Date(startDate) : new Date();
-  
+
     // Always move +1 day to ensure even today is excluded
     minDate.setDate(minDate.getDate() + 1);
     return minDate;
   }
-  
-  
+
+
   createForm() {
     const tomorrow = new Date();
-    tomorrow.setDate(tomorrow.getDate() + 1); 
-    
+    tomorrow.setDate(tomorrow.getDate() + 1);
+
     this.page.form = this._sharedService.formBuilder.group({
       title: [this.item.title, [Validators.required, Validators.minLength(5), Validators.maxLength(200)]],
       hyperlink: [this.item.hyperlink],
@@ -159,13 +165,13 @@ export class CreateComponent implements OnInit, OnDestroy {
     this.page.isSaving = true;
     Object.assign(this.item, this.page.form.value);
     this.item.isActive = this.isActivated;
-    this.item.paths = this.getUploadedImages(); 
+    this.item.paths = this.getUploadedImages();
     //this.item.paths = this.getUploadedImages();
     // this.item.paths = this.images
     //    .filter((image) => image.uploaded)
     //    .map((image) => image.src);
     this.item.paths = this.images.filter((image) => image.uploaded).map((image) => image.src);
-    this.item.id=this.id;
+    this.item.id = this.id;
     this._AdsService.postOrUpdate(this.item).subscribe({
       next: (res) => {
 
@@ -219,7 +225,7 @@ export class CreateComponent implements OnInit, OnDestroy {
   validateImages(): boolean {
     return this.images.some(image => image.uploaded);
   }
-  
+
   replaceImage(index: number) {
     this.images[index] = { uploaded: false, src: null };
   }
