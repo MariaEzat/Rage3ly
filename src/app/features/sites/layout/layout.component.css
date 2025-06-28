@@ -9,8 +9,11 @@
 }
 
 .flex-grow-1 {
-  margin-right: 250px; /* match the sidebar width */
+  margin-right: 250px; /* عشان ما يدخل تحت الـ sidebar */
+  height: 100vh; /* ياخد ارتفاع الشاشة كله */
+  overflow-y: auto; /* يخليه يسكروول داخلي */
 }
+
 
 .active-color {
   background-color: #121c5066;

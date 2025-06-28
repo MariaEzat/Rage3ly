@@ -172,6 +172,14 @@ export class HomeComponent extends CrudIndexBaseUtils {
     sessionStorage.setItem('clientId', id);
     this.router.navigate(['/sites/transferOfOwnership/clientDetails']);
   }
+  changePage(pageNumber: number) {
+    const totalPages = Math.ceil(this.page.options.totalItems / this.page.options.itemsPerPage);
+    if (pageNumber < 1 || pageNumber > totalPages) {
+      return; // ممنوع أرقام خارج المدى
+    }
+    this.page.options.currentPage = pageNumber;
+    this.search();
+  }
 
 
 }
