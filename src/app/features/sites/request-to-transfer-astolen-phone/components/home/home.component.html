@@ -198,7 +198,7 @@
                 </div>
             </div>
             <nav *ngIf="page.options.totalItems > page.options.itemsPerPage" >
-                <div class="d-flex justify-content-between align-items-center flex-wrap pb-4">
+                <div class="d-flex justify-content-between align-items-center flex-wrap">
 
                     <!-- Prev Button -->
                     <button class="btn btn-outline-light me-2" [disabled]="page.options.currentPage === 1"
@@ -210,9 +210,7 @@
                     <ul class="pagination mb-0 justify-content-center flex-wrap">
                         <li *ngFor="let _ of totalPagesArray; let idx = index" class="page-item"
                             [class.active]="page.options.currentPage === idx + 1">
-                            <!-- <button class="page-link" (click)="changePage(idx + 1)">
-                                {{ idx + 1 }}
-                            </button> -->
+                          
                         </li>
                     </ul>
 
