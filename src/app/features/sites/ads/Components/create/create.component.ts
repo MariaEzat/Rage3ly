@@ -176,7 +176,6 @@ export class CreateComponent implements OnInit, OnDestroy {
     });
     this.page.form.get('startDate')?.enable();
     this.page.isPageLoaded = true;
-    console.log('Start date:', this.page.form.get('startDate')?.value);
 
   }
 
@@ -260,13 +259,11 @@ export class CreateComponent implements OnInit, OnDestroy {
     const file = <File>files[0];
     const formData = new FormData();
     formData.append('Files', file, file.name);  // Use 'Files' as the field name if required by backend
-    console.log(formData);
 
     // Call the service to upload the image, passing the FormData directly
     this._AdsService.uploadImage(formData).subscribe({
       next: (res) => {
         if (res.isSuccess) {
-          console.log(res);
           //this.images[index] = { uploaded: true, src: res.data.path[index] };
           this.images[index] = { uploaded: true, src: res.data.path[index] };
 

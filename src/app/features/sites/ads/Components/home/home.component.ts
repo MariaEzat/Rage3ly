@@ -74,9 +74,7 @@ export class HomeComponent extends CrudIndexBaseUtils {
     this.page.isSearching = true;
     this.items = [];
     Object.assign(this.searchViewModel, this.page.searchForm.value);
-    console.log(this.searchViewModel)
     this._pageService.get(this.searchViewModel, this.page.orderBy, this.page.isAscending, this.page.options.currentPage, this.page.options.itemsPerPage).subscribe(response => {
-      console.log(response)
 
       this.page.isSearching = false;
       // if( response.message = "Unauthorize Access "){
@@ -85,7 +83,6 @@ export class HomeComponent extends CrudIndexBaseUtils {
 
       if (response.isSuccess) {
         
-        console.log(response)
         this.page.isAllSelected = false;
         this.confingPagination(response)
         this.items = response.data.items as adsViewModel[];
