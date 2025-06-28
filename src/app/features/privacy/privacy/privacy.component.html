@@ -1,0 +1,184 @@
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  </head>
+  <div *ngIf="isLoading" class="fixed inset-0 h-100 flex items-center justify-center z-50"
+    style="background-color: #060B26;">
+    <span class="loader"></span>
+  </div>
+  
+  <body *ngIf="!isLoading" class="app-body text-white font-sans overflow-auto overflow-x-hidden p-4 min-h-screen">
+    <div class="max-w-5xl mx-auto">
+      <nav class="flex items-center justify-between px-4 md:px-12 py-4 bg-opacity-30 rounded-lg flex-wrap nav-features mb-6">
+        <div class="hidden md:flex items-center space-x-5">
+          <a href="#" class="bg-white text-purple-700 px-4 h-16 flex items-center rounded-full font-semibold gradient-border">نزل التطبيق الآن</a>
+          <a (click)="openWhatsApp()" class="border border-white px-4 h-16 flex items-center rounded-full text-white pointer">تحدث مع خبير</a>
+        </div>
+        <div class="w-full md:w-auto flex justify-center md:justify-start mb-2 md:mb-0">
+          <div class="flex items-center">
+            <span class="font-bold text-white px-2 text-[22px] md:text-2xl text-center md:text-right block w-full md:w-auto">rage3ly.com</span>
+            <img src="/assets/images/logo-removebg2 (1).png" class="h-12 w-auto rounded" alt="logo">
+          </div>
+        </div>
+      </nav>
+  
+      <h1 class="text-2xl sm:text-3xl font-bold mb-4 mt-6 text-right">سياسة الخصوصية →</h1>
+  
+      <div class="space-y-10 text-right leading-relaxed">
+  
+        <section>
+          <p class="mb-4" dir="rtl" style="unicode-bidi: isolate;">نحن نهتم بخصوصيتك ونسعى لحماية بياناتك الشخصية عند استخدامك لتطبيقنا. توضح هذه السياسة كيف نقوم بجمع واستخدام وحماية المعلومات التي تقدمها لنا.</p>
+        </section>
+  
+        <section>
+          <h2 class="font-semibold text-lg mb-2">١. المعلومات التي نقوم بجمعها</h2>
+          <p class="mb-2" dir="rtl" style="unicode-bidi: isolate;">قد نقوم بجمع أنواع مختلفة من البيانات، منها:</p>
+          <ul class="space-y-2 list-disc list-inside text-right" dir="rtl">
+            <li>معلومات الهوية: مثل الاسم، رقم الهاتف، البريد الإلكتروني.</li>
+            <li>معلومات الاستخدام: مثل كيفية استخدامك للتطبيق، الصفحات التي تزورها، والخصائص التي تستخدمها.</li>
+            <li>معلومات الجهاز: مثل نوع الجهاز، نظام التشغيل، عنوان الـ IP، والمعرّف الإعلاني.</li>
+            <li>موقعك الجغرافي (عند منح الإذن بذلك): لتحسين الخدمة وتقديم ميزات مخصصة.</li>
+          </ul>
+        </section>
+  
+        <section>
+          <h2 class="font-semibold text-lg mb-2">٢. كيفية استخدام المعلومات</h2>
+          <p class="mb-2" dir="rtl" style="unicode-bidi: isolate;">نستخدم المعلومات التي نجمعها من أجل:</p>
+          <ul class="space-y-2 list-disc list-inside text-right" dir="rtl">
+            <li>تشغيل التطبيق وتحسين أدائه.</li>
+            <li>تخصيص التجربة للمستخدم.</li>
+            <li>الرد على استفساراتك ودعمك فنياً.</li>
+            <li>إرسال إشعارات مهمة تتعلق بالتطبيق أو خدماتنا.</li>
+            <li>الأغراض الأمنية والكشف عن الاحتيال أو الانتهاكات.</li>
+          </ul>
+        </section>
+  
+        <section>
+          <h2 class="font-semibold text-lg mb-2">٣. مشاركة المعلومات</h2>
+          <p class="mb-2"dir="rtl" style="unicode-bidi: isolate;">نحن لا نشارك معلوماتك الشخصية مع أي طرف ثالث إلا في الحالات التالية:</p>
+          <ul class="space-y-2 list-disc list-inside text-right" dir="rtl">
+            <li>بموافقتك الصريحة.</li>
+            <li>مع مزودي خدمات موثوقين يساعدوننا في تشغيل التطبيق (مع التزامهم بسياسة الخصوصية).</li>
+            <li>إذا طُلب منا ذلك بموجب القانون أو من خلال أمر قضائي.</li>
+          </ul>
+        </section>
+  
+        <section>
+          <h2 class="font-semibold text-lg mb-2">٤. حماية المعلومات</h2>
+          <p dir="rtl" style="unicode-bidi: isolate;">نستخدم إجراءات أمنية مناسبة لحماية معلوماتك من الوصول غير المصرح به أو التعديل أو الكشف أو الإتلاف.</p>
+        </section>
+  
+        <section>
+          <h2 class="font-semibold text-lg mb-2">٥. حقوق المستخدم</h2>
+          <p class="mb-2"dir="rtl" style="unicode-bidi: isolate;">يحق لك:</p>
+          <ul class="space-y-2 list-disc list-inside text-right" dir="rtl">
+            <li>الوصول إلى معلوماتك الشخصية.</li>
+            <li>تعديل أو تحديث بياناتك.</li>
+            <li>طلب حذف بياناتك.</li>
+            <li>سحب موافقتك على المعالجة (إن وُجدت).</li>
+          </ul>
+          <p class="mt-2"dir="rtl" style="unicode-bidi: isolate;">يرجى التواصل معنا عبر [البريد الإلكتروني] لممارسة هذه الحقوق.</p>
+        </section>
+  
+        <section>
+          <h2 class="font-semibold text-lg mb-2">٦. ملفات تعريف الارتباط (Cookies)</h2>
+          <p dir="rtl" style="unicode-bidi: isolate;">قد نستخدم ملفات تعريف الارتباط لتحسين تجربة الاستخدام، وتخصيص المحتوى، وتحليل الاستخدام.</p>
+        </section>
+  
+        <section>
+          <h2 class="font-semibold text-lg mb-2">٧. خصوصية الأطفال</h2>
+          <p dir="rtl" style="unicode-bidi: isolate;">لا نستهدف الأطفال دون سن ١٣ عامًا، ولا نقوم بجمع بياناتهم بشكل مقصود. إذا كنت ولي أمر وكنت تعتقد أن طفلك قد زوّدنا ببياناته، نرجو التواصل معنا فورًا.</p>
+        </section>
+  
+        <section>
+          <h2 class="font-semibold text-lg mb-2">٨. التغييرات على سياسة الخصوصية</h2>
+          <p dir="rtl" style="unicode-bidi: isolate;">قد نقوم بتحديث هذه السياسة من وقت لآخر، وسيتم إعلامك بأي تغييرات مهمة من خلال التطبيق أو البريد الإلكتروني.</p>
+        </section>
+  
+      </div>
+    </div>
+
+
+   <!-- Footer Section -->
+   <footer class="bg-[#0c0021] text-white py-10 px-4">
+    <div class="bg-[#0c0021] max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-right d-flex " style="justify-content: space-between;">
+
+      <div class="flex flex-col items-center md:items-end justify-end space-y-4">
+        <div>
+          <h3 class="font-semibold mb-4">تحميل التطبيق</h3>
+          <div class="flex justify-center md:justify-end items-center gap-4">
+            <a href="#">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg"
+                alt="Google Play" class="h-10">
+            </a>
+            <a href="#">
+              <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg"
+                alt="App Store" class="h-10">
+            </a>
+          </div>
+        </div>
+      </div>
+
+    
+
+      <!-- <div class="bg-[#0c0021] text-center md:text-left space-y-3">
+        <h3 class="text-xl font-bold text-right"> rage3ly.com</h3>
+           <img src="/assets/images/logo-removebg2 (1).png" class="h-12  w-15 rounded" alt="logo">
+        <p class="text-sm text-gray-400 leading-relaxed text-right">
+          لوريم إيبسوم دولار سيت أميت فيسبيكياتور، تولت إيكتبات تيبسات رويس فيرسوس إنفيرس كورسيس إلأكتروني دروكوم
+          فيسبيكياتور، بتحديث توايم موق نون إنتر لوريم إيبسوماتي.
+        </p>
+      </div> -->
+
+      <div class="bg-[#0c0021] text-white py-4 px-6">
+        <div class="flex flex-row-reverse items-center justify-center gap-3">
+          <img src="/assets/images/logo-removebg2 (1).png" class="h-12 w-12 rounded" style="height: 50%; width: 50%;" alt="logo" />
+          <!-- <h3 class="text-[22px] md:text-2xl font-bold mt-2">rage3ly.com</h3> -->
+        </div>
+      </div>
+
+
+    </div>
+    <hr class="color-white  m-5">
+    <div class="bg-[#0c0021] max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-right">
+
+      <div class="flex flex-col items-center md:items-end justify-end space-y-4">
+        <div>
+          <div class="flex justify-center md:justify-end items-center gap-4">
+            <a href="#" target="_blank">
+              <img src="../../../../assets/images/tiktok.png" class="h-10 w-10">
+            </a>
+            <a href="https://www.facebook.com/Rage3ly" target="_blank">
+              <img src="../../../../assets/images/facebook.png" class="h-10 w-10">
+            </a>
+            <a href="https://www.linkedin.com/company/rage3ly" target="_blank">
+              <img src="../../../../assets/images/linkedin.png" class="h-10 w-10">
+            </a>
+            <a href="https://www.linkedin.com/company/rage3ly" target="_blank">
+              <img src="../../../../assets/images/instgram.png" class="h-10 w-10">
+            </a>
+            <button (click)="openWhatsApp()" target="_blank">
+              <img src="../../../../assets/images/whatsap.png" class="h-10 w-10">
+            </button>
+
+
+
+          </div>
+        </div>
+      </div>
+      <div></div>
+      <div class="text-center md:text-left space-y-3">
+        <p class="text-xl font-bold text-right" dir="rtl">
+          <a href="/privacy" class="hover:underline">الخصوصية</a> | حقوق الملكية <span class="text-primary">Rage3ly.com</span>
+        </p>
+        
+        
+        
+
+      </div>
+
+
+
+
+    </div>
+  </footer>
+</body>

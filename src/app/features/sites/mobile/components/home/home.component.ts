@@ -6,6 +6,7 @@ import { BsModalRef } from 'ngx-bootstrap/modal';
 import { SharedService } from 'src/app/shared/service/shared.service';
 import { MobileService } from '../../service/mobile.service';
 import { ActivatedRoute, Router } from '@angular/router';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-home',
@@ -22,14 +23,7 @@ export class HomeComponent extends CrudIndexBaseUtils {
   showDownloadOptions = false;
   records: number;
   activation: mobileActivateViewModel = { id: '' }
-  PhoneStatus = [
-    { id: 1, name: 'Safe' },
-    { id: 2, name: 'PendingUploadImage' },
-    { id: 3, name: 'PendingAdminConfirmation' },
-    { id: 4, name: 'Stolen' },
-    { id: 4, name: 'NotSure' },
-    { id: 5, name: 'UnRegistered' }
-  ];
+  PhoneStatus = [];
 
 
 
@@ -53,15 +47,33 @@ export class HomeComponent extends CrudIndexBaseUtils {
     private _pageService: MobileService,
     private _router: Router,
     private activatedRoute: ActivatedRoute,
-
+private translate: TranslateService
   ) {
     super(_sharedService);
   }
 
-  ngOnInit(): void {
-    this.initializePage();
+ ngOnInit(): void {
+  this.translate.get([
+      'sites.mobile.Safe',
+      'sites.mobile.PendingUploadImage',
+      'sites.mobile.PendingAdminConfirmation',
+      'sites.mobile.Stolen',
+       'sites.mobile.NotSure',
+        'sites.mobile.UnRegistered'
+    ]).subscribe(translations => {
+      this.PhoneStatus = [
+        { id: 1, name: translations['sites.mobile.Safe'] },
+        { id: 2, name: translations['sites.mobile.PendingUploadImage'] },
+        { id: 3, name: translations['sites.mobile.PendingAdminConfirmation'] },
+        { id: 4, name: translations['sites.mobile.Stolen'] },
+           { id: 5, name: translations['sites.mobile.NotSure'] },
+              { id: 6, name: translations['sites.mobile.UnRegistered'] }
+      ];
+    });
+ 
+  this.initializePage();
+}
 
-  }
   getPhoneStatusName(statusId: number): string {
     const PhoneStatus = this.PhoneStatus.find(s => s.id === statusId);
     return PhoneStatus ? PhoneStatus.name : 'Unknown';

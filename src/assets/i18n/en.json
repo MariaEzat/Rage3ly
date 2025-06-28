@@ -347,7 +347,13 @@
       "ImeI2": "IMEI2",
       "serialNumber": "Serial Number",
       "dateOfPurchase": "Date Of Purchase",
-      "search": "Search"
+      "search": "Search",
+       "Safe": "Safe",
+    "PendingUploadImage": "Pending Upload Image",
+    "PendingAdminConfirmation": "Pending Admin Confirmation",
+    "Stolen": "Stolen",
+    "NotSure": "Not Sure",
+    "UnRegistered": "UnRegistered"
     },
     "employee-profile": {
       "profileSettings": "Profile Settings",
@@ -381,7 +387,7 @@
       "approved": "Approved",
       "pending": "Pending",
       "rejected": "Rejected",
-      "editImageRequest": "EditImageRequest",
+      "editImageRequest": "Edit Image Request",
       "name": "Name",
       "mobile": "Mobile Number",
       "email": "Email",
@@ -410,7 +416,7 @@
       "approved": "Approved",
       "pending": "Pending",
       "rejected": "Rejected",
-      "editImageRequest": "EditImageRequest",
+      "editImageRequest": "Edit Image Request",
       "fromClient": "From Client",
       "toClient": "To Client",
       "mobile": "Mobile",

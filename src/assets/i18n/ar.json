@@ -337,7 +337,13 @@
       "ImeI2": "IMEI2",
       "serialNumber": "رقم سري",
       "dateOfPurchase": "تاريخ الشراء",
-      "search": "بحث"
+      "search": "بحث",
+      "Safe": "آمن",
+      "PendingUploadImage": "بانتظار رفع الصورة",
+      "PendingAdminConfirmation": "بانتظار تأكيد الإدارة",
+      "Stolen": "مسروق",
+      "NotSure": "غير مؤكد",
+      "UnRegistered": "غير مسجل"
     },
     "employee-profile": {
       "profileSettings": "إعدادات الملف الشخصي",
@@ -392,6 +398,7 @@
       "request": "طلب",
       "policeDepartment": "قسم الشرطة",
       "reportNumber": "رقم المحضر"
+
     },
     "ownership": {
       "ownership": "نقل الملكية",
@@ -561,7 +568,7 @@
       "cancel": "الغاء",
       "Upload New Image": "رفع صورة جديدة",
       "Error Uploading": "خطأ في رفع الصورة",
-      "addMobile": "اضف رقم تليفون",
+      "addMobile": "اضف هاتف ",
       "noClients": "لا يوجد عملاء",
       "mobilesCount": "عدد الهواتف"
     },
