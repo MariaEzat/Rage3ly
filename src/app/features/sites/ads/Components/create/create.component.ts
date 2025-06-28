@@ -76,6 +76,13 @@ export class CreateComponent implements OnInit, OnDestroy {
       }
     });
   }
+getTomorrowDate(): Date {
+  const tomorrow = new Date();
+  tomorrow.setDate(tomorrow.getDate() + 1);
+  tomorrow.setHours(0, 0, 0, 0);
+  return tomorrow;
+}
+
 
   validatePastDate(control: AbstractControl): ValidationErrors | null {
     if (!control.value) return null;
@@ -126,6 +133,7 @@ export class CreateComponent implements OnInit, OnDestroy {
     endDateControl.updateValueAndValidity();
   }
 
+
   getMinEndDate(): Date {
     const startDate = this.page.form?.get('startDate')?.value;
     const minDate = startDate ? new Date(startDate) : new Date();
@@ -135,6 +143,11 @@ export class CreateComponent implements OnInit, OnDestroy {
     return minDate;
   }
 
+getToday(): Date {
+  const today = new Date();
+  today.setHours(0, 0, 0, 0);
+  return today;
+}
 
   createForm() {
     const tomorrow = new Date();
@@ -143,13 +156,12 @@ export class CreateComponent implements OnInit, OnDestroy {
     this.page.form = this._sharedService.formBuilder.group({
       title: [this.item.title, [Validators.required, Validators.minLength(5), Validators.maxLength(200)]],
       hyperlink: [this.item.hyperlink],
-      startDate: [
-        this.item.startDate || tomorrow,
-        [
-          Validators.required,
-          this.validatePastDate
-        ],
+     startDate: [
+      this.item.startDate || tomorrow,
+      [
+        Validators.required,
       ],
+    ],
       endDate: [
         this.item.endDate,
         [
@@ -158,6 +170,7 @@ export class CreateComponent implements OnInit, OnDestroy {
         ],
       ],
     });
+    this.page.form.get('startDate')?.enable();
     this.page.isPageLoaded = true;
   }
 

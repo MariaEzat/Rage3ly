@@ -4,11 +4,12 @@
 
             <a class="mb-2 color-gray-800 ts-3 text-white font-big">
                 <span class="expand-arrow " routerLink="/sites/ads">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="white" stroke-width="2" viewBox="0 0 24 24">
-                      <path d="M8 5l8 7-8 7" />
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="white"
+                        stroke-width="2" viewBox="0 0 24 24">
+                        <path d="M8 5l8 7-8 7" />
                     </svg>
-                  </span>
-                  
+                </span>
+
                 {{(page.isEdit?'shared.edit':'shared.create')|translate}}
                 {{"sites.advertisment.advertisment"|translate}}
             </a>
@@ -26,71 +27,64 @@
 
         <ng-container *ngIf="page.isPageLoaded">
             <form [formGroup]="page.form">
-               <form [formGroup]="page.form">
- <div class="row g-4">
+                <form [formGroup]="page.form">
+                    <div class="row g-4">
 
-  <!-- Ad Name -->
-  <div class="col-12 col-md-6">
-    <ng-control
-      [form]="page.form"
-      control="title"
-      label="sites.advertisment.name"
-      placeholder="sites.advertisment.name"
-      [inputClass]="'w-100 form-control-lg px-3 py-2 bg-Dark border border-gray-600 text-white rounded-3'"
-      [labelClass]="'d-block text-white mb-2 ps-1 fw-semibold fs-6'">
-    </ng-control>
-  </div>
+                        <!-- Ad Name -->
+                        <div class="col-12 col-md-6">
+                            <ng-control [form]="page.form" control="title" label="sites.advertisment.name"
+                                placeholder="sites.advertisment.name"
+                                [inputClass]="'w-100 form-control-lg px-3 py-2 bg-Dark border border-gray-600 text-white rounded-3'"
+                                [labelClass]="'d-block text-white mb-2 ps-1 fw-semibold fs-6'">
+                            </ng-control>
+                        </div>
 
-  <!-- Start Date -->
-  <div class="col-12 col-md-6">
-    <ng-control
-      [form]="page.form"
-      control="startDate"
-      label="sites.advertisment.startDate"
-      [inputClass]="'w-100 form-control-lg px-3 py-2 bg-Dark border border-gray-600 text-white rounded-3'"
-      [labelClass]="'d-block text-white mb-2 ps-1 fw-semibold fs-6'"
-      [type]="page.ControlType.INPUT_DATE"
-      [minDate]="page.form.get('startDate').value"
-      [diasblePastDate]="true"
-      (change)="onChangeStartDate($event)">
-    </ng-control>
-    <div *ngIf="page.form.get('startDate')?.errors?.pastDate" class="text-danger extra-small mt-1 ps-1">
-      {{ page.form.get('startDate')?.errors?.pastDate }}
-    </div>
-  </div>
+                        <!-- Start Date -->
+                        <div class="col-12 col-md-6">
+                            <ng-control [form]="page.form" control="startDate" label="sites.advertisment.startDate"
+                                [inputClass]="'w-100 form-control-lg px-3 py-2 bg-Dark border border-gray-600 text-white rounded-3'"
+                                [labelClass]="'d-block text-white mb-2 ps-1 fw-semibold fs-6'"
+                                [type]="page.ControlType.INPUT_DATE" [minDate]="getTomorrowDate()"
+                                (change)="onChangeStartDate($event)">
+                            </ng-control>
 
-  <!-- End Date -->
-  <div class="col-12 col-md-6">
-    <ng-control
-      [form]="page.form"
-      control="endDate"
-      label="sites.advertisment.endDate"
-      [type]="page.ControlType.INPUT_DATE"
-      [inputClass]="'w-100 form-control-lg px-3 py-2 bg-Dark border border-gray-600 text-white rounded-3'"
-      [labelClass]="'d-block text-white mb-2 ps-1 fw-semibold fs-6'"
-      [minDate]="getMinEndDate()"
-      [diasblePastDate]="true">
-    </ng-control>
-    <div *ngIf="page.form.get('endDate')?.errors?.endDateBeforeStart" class="text-danger extra-small mt-1 ps-1">
-      {{ page.form.get('endDate')?.errors?.endDateBeforeStart }}
-    </div>
-  </div>
 
-  <!-- Hyperlink -->
-  <div class="col-12 col-md-6">
-    <ng-control
-      [form]="page.form"
-      control="hyperlink"
-      placeholder="sites.advertisment.hyberLink"
-      label="sites.advertisment.hyberLink"
-      [inputClass]="'w-100 form-control-lg px-3 py-2 bg-Dark border border-gray-600 text-white rounded-3'"
-      [labelClass]="'d-block text-white mb-2 ps-1 fw-semibold fs-6'">
-    </ng-control>
-  </div>
+                            <div *ngIf="page.form.get('startDate')?.errors?.pastDate"
+                                class="text-danger extra-small mt-1 ps-1">
+                                {{ page.form.get('startDate')?.errors?.pastDate }}
+                            </div>
+                        </div>
 
-</div>
+                        <!-- End Date -->
+                        <div class="col-12 col-md-6">
+                            <ng-control [form]="page.form" control="endDate" label="sites.advertisment.endDate"
+                                [type]="page.ControlType.INPUT_DATE"
+                                [inputClass]="'w-100 form-control-lg px-3 py-2 bg-Dark border border-gray-600 text-white rounded-3'"
+                                [labelClass]="'d-block text-white mb-2 ps-1 fw-semibold fs-6'"
+                                [minDate]="getMinEndDate()" [diasblePastDate]="true">
+                            </ng-control>
+                            <div *ngIf="
+    page.form.get('endDate')?.errors?.endDateBeforeStart &&
+    (page.form.get('endDate')?.touched || page.form.get('endDate')?.dirty)
+  " class="text-danger extra-small mt-1 ps-1">
+                                {{ page.form.get('endDate')?.errors?.endDateBeforeStart }}
+                            </div>
 
-</form>
+
+                        </div>
+
+                        <!-- Hyperlink -->
+                        <div class="col-12 col-md-6">
+                            <ng-control [form]="page.form" control="hyperlink"
+                                placeholder="sites.advertisment.hyberLink" label="sites.advertisment.hyberLink"
+                                [inputClass]="'w-100 form-control-lg px-3 py-2 bg-Dark border border-gray-600 text-white rounded-3'"
+                                [labelClass]="'d-block text-white mb-2 ps-1 fw-semibold fs-6'">
+                            </ng-control>
+                        </div>
+
+                    </div>
+
+                </form>
 
 
 
