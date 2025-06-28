@@ -13,6 +13,9 @@
   height: 100vh; /* ياخد ارتفاع الشاشة كله */
   overflow-y: auto; /* يخليه يسكروول داخلي */
 }
+.flex-grow-1::-webkit-scrollbar {
+  width: 5px; /* عرض الـ scroll bar نفسه، قلليه هنا */
+}
 
 
 .active-color {
