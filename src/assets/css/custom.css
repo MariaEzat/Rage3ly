@@ -189,7 +189,7 @@ body {
   height: calc(100vh - 48px);
   display: flex;
   flex-direction: column;
-  direction: rtl;
+  direction: rtl !important;
 }
 
 .page {
