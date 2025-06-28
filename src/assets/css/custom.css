@@ -186,7 +186,7 @@ body {
 .main-page {
   overflow-x: hidden;
   overflow-y: auto ;
-  height: calc(100vh - 48px);
+  /* height: calc(100vh - 48px); */
   display: flex;
   flex-direction: column;
 /* direction: rtl;  margin-top: 20px; */
