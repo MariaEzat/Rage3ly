@@ -92,6 +92,11 @@
   background-color: #4DC3FF;
   border: none;
 }
+.btn-cancell {
+  background-color: #5c2e91;
+  border: none;
+  color: #ffffff;
+}
 
 .btn-primary:hover {
   background-color: #35b3f2;

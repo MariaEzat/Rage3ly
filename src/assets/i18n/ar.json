@@ -397,7 +397,8 @@
       "street": "الشارع",
       "request": "طلب",
       "policeDepartment": "قسم الشرطة",
-      "reportNumber": "رقم المحضر"
+      "reportNumber": "رقم المحضر",
+      "canceled":"اٍلغاء"
 
     },
     "ownership": {
@@ -436,7 +437,8 @@
       "number": "رقم الموبايل",
       "otherBrand": "ماركات اخرى",
       "Img": "الصورة",
-      "transfer": "نقل الملكية"
+      "transfer": "نقل الملكية",
+      "canceled":"اٍلغاء"
     },
     "brands": {
       "brands": "الماركات",

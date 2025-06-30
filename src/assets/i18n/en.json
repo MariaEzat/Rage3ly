@@ -407,7 +407,8 @@
       "street": "Street",
       "request": "Request",
       "policeDepartment": "Police Department",
-      "reportNumber": "Report Number"
+      "reportNumber": "Report Number",
+      "canceled":"Cancelled"
     },
     "ownership": {
       "ownership": "Ownership",
@@ -445,7 +446,8 @@
       "number": "Number",
       "otherBrand": "Other Brand",
       "Img": "Img",
-      "transfer": "Transfer"
+      "transfer": "Transfer",
+      "canceled":"Cancelled"
     },
     "brands": {
       "brands": "Brands",

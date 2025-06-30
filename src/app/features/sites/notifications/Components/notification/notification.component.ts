@@ -28,7 +28,8 @@ export class NotificationComponent extends CrudIndexBaseUtils {
     { id: 1, name: 'sites.ownership.pending' },
     { id: 2, name: 'sites.ownership.approved' },
     { id: 3, name: 'sites.ownership.editImageRequest' },
-    { id: 4, name: 'sites.ownership.rejected' }
+    { id: 4, name: 'sites.ownership.rejected' },
+    { id: 5, name: 'sites.ownership.canceled' },
   ];
 
 

@@ -28,7 +28,9 @@ export class HomeComponent extends CrudIndexBaseUtils {
     { id: 1, name: 'sites.ownership.pending' },
     { id: 2, name: 'sites.ownership.approved' },
     { id: 3, name: 'sites.ownership.editImageRequest' },
-    { id: 4, name: 'sites.ownership.rejected' }
+    { id: 4, name: 'sites.ownership.rejected' },
+    { id: 5, name: 'sites.ownership.canceled' },
+
   ];
 
 
@@ -45,13 +47,15 @@ export class HomeComponent extends CrudIndexBaseUtils {
       'sites.ownership.pending',
       'sites.ownership.approved',
       'sites.ownership.editImageRequest',
-      'sites.ownership.rejected'
+      'sites.ownership.rejected',
+      'sites.ownership.canceled'
     ]).subscribe(translations => {
       this.RequestStatus = [
         { id: 1, name: translations['sites.ownership.pending'] },
         { id: 2, name: translations['sites.ownership.approved'] },
         { id: 3, name: translations['sites.ownership.editImageRequest'] },
-        { id: 4, name: translations['sites.ownership.rejected'] }
+        { id: 4, name: translations['sites.ownership.rejected'] },
+        { id: 5, name: translations['sites.ownership.canceled'] }
       ];
     });
   }

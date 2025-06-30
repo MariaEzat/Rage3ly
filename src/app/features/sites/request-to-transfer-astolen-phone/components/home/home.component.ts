@@ -29,7 +29,9 @@ export class HomeComponent extends CrudIndexBaseUtils {
     { id: 1, name: 'sites.requestToStolenPhone.pending' },
     { id: 2, name: 'sites.requestToStolenPhone.approved' },
     { id: 3, name: 'sites.requestToStolenPhone.editImageRequest' },
-    { id: 4, name: 'sites.requestToStolenPhone.rejected' }
+    { id: 4, name: 'sites.requestToStolenPhone.rejected' },
+    { id: 5, name: 'sites.ownership.canceled' },
+
   ];
 
   constructor(private requestService: RequestService, public override _sharedService: SharedService,
@@ -45,13 +47,16 @@ export class HomeComponent extends CrudIndexBaseUtils {
       'sites.requestToStolenPhone.pending',
       'sites.requestToStolenPhone.approved',
       'sites.requestToStolenPhone.editImageRequest',
-      'sites.requestToStolenPhone.rejected'
+      'sites.requestToStolenPhone.rejected',
+      'sites.requestToStolenPhone.canceled'
     ]).subscribe(translations => {
       this.RequestStatus = [
         { id: 1, name: translations['sites.requestToStolenPhone.pending'] },
         { id: 2, name: translations['sites.requestToStolenPhone.approved'] },
         { id: 3, name: translations['sites.requestToStolenPhone.editImageRequest'] },
-        { id: 4, name: translations['sites.requestToStolenPhone.rejected'] }
+        { id: 4, name: translations['sites.requestToStolenPhone.rejected'] },
+        { id: 5, name: translations['sites.requestToStolenPhone.canceled'] }
+
       ];
     });
   }
