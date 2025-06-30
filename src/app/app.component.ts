@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { TokenService } from './shared/service/token.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +9,12 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Rage3ly';
+  constructor(private tokenService: TokenService, private router: Router) { }
+
+  ngOnInit() {
+    if (!this.tokenService.isAuthenticated()) {
+      this.router.navigate(['/login']);
+    }
+  }
+
 }

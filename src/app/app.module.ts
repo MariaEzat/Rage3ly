@@ -10,12 +10,12 @@ import {
   TranslateModule,
   TranslateService,
 } from '@ngx-translate/core';
-import { HttpClient } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClient } from '@angular/common/http';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { ToastrModule } from 'ngx-toastr';
 import { NgProgressModule } from 'ngx-progressbar';
 import { AnimationLoader, LottieModule } from 'ngx-lottie';
-
+import { AuthInterceptor } from './shared/interceptor/auth.interceptor';
 export function httpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
 }
@@ -48,7 +48,8 @@ export function playerFactory() {
     ToastrModule.forRoot(),
     LottieModule.forRoot({player: playerFactory}),
   ],
-  providers: [TranslateService],
+  providers: [TranslateService,    { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
