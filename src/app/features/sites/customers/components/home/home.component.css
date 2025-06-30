@@ -114,23 +114,27 @@ input::placeholder {
   border-collapse: collapse;
 }
 
-.transparent-table thead {
-  background-color: transparent;
+.transparent-table thead th {
+  position: sticky;
+  top: -2px;
+  background-color: #0B1437; /* لون واضح */
+  z-index: 10;
   color: white;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* خط سفلي يفصل الهيدر */
+
 }
-
-.transparent-table tbody tr {
-  background-color: transparent;
-}
-
-
-.transparent-table td,
-.transparent-table th {
+  
+.transparent-table thead {
+  background-color: #0B1437; /* مش transparent */
   background-color: transparent !important;
   color: white;
- 
   border: 1px solid rgba(255, 255, 255, 0.1);
-
+}
+.transparent-table td {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  background-color: transparent !important;
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .transparent-table img {
