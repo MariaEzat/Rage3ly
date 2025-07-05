@@ -29,6 +29,10 @@ body {
   transform: translateY(-4px);
 }
 
+.card-col:hover .hover-text {
+  display: block;
+}
+
 .text-white {
   color: #ffffff;
 }
