@@ -1,73 +1,30 @@
 <ng-container *ngIf="page.isPageLoaded">
-  <!-- Header Section -->
-  <div class="container-fluid pt-4 px-5">
-    <div class="d-flex flex-wrap justify-content-between align-items-center py-2">
-      <!-- Back + Title -->
-      <a class="mb-2 color-gray-800 ts-3 text-white font-big text-decoration-none" routerLink="/sites/notifications">
-        <span class="expand-arrow me-2">
-          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="white"
-            stroke-width="2" viewBox="0 0 24 24">
-            <path d="M8 5l8 7-8 7" />
-          </svg>
-        </span>
-        <span class="text-nowrap font-big">
-          {{ 'sites.allNotifications.sendNotification' | translate }}
-        </span>
-      </a>
+    <!-- Header Section -->
+    <div class="container-fluid pt-4 px-5">
+        <div class="d-flex flex-wrap justify-content-between align-items-center py-2">
+            <!-- Back + Title -->
+            <a class="mb-2 color-gray-800 ts-3 text-white font-big text-decoration-none"
+                routerLink="/sites/notifications">
+                <span class="expand-arrow me-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="white"
+                        stroke-width="2" viewBox="0 0 24 24">
+                        <path d="M8 5l8 7-8 7" />
+                    </svg>
+                </span>
+                <span class="text-nowrap font-big">
+                    {{ 'sites.allNotifications.sendNotification' | translate }}
+                </span>
+            </a>
 
-      <!-- Save Button -->
-      <button class="btn btn-primary bg-brand-500 color-gray-25 no-border cr3 px-3 py-2" (click)="Save()"
-        [disabled]="!page.isEdit && (page.form?.invalid || page.isSaving)">
-        <span class="rb-btn-text">
-          {{ 'sites.allNotifications.sendNotification' | translate }}
-        </span>
-      </button>
-    </div>
-
-    <hr class="border-secondary" />
-
-    <!-- Form -->
-    <form [formGroup]="page.form" class="pt-2">
-      <div class="d-flex flex-row gap-4 flex-wrap">
-        
-        <!-- Left Side -->
-        <div class="flex-grow-1" style="min-width: 300px;">
-          <div class="card border rounded shadow-sm h-100" style="background-color: #1A1F3766;">
-            <div class="card-body">
-              <!-- Select Users -->
-              <ng-control [type]="page.ControlType.SELECT" [form]="page.form" control="userId"
-                label="sites.allNotifications.users" placeholder="sites.allNotifications.users"
-                [items]="clientlist" [bindValue]="'id'" [bindLabel]="'name'"
-                [inputClass]="'bg-Dark border-color color-color-gray-300'" [labelClass]="'text-white'"
-                multiple="true" (change)="onUserSelectionChange()">
-              </ng-control>
-
-              <!-- Title -->
-              <div class="mt-4">
-                <ng-control [form]="page.form" control="title" label="sites.allNotifications.title"
-                  placeholder="sites.allNotifications.title" [labelClass]=" 'text-white ' ">
-                </ng-control>
-              </div>
-
-              <!-- Body -->
-              <div class="mt-4">
-                <ng-control [form]="page.form" control="body" label="sites.allNotifications.body"
-                  placeholder="sites.allNotifications.body" [type]="page.ControlType.TEXTAREA"
-                  [labelClass]="'text-white ' ">
-                </ng-control>
-              </div>
-            </div>
-          </div>
+            <!-- Save Button -->
+            <button class="btn btn-primary bg-brand-500 color-gray-25 no-border cr3 px-3 py-2 " (click)="Save()"
+                [disabled]="!page.isEdit && (page.form?.invalid || page.isSaving)">
+                <span class="rb-btn-text">
+                    {{ 'sites.allNotifications.sendNotification' | translate }}
+                </span>
+            </button>
         </div>
 
-
-        <!-- Right Side -->
-        <div style="flex: 0 0 30%; max-width: 30%; min-width: 280px;">
-          <div class="card border border-secondary rounded-3 p-3 d-flex flex-column"
-            style="background-color: #1A1F3766; height: 100%; max-height: 500px;">
-            <h6 class="text-white mb-3">
-              {{ 'sites.allNotifications.selectedUsers' | translate }}
-            </h6>
         <hr class="border-secondary" />
 
         <form [formGroup]="page.form" class="pt-2">
@@ -146,42 +103,7 @@
                     </div>
                 </div>
 
-
-            <!-- Table with Scroll -->
-            <div *ngIf="selectedUsers.length > 0" class="table-responsive flex-grow-1"
-              style="overflow-y: auto;">
-              <table class="table text-center align-middle transparent-table mb-0">
-                <thead>
-                  <tr>
-                    <th>{{ 'sites.allNotifications.userName' | translate }}</th>
-                    <th style="width: 40px;"><i class="fa fa-cog"></i></th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr *ngFor="let user of selectedUsers">
-                    <td>{{ user.name }}</td>
-                    <td>
-                      <button pButton icon="pi pi-trash"
-                        class="p-button-rounded p-button-text p-button-danger p-0 pointer"
-                        aria-label="Delete" (click)="removeUser(user)" title="Remove">
-                      </button>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
             </div>
-
-
-            <!-- No users message -->
-            <div *ngIf="selectedUsers.length === 0" class="text-white text-center mt-2">
-              {{ 'sites.allNotifications.noUsersSelected' | translate }}
-            </div>
-          </div>
-  
-
-      </div>
-    </form>
-    <
-  </div>
+        </form>
+    </div>
 </ng-container>
-
