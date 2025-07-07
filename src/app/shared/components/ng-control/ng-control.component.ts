@@ -18,6 +18,7 @@ export class NgControlComponent implements OnInit, OnChanges {
   @Input() placeholder: string = ''
   @Input() bindValue: string = 'id'
   @Input() bindLabel: string = 'name'
+  @Input() appendTo: string;
   bsConfig: object = { dateInputFormat: 'YYYY-MM-DD', showClearButton: false, clearPosition: 'right', adaptivePosition: true }
   @Input() searchFn
   @Input() filterValue: any
