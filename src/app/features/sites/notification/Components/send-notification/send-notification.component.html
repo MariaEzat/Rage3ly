@@ -27,14 +27,13 @@
 
         <hr class="border-secondary" />
 
-
         <form [formGroup]="page.form" class="pt-2">
-            <div class="d-flex flex-row gap-4  " >
+            <div class=" row " >
 
                 <!-- Left Side: takes remaining space -->
-                <div class="flex-grow-1" >
+                <div class=" col-10" >
                     <div class="card border rounded shadow-sm h-100" style="background-color: #1A1F3766;">
-                        <div class="card-body">
+                        <div class="card-body m-5">
                             <!-- Select Users -->
                             <ng-control [type]="page.ControlType.SELECT" [form]="page.form" control="userId"
                                 label="sites.allNotifications.users" placeholder="sites.allNotifications.users"
@@ -62,8 +61,8 @@
                 </div>
 
                 <!-- Right Side: fixed width -->
-                <div >
-                    <div class="card border border-secondary rounded-3 p-3 h-100" style="background-color: #1A1F3766;">
+                <div class="col-2">
+                    <div class="card border border-secondary rounded-3 p-3 h-100 " style="background-color: #1A1F3766;">
                         <h6 class="text-white mb-3">
                             {{ 'sites.allNotifications.selectedUsers' | translate }}
                         </h6>
@@ -75,8 +74,9 @@
                                 <thead>
                                     <tr>
                                         <th>{{ 'sites.allNotifications.userName' | translate }}</th>
-                                        <th style="width: 40px;">
-                                            <i class="fa fa-cog"></i>
+
+                                        <th style="width: 40px;"><span>
+                                            {{ 'sites.allNotifications.action' | translate }}</span>
                                         </th>
                                     </tr>
                                 </thead>
@@ -102,6 +102,5 @@
 
             </div>
         </form>
-
     </div>
 </ng-container>
