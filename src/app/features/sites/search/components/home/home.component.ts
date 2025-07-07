@@ -78,7 +78,7 @@ export class HomeComponent extends CrudIndexBaseUtils {
       { Name: 'IP', Title: 'sites.search.ip', Selectable: false, Sortable: true },
       { Name: 'Port', Title: 'sites.search.port', Selectable: false, Sortable: true },
       { Name: 'SearchText', Title: 'sites.search.searchText', Selectable: false, Sortable: true },
-      { Name: 'Email', Title: 'sites.search.email', Selectable: false, Sortable: true },
+      // { Name: 'Email', Title: 'sites.search.email', Selectable: false, Sortable: true },
       { Name: 'phoneNumberOwner ', Title: 'sites.search.phoneNumberOwner', Selectable: false, Sortable: true },
       { Name: 'phoneNumberSearcher ', Title: 'sites.search.phoneNumberSearcher', Selectable: false, Sortable: true },
       { Name: 'createdDate ', Title: 'sites.search.createdDate', Selectable: false, Sortable: true },
