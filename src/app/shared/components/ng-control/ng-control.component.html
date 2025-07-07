@@ -48,8 +48,8 @@
       <!--------------------------------- input select -------------------------------------->
       <ng-select class="form-control" [ngClass]="inputClass" (change)="onChange($event)" 
         [items]="items |propertyFilter:{'property':filterProp,'value':filterValue}" [bindLabel]="bindLabel"
-        [bindValue]="bindValue" appendTo="body" [formControlName]="control" placeholder="{{placeholder |translate}}"
-        *ngIf="type==controlType.SELECT" [clearable]="clearable" [multiple]="multiple" [hideSelected]="hideSelected">
+        [bindValue]="bindValue" appendTo="body" [formControlName]="control" placeholder="{{placeholder |translate}}"  [appendTo]="appendTo"
+        *ngIf="type==controlType.SELECT" [clearable]="clearable" [multiple]="multiple" [hideSelected]="hideSelected" >
       </ng-select>
 
       <!--------------------------------- input select custom options-------------------------------------->

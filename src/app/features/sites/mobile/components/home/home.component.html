@@ -21,10 +21,19 @@
                 </ng-control>
               </div>
 
-              <div class="col-12 col-md-6 col-lg-2"> <ng-control [type]="controlType.SELECT" [form]="page.searchForm"
-                  control="PhoneStatus" [inputClass]="'bg-Dark border-color text-white'" [labelClass]="'text-white'"
-                  label="sites.mobile.phoneStatus" placeholder="sites.mobile.phoneStatus" [items]="PhoneStatus">
-                </ng-control>
+              <div class="col-12 col-md-6 col-lg-2"> <ng-control
+                [type]="controlType.SELECT"
+                [form]="page.searchForm"
+                control="PhoneStatus"
+                [inputClass]="'bg-Dark border-color text-white'"
+                [labelClass]="'text-white'"
+                label="sites.mobile.phoneStatus"
+                placeholder="sites.mobile.phoneStatus"
+                [items]="PhoneStatus"
+                multiple="true"
+                       ></ng-control>
+              
+             
               </div>
 
 
