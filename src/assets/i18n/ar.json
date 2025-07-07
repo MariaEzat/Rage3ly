@@ -550,7 +550,8 @@
       "sendNotification": "إرسال إشعار",
          "users":"المستخدمون",
       "selectedUsers": "المستخدمون المحددون",
-      "noUsersSelected": "لا يوجد مستخدمون محددون"
+      "noUsersSelected": "لا يوجد مستخدمون محددون",
+      "action":"الاجراءات"
     }
   },
   "salesflow": {

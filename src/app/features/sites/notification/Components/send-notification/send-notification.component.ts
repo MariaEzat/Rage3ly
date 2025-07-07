@@ -20,12 +20,12 @@ export class SendNotificationComponent implements OnInit, OnDestroy {
   id: string;
   isActivated: boolean = false;
   images = [{ uploaded: false, src: null }, { uploaded: false, src: null }];
-
+  private isManualRemove = false;
   environment = environment;
-clientlist: Client[] = [];
+  clientlist: Client[] = [];
 
   clientId: string = "";
-selectedUsers: any[] = [];
+  selectedUsers: any[] = [];
   constructor(
     private _sharedService: SharedService,
     private _notificationsService: NotificationsService,
@@ -38,7 +38,7 @@ selectedUsers: any[] = [];
     this.page.isPageLoaded = false;
     this.onSelectClients();
 
-   
+
 
     this._activatedRoute.paramMap.subscribe((params) => {
       if (params.has('id')) {
@@ -51,7 +51,7 @@ selectedUsers: any[] = [];
       }
 
       if (this.page.isEdit) {
-        
+
       } else {
         this.createForm();
       }
@@ -62,7 +62,7 @@ selectedUsers: any[] = [];
   createForm() {
     this.page.form = this._sharedService.formBuilder.group({
       userId: [this.item.userId, [Validators.required]],
-      title: [this.item.title, [Validators.required,  Validators.maxLength(100)]],
+      title: [this.item.title, [Validators.required, Validators.maxLength(100)]],
       body: [this.item.body, [Validators.required, Validators.maxLength(500)]],
     });
     this.page.isPageLoaded = true;
@@ -72,7 +72,7 @@ selectedUsers: any[] = [];
     if (this.page.isSaving || this.page.form.invalid) return;
     this.page.isSaving = true;
     Object.assign(this.item, this.page.form.value);
-   
+
 
     this._notificationsService.sendNotification(this.item).subscribe({
       next: (res) => {
@@ -90,8 +90,8 @@ selectedUsers: any[] = [];
     });
   }
 
-  
- 
+
+
   onCancel(): void {
     this._router.navigate(['/sites/notifications']);
   }
@@ -115,17 +115,28 @@ selectedUsers: any[] = [];
   numberOnly(event: any) {
     return this._sharedService.numberOnly(event);
   }
-
-onUserSelectionChange() {
-  const selectedIds = this.page.form.value.userId;
-  this.selectedUsers = this.clientlist.filter((client) =>
-    selectedIds.includes(client.id)
-  );
-}
-
-removeUser(user: any) {
-  const newIds = this.page.form.value.userId.filter((id) => id !== user.id);
-  this.page.form.get('userId').setValue(newIds);
-  this.onUserSelectionChange();
-}
+  onUserSelectionChange() {
+    let selectedIds: string[] = this.page.form.value.userId || [];
+  
+    if (!this.isManualRemove && selectedIds.length < this.selectedUsers.length) {
+      this.page.form.get('userId').setValue(this.selectedUsers.map(u => u.id), { emitEvent: false });
+      return;
+    }
+  
+    selectedIds = Array.from(new Set(selectedIds));
+    this.page.form.get('userId').setValue(selectedIds, { emitEvent: false });
+  
+    this.selectedUsers = this.clientlist.filter((client) =>
+      selectedIds.includes(client.id)
+    );
+  
+    this.isManualRemove = false;
+  }
+  
+  removeUser(user: any) {
+    this.isManualRemove = true;
+    const newIds = this.page.form.value.userId.filter((id) => id !== user.id);
+    this.page.form.get('userId').setValue(newIds);
+    this.onUserSelectionChange();
+  }
 }

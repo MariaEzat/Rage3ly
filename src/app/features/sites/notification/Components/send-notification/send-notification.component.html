@@ -60,6 +60,7 @@
           </div>
         </div>
 
+
         <!-- Right Side -->
         <div style="flex: 0 0 30%; max-width: 30%; min-width: 280px;">
           <div class="card border border-secondary rounded-3 p-3 d-flex flex-column"
@@ -67,6 +68,84 @@
             <h6 class="text-white mb-3">
               {{ 'sites.allNotifications.selectedUsers' | translate }}
             </h6>
+        <hr class="border-secondary" />
+
+        <form [formGroup]="page.form" class="pt-2">
+            <div class=" row ">
+
+                <!-- Left Side: takes remaining space -->
+                <div class=" col-10">
+                    <div class="card border rounded shadow-sm h-100" style="background-color: #1A1F3766;">
+                        <div class="card-body m-5">
+                            <!-- Select Users -->
+                            <ng-control [type]="page.ControlType.SELECT" [form]="page.form" control="userId"
+                                label="sites.allNotifications.users" placeholder="sites.allNotifications.users"
+                                [items]="clientlist" [bindValue]="'id'" [bindLabel]="'name'"
+                                [inputClass]="'bg-Dark border-color text-white'" [labelClass]="'text-white'"
+                                multiple="true" [closeOnSelect]="false" (change)="onUserSelectionChange()">
+                            </ng-control>
+
+
+                        
+
+                            <!-- Title -->
+                            <div class="mt-4">
+                                <ng-control [form]="page.form" control="title" label="sites.allNotifications.title"
+                                    placeholder="sites.allNotifications.title" [labelClass]=" 'text-white ' ">
+                                </ng-control>
+                            </div>
+
+                            <!-- Body -->
+                            <div class="mt-4">
+                                <ng-control [form]="page.form" control="body" label="sites.allNotifications.body"
+                                    placeholder="sites.allNotifications.body" [type]="page.ControlType.TEXTAREA"
+                                    [labelClass]="'text-white ' ">
+                                </ng-control>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Side: fixed width -->
+                <div class="col-2">
+                    <div class="card border border-secondary rounded-3 p-3 h-100 " style="background-color: #1A1F3766;">
+                        <h6 class="text-white mb-3">
+                            {{ 'sites.allNotifications.selectedUsers' | translate }}
+                        </h6>
+
+                        <div *ngIf="selectedUsers.length > 0" class="table-responsive"
+                            style="max-height: 400px; overflow-y: auto;">
+
+                            <table class="table text-center align-middle transparent-table">
+                                <thead>
+                                    <tr>
+                                        <th>{{ 'sites.allNotifications.userName' | translate }}</th>
+
+                                        <th style="width: 40px;"><span>
+                                                {{ 'sites.allNotifications.action' | translate }}</span>
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr *ngFor="let user of selectedUsers">
+                                        <td>{{ user.name }}</td>
+                                        <td>
+                                            <button pButton icon="pi pi-trash"
+                                                class="p-button-rounded p-button-text p-button-danger p-0 pointer"
+                                                aria-label="Delete" (click)="removeUser(user)" title="Remove">
+                                            </button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div *ngIf="selectedUsers.length === 0" class="text-white text-center mt-2">
+                            {{ 'sites.allNotifications.noUsersSelected' | translate }}
+                        </div>
+                    </div>
+                </div>
+
 
             <!-- Table with Scroll -->
             <div *ngIf="selectedUsers.length > 0" class="table-responsive flex-grow-1"
@@ -92,14 +171,17 @@
               </table>
             </div>
 
+
             <!-- No users message -->
             <div *ngIf="selectedUsers.length === 0" class="text-white text-center mt-2">
               {{ 'sites.allNotifications.noUsersSelected' | translate }}
             </div>
           </div>
-        </div>
+  
 
       </div>
     </form>
+    <
   </div>
 </ng-container>
+

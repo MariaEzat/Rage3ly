@@ -559,7 +559,8 @@
       "sendNotification": "Send Notification",
       "users":"Users",
       "selectedUsers": "Selected Users",
-      "noUsersSelected": "No Users Selected"
+      "noUsersSelected": "No Users Selected",
+      "action":"Action"
     }
   },
   "salesflow": {
