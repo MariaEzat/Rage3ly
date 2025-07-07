@@ -546,7 +546,11 @@
       "Pending": "قيد الانتظار",
       "Received": "تم الاستلام",
       "Read": "تم القراءة",
-      "searchOfNotification": "بحث في الاشعارات"
+      "searchOfNotification": "بحث في الاشعارات",
+      "sendNotification": "إرسال إشعار",
+         "users":"المستخدمون",
+      "selectedUsers": "المستخدمون المحددون",
+      "noUsersSelected": "لا يوجد مستخدمون محددون"
     }
   },
   "salesflow": {

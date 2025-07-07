@@ -128,5 +128,7 @@ export class NotificationsComponent extends CrudIndexBaseUtils{
       });
   }
 
-
+sendNotification() {
+  this._router.navigate(['/sites/notifications/sendNotification']);
+}
 }

@@ -24,4 +24,14 @@ export interface notificationViewModel {
     name:string;
   }
 
-  
+  export class sendNotificationViewModel {
+    id: string;
+     userId: string[];
+    title: string;
+    body: string;
+  }
+
+  export interface Client {
+  id: string;
+  name: string;
+}

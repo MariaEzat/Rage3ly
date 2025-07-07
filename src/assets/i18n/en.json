@@ -555,7 +555,11 @@
       "Pending": "Pending",
       "Received": "Received",
       "Read": "Read",
-      "searchOfNotification": "Search Of Notification"
+      "searchOfNotification": "Search Of Notification",
+      "sendNotification": "Send Notification",
+      "users":"Users",
+      "selectedUsers": "Selected Users",
+      "noUsersSelected": "No Users Selected"
     }
   },
   "salesflow": {

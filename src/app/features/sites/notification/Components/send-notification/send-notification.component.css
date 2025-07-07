@@ -1,0 +1,211 @@
+.download-options {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: white;
+    border: 1px solid #ddd;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    overflow: hidden;
+    z-index: 1000;
+    margin-left: 0;
+    min-width: 120px;
+  
+  }
+  
+  .download-options button {
+    width: 100%;
+    padding: 8px 12px;
+    border: none;
+    background: none;
+    text-align: left;
+    cursor: pointer;
+  }
+  .fixed-button {
+    flex: 0 0 auto;
+    width: 130px; 
+  }
+  
+  .download-options button:hover {
+    background: #f1f1f1;
+  }
+  
+  /* Base style for the clickable row */
+  .clickable-row {
+    transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  .download-options {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: white;
+    border: 1px solid #ddd;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    overflow: hidden;
+    z-index: 1000;
+    margin-left: 7px;
+  
+  }
+  
+  body {
+    background-color: #060B26;
+    color: #fff;
+    font-family: 'Cairo', sans-serif;
+  }
+  
+  .card {
+    background-color: #0B1437;
+    border: none;
+    border-radius: 8px;
+  }
+  
+  .btn-primary {
+    background-color: #4DC3FF;
+    border: none;
+  }
+  
+  .btn-primary:hover {
+    background-color: #35b3f2;
+  }
+  
+  .btn-danger {
+    background-color: #B73C3C;
+    border: none;
+  }
+  
+  .btn-danger:hover {
+    background-color: #a83232;
+  }
+  
+  .table {
+    background-color: transparent;
+    color: #fff;
+  }
+  
+  input,
+  select {
+    background-color: #0B1437;
+    border: 1px solid #4DC3FF;
+    color: #fff;
+  }
+  
+  input::placeholder {
+    color: #ccc;
+  }
+  .border-color{
+    border-color: #535862;
+  }
+  
+  .transparent-table {
+    background-color: transparent;
+    color: white;
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  .transparent-table thead th {
+    position: sticky;
+    top: -2px;
+    background-color: #0B1437; /* لون واضح */
+    z-index: 10;
+    color: white;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* خط سفلي يفصل الهيدر */
+
+  }
+  
+.nav-tabs .nav-link.bg-brand-100 {
+  background-color: #fcecd8; /* Adjust this to match your active tab style */
+  color: #EB762C;
+}
+
+.btn-primary {
+  background-color: #4DC3FF;
+  border: none;
+}
+
+.btn-primary:hover {
+  background-color: #35b3f2;
+}
+
+.expand-arrow svg {
+  transition: transform 0.3s;
+  margin-right: 8px;  
+  transform: rotate(180deg); 
+}
+.expand-arrow {
+  cursor: pointer; 
+}
+h1,h2,h3,h4,h5{
+  font-family: 'Zain', serif !important;
+ }
+
+ p,span,button,nav,div,a ,label,td,form{
+  font-family: 'Zain', serif !important;
+  font-size: 20px;
+ }
+ .font-big {
+  font-size: 28px;
+ } 
+  .transparent-table thead {
+    background-color: #0B1437; /* مش transparent */
+    background-color: transparent !important;
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  .transparent-table td {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    background-color: transparent !important;
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+
+
+  .transparent-table img {
+    border-radius: 0.5rem;
+  }
+  
+  .transparent-table .pointer {
+    cursor: pointer;
+  }
+  
+  
+  .border-gray-input {
+    border: 1px solid rgb(190, 32, 32) !important;
+    border-radius: 4px; /* اختياري */
+    color: white;       /* حسب التنسيق */
+  }
+  
+  h1,h2,h3,h4,h5{
+    font-family: 'Zain', serif !important;
+   }
+  
+ 
+  
+    @media (max-width: 576px) {
+    h5, .rb-btn-text {
+    font-size: 1rem;
+    }
+    
+    .table-responsive {
+    overflow-x: auto;
+    }
+  }
+  .clientHover:hover{
+    color: #9454C6 !important;
+    text-decoration: underline;
+cursor: pointer;
+  }
+  
+  
+  
+  @media (min-width: 990px) and (max-width: 1700px) {
+    .chang-width {
+     width: 700px !important;
+    }
+  }
+
+

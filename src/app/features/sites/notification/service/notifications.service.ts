@@ -2,7 +2,7 @@ import { HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { ApiService } from 'src/app/shared/service/api.service';
 import { environment } from 'src/environments/environment';
-import { searchOfnotificationViewModel } from '../interface/notifications';
+import { searchOfnotificationViewModel, sendNotificationViewModel } from '../interface/notifications';
 
 @Injectable({
   providedIn: 'root'
@@ -72,5 +72,13 @@ export class NotificationsService {
    }
    uploadImage(formData: FormData) {
      return this._apiService.postMedia('/UploadMediaEndPoint/UploadMedia', formData, true);
+   }
+
+   getclients() {
+      return this._apiService.get('/ClientSelectListByMobileEndpoint/ClientSelectList');
+   }
+
+   sendNotification(body :sendNotificationViewModel) {
+      return this._apiService.post('/SendNotificationEndpoint/Post', body);
    }
 }

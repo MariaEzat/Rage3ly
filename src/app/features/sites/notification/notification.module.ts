@@ -9,14 +9,16 @@ import { DropdownModule } from 'primeng/dropdown';
 import { InputSwitchModule } from 'primeng/inputswitch';
 import { TableModule } from 'primeng/table';
 import { SharedModule } from 'src/app/shared/shared.module';
+import { SendNotificationComponent } from './Components/send-notification/send-notification.component';
 
 const routes: Routes = [
   { path: '', component:NotificationsComponent }, 
+   { path: 'sendNotification', component:SendNotificationComponent }, 
 ];
 
 
 @NgModule({
-  declarations: [NotificationsComponent],
+  declarations: [NotificationsComponent, SendNotificationComponent],
   imports: [
      CommonModule,
         DropdownModule,

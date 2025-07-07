@@ -1,0 +1,109 @@
+<ng-container *ngIf="page.isPageLoaded">
+   <!-- Header Section -->
+<div class="container-fluid pt-4 px-5">
+  <div class="d-flex flex-wrap justify-content-between align-items-center py-2">
+    <!-- Back + Title -->
+    <a class="mb-2 color-gray-800 ts-3 text-white font-big text-decoration-none" routerLink="/sites/notifications" >
+      <span class="expand-arrow me-2">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="white" stroke-width="2" viewBox="0 0 24 24">
+          <path d="M8 5l8 7-8 7" />
+        </svg>
+      </span>
+      <span class="text-nowrap font-big">
+        {{ 'sites.allNotifications.sendNotification' | translate }}
+      </span>
+    </a>
+
+    <!-- Save Button -->
+    <button
+      class="btn btn-primary bg-brand-500 color-gray-25 no-border cr3 px-3 py-2 "
+      (click)="Save()"
+      [disabled]="!page.isEdit && (page.form?.invalid || page.isSaving)"
+    >
+      <span class="rb-btn-text">
+        {{ 'sites.allNotifications.sendNotification' | translate }}
+      </span>
+    </button>
+  </div>
+
+  <hr class="border-secondary" />
+
+
+        <form [formGroup]="page.form" class="pt-2">
+            <div class="row g-4 ">
+
+                <!-- Left Side: 2/3 (dropdown + title + body) -->
+                <div class="col-lg-8 col-md-7">
+                    <div class="card border rounded shadow-sm h-100" style="background-color: #1A1F3766;">
+                        <div class="card-body">
+
+                            <!-- Select Users -->
+                            <ng-control [type]="page.ControlType.SELECT" [form]="page.form" control="userId"
+                                label="sites.allNotifications.users" placeholder="sites.allNotifications.users" [items]="clientlist"
+                                [bindValue]="'id'" [bindLabel]="'name'"
+                                [inputClass]="'bg-Dark border-color color-color-gray-300'" [labelClass]="'text-white'"
+                                multiple="true" (change)="onUserSelectionChange()"></ng-control>
+
+                            <!-- Title -->
+                            <div class="mt-4">
+                                <ng-control [form]="page.form" control="title" label="sites.allNotifications.title"
+                                    placeholder="sites.allNotifications.title" [labelClass]=" 'text-white ' ">
+                                </ng-control>
+                            </div>
+
+                            <!-- Body -->
+                            <div class="mt-4">
+                                <ng-control [form]="page.form" control="body" label="sites.allNotifications.body"
+                                    placeholder="sites.allNotifications.body" [type]="page.ControlType.TEXTAREA"
+                                    [labelClass]="'text-white ' ">
+                                </ng-control>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- Right Side: 1/3 (selected users table) -->
+                <div class="col-lg-4 col-md-5">
+                    <div class="card border border-secondary rounded-3 p-3 h-100" style="background-color: #1A1F3766;">
+                        <h6 class="text-white mb-3">
+                            {{ 'sites.allNotifications.selectedUsers' | translate }}
+                        </h6>
+
+                        <div *ngIf="selectedUsers.length > 0" class="table-responsive">
+                            <table class="table text-center align-middle transparent-table">
+                                <thead>
+                                    <tr>
+                                        <th>{{ 'sites.allNotifications.userName' | translate }}</th>
+                                        <th style="width: 40px;">
+                                            <i class="fa fa-cog"></i>
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr *ngFor="let user of selectedUsers">
+                                        <td>{{ user.name }}</td>
+                                        <td>
+                                            <button pButton icon="pi pi-trash"
+                                                class="p-button-rounded p-button-text p-button-danger p-0 pointer"
+                                                aria-label="Delete" (click)="removeUser(user)" title="Remove">
+
+                                            </button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div *ngIf="selectedUsers.length === 0" class="text-white text-center mt-2">
+                            {{ 'sites.allNotifications.noUsersSelected' | translate }}
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </form>
+    </div>
+</ng-container>
