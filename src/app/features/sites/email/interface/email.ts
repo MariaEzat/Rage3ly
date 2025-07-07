@@ -3,3 +3,12 @@ export class EmailViewModel {
   body:string;
   toEmails:string[]
 }
+export class AllEmailsViewModel {
+id:string
+selected?:boolean
+}
+
+
+export class EmailSearchViewModel {
+  
+}

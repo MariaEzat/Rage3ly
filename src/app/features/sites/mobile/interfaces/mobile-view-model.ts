@@ -6,6 +6,7 @@ export interface mobileViewModel {
   phoneStatus: string;
   imeI2: string;
   selected?: boolean;
+  deleted: boolean;
 }
 
 export class mobileCreateViewModel {
@@ -24,7 +25,7 @@ export class mobileCreateViewModel {
 export class mobileSearchViewModel {
   SearchText: string;
   PhoneStatus: number;
-  
+  Deleted: number;
 }
 export class mobileSelectedViewModel {
   id: string;

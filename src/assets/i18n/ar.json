@@ -311,7 +311,7 @@
       "dashboard": "الاحصائيات",
       "searchOfStolenPhone": "بحث مسروقات",
       "retrivedPhones": "التليفونات للى تم استردادها",
-      "email": "ارسال ايميل"
+      "email": "البريد الالكتروني"
     },
     "mobile": {
       "userName": "اسم المستخدم",
@@ -343,7 +343,9 @@
       "PendingAdminConfirmation": "بانتظار تأكيد الإدارة",
       "Stolen": "مسروق",
       "NotSure": "غير مؤكد",
-      "UnRegistered": "غير مسجل"
+      "UnRegistered": "غير مسجل",
+      "deleted": "محذوف",
+      "notDeleted": "غير محذوف"
     },
     "employee-profile": {
       "profileSettings": "إعدادات الملف الشخصي",
@@ -586,7 +588,11 @@
       "invalid emails": "البريد الإلكتروني غير صالح",
       "subject": "عنوان الرسالة",
       "message Body": "محتوى الرسالة",
-      "enter Emails": "ادخل الايميلات"
+      "enter Emails": "ادخل الايميلات" ,
+       "search in emails": "بحث في الايميلات",
+      "email": "بريد إلكتروني",
+      "emails": "البريد الإلكتروني",
+      "noEmails": "لا توجد رسائل إلكترونية"
     }
   }
 }

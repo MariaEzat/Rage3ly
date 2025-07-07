@@ -35,6 +35,9 @@ export class MobileService {
     if (searchViewModel.PhoneStatus) {
       params = params.set("PhoneStatus", searchViewModel.PhoneStatus);
     }
+    if (searchViewModel.Deleted) {
+      params = params.set("Deleted", searchViewModel.Deleted);
+    }
 
     return this._apiService.get(`/GetPhonesByAdminEndpoint/GetPhones?orderBy=${orderBy}&pageIndex=${pageIndex}&pageSize=${pageSize}`, params);
   }

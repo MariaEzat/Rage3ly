@@ -321,7 +321,7 @@
       "dashboard": "Dashboard",
       "searchOfStolenPhone": "Search Of Stolen Phone",
       "retrivedPhones": "Retrived Phones",
-      "email": "Send Email"
+      "email": "Email"
     },
     "mobile": {
       "userName": "User Name",
@@ -353,7 +353,9 @@
     "PendingAdminConfirmation": "Pending Admin Confirmation",
     "Stolen": "Stolen",
     "NotSure": "Not Sure",
-    "UnRegistered": "UnRegistered"
+    "UnRegistered": "UnRegistered",
+    "deleted":"Deleted",
+    "notDeleted":"Not Deleted"
     },
     "employee-profile": {
       "profileSettings": "Profile Settings",
@@ -595,7 +597,11 @@
       "invalid emails": "Invalid emails",
       "subject": "Subject",
       "message Body": "Message Body",
-      "enter Emails": "Enter Emails"
+      "enter Emails": "Enter Emails",
+      "search in emails": "Search In Emails",
+      "email": "Email",
+      "emails": "Emails",
+      "noEmails": "No Emails"
     }
   }
 }

@@ -24,7 +24,7 @@ export class HomeComponent extends CrudIndexBaseUtils {
   records: number;
   activation: mobileActivateViewModel = { id: '' }
   PhoneStatus = [];
-
+  DeletedList = [];
 
 
   // @ViewChild('downloadButton') downloadButton: ElementRef;
@@ -59,7 +59,9 @@ private translate: TranslateService
       'sites.mobile.PendingAdminConfirmation',
       'sites.mobile.Stolen',
        'sites.mobile.NotSure',
-        'sites.mobile.UnRegistered'
+        'sites.mobile.UnRegistered',
+        'sites.mobile.deleted',
+        'sites.mobile.notDeleted',
     ]).subscribe(translations => {
       this.PhoneStatus = [
         { id: 1, name: translations['sites.mobile.Safe'] },
@@ -68,6 +70,11 @@ private translate: TranslateService
         { id: 4, name: translations['sites.mobile.Stolen'] },
            { id: 5, name: translations['sites.mobile.NotSure'] },
               { id: 6, name: translations['sites.mobile.UnRegistered'] }
+      ];
+
+      this.DeletedList = [
+        { id: 1, name: translations['sites.mobile.deleted'] },
+        { id: 2, name: translations['sites.mobile.notDeleted'] }
       ];
     });
  
@@ -88,6 +95,7 @@ private translate: TranslateService
       { Name: 'IMEI1', Title: 'IMEI1', Selectable: false, Sortable: true },
       { Name: 'IMEI2', Title: 'IMEI2', Selectable: false, Sortable: true },
       { Name: 'Phone Status', Title: 'sites.mobile.phoneStatus', Selectable: false, Sortable: true },
+       { Name: 'Deleted', Title: 'sites.mobile.deleted', Selectable: false, Sortable: true },
       { Name: 'Action', Title: 'sites.mobile.action', Selectable: false, Sortable: true },
 
 
@@ -104,6 +112,7 @@ private translate: TranslateService
     this.page.searchForm = this._sharedService.formBuilder.group({
       SearchText: [this.searchViewModel.SearchText],
       PhoneStatus: [this.searchViewModel.PhoneStatus],
+      Deleted: [this.searchViewModel.Deleted]
     });
     this.page.isPageLoaded = true;
   }
