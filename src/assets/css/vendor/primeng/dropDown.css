@@ -1,20 +1,57 @@
-.p-inputwrapper{
-    width: 100%;
+.ng-dropdown-panel {
+  background-color: #0B1437 !important;
+  color: white !important;
+  border-radius: 6px !important;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  max-height: 300px;
+  overflow: hidden;
+}
+.ng-dropdown-panel .ng-dropdown-panel-items {
+  display: block;
+  height: auto;
+  box-sizing: border-box;
+  max-height: 300px !important;
+  overflow-y: auto;
+}
+.ng-dropdown-panel .scroll-host {
+  background-color: #0B1437 !important;
+  max-height: 300px;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: #35b3f2 #1A1F37;
 }
 
-.ng-dropdown-panel .ng-option:hover{
-    background-color: #31314a  !important;
-    color: white !important;
-  }
-  .ng-dropdown-panel .ng-option{
-    background-color: #060B26  !important;
-    color: white !important;
-  
-  }
-  .ng-option-label{
-    color: white !important;
-  
-  }
+.ng-dropdown-panel .scroll-host::-webkit-scrollbar {
+  width: 6px;
+}
+
+.ng-dropdown-panel .scroll-host::-webkit-scrollbar-thumb {
+  border-radius: 2px;
+}
+
+.ng-dropdown-panel .scroll-host::-webkit-scrollbar-track {
+  background-color: #0B1437;
+}
+
+.ng-dropdown-panel .ng-option {
+  color: white !important;
+  padding: 8px 12px;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.ng-dropdown-panel .ng-option:hover {
+  background-color: #31314a !important;
+  color: white !important;
+}
+
+.ng-dropdown-panel .ng-option-selected {
+  color: #fff !important;
+}
+
+.ng-option-label {
+  color: white !important;
+}
 
 .ng-clear-wrapper {
   color: white;
