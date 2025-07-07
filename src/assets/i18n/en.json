@@ -606,7 +606,9 @@
       "search in emails": "Search In Emails",
       "email": "Email",
       "emails": "Emails",
-      "noEmails": "No Emails"
+      "noEmails": "No Emails",
+      "body": "Body",
+      "emailAdress": "Email Address"
     }
   }
 }

@@ -15,7 +15,7 @@ import { EmailService } from '../../service/email.service';
 })
 export class GetAllEmailsComponent extends CrudIndexBaseUtils {
   override page: CRUDIndexPage = new CRUDIndexPage();
-  override pageRoute = '/sites/jobTitle';
+  override pageRoute = '/sites/email';
   override searchViewModel: EmailSearchViewModel = new EmailSearchViewModel();
   modalRef: BsModalRef;
   override items: AllEmailsViewModel[] = [];
@@ -42,11 +42,10 @@ export class GetAllEmailsComponent extends CrudIndexBaseUtils {
   initializePage() {
     this.page.columns = [
       { Name: "No", Title: "#", Selectable: true, Sortable: false },
-      { Name: "Name", Title: "sites.employee.employee", Selectable: false, Sortable: true },
-      { Name: "Mobile", Title: "sites.employee.mobile", Selectable: false, Sortable: true },
-      { Name: "roleId", Title: "sites.employee.role", Selectable: false, Sortable: true },
-      { Name: 'Activation', Title: 'sites.employee.activation', Selectable: false, Sortable: true },
-      { Name: "Action", Title: "sites.employee.action", Selectable: false, Sortable: true },
+      { Name: "Subject", Title: "salesflow.Email.subject", Selectable: false, Sortable: true },
+      { Name: "Body", Title: "salesflow.Email.body", Selectable: false, Sortable: true },
+      { Name: "EmailAdresses", Title: "salesflow.Email.emailAdress", Selectable: false, Sortable: true },
+
 
     ];
 
@@ -67,8 +66,9 @@ export class GetAllEmailsComponent extends CrudIndexBaseUtils {
 
   override createSearchForm() {
     this.page.searchForm = this._sharedService.formBuilder.group({
-
-
+      Subject: [this.searchViewModel.Subject],
+      Body: [this.searchViewModel.Body],
+      EmailAdress: [this.searchViewModel.EmailAdress],
     });
     this.page.isPageLoaded = true;
   }
@@ -88,74 +88,15 @@ export class GetAllEmailsComponent extends CrudIndexBaseUtils {
     });
   }
 
-  @ViewChild('confirmDeleteTemplate', { static: false }) confirmDeleteTemplate: any;
-  showDeleteConfirmation(selectedItem: AllEmailsViewModel) {
-    this.selectedItem = selectedItem;
-    this.modalRef = this._sharedService.modalService.show(this.confirmDeleteTemplate, { class: 'modal-sm' });
-  }
 
 
-
-  remove() {
-    this._emailService.remove(this.selectedItem).subscribe(res => {
-      this._sharedService.showToastr(res)
-      if (res.isSuccess) {
-        let index = this.items.findIndex(x => x.id == this.selectedItem.id);
-        this.items.splice(index, 1);
-        this.search();
-      }
-    })
-  }
-
-
-
-  editEmployee(id: string) {
-    // Navigate to the create page with the governorate ID
-    this._router.navigate(['/sites/jobTitle/edit', id]);
-  }
 
   getRoleName(statusId: number): string {
     const status = this.RolesEnum.find(s => s.id === Number(statusId));
     return status ? status.name : 'Unknown';
   }
  
-  @ViewChild('confirmDeleteTemplates', { static: false }) confirmDeleteTemplates: any;
-  showDeleteConfirmations(selectedItem: AllEmailsViewModel) {
-    this.selectedItem = selectedItem;
-    this.modalRef = this._sharedService.modalService.show(this.confirmDeleteTemplates, { class: 'modal-sm' });
-  }
-
-  // deleteSelectedGovernorates() {
-  //   const selectedIds = this.items
-  //     .filter(item => item.selected) 
-  //     .map(item => item.id);         
-
-  //   if (selectedIds.length === 0) {
-
-  //     return;
-  //   }
-  //   this.modalRef = this._sharedService.modalService.show(this.confirmDeleteTemplates, { class: 'modal-sm' });
-  //   this.modalRef.content = {
-  //     onConfirm: () => {
-  //       // Call the delete API
-  //       this._employeeService.bulkDelete(selectedIds).subscribe({
-  //         next: (response) => {
-  //           this._sharedService.showToastr(response);
-  //           if (response.isSuccess) {
-  //             // Remove the deleted items from the local list
-  //             this.items = this.items.filter(item => !selectedIds.includes(item.id));
-  //             this.search();
-  //           }
-  //         },
-  //         error: (error) => {
-  //           this._sharedService.showToastr(error);
-  //         }
-  //       });
-  //     },
-  //   };
-  // }
-
-
+ 
  
 
   getRoleNameById(id: number): string {
@@ -163,75 +104,5 @@ export class GetAllEmailsComponent extends CrudIndexBaseUtils {
     return role ? role.name : 'Unknown';
   }
   
-  isAllSelected(): boolean {
-    return this.items.every(item => item.selected);
-  }
 
-  // Toggle the selection of all items
-  toggleSelectAll(event: any): void {
-    const isChecked = event.target.checked;
-    this.items.forEach(item => {
-      item.selected = isChecked;
-    });
-  }
-
-
-  // activateCustomers() {
-  //   const selectedIds = this.items
-  //     .filter(item => item.selected)
-  //     .map(item => item.id);
-
-  //   if (selectedIds.length > 0) {
-  //     this._employeeService.bulkActivate(selectedIds).subscribe(response => {
-
-
-
-  //       this._sharedService.showToastr(response);
-  //       if (response.isSuccess) {
-  //         this.items.forEach(item => {
-  //           if (selectedIds.includes(item.id)) {
-  //             item.isActive = true;
-  //           }
-  //         });
-  //       }
-  //     });
-  //   }
-  // }
-  // updateActivation(id: string, isActive: boolean) {
-  //   this.activation.id = id;
-  //   const updateObservable = isActive ? this._employeeService.updateActivated(this.activation) : this._employeeService.updateDeactivated(this.activation);
-
-  //   updateObservable.subscribe({
-  //     next: (response) => {
-  //       this._sharedService.showToastr(response);
-  //       if (response.isSuccess) {
-  //         this.initializePage();
-  //       } else {
-  //         this._sharedService.showToastr(response);
-  //       }
-  //     },
-  //     error: (error) => {
-  //       this._sharedService.showToastr(error);
-  //     },
-  //   });
-  // }
-
-  // disActiveCustomers() {
-  //   const selectedIds = this.items
-  //     .filter(item => item.selected)
-  //     .map(item => item.id);
-
-  //   if (selectedIds.length > 0) {
-  //     this._employeeService.bulkDeactivate(selectedIds).subscribe(response => {
-  //       this._sharedService.showToastr(response);
-  //       if (response.isSuccess) {
-  //         this.items.forEach(item => {
-  //           if (selectedIds.includes(item.id)) {
-  //             item.isActive = false;
-  //           }
-  //         });
-  //       }
-  //     });
-  //   }
-  // }
 }

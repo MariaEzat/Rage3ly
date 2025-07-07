@@ -128,3 +128,10 @@ form {
     padding: 1px;
   }
 }
+
+@media (min-width: 990px) and (max-width: 1700px) {
+  .chang-width {
+    width: 700px !important;
+  }
+}
+
