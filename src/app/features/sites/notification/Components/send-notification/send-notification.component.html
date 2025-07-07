@@ -28,19 +28,22 @@
         <hr class="border-secondary" />
 
         <form [formGroup]="page.form" class="pt-2">
-            <div class=" row " >
+            <div class=" row ">
 
                 <!-- Left Side: takes remaining space -->
-                <div class=" col-10" >
+                <div class=" col-10">
                     <div class="card border rounded shadow-sm h-100" style="background-color: #1A1F3766;">
                         <div class="card-body m-5">
                             <!-- Select Users -->
                             <ng-control [type]="page.ControlType.SELECT" [form]="page.form" control="userId"
                                 label="sites.allNotifications.users" placeholder="sites.allNotifications.users"
                                 [items]="clientlist" [bindValue]="'id'" [bindLabel]="'name'"
-                                [inputClass]="'bg-Dark border-color color-color-gray-300'" [labelClass]="'text-white'"
-                                multiple="true" (change)="onUserSelectionChange()">
+                                [inputClass]="'bg-Dark border-color text-white'" [labelClass]="'text-white'"
+                                multiple="true" [closeOnSelect]="false" (change)="onUserSelectionChange()">
                             </ng-control>
+
+
+                        
 
                             <!-- Title -->
                             <div class="mt-4">
@@ -76,7 +79,7 @@
                                         <th>{{ 'sites.allNotifications.userName' | translate }}</th>
 
                                         <th style="width: 40px;"><span>
-                                            {{ 'sites.allNotifications.action' | translate }}</span>
+                                                {{ 'sites.allNotifications.action' | translate }}</span>
                                         </th>
                                     </tr>
                                 </thead>
