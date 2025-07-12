@@ -355,7 +355,8 @@
     "NotSure": "Not Sure",
     "UnRegistered": "UnRegistered",
     "deleted":"Deleted",
-    "notDeleted":"Not Deleted"
+    "notDeleted":"Not Deleted",
+    "dateOfPurchaseError":"Date of Purchase cannot be in the future"
     },
     "employee-profile": {
       "profileSettings": "Profile Settings",

@@ -76,10 +76,17 @@
               <ng-control [form]="page.form" control="dateOfPurchase" label="sites.mobile.dateOfPurchase"
                 [inputClass]="'mb-2 bg-Dark border-color color-color-gray-300'"
                 [labelClass]="page.form.get('dateOfPurchase')?.invalid && (page.form.get('dateOfPurchase')?.touched || page.form.get('dateOfPurchase')?.dirty) ? 'form-control-with-validate' : 'form-control-no-validate'"
-                [type]="page.ControlType.INPUT_DATE"  [attr.max]="todayString">
+                [type]="page.ControlType.INPUT_DATE" [attr.max]="todayString">
               </ng-control>
 
+              <!-- رسالة الخطأ -->
+              <div *ngIf="page.form.get('dateOfPurchase')?.hasError('maxToday') 
+              && (page.form.get('dateOfPurchase')?.dirty || page.form.get('dateOfPurchase')?.touched)"
+                class="text-danger small mt-1 ms-1">
+                {{ "sites.mobile.dateOfPurchaseError" | translate }}
+              </div>
             </div>
+
           </div>
           <div class="row g-2">
             <div class="col-sm-6">
@@ -87,6 +94,7 @@
                 (keypress)="numberOnly($event)" placeholder="sites.mobile.number"
                 [inputClass]="'mb-2 bg-Dark border-color color-color-gray-300'"
                 [labelClass]="page.form.get('number')?.invalid && (page.form.get('number')?.touched || page.form.get('number')?.dirty) ? 'form-control-with-validate' : 'form-control-no-validate'"></ng-control>
+
             </div>
           </div>
           <div class="row g-2 justify-content-center m-3">

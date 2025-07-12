@@ -345,7 +345,8 @@
       "NotSure": "غير مؤكد",
       "UnRegistered": "غير مسجل",
       "deleted": "محذوف",
-      "notDeleted": "غير محذوف"
+      "notDeleted": "غير محذوف",
+      "dateOfPurchaseError":"تاريخ الشراء لا يمكن ان يكون ف المستقبل"
     },
     "employee-profile": {
       "profileSettings": "إعدادات الملف الشخصي",

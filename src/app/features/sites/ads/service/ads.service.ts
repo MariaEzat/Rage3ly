@@ -30,7 +30,7 @@ export class AdsService {
     if (searchViewModel.EndDate) {
       params = params.set("EndDate", this.formatDate(searchViewModel.EndDate));
     }
-    return this._apiService.get(`/GetAllAdvertisementEndpoint/GetList?orderBy=${orderBy}&isAscending=${isAscending}&pageIndex=${pageIndex}&pageSize=${pageSize}`,params);
+    return this._apiService.get(`/GetAllAdvertisementForAdminEndPoint/GetList?orderBy=${orderBy}&isAscending=${isAscending}&pageIndex=${pageIndex}&pageSize=${pageSize}`,params);
   }
   getById(ID: string) {
     return this._apiService.get(`/GetAdvertisementByIDEndPoint/GetAdvertisementByID?ID=${ID}`,);
