@@ -6,7 +6,7 @@ import { CRUDCreatePage } from 'src/app/shared/classes/crud-create.model';
 import {
   mobileCreateViewModel
 } from '../../interfaces/mobile-view-model';
-import { Validators } from '@angular/forms';
+import { AbstractControl, ValidationErrors, Validators } from '@angular/forms';
 import { forkJoin } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { TranslateService } from '@ngx-translate/core';
@@ -22,7 +22,7 @@ export class CreateComponent implements OnInit, OnDestroy {
   id: string;
   isActivated: boolean = false;
   images = [{ uploaded: false, src: null }, { uploaded: false, src: null }];
-
+  todayString: string = '';
   environment = environment;
   Brandslist: [] = [];
   clientId: string = "";
@@ -39,7 +39,8 @@ export class CreateComponent implements OnInit, OnDestroy {
     this.page.isPageLoaded = false;
     this.onSelectBrand();
 
-   
+    const today = new Date();
+    this.todayString = today.toISOString().split('T')[0];
 
     this._activatedRoute.paramMap.subscribe((params) => {
       if (params.has('id')) {
@@ -69,7 +70,7 @@ export class CreateComponent implements OnInit, OnDestroy {
           this.item.id = this.id;
           this.item.paths = res.data.media?.map((m) => m.path) || [];
 
-          
+
           this.images = [];
 
           for (let i = 0; i < 2; i++) {
@@ -92,12 +93,12 @@ export class CreateComponent implements OnInit, OnDestroy {
   createForm() {
     this.page.form = this._sharedService.formBuilder.group({
       imeI1: [this.item.imeI1, [Validators.required, Validators.pattern(/^\d{15}$/)]],
-      imeI2: [this.item.imeI2, [Validators.required, Validators.pattern(/^\d{15}$/)]],
+      imeI2: [this.item.imeI2, [Validators.pattern(/^\d{15}$/)]],
       mobileModel: [this.item.mobileModel, Validators.required],
       number: [this.item.number, [Validators.required, Validators.pattern(/^(010|011|012|015)\d{8}$/)]],
-      serialNumber: [this.item.serialNumber,[Validators.required,Validators.minLength(5)] ],
+      serialNumber: [this.item.serialNumber, [Validators.required, Validators.minLength(5)]],
       brandId: [this.item.brandId, Validators.required],
-      dateOfPurchase: [this.item.dateOfPurchase, Validators.required],
+      dateOfPurchase: [this.item.dateOfPurchase, [Validators.required, this.maxTodayValidator()]],
       paths: [this.item.paths],
     });
     this.page.isPageLoaded = true;
@@ -107,6 +108,12 @@ export class CreateComponent implements OnInit, OnDestroy {
     if (this.page.isSaving || this.page.form.invalid) return;
     this.page.isSaving = true;
     Object.assign(this.item, this.page.form.value);
+    const rawDate: Date = this.page.form.get('dateOfPurchase')?.value;
+    if (rawDate) {
+      const localDate = new Date(rawDate.getTime() - rawDate.getTimezoneOffset() * 60000);
+      this.item.dateOfPurchase = localDate; 
+    }
+
     this.item.paths = this.getUploadedImages();
     this.item.paths = this.images.filter((image) => image.uploaded).map((image) => image.src);
     if (!this.page.isEdit) {
@@ -130,8 +137,21 @@ export class CreateComponent implements OnInit, OnDestroy {
     });
   }
 
-  
- 
+
+maxTodayValidator(): (control: AbstractControl) => ValidationErrors | null {
+  return (control: AbstractControl) => {
+    if (!control.value) return null;
+
+    const inputDate = new Date(control.value);
+    const today = new Date();
+    today.setHours(0, 0, 0, 0); 
+
+    if (inputDate > today) {
+      return { maxToday: true };
+    }
+    return null;
+  };
+}
   onCancel(): void {
     this._router.navigate(['/sites/mobile']);
   }

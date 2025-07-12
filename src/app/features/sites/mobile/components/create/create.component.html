@@ -76,17 +76,18 @@
               <ng-control [form]="page.form" control="dateOfPurchase" label="sites.mobile.dateOfPurchase"
                 [inputClass]="'mb-2 bg-Dark border-color color-color-gray-300'"
                 [labelClass]="page.form.get('dateOfPurchase')?.invalid && (page.form.get('dateOfPurchase')?.touched || page.form.get('dateOfPurchase')?.dirty) ? 'form-control-with-validate' : 'form-control-no-validate'"
-                [type]="page.ControlType.INPUT_DATE">
+                [type]="page.ControlType.INPUT_DATE"  [attr.max]="todayString">
               </ng-control>
+
             </div>
           </div>
           <div class="row g-2">
-               <div class="col-sm-6">
-                <ng-control [form]="page.form" control="number" label="sites.mobile.number"
-                  (keypress)="numberOnly($event)" placeholder="sites.mobile.number"
-                  [inputClass]="'mb-2 bg-Dark border-color color-color-gray-300'"
-                  [labelClass]="page.form.get('number')?.invalid && (page.form.get('number')?.touched || page.form.get('number')?.dirty) ? 'form-control-with-validate' : 'form-control-no-validate'"></ng-control>
-              </div>
+            <div class="col-sm-6">
+              <ng-control [form]="page.form" control="number" label="sites.mobile.number"
+                (keypress)="numberOnly($event)" placeholder="sites.mobile.number"
+                [inputClass]="'mb-2 bg-Dark border-color color-color-gray-300'"
+                [labelClass]="page.form.get('number')?.invalid && (page.form.get('number')?.touched || page.form.get('number')?.dirty) ? 'form-control-with-validate' : 'form-control-no-validate'"></ng-control>
+            </div>
           </div>
           <div class="row g-2 justify-content-center m-3">
             <div *ngFor="let image of images; let i = index" class="col-12 col-sm-4 col-lg-4">
