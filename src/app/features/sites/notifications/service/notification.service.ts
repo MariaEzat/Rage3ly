@@ -23,20 +23,16 @@ export class NotificationService {
       params = params.set("ClinetName", searchViewModel.ClinetName);
     }
     if (searchViewModel.From) {
-      params = params.set("From", searchViewModel.PhoneNumber);
+      params = params.set("From", this.formatDate(searchViewModel.From));
     }
     if (searchViewModel.To) {
-      params = params.set("To", searchViewModel.PhoneNumber);
+      params = params.set("To", this.formatDate(searchViewModel.To));
     }
     if (searchViewModel.ImeiAndSerial) {
       params = params.set("ImeiAndSerial", searchViewModel.ImeiAndSerial);
     }
     return this._apiService.get(`/FilterActionLogByStolenStatusEndPoint/FilterActionLogByStolenStatus?orderBy=${orderBy}&pageIndex=${pageIndex}&pageSize=${pageSize}`, params);
   }
-
-
-  
-
 
   getById(ID: string) {
     return this._apiService.get(`/GetClientWithPhoneDetailsEndpoint/GetClientWithPhoneDetails?ID=${ID}`,);

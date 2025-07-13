@@ -42,8 +42,8 @@ export interface TransferOfOwnershipViewModel {
 export class notificationSearchViewModel {
   ClinetName: string;
   PhoneNumber: string;
-  From:Data;
-  To:Data;
+  From: Date;
+  To: Date;
   ImeiAndSerial: string;
 
 }
