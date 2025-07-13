@@ -65,21 +65,8 @@ export class CreateComponent implements OnInit, OnDestroy {
     this._mobileService.getById(this.id).subscribe({
       next: (res) => {
         if (res.isSuccess) {
-          console.log(res.data)
           this.item = res.data;
           this.item.id = this.id;
-          this.item.paths = res.data.media?.map((m) => m.path) || [];
-
-
-          this.images = [];
-
-          for (let i = 0; i < 2; i++) {
-            const path = this.item.paths[i];
-            this.images.push({
-              uploaded: !!path,
-              src: path || null
-            });
-          }
           this.createForm();
           this.page.isPageLoaded = true;
         }
@@ -99,7 +86,7 @@ export class CreateComponent implements OnInit, OnDestroy {
       serialNumber: [this.item.serialNumber, [Validators.required, Validators.minLength(5)]],
       brandId: [this.item.brandId, Validators.required],
       dateOfPurchase: [this.item.dateOfPurchase, [Validators.required, this.maxTodayValidator()]],
-      paths: [this.item.paths],
+      otherBrand: [this.item.otherBrand],
     });
     this.page.isPageLoaded = true;
   }
@@ -113,9 +100,6 @@ export class CreateComponent implements OnInit, OnDestroy {
       const localDate = new Date(rawDate.getTime() - rawDate.getTimezoneOffset() * 60000);
       this.item.dateOfPurchase = localDate; 
     }
-
-    this.item.paths = this.getUploadedImages();
-    this.item.paths = this.images.filter((image) => image.uploaded).map((image) => image.src);
     if (!this.page.isEdit) {
       this.item.clientId = this.clientId;
     }
@@ -172,51 +156,20 @@ maxTodayValidator(): (control: AbstractControl) => ValidationErrors | null {
   }
   ngOnDestroy(): void { }
 
-  onImageUpload(files, index: number): void {
-    if (files.length === 0) {
-      return;
-    }
-
-    const file = <File>files[0];
-    const formData = new FormData();
-    formData.append('Files', file, file.name);
-
-    this._mobileService.uploadImage(formData).subscribe({
-      next: (res) => {
-        if (res.isSuccess) {
-          // this.images[index] = { uploaded: true, src: res.data.path[index] };
-          this.images[index] = { uploaded: true, src: res.data.path[0] };
-
-          this._sharedService.showToastr(res);
-        }
-      },
-      error: (err) => {
-        this._sharedService.showToastr(err);
-      },
-    });
-  }
-
-  replaceImage(index: number): void {
-    this.images[index] = { src: '', uploaded: false };
-  }
 
   addNewPhone() {
     this._router.navigateByUrl('/', { skipLocationChange: true }).then(() => {
       this._router.navigate([`/sites/mobile/create/${this.clientId}`]);
     });
   }
-  addImageBox() {
-    this.images.push({ uploaded: false, src: null });
-  }
-
-  getUploadedImages() {
-    return this.images.filter(image => image.uploaded).map(image => image.src);
-  }
-
+ 
 
   numberOnly(event: any) {
     return this._sharedService.numberOnly(event);
   }
 
+get isOtherBrandSelected(): boolean {
+  return this.page.form?.get('brandId')?.value === 'other';
+}
 
 }

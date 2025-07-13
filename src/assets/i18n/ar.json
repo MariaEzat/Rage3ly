@@ -346,7 +346,8 @@
       "UnRegistered": "غير مسجل",
       "deleted": "محذوف",
       "notDeleted": "غير محذوف",
-      "dateOfPurchaseError":"تاريخ الشراء لا يمكن ان يكون ف المستقبل"
+      "dateOfPurchaseError":"تاريخ الشراء لا يمكن ان يكون ف المستقبل",
+      "otherBrand":"ماركات اخرى"
     },
     "employee-profile": {
       "profileSettings": "إعدادات الملف الشخصي",

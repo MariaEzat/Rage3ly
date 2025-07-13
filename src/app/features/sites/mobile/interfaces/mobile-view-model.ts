@@ -12,14 +12,14 @@ export interface mobileViewModel {
 export class mobileCreateViewModel {
     id:string;
     imeI1: string;
-    imeI2: string;  
+    imeI2?: string;  
     number: string;
     mobileModel: string;
     serialNumber: string;
     brandId:string;
     clientId:string;
     dateOfPurchase:Date;
-    paths?:string[];
+    otherBrand?:string;
   }
 
 export class mobileSearchViewModel {

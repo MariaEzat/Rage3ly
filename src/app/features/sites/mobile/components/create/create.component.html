@@ -59,18 +59,14 @@
 
           </div>
           <div class="row g-2">
-
             <div class="col-sm-6">
-              <label
-                [class.text-danger]="page.form.get('brandId')?.invalid && (page.form.get('brandId')?.dirty || page.form.get('brandId')?.touched)">
-                {{"sites.mobile.brand"|translate}}
-              </label>
-              <select formControlName="brandId"
-                class="form-control mb-2 text-sm bg-Dark border-color color-color-gray-300">
-                <option value="" disabled selected> {{"sites.mobile.brand"|translate}}</option>
-                <option *ngFor="let brand of Brandslist" [value]="brand.id">{{ brand.name }}</option>
-              </select>
+              <ng-control [form]="page.form" control="number" label="sites.mobile.number"
+                (keypress)="numberOnly($event)" placeholder="sites.mobile.number"
+                [inputClass]="'mb-2 bg-Dark border-color color-color-gray-300'"
+                [labelClass]="page.form.get('number')?.invalid && (page.form.get('number')?.touched || page.form.get('number')?.dirty) ? 'form-control-with-validate' : 'form-control-no-validate'"></ng-control>
+
             </div>
+
 
             <div class="col-sm-6">
               <ng-control [form]="page.form" control="dateOfPurchase" label="sites.mobile.dateOfPurchase"
@@ -89,39 +85,31 @@
 
           </div>
           <div class="row g-2">
+            <!-- Brand Dropdown -->
             <div class="col-sm-6">
-              <ng-control [form]="page.form" control="number" label="sites.mobile.number"
-                (keypress)="numberOnly($event)" placeholder="sites.mobile.number"
-                [inputClass]="'mb-2 bg-Dark border-color color-color-gray-300'"
-                [labelClass]="page.form.get('number')?.invalid && (page.form.get('number')?.touched || page.form.get('number')?.dirty) ? 'form-control-with-validate' : 'form-control-no-validate'"></ng-control>
+              <label
+                [class.text-danger]="page.form.get('brandId')?.invalid && (page.form.get('brandId')?.dirty || page.form.get('brandId')?.touched)">
+                {{ "sites.mobile.brand" | translate }}
+              </label>
+              <select formControlName="brandId"
+                class="form-control mb-2 text-sm bg-Dark border-color color-color-gray-300">
+                <option value="" disabled selected>{{ "sites.mobile.brand" | translate }}</option>
+                <option *ngFor="let brand of Brandslist" [value]="brand.id">{{ brand.name }}</option>
+                <option value="other">{{ "sites.mobile.otherBrand" | translate }}</option> 
+              </select>
+            </div>
 
+            <!-- Other Brand Input -->
+            <div class="col-sm-6" *ngIf="page.form.get('brandId')?.value === 'other'">
+              <ng-control [form]="page.form" control="otherBrand" label="sites.mobile.otherBrand"
+                placeholder="sites.mobile.otherBrand" [inputClass]="'mb-2 bg-Dark border-color color-color-gray-300'"
+                [labelClass]="page.form.get('otherBrand')?.invalid && (page.form.get('otherBrand')?.touched || page.form.get('otherBrand')?.dirty) 
+        ? 'form-control-with-validate' : 'form-control-no-validate'">
+              </ng-control>
             </div>
           </div>
-          <div class="row g-2 justify-content-center m-3">
-            <div *ngFor="let image of images; let i = index" class="col-12 col-sm-4 col-lg-4">
-              <div class="border p-3 text-center h-100">
-                <div *ngIf="image.uploaded; else uploadTemplate" class="text-center">
-                  <img [src]="environment.api + '/' + image.src" alt="Uploaded Image"
-                    style="width: 200px; height: 200px;" class="img-fluid mb-2 img-thumbnail" />
-                  <div class="d-flex justify-content-center gap-2">
-                    <button class="btn btn-delete ms-2" (click)="replaceImage(i)">
-                      <img src="/assets/images/delete-white.svg" class="icon-size" />
-                    </button>
-                  </div>
-                </div>
-                <ng-template #uploadTemplate>
-                  <label for="fileInput-{{i}}" class="text-primary cursor-pointer">
-                    <i class="fa fa-upload fa-2x mb-2 color-brand-500"></i>
-                    <p class="color-brand-500 text-white">
-                      {{"sites.advertisment.Upload New Image" | translate}}
-                    </p>
-                  </label>
-                  <input #file type="file" id="fileInput-{{i}}" class="d-none"
-                    (change)="onImageUpload(file.files, i)" />
-                </ng-template>
-              </div>
-            </div>
-          </div>
+
+
 
 
         </form>
