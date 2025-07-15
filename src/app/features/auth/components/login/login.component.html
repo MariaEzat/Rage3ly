@@ -8,7 +8,7 @@
         <form [formGroup]="loginForm">
           <ng-control [form]="loginForm" control="mobile" [inputClass]="'mb-3 bg-Dark border-color'"
             [labelClass]="loginForm.get('mobile')?.invalid && (loginForm.get('mobile')?.touched || loginForm.get('mobile')?.dirty) ? 'form-control-with-validate' : 'form-control-no-validate'"
-            label="auth.login.phoneNumberOrEmail" placeholder="01-xxx-xxx-xxx , Email" (keypress)="numberOnly($event)">
+            label="auth.login.phoneNumberOrEmail" placeholder="01-xxx-xxx-xxx" (keypress)="numberOnly($event)">
           </ng-control>
           <ng-control [form]="loginForm" [inputClass]="'mb-2 bg-Dark border-color color-color-gray-300'" 
             [labelClass]="loginForm.get('password')?.invalid && (loginForm.get('password')?.touched || loginForm.get('password')?.dirty) ? 'form-control-with-validate' : 'form-control-no-validate'"

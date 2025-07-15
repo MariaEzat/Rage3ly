@@ -229,7 +229,7 @@
     "login": {
       "login": "Login",
       "enterThePhoneNumberandPassword": "Enter The Phone Number and Password",
-      "phoneNumberOrEmail": "Phone Number or Email",
+      "phoneNumberOrEmail": "Phone Number",
       "password": "Password",
       "forgotPassword?": "Forgot Password ?",
       "haveNotAnAccount?": "Don't have an account?",
