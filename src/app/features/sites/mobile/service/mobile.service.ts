@@ -12,7 +12,7 @@ export class MobileService {
   [x: string]: any;
 
 
-  constructor(private _apiService:ApiService) { }
+  constructor(private _apiService: ApiService) { }
 
   postOrUpdate(body: mobileCreateViewModel) {
     if (body.id) return this._apiService.update(`/EditPhoneEndPoint/EditPhone`, body)
@@ -36,8 +36,10 @@ export class MobileService {
       params = params.set("PhoneStatus", searchViewModel.PhoneStatus);
     }
     if (searchViewModel.Deleted) {
-      params = params.set("Deleted", searchViewModel.Deleted);
+      const isDeleted = searchViewModel.Deleted == 1 ? true : false;
+      params = params.set("Deleted", isDeleted);
     }
+
 
     return this._apiService.get(`/GetPhonesByAdminEndpoint/GetPhones?orderBy=${orderBy}&pageIndex=${pageIndex}&pageSize=${pageSize}`, params);
   }
@@ -67,7 +69,7 @@ export class MobileService {
 
   //   return this._apiService.get(`/GetPhonesByAdminEndpoint/GetPhones?orderBy=${orderBy}&pageIndex=${pageIndex}&pageSize=${pageSize}`, params);
   // }
-  
+
 
 
   updateActivated(body: mobileActivateViewModel) {
