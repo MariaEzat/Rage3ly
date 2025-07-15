@@ -26,6 +26,8 @@ export class CreateComponent implements OnInit, OnDestroy {
   environment = environment;
   Brandslist: [] = [];
   clientId: string = "";
+isDropdownOpen: boolean = false;
+
 
   constructor(
     private _sharedService: SharedService,

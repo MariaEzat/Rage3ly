@@ -31,3 +31,20 @@
  .font-big {
   font-size: 25px;
  }
+
+.custom-dropdown {
+  appearance: none;
+  background-color: transparent;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'><path fill='white' d='M6 8L0 0h12z'/></svg>");
+  background-repeat: no-repeat;
+  background-position: right 0.75rem center;
+  background-size: 12px 8px;
+  padding-right: 2rem;
+  color: white;
+  transition: background-image 0.3s ease;
+}
+
+
+.custom-dropdown.dropdown-open {
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'><path fill='white' d='M6 0L0 8h12z'/></svg>");
+}

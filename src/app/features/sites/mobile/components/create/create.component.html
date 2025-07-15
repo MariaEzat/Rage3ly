@@ -92,11 +92,14 @@
                 {{ "sites.mobile.brand" | translate }}
               </label>
               <select formControlName="brandId"
-                class="form-control mb-2 text-sm bg-Dark border-color color-color-gray-300">
+                class="form-control mb-2 text-sm bg-Dark border-color color-color-gray-300 custom-dropdown"
+                [ngClass]="{ 'dropdown-open': isDropdownOpen }" (focus)="isDropdownOpen = true"
+                (blur)="isDropdownOpen = false">
                 <option value="" disabled selected>{{ "sites.mobile.brand" | translate }}</option>
                 <option *ngFor="let brand of Brandslist" [value]="brand.id">{{ brand.name }}</option>
-                <option value="other">{{ "sites.mobile.otherBrand" | translate }}</option> 
+                <option value="other">{{ "sites.mobile.otherBrand" | translate }}</option>
               </select>
+
             </div>
 
             <!-- Other Brand Input -->
