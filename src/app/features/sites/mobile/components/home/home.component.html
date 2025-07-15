@@ -133,13 +133,14 @@
                 <td>{{ item.deleted }}</td>
                 <td>
                   <div class="d-flex">
-                    <button pButton icon="pi pi-trash"
+                      <button pButton icon="pi pi-pencil" class="p-button-rounded p-button-text p-button-info"
+                      aria-label="Edit" (click)="editPhone(item.id)">
+                    </button>
+                    <button *ngIf="!item.deleted" pButton icon="pi pi-trash"
                       class="p-button-rounded p-button-text p-button-danger p-0 pointer" aria-label="Delete"
                       (click)="showDeleteConfirmation(item)">
                     </button>
-                    <button pButton icon="pi pi-pencil" class="p-button-rounded p-button-text p-button-info"
-                      aria-label="Edit" (click)="editPhone(item.id)">
-                    </button>
+                  
 
                   </div>
                 </td>
