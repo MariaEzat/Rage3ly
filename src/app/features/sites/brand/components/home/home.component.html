@@ -23,9 +23,9 @@
 
   <!-- الأزرار -->
   <div class="d-flex flex-wrap gap-2">
-    <button class="btn btn-primary flex-grow-1 flex-sm-grow-0" (click)="deleteSelectedbrands()">
+    <!-- <button class="btn btn-primary flex-grow-1 flex-sm-grow-0" (click)="deleteSelectedbrands()">
       {{ "sites.brands.delete" | translate }}
-    </button>
+    </button> -->
     <button class="btn btn-primary flex-grow-1 flex-sm-grow-0" (click)="navigateToCreateBrand()">
       {{ "sites.brands.addNewBrand" | translate }}
     </button>
@@ -44,9 +44,9 @@
             <table class="table text-center align-middle transparent-table">
               <thead>
                 <tr>
-                  <th>
+                  <!-- <th>
                     <input type="checkbox" (change)="toggleSelectAll($event)" [checked]="isAllSelected()" />
-                  </th>
+                  </th> -->
                   <ng-container *ngFor="let colum of page.columns">
                     <th (click)="onSortClicked(colum)" [class.pointer]="colum.Sortable">
                       {{ colum.Title | translate }}
@@ -65,16 +65,16 @@
                   <td colspan="100%">{{"sites.brands.noBrands"|translate}}</td>
                 </tr>
                 <tr *ngFor="let item of items | paginate: page.options; let i = index">
-                  <td data-label="Select"><input type="checkbox" [(ngModel)]="item.selected" /></td>
+                  <!-- <td data-label="Select"><input type="checkbox" [(ngModel)]="item.selected" /></td> -->
                   <td data-label="No.">{{ (page.options.currentPage - 1) * page.options.itemsPerPage + i + 1 }}</td>
                   <td data-label="{{ 'sites.brands.brandName' | translate }}">{{ item.name }}</td>
                   <td data-label="Image">
                     <img [src]="getImageUrl(item.path)" style="width: 80px; height: 80px; object-fit: cover;" />
                   </td>
                   <td data-label="Actions">
-                    <button pButton icon="pi pi-trash" class="p-button-rounded p-button-text p-button-danger"
+                    <!-- <button pButton icon="pi pi-trash" class="p-button-rounded p-button-text p-button-danger"
                             aria-label="Delete" (click)="showDeleteConfirmation(item)">
-                    </button>
+                    </button> -->
                     <button pButton icon="pi pi-pencil" class="p-button-rounded p-button-text p-button-info"
                             aria-label="Edit" (click)="editad(item.id)">
                     </button>
