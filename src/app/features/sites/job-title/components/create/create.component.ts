@@ -30,7 +30,6 @@ export class CreateComponent implements OnInit, OnDestroy {
   RolesEnum = [
     { id: 1, name: 'SuperAdmin' },
     { id: 2, name: 'Admin' },
-    { id: 3, name: 'Client' },
   ];
   VerifyStatusList=[
     {id:1,name:"Pending"},
