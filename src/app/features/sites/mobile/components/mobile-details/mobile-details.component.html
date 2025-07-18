@@ -1,0 +1,48 @@
+<div class="container my-4" *ngIf="mobile">
+    <div class="details-card">
+
+        <div class="section-title"> {{'sites.mobile.mobileDetails'|translate}}</div>
+
+        <div class="row g-4">
+            <div class="col-md-6" *ngIf="mobile.clientName != null && mobile.clientName !='' ">
+                <div class="details-label">👤 {{'sites.mobile.userName'|translate}}</div>
+                <div class="details-value">{{ mobile.clientName }}</div>
+            </div>
+            <div class="col-md-6" *ngIf="mobile.imeI1 != null && mobile.imeI1 !='' ">
+                <div class="details-label">📱 {{"sites.mobile.ImeI1"|translate}}</div>
+                <div class="details-value">{{ mobile.imeI1 }}</div>
+            </div>
+            <div class="col-md-6" *ngIf="mobile.imeI2 != null && mobile.imeI2 !='' ">
+                <div class="details-label">📱 {{'sites.mobile.ImeI2'|translate}}</div>
+                <div class="details-value">{{ mobile.imeI2 }}</div>
+            </div>
+
+            <div class="col-md-6" *ngIf="mobile.serialNumber != null && mobile.serialNumber !='' ">
+                <div class="details-label">🔐 {{'sites.mobile.serialNumber'|translate}}</div>
+                <div class="details-value">{{ mobile.serialNumber }}</div>
+            </div>
+            <div class="col-md-6" *ngIf="mobile.mobileModel != null && mobile.mobileModel !='' ">
+                <div class="details-label">📲 {{'sites.mobile.mobileModel'|translate}}</div>
+                <div class="details-value">{{ mobile.mobileModel }}</div>
+            </div>
+
+            <div class="col-md-6" *ngIf="mobile.number != null && mobile.number !='' ">
+                <div class="details-label">📞 {{'sites.mobile.number' |translate}}</div>
+                <div class="details-value">{{ mobile.number }}</div>
+            </div>
+            <div class="col-md-6" *ngIf="mobile.dateOfPurchase != null && mobile.dateOfPurchase !='' ">
+                <div class="details-label">🗓️ {{'sites.mobile.dateOfPurchase'|translate}}</div>
+                <div class="details-value">{{ mobile.dateOfPurchase | date:'yyyy-MM-dd' }}</div>
+            </div>
+
+            <div class="col-md-6" *ngIf="mobile.brandName != null && mobile.brandName !='' ">
+                <div class="details-label">🏷️ {{'sites.mobile.brand'|translate}}</div>
+                <div class="details-value">{{ mobile.brandName }}</div>
+            </div>
+            <div class="col-md-6" *ngIf="mobile.otherBrand != null && mobile.otherBrand !='' ">
+                <div class="details-label">🏷️ {{'sites.mobile.otherBrand'|translate}}</div>
+                <div class="details-value">{{ mobile.otherBrand }}</div>
+            </div>
+        </div>
+    </div>
+</div>

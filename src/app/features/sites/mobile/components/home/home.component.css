@@ -1,3 +1,13 @@
+.tablehover tbody tr:hover {
+  background-color: rgba(255, 255, 255, 0.1); /* Light white on dark bg */
+  cursor: pointer;
+}
+.tablehover tbody tr:hover {
+  background-color: #2c2f4a; /* Or use rgba(255,255,255,0.05) for a subtler effect */
+  transition: background-color 0.3s ease;
+}
+
+
 .download-options {
   position: absolute;
   top: 100%;

@@ -11,6 +11,7 @@ import { TableModule } from 'primeng/table';
 import { TranslateModule } from '@ngx-translate/core';
 
 import { HomeComponent } from './components/home/home.component';
+import { MobileDetailsComponent } from './components/mobile-details/mobile-details.component';
 
 
 
@@ -18,13 +19,15 @@ const routes: Routes = [
   { path: '', component:HomeComponent }, 
   { path:'create/:clientId', component: CreateComponent },
   { path:'edit/:id', component: CreateComponent },
+  { path: 'mobileDetails', component: MobileDetailsComponent }
 
 
 ];
 @NgModule({
   declarations: [
     HomeComponent,
-    CreateComponent
+    CreateComponent,
+    MobileDetailsComponent
   ],
   imports: [
     CommonModule,

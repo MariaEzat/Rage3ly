@@ -1,7 +1,12 @@
 import { Component, ElementRef, HostListener, ViewChild } from '@angular/core';
 import { CrudIndexBaseUtils } from 'src/app/shared/classes/crud-index.utils';
 import { CRUDIndexPage } from 'src/app/shared/models/crud-index.model';
-import { mobileActivateViewModel, mobileSearchViewModel, mobileSelectedViewModel, mobileViewModel } from '../../interfaces/mobile-view-model';
+import {
+  mobileActivateViewModel,
+  mobileSearchViewModel,
+  mobileSelectedViewModel,
+  mobileViewModel,
+} from '../../interfaces/mobile-view-model';
 import { BsModalRef } from 'ngx-bootstrap/modal';
 import { SharedService } from 'src/app/shared/service/shared.service';
 import { MobileService } from '../../service/mobile.service';
@@ -11,7 +16,7 @@ import { TranslateService } from '@ngx-translate/core';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+  styleUrls: ['./home.component.css'],
 })
 export class HomeComponent extends CrudIndexBaseUtils {
   override page: CRUDIndexPage = new CRUDIndexPage();
@@ -22,10 +27,9 @@ export class HomeComponent extends CrudIndexBaseUtils {
   selectedItem: mobileViewModel;
   showDownloadOptions = false;
   records: number;
-  activation: mobileActivateViewModel = { id: '' }
+  activation: mobileActivateViewModel = { id: '' };
   PhoneStatus = [];
   DeletedList = [];
-
 
   // @ViewChild('downloadButton') downloadButton: ElementRef;
   // @ViewChild('downloadOptions') downloadOptions: ElementRef;
@@ -47,58 +51,86 @@ export class HomeComponent extends CrudIndexBaseUtils {
     private _pageService: MobileService,
     private _router: Router,
     private activatedRoute: ActivatedRoute,
-private translate: TranslateService
+    private translate: TranslateService
   ) {
     super(_sharedService);
   }
 
- ngOnInit(): void {
-  this.translate.get([
-      'sites.mobile.Safe',
-      'sites.mobile.PendingUploadImage',
-      'sites.mobile.PendingAdminConfirmation',
-      'sites.mobile.Stolen',
-       'sites.mobile.NotSure',
+  ngOnInit(): void {
+    this.translate
+      .get([
+        'sites.mobile.Safe',
+        'sites.mobile.PendingUploadImage',
+        'sites.mobile.PendingAdminConfirmation',
+        'sites.mobile.Stolen',
+        'sites.mobile.NotSure',
         'sites.mobile.UnRegistered',
         'sites.mobile.deleted',
         'sites.mobile.notDeleted',
-    ]).subscribe(translations => {
-      this.PhoneStatus = [
-        { id: 1, name: translations['sites.mobile.Safe'] },
-        { id: 2, name: translations['sites.mobile.PendingUploadImage'] },
-        { id: 3, name: translations['sites.mobile.PendingAdminConfirmation'] },
-        { id: 4, name: translations['sites.mobile.Stolen'] },
-           { id: 5, name: translations['sites.mobile.NotSure'] },
-              { id: 6, name: translations['sites.mobile.UnRegistered'] }
-      ];
+      ])
+      .subscribe((translations) => {
+        this.PhoneStatus = [
+          { id: 1, name: translations['sites.mobile.Safe'] },
+          { id: 2, name: translations['sites.mobile.PendingUploadImage'] },
+          {
+            id: 3,
+            name: translations['sites.mobile.PendingAdminConfirmation'],
+          },
+          { id: 4, name: translations['sites.mobile.Stolen'] },
+          { id: 5, name: translations['sites.mobile.NotSure'] },
+          { id: 6, name: translations['sites.mobile.UnRegistered'] },
+        ];
 
-      this.DeletedList = [
-        { id: 1, name: translations['sites.mobile.deleted'] },
-        { id: 2, name: translations['sites.mobile.notDeleted'] }
-      ];
-    });
- 
-  this.initializePage();
-}
+        this.DeletedList = [
+          { id: 1, name: translations['sites.mobile.deleted'] },
+          { id: 2, name: translations['sites.mobile.notDeleted'] },
+        ];
+      });
+
+    this.initializePage();
+  }
 
   getPhoneStatusName(statusId: number): string {
-    const PhoneStatus = this.PhoneStatus.find(s => s.id === statusId);
+    const PhoneStatus = this.PhoneStatus.find((s) => s.id === statusId);
     return PhoneStatus ? PhoneStatus.name : 'Unknown';
   }
+  
 
   initializePage() {
     this.page.columns = [
-
       { Name: 'No', Title: '#', Selectable: true, Sortable: false },
-      { Name: 'User Name', Title: 'sites.mobile.userName', Selectable: false, Sortable: true },
-      { Name: 'Mobile Model', Title: 'sites.mobile.mobileModel', Selectable: false, Sortable: true },
+      {
+        Name: 'User Name',
+        Title: 'sites.mobile.userName',
+        Selectable: false,
+        Sortable: true,
+      },
+      {
+        Name: 'Mobile Model',
+        Title: 'sites.mobile.mobileModel',
+        Selectable: false,
+        Sortable: true,
+      },
       { Name: 'IMEI1', Title: 'IMEI1', Selectable: false, Sortable: true },
       { Name: 'IMEI2', Title: 'IMEI2', Selectable: false, Sortable: true },
-      { Name: 'Phone Status', Title: 'sites.mobile.phoneStatus', Selectable: false, Sortable: true },
-       { Name: 'Deleted', Title: 'sites.mobile.deleted', Selectable: false, Sortable: true },
-      { Name: 'Action', Title: 'sites.mobile.action', Selectable: false, Sortable: true },
-
-
+      {
+        Name: 'Phone Status',
+        Title: 'sites.mobile.phoneStatus',
+        Selectable: false,
+        Sortable: true,
+      },
+      {
+        Name: 'Deleted',
+        Title: 'sites.mobile.deleted',
+        Selectable: false,
+        Sortable: true,
+      },
+      {
+        Name: 'Action',
+        Title: 'sites.mobile.action',
+        Selectable: false,
+        Sortable: true,
+      },
     ];
     this.createSearchForm();
     this.activatedRoute.queryParams.subscribe((params) => {
@@ -107,12 +139,11 @@ private translate: TranslateService
     });
   }
 
-
   override createSearchForm() {
     this.page.searchForm = this._sharedService.formBuilder.group({
       SearchText: [this.searchViewModel.SearchText],
       PhoneStatus: [this.searchViewModel.PhoneStatus],
-      Deleted: [this.searchViewModel.Deleted]
+      Deleted: [this.searchViewModel.Deleted],
     });
     this.page.isPageLoaded = true;
   }
@@ -146,13 +177,13 @@ private translate: TranslateService
   }
 
   isAllSelected(): boolean {
-    return this.items.every(item => item.selected);
+    return this.items.every((item) => item.selected);
   }
 
   // Toggle the selection of all items
   toggleSelectAll(event: any): void {
     const isChecked = event.target.checked;
-    this.items.forEach(item => {
+    this.items.forEach((item) => {
       item.selected = isChecked;
     });
   }
@@ -269,41 +300,48 @@ private translate: TranslateService
     this.showDownloadOptions = !this.showDownloadOptions;
   }
 
-  @ViewChild('confirmDeleteTemplate', { static: false }) confirmDeleteTemplate: any;
+  @ViewChild('confirmDeleteTemplate', { static: false })
+  confirmDeleteTemplate: any;
   showDeleteConfirmation(selectedItem: mobileViewModel) {
     this.selectedItem = selectedItem;
-    this.modalRef = this._sharedService.modalService.show(this.confirmDeleteTemplate, { class: 'modal-sm' });
+    this.modalRef = this._sharedService.modalService.show(
+      this.confirmDeleteTemplate,
+      { class: 'modal-sm' }
+    );
   }
 
-
-
   remove() {
-    this._pageService.remove(this.selectedItem).subscribe(res => {
-      this._sharedService.showToastr(res)
+    this._pageService.remove(this.selectedItem).subscribe((res) => {
+      this._sharedService.showToastr(res);
       if (res.isSuccess) {
-        let index = this.items.findIndex(x => x.id == this.selectedItem.id);
+        let index = this.items.findIndex((x) => x.id == this.selectedItem.id);
         this.items.splice(index, 1);
         this.search();
       }
-    })
+    });
   }
-  @ViewChild('confirmDeleteTemplates', { static: false }) confirmDeleteTemplates: any;
+  @ViewChild('confirmDeleteTemplates', { static: false })
+  confirmDeleteTemplates: any;
   showDeleteConfirmations(selectedItem: mobileViewModel) {
     this.selectedItem = selectedItem;
-    this.modalRef = this._sharedService.modalService.show(this.confirmDeleteTemplates, { class: 'modal-sm' });
+    this.modalRef = this._sharedService.modalService.show(
+      this.confirmDeleteTemplates,
+      { class: 'modal-sm' }
+    );
   }
-
 
   deleteSelectedPhones() {
     const selectedIds = this.items
-      .filter(item => item.selected) // Filter selected rows
-      .map(item => item.id);         // Extract IDs
+      .filter((item) => item.selected) // Filter selected rows
+      .map((item) => item.id); // Extract IDs
 
     if (selectedIds.length === 0) {
-
       return;
     }
-    this.modalRef = this._sharedService.modalService.show(this.confirmDeleteTemplates, { class: 'modal-sm' });
+    this.modalRef = this._sharedService.modalService.show(
+      this.confirmDeleteTemplates,
+      { class: 'modal-sm' }
+    );
     this.modalRef.content = {
       onConfirm: () => {
         // Call the delete API
@@ -312,18 +350,22 @@ private translate: TranslateService
             this._sharedService.showToastr(response);
             if (response.isSuccess) {
               // Remove the deleted items from the local list
-              this.items = this.items.filter(item => !selectedIds.includes(item.id));
+              this.items = this.items.filter(
+                (item) => !selectedIds.includes(item.id)
+              );
               this.search();
             }
           },
           error: (error) => {
             this._sharedService.showToastr(error);
-          }
+          },
         });
       },
     };
   }
 
+
+ mobileDetails(id: string) {
+  sessionStorage.setItem('mobileId', id);
+  this._router.navigate(['/sites/mobile/mobileDetails']);  }
 }
-
-

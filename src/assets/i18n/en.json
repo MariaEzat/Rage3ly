@@ -357,7 +357,8 @@
     "deleted":"Deleted",
     "notDeleted":"Not Deleted",
     "dateOfPurchaseError":"Date of Purchase cannot be in the future",
-    "otherBrand": "Other Brand"
+    "otherBrand": "Other Brand",
+    "mobileDetails":"Mobile Details"
     },
     "employee-profile": {
       "profileSettings": "Profile Settings",

@@ -347,7 +347,8 @@
       "deleted": "محذوف",
       "notDeleted": "غير محذوف",
       "dateOfPurchaseError":"تاريخ الشراء لا يمكن ان يكون ف المستقبل",
-      "otherBrand":"ماركات اخرى"
+      "otherBrand":"ماركات اخرى",
+      "mobileDetails":"تفاصيل الموبايل"
     },
     "employee-profile": {
       "profileSettings": "إعدادات الملف الشخصي",

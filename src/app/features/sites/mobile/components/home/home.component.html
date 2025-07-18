@@ -93,7 +93,7 @@
         <!-- Table -->
         <div class=" scrolled mt-3 h-100 table-responsive">
 
-          <table class="table text-center align-middle transparent-table">
+          <table class="table tablehover text-center align-middle transparent-table">
 
             <thead>
               <tr>
@@ -121,19 +121,19 @@
               </tr>
               <tr *ngFor="let item of items | paginate: page.options; let i = index">
                 <td><input type="checkbox" [(ngModel)]="item.selected" /></td>
-                <td>{{ (page.options.currentPage - 1) * page.options.itemsPerPage + i + 1 }}</td>
+                <td (click)="mobileDetails(item.id)">{{ (page.options.currentPage - 1) * page.options.itemsPerPage + i + 1 }}</td>
 
 
-                <td>{{ item.username }}</td>
+                <td (click)="mobileDetails(item.id)">{{ item.username }}</td>
 
-                <td>{{ item.mobileModel }}</td>
-                <td>{{ item.imeI1 }}</td>
-                <td>{{ item.imeI2 }}</td>
+                <td (click)="mobileDetails(item.id)">{{ item.mobileModel }}</td>
+                <td (click)="mobileDetails(item.id)">{{ item.imeI1 }}</td>
+                <td (click)="mobileDetails(item.id)">{{ item.imeI2 }}</td>
                 <td>{{ getPhoneStatusName(item.phoneStatus) }}</td>
-                <td>{{ item.deleted }}</td>
+                <td (click)="mobileDetails(item.id)">{{ item.deleted }}</td>
                 <td>
                   <div class="d-flex">
-                      <button pButton icon="pi pi-pencil" class="p-button-rounded p-button-text p-button-info"
+                      <button *ngIf="!item.deleted" pButton icon="pi pi-pencil" class="p-button-rounded p-button-text p-button-info"
                       aria-label="Edit" (click)="editPhone(item.id)">
                     </button>
                     <button *ngIf="!item.deleted" pButton icon="pi pi-trash"
