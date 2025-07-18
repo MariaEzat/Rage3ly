@@ -6,14 +6,29 @@
   right: 0;
   overflow-y: auto;
   z-index: 1000;
+ 
 }
+.sidebar-right::-webkit-scrollbar {
+  width: 4px;
+}
+
+.sidebar-right::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.sidebar-right::-webkit-scrollbar-thumb {
+  background-color: #4DC3FF;
+  border-radius: 4px;
+}
+
+
 
 .flex-grow-1 {
   margin-right: 250px; /* عشان ما يدخل تحت الـ sidebar */
  
 }
 .flex-grow-1::-webkit-scrollbar {
-  width: 5px; /* عرض الـ scroll bar نفسه، قلليه هنا */
+  width: 5px !important; /* عرض الـ scroll bar نفسه، قلليه هنا */
 }
 
 
