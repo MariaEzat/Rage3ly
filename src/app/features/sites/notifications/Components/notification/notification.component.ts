@@ -97,9 +97,10 @@ export class NotificationComponent extends CrudIndexBaseUtils {
       });
   }
 
-  clientDetails(id: string) {
-    this.router.navigate(['/sites/transferOfOwnership/clientDetails', id]);
-  }
+ clientDetails(id: string) {
+  sessionStorage.setItem('clientId', id);
+  this.router.navigate(['/sites/transferOfOwnership/clientDetails']);  }
+
   changePage(pageNumber: number) {
     const totalPages = Math.ceil(this.page.options.totalItems / this.page.options.itemsPerPage);
     if (pageNumber < 1 || pageNumber > totalPages) {

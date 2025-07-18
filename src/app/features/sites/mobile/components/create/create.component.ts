@@ -38,29 +38,35 @@ isDropdownOpen: boolean = false;
   ) { }
 
   ngOnInit(): void {
-    this.page.isPageLoaded = false;
-    this.onSelectBrand();
+  this.page.isPageLoaded = false;
+  const today = new Date();
+  this.todayString = today.toISOString().split('T')[0];
 
-    const today = new Date();
-    this.todayString = today.toISOString().split('T')[0];
+  this._activatedRoute.paramMap.subscribe((params) => {
+    if (params.has('id')) {
+      this.id = params.get('id');
+      this.page.isEdit = true;
+    }
 
-    this._activatedRoute.paramMap.subscribe((params) => {
-      if (params.has('id')) {
-        this.id = params.get('id');
-        this.page.isEdit = true;
-      }
+    if (params.has('clientId')) {
+      this.clientId = params.get('clientId');
+    }
 
-      if (params.has('clientId')) {
-        this.clientId = params.get('clientId');
-      }
+    // أول حاجة جيب البراندات
+    this._mobileService.getBrands().subscribe((brandRes) => {
+      if (brandRes.isSuccess) {
+        this.Brandslist = brandRes.data;
 
-      if (this.page.isEdit) {
-        this.getEditableItem();
-      } else {
-        this.createForm();
+        // بعدين حمّل البيانات أو أنشئ الفورم
+        if (this.page.isEdit) {
+          this.getEditableItem(); // فيه createForm جوا
+        } else {
+          this.createForm(); // هنا كمان فيه
+        }
       }
     });
-  }
+  });
+}
 
 
   getEditableItem() {
@@ -93,35 +99,44 @@ isDropdownOpen: boolean = false;
     this.page.isPageLoaded = true;
   }
 
-  Save() {
-    if (this.page.isSaving || this.page.form.invalid) return;
-    this.page.isSaving = true;
-    Object.assign(this.item, this.page.form.value);
-    const rawDate: Date = this.page.form.get('dateOfPurchase')?.value;
-    if (rawDate) {
+ Save() {
+  if (this.page.isSaving || this.page.form.invalid) return;
+
+  this.page.isSaving = true;
+  Object.assign(this.item, this.page.form.value);
+
+  // معالجة التاريخ
+  const rawDateValue = this.page.form.get('dateOfPurchase')?.value;
+  if (rawDateValue) {
+    const rawDate = new Date(rawDateValue);
+    if (!isNaN(rawDate.getTime())) {
       const localDate = new Date(rawDate.getTime() - rawDate.getTimezoneOffset() * 60000);
-      this.item.dateOfPurchase = localDate; 
+      this.item.dateOfPurchase = localDate;
+    } else {
+      console.warn('Invalid date:', rawDateValue);
     }
-    if (!this.page.isEdit) {
-      this.item.clientId = this.clientId;
-    }
-
-
-    this._mobileService.postOrUpdate(this.item).subscribe({
-      next: (res) => {
-        this.page.isSaving = false;
-        this.page.responseViewModel = res;
-        this._sharedService.showToastr(res);
-        if (res.isSuccess) {
-          this._router.navigate(['/sites/mobile']);
-        }
-      },
-      error: (err) => {
-        this._sharedService.showToastr(err);
-        this.page.isSaving = false;
-      },
-    });
   }
+
+  if (!this.page.isEdit) {
+    this.item.clientId = this.clientId;
+  }
+
+  this._mobileService.postOrUpdate(this.item).subscribe({
+    next: (res) => {
+      this.page.isSaving = false;
+      this.page.responseViewModel = res;
+      this._sharedService.showToastr(res);
+      if (res.isSuccess) {
+        this._router.navigate(['/sites/mobile']);
+      }
+    },
+    error: (err) => {
+      this._sharedService.showToastr(err);
+      this.page.isSaving = false;
+    },
+  });
+}
+
 
 
 maxTodayValidator(): (control: AbstractControl) => ValidationErrors | null {
@@ -152,7 +167,7 @@ maxTodayValidator(): (control: AbstractControl) => ValidationErrors | null {
       const BrandResponse = res[0];
       if (BrandResponse.isSuccess) {
         this.Brandslist = BrandResponse.data;
-        this.createForm();
+        //this.createForm();
       }
     });
   }

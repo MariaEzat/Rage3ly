@@ -29,7 +29,8 @@
 
     <hr />
     <div class="pb-2">
-      <div class=" mb-2">
+      <div class=" mb-2" *ngIf="page.form">
+        
         <form [formGroup]="page.form">
           <div class="row g-2">
             <div class="col-sm-6">
