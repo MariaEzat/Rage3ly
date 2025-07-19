@@ -120,11 +120,11 @@ export class CreateComponent implements OnInit {
         this.item.nationalNumber,
         [Validators.pattern(/^\d{14}$/)],
       ],
-      email: [this.item.email, [Validators.email, Validators.required]],
+      email: [ { value: this.item.email, disabled: true }, [Validators.email, Validators.required]],
       cityId: [this.item.cityId, [Validators.required]],
       governorateId: [this.item.governrateId, [Validators.required]],
       mobile: [
-        this.item.mobile,
+        { value: this.item.mobile, disabled: true },
         [Validators.required, , Validators.pattern(/^(010|011|012|015)\d{8}$/)],
       ],
     });
@@ -172,7 +172,7 @@ export class CreateComponent implements OnInit {
     this.areImagesValid = this.validateImages(); // Validate images before saving
 
     this.page.isSaving = true;
-    Object.assign(this.item, this.page.form.value);
+    Object.assign(this.item, this.page.form.getRawValue());
     this.item.paths = this.getUploadedImages();
     this._customersService.postOrUpdate(this.item).subscribe({
       next: (res) => {

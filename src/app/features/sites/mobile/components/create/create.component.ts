@@ -87,11 +87,12 @@ isDropdownOpen: boolean = false;
   }
   createForm() {
     this.page.form = this._sharedService.formBuilder.group({
-      imeI1: [this.item.imeI1, [Validators.required, Validators.pattern(/^\d{15}$/)]],
+      imeI1: [  { value: this.item.imeI1, disabled: this.page.isEdit }, 
+        [Validators.required, Validators.pattern(/^\d{15}$/)]],
       imeI2: [this.item.imeI2, [Validators.pattern(/^\d{15}$/)]],
       mobileModel: [this.item.mobileModel, Validators.required],
       number: [this.item.number, [Validators.required, Validators.pattern(/^(010|011|012|015)\d{8}$/)]],
-      serialNumber: [this.item.serialNumber, [Validators.required, Validators.minLength(5)]],
+      serialNumber: [ { value: this.item.serialNumber, disabled: this.page.isEdit }, [Validators.required, Validators.minLength(5)]],
       brandId: [this.item.brandId, Validators.required],
       dateOfPurchase: [this.item.dateOfPurchase, [Validators.required, this.maxTodayValidator()]],
       otherBrand: [this.item.otherBrand],
@@ -103,7 +104,7 @@ isDropdownOpen: boolean = false;
   if (this.page.isSaving || this.page.form.invalid) return;
 
   this.page.isSaving = true;
-  Object.assign(this.item, this.page.form.value);
+  Object.assign(this.item, this.page.form.getRawValue());
 
   // معالجة التاريخ
   const rawDateValue = this.page.form.get('dateOfPurchase')?.value;

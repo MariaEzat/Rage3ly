@@ -46,21 +46,7 @@
       </div>
      
     </div>
-    <div class="row g-3 mb-4">
-      <div class="col-6">
-        <ng-control [form]="page.form" control="mobile" label="salesflow.Customers.mobile" placeholder="Ex: 0123567891"  [inputClass]="'mb-2 bg-Dark border-color color-color-gray-300'"
-        [labelClass]="page.form.get('mobile')?.invalid && (page.form.get('mobile')?.touched || page.form.get('mobile')?.dirty) ? 'form-control-with-validate' : 'form-control-no-validate'"
-  
-          (keypress)="numberOnly($event)"></ng-control>
-      </div>
-      <div class="col-6">
-        <ng-control [form]="page.form" control="email" label="salesflow.Customers.email" placeholder="salesflow.Customers.email" [inputClass]="'mb-2 bg-Dark border-color color-color-gray-300'"
-        [labelClass]="page.form.get('email')?.invalid && (page.form.get('email')?.touched || page.form.get('email')?.dirty) ? 'form-control-with-validate' : 'form-control-no-validate'"></ng-control>
-      </div>
-       
-
-
-    </div>
+ 
     <div class="row g-3 mb-4">
 
       <div class="col-6" *ngIf="!page.isEdit">
@@ -90,7 +76,21 @@
     </ng-control>
       </div>
     </div>
-    
+    <div class="row g-3 mb-4">
+      <div class="col-6">
+        <ng-control [form]="page.form" control="mobile" label="salesflow.Customers.mobile" placeholder="Ex: 0123567891"  [inputClass]="'mb-2 bg-Dark border-color color-color-gray-300'"
+        [labelClass]="page.form.get('mobile')?.invalid && (page.form.get('mobile')?.touched || page.form.get('mobile')?.dirty) ? 'form-control-with-validate' : 'form-control-no-validate'"
+  
+          (keypress)="numberOnly($event)"></ng-control>
+      </div>
+      <div class="col-6">
+        <ng-control [form]="page.form" control="email" label="salesflow.Customers.email" placeholder="salesflow.Customers.email" [inputClass]="'mb-2 bg-Dark border-color color-color-gray-300'"
+        [labelClass]="page.form.get('email')?.invalid && (page.form.get('email')?.touched || page.form.get('email')?.dirty) ? 'form-control-with-validate' : 'form-control-no-validate'"></ng-control>
+      </div>
+       
+
+
+    </div>
     <div class="row g-3 mb-4" style="display: flex; justify-content: center;"*ngIf="!page.isEdit" >
 
       <div class="col-4 col-md-4 col-lg-4 mt-5 h-100" *ngFor="let image of images; let i = index">

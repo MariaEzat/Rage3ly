@@ -43,8 +43,7 @@ export class AdsService {
     if (body.id) return this._apiService.update(`/EditAdvertisementEndpoint/EditAdvertisement`, body)
     else return this._apiService.post(`/CreateAdvertisementEndPoint/CreateAdvertisement`, body)
   }
- 
- 
+  
   updateActivated(body: adsActivateViewModel) {
     return this._apiService.update(`/ActiveAdvertisementEndPoint/ActiveAdvertisement`, body);
   }
@@ -59,6 +58,7 @@ export class AdsService {
   bulkDelete(ids: string[]) {
     return this._apiService.remove(`/BulkDeleteAdvertisementEndpoint/BulkDeletedAdvertisement`, { ids });
   }
+  
   bulkActivate(ids: string[]) {
     return this._apiService.update(`/BulkActivateAdvertisementEndpoint/BulkActivateAdvertisement`, { ids });
   }
