@@ -1,5 +1,5 @@
 <!-- Container -->
-<div class="d-flex  min-vh-100 bg-Dark text-white ">
+<div *ngIf="hasFeature(featureEnum.SearchClient)" class="d-flex  min-vh-100 bg-Dark text-white ">
   <div class="flex-grow-1 p-2 chang-width " style="width: 90%;">
     <div class="container-fluid">
 
@@ -81,11 +81,11 @@
                 <button (click)="downloadPDF()">PDF</button>
               </div>
             </div>
-            <button class="btn btn-primary  "
+            <button class="btn btn-primary  " *ngIf="hasFeature(featureEnum.BulkActivateClients)"
               (click)="activateCustomers()">{{"salesflow.Customers.active"|translate}}</button>
-            <button class="btn btn-primary flex-grow-1 flex-sm-grow-0 "
+            <button *ngIf="hasFeature(featureEnum.BulkDeactivateClients)" class="btn btn-primary flex-grow-1 flex-sm-grow-0 "
               (click)="disActiveCustomers()">{{"salesflow.Customers.disActive"|translate}}</button>
-            <button class="btn btn-primary flex-grow-1 flex-sm-grow-0"
+            <button  *ngIf="hasFeature(featureEnum.CreateClient)" class="btn btn-primary flex-grow-1 flex-sm-grow-0"
               (click)="navigateToCreateCustomer()">{{"salesflow.Customers.addNewCustomer"|translate}}</button>
 
           </div>
@@ -101,7 +101,7 @@
                   <input type="checkbox" (change)="toggleSelectAll($event)" [checked]="isAllSelected()" />
                 </th>
                 <ng-container *ngFor="let colum of page.columns">
-                  <th (click)="onSortClicked(colum)" [class.pointer]="colum.Sortable">
+                  <th *ngIf="!(colum.Name === 'AddMobile' && !hasFeature(featureEnum.AddPhone))" (click)="onSortClicked(colum)" [class.pointer]="colum.Sortable">
                     {{ colum.Title | translate }}
                     <i class="uil uil-sort ms-1" *ngIf="colum.Sortable" [ngClass]="{
                          'sort-icon-ase': isColumnAscending(colum),
@@ -121,7 +121,7 @@
                 <td (click)="clientDetails(item.id)">{{ (page.options.currentPage - 1) * page.options.itemsPerPage + i + 1 }}</td>
                 <td (click)="clientDetails(item.id)">{{ item.name }}</td>
                 <td>
-                  <p-inputSwitch [(ngModel)]="item.isActive" (ngModelChange)="updateActivation(item.id, item.isActive)">
+                  <p-inputSwitch [(ngModel)]="item.isActive" [disabled]="page.isSaving || !hasFeature(item.isActive ? featureEnum.DeactivateClients : featureEnum.ActivateClients)" (ngModelChange)="updateActivation(item.id, item.isActive)">
                   </p-inputSwitch>
                 </td>
                 <td (click)="clientDetails(item.id)">{{ item.email }}</td>
@@ -132,14 +132,14 @@
                 <!-- <td>
                   <img [src]="getImageUrl(item.path)" style="width: 80px; height: 80px; object-fit: cover;" />
                 </td> -->
-                <td>
-                  <button class="btn btn-primary me-2"
+                <td *ngIf="hasFeature(featureEnum.AddPhone)">
+                  <button  class="btn btn-primary me-2"
                     (click)="navigateToCreateMobile(item.id); $event.stopPropagation()">
                     {{"salesflow.Customers.addMobile" | translate}}
                   </button>
                 </td>
                 <td>
-                  <button pButton icon="pi pi-pencil" class="p-button-rounded p-button-text p-button-info"
+                  <button *ngIf="hasFeature(featureEnum.EditClient)" pButton icon="pi pi-pencil" class="p-button-rounded p-button-text p-button-info"
                     aria-label="Edit" (click)="editCustomer(item.id); $event.stopPropagation()">
                   </button>
                 </td>
