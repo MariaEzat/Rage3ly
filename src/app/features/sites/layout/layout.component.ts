@@ -1,6 +1,8 @@
 import { Component, HostListener } from '@angular/core';
 import { Router } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
+import { FeatureEnum } from 'src/app/shared/models/enum/feature.enum';
+import { SharedService } from 'src/app/shared/service/shared.service';
 
 @Component({
   selector: 'app-layout',
@@ -12,8 +14,8 @@ export class LayoutComponent {
   activeLink: string = '';
   sidebarVisible: boolean = false;
   sidebarCollapsed = false;
-
-  constructor(private router: Router) {}
+  featureEnum = FeatureEnum;
+  constructor(private router: Router,private _sharedService:SharedService) {}
 
   toggleDropdown(menu: string) {
     this.openDropdown = this.openDropdown === menu ? null : menu;
@@ -42,5 +44,7 @@ export class LayoutComponent {
 isClientDetailsActive(): boolean {
   return this.router.url.includes('/sites/transferOfOwnership/clientDetails');
 }
-  
+hasFeature(feature: FeatureEnum): boolean {
+  return this._sharedService.hasFeature(feature);
+}
 }
