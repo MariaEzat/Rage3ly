@@ -31,7 +31,7 @@ export class CreateComponent implements OnInit {
   item: customerCreateViewModel = new customerCreateViewModel();
   governorates: customerSelectedViewModel[] = [];
   cities: customerSelectedViewModel[] = [];
-  featureEnum:FeatureEnum;
+  featureEnum=FeatureEnum;
   clientGroups: customerSelectedViewModel[] = [];
   selectedGovernorateId?: string = '';
   images = [{ uploaded: false, src: null }];
@@ -342,5 +342,9 @@ export class CreateComponent implements OnInit {
     } else {
       console.error('Client ID is missing or invalid.');
     }
+  }
+
+  hasFeature(value: FeatureEnum) {
+    return SharedService.featureList.some(i => i == value);
   }
 }

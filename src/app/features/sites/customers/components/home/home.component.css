@@ -180,3 +180,22 @@ h1,h2,h3,h4,h5{
    width: 700px !important;
   }
 }
+
+
+.disabled-cell {
+  pointer-events: none;
+  cursor: default !important;
+}
+tr:hover .disabled-cell {
+  background-color: inherit !important;
+}
+.no-hover-row:hover {
+  background-color: inherit !important;
+  cursor: default !important;
+}
+
+
+.no-hover-row:hover td:not(.no-hover-cell) {
+  background-color: inherit !important;
+  cursor: default !important;
+}
