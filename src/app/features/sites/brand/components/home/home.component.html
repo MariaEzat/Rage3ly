@@ -23,10 +23,10 @@
 
   <!-- الأزرار -->
   <div class="d-flex flex-wrap gap-2">
-    <!-- <button class="btn btn-primary flex-grow-1 flex-sm-grow-0" (click)="deleteSelectedbrands()">
+    <!-- <button *ngIf="hasFeature(featureEnum.BulkDeleteBrand)" class="btn btn-primary flex-grow-1 flex-sm-grow-0" (click)="deleteSelectedbrands()">
       {{ "sites.brands.delete" | translate }}
     </button> -->
-    <button class="btn btn-primary flex-grow-1 flex-sm-grow-0" (click)="navigateToCreateBrand()">
+    <button *ngIf="hasFeature(featureEnum.CreateBrand)" class="btn btn-primary flex-grow-1 flex-sm-grow-0" (click)="navigateToCreateBrand()">
       {{ "sites.brands.addNewBrand" | translate }}
     </button>
   </div>
@@ -40,7 +40,7 @@
           
           
           <!-- Table -->
-          <div class="table-responsive scrolled mt-3 h-100">
+          <div  class="table-responsive scrolled mt-3 h-100">
             <table class="table text-center align-middle transparent-table">
               <thead>
                 <tr>
@@ -72,10 +72,10 @@
                     <img [src]="getImageUrl(item.path)" style="width: 80px; height: 80px; object-fit: cover;" />
                   </td>
                   <td data-label="Actions">
-                    <!-- <button pButton icon="pi pi-trash" class="p-button-rounded p-button-text p-button-danger"
+                    <!-- <button *ngIf="hasFeature(featureEnum.DeleteBrand)" pButton icon="pi pi-trash" class="p-button-rounded p-button-text p-button-danger"
                             aria-label="Delete" (click)="showDeleteConfirmation(item)">
                     </button> -->
-                    <button pButton icon="pi pi-pencil" class="p-button-rounded p-button-text p-button-info"
+                    <button *ngIf="hasFeature(featureEnum.EditBrand)" pButton icon="pi pi-pencil" class="p-button-rounded p-button-text p-button-info"
                             aria-label="Edit" (click)="editad(item.id)">
                     </button>
                   </td>
