@@ -1,4 +1,4 @@
-<div class="d-flex min-vh-100 bg-Dark text-white">
+<div *ngIf="hasFeature(featureEnum.FilterUsers)" class="d-flex min-vh-100 bg-Dark text-white">
   <div class="flex-grow-1 p-2" style="width: 90%;">
     <div class="container-fluid">
 
@@ -47,11 +47,11 @@
       <div class="d-flex flex-wrap justify-content-between align-items-center mb-3 gap-2">
         <h5 class="text-white mb-0"> {{"sites.employee.employees"|translate}} </h5>
         <div class="d-flex flex-wrap gap-2 w-100 justify-content-end">
-          <button class="btn btn-primary flex-grow-1 flex-sm-grow-0 me-1"
+          <button *ngIf="hasFeature(featureEnum.BulkActivateUser)" class="btn btn-primary flex-grow-1 flex-sm-grow-0 me-1"
             (click)="activateCustomers()">{{"sites.employee.active"|translate}}</button>
-          <button class="btn btn-primary flex-grow-1 flex-sm-grow-0 me-1"
+          <button *ngIf="hasFeature(featureEnum.BulkDeActivateUser)" class="btn btn-primary flex-grow-1 flex-sm-grow-0 me-1"
             (click)="disActiveCustomers()">{{"sites.employee.disActive"|translate}}</button>
-          <button class="btn btn-primary flex-grow-1 flex-sm-grow-0 me-1"
+          <button *ngIf="hasFeature(featureEnum.CreateUser)" class="btn btn-primary flex-grow-1 flex-sm-grow-0 me-1"
             (click)="navigateToCreateEmployee()">{{"sites.employee.addNewEmployee"|translate}}</button>
 
         </div>
@@ -91,7 +91,7 @@
               <td>{{ getRoleNameById(item.roleId) }}</td>
 
               <td>
-                <p-inputSwitch [(ngModel)]="item.isActive" (ngModelChange)="updateActivation(item.id, item.isActive)">
+                <p-inputSwitch [disabled]="page.isSaving || !hasFeature(item.isActive ? featureEnum.DeactivateUser : featureEnum.ActivateUser)" [(ngModel)]="item.isActive" (ngModelChange)="updateActivation(item.id, item.isActive)">
                 </p-inputSwitch>
               </td>
               <!-- <td>
@@ -101,7 +101,7 @@
                 <!-- <button pButton icon="pi pi-trash" class="p-button-rounded p-button-text p-button-danger"
                             aria-label="Delete" (click)="showDeleteConfirmation(item)">
                     </button> -->
-                <button pButton icon="pi pi-pencil" class="p-button-rounded p-button-text p-button-info"
+                <button *ngIf="hasFeature(featureEnum.EditUser)" pButton icon="pi pi-pencil" class="p-button-rounded p-button-text p-button-info"
                   aria-label="Edit" (click)="editEmployee(item.id)">
                 </button>
               </td>

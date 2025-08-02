@@ -7,6 +7,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Validators } from '@angular/forms';
 import { ControlType } from 'src/app/shared/models/enum/control-type.enum';
 import { environment } from 'src/environments/environment';
+import { FeatureEnum } from 'src/app/shared/models/enum/feature.enum';
 
 @Component({
   selector: 'app-create',
@@ -20,6 +21,8 @@ export class CreateComponent implements OnInit, OnDestroy {
   isEqualPassword: boolean = true;
   controlType = ControlType;
   environment = environment;
+    featureEnum=FeatureEnum;
+  
   constructor(
     private _sharedService: SharedService,
     private _employeeService: EmployeeService,
@@ -126,5 +129,8 @@ export class CreateComponent implements OnInit, OnDestroy {
       console.error('Client ID is missing or invalid.');
     }
   }
+   hasFeature(value: FeatureEnum) {
+      return SharedService.featureList.some(i => i == value);
+    }
 }
 
