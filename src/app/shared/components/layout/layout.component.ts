@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { WebsiteService } from 'src/app/features/website/services/website.service';
+import { SharedService } from '../../service/shared.service';
 
 @Component({
   selector: 'app-layout',
@@ -16,13 +17,25 @@ export class LayoutComponent implements OnInit {
 
  
 
+  
   getUserName() {
-    this.websiteService.userLoading = true
+    this.websiteService.userLoading = true;
     this.websiteService.getUserInfo().subscribe((res) => {
       if (res.isSuccess) {
-        this.websiteService.userInfo = res.data
-        this.websiteService.userLoading = false
+        this.websiteService.userInfo = res.data;
+        this.getUserFeatures();
       }
-    })
+    });
+  }
+
+  getUserFeatures() {
+    this.websiteService.getUserFeatures().subscribe((res) => {
+      if (res.isSuccess) {
+        SharedService.featureList = res.data.featureIds;
+        this.websiteService.userLoading = false;
+      } else {
+        console.error('Failed to load user features:', res.message);
+      }
+    });
   }
 }

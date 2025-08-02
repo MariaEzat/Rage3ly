@@ -126,4 +126,7 @@ export class WebsiteService {
     return this._apiService.get('/GetAllAdvertisementEndpoint/GetList');
   }
 
+  getUserFeatures() {
+    return this._apiService.get('/GetFeaturesByRoleIdEndPoint/GetModulesByRoleId');
+  }
 }
