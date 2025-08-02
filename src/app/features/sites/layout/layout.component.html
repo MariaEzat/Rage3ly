@@ -142,7 +142,7 @@
           class="px-1 nav-icon">
       </a>
 
-      <a class="nav-link text-white py-2 d-flex flex-row-reverse justify-content-end align-items-center"
+      <a class="nav-link text-white py-2 d-flex flex-row-reverse justify-content-end align-items-center" *ngIf="hasFeature(featureEnum.GetAllEmails)"
         routerLink="/sites/email" routerLinkActive="active" #emailRla="routerLinkActive"
         [ngClass]="{ 'active-color': emailRla.isActive }" (mouseenter)="setActiveLink('email')"
         (mouseleave)="setActiveLink('')">
