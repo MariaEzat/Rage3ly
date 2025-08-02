@@ -11,9 +11,9 @@
         {{"sites.employee.employee"|translate}}
       </a>
       <div class="d-flex">
-        <button class="btn btn-primary flex-grow-1 flex-sm-grow-0 py-2 px-4 color-gray-25 no-border cr3"
+        <button  *ngIf="hasFeature(featureEnum.ChangeUserPassword) && page.isEdit" class="btn btn-primary flex-grow-1 flex-sm-grow-0 py-2 px-4 color-gray-25 no-border cr3"
                 (click)="navigateToChangePassword(id)"
-                *ngIf="page.isEdit">
+                >
           <span class="rb-btn-text">{{"sites.employee.changePassword"|translate}}</span>
         </button>
         <button class="btn btn-primary py-2 px-4 color-gray-25 no-border cr3 mx-2"

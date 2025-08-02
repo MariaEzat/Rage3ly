@@ -1,5 +1,5 @@
 <!-- Container -->
-<div class="d-flex  min-vh-100 bg-Dark text-white ">
+<div *ngIf="hasFeature(featureEnum.GetAllNotificationMessages)" class="d-flex  min-vh-100 bg-Dark text-white ">
   <div class="flex-grow-1 p-2 chang-width " style="width: 90%;">
     <div class="container-fluid">
 
@@ -76,7 +76,7 @@
           <h5 class="text-white"> {{"sites.allNotifications.notifications"|translate}} </h5>
          
           <div class="d-flex flex-wrap gap-2">
-              <button class="btn btn-primary me-2"   (click)="sendNotification()"
+              <button class="btn btn-primary me-2" *ngIf="hasFeature(featureEnum.SendNotification)"  (click)="sendNotification()"
              >{{"sites.allNotifications.sendNotification"|translate}}</button>
           </div>
         </div>
