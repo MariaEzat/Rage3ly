@@ -19,6 +19,7 @@ import { forkJoin } from 'rxjs';
 
 import { environment } from 'src/environments/environment';
 import * as L from 'leaflet';
+import { FeatureEnum } from 'src/app/shared/models/enum/feature.enum';
 
 @Component({
   selector: 'app-create',
@@ -30,6 +31,7 @@ export class CreateComponent implements OnInit {
   item: customerCreateViewModel = new customerCreateViewModel();
   governorates: customerSelectedViewModel[] = [];
   cities: customerSelectedViewModel[] = [];
+  featureEnum=FeatureEnum;
   clientGroups: customerSelectedViewModel[] = [];
   selectedGovernorateId?: string = '';
   images = [{ uploaded: false, src: null }];
@@ -340,5 +342,9 @@ export class CreateComponent implements OnInit {
     } else {
       console.error('Client ID is missing or invalid.');
     }
+  }
+
+  hasFeature(value: FeatureEnum) {
+    return SharedService.featureList.some(i => i == value);
   }
 }

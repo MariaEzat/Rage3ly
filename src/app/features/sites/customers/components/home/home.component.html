@@ -1,16 +1,16 @@
 <!-- Container -->
-<div class="d-flex  min-vh-100 bg-Dark text-white ">
+<div *ngIf="hasFeature(featureEnum.SearchClient)" class="d-flex  min-vh-100 bg-Dark text-white ">
   <div class="flex-grow-1 p-2 chang-width " style="width: 90%;">
     <div class="container-fluid">
 
       <!-- Search Card -->
       <div class="card p-4 mb-4" style="background-color: #1A1F3766;">
-          <div class="d-flex justify-content-between align-items-center mb-3">
-        <h5 class="mb-3 text-white"> {{"salesflow.Customers.searchofCustomers"|translate}} </h5>
-         <div class="totalItems cr7 px-3 py-1 ms-2">{{page.options.totalItems}}
-                        {{"salesflow.Customers.customer"|translate}}
-                    </div>
-                    </div>
+        <div class="d-flex justify-content-between align-items-center mb-3">
+          <h5 class="mb-3 text-white"> {{"salesflow.Customers.searchofCustomers"|translate}} </h5>
+          <div class="totalItems cr7 px-3 py-1 ms-2">{{page.options.totalItems}}
+            {{"salesflow.Customers.customer"|translate}}
+          </div>
+        </div>
         <form [formGroup]="page.searchForm">
           <div class="form-body">
             <div class="row g-2">
@@ -73,7 +73,7 @@
           <h5 class="text-white"> {{"salesflow.Customers.customers"|translate}} </h5>
           <div class="d-flex flex-wrap gap-2">
             <div class="position-relative ">
-              <button #downloadButton class="btn btn-primary flex-grow-1 flex-sm-grow-0"
+              <button *ngIf="hasFeature(featureEnum.ExportClientsToExcel)" #downloadButton class="btn btn-primary flex-grow-1 flex-sm-grow-0"
                 (click)="toggleDownloadOptions()">{{"salesflow.Customers.download"|translate}}</button>
 
               <div #downloadOptions *ngIf="showDownloadOptions" class="download-options">
@@ -81,11 +81,12 @@
                 <button (click)="downloadPDF()">PDF</button>
               </div>
             </div>
-            <button class="btn btn-primary  "
+            <button class="btn btn-primary  " *ngIf="hasFeature(featureEnum.BulkActivateClients)"
               (click)="activateCustomers()">{{"salesflow.Customers.active"|translate}}</button>
-            <button class="btn btn-primary flex-grow-1 flex-sm-grow-0 "
+            <button *ngIf="hasFeature(featureEnum.BulkDeactivateClients)"
+              class="btn btn-primary flex-grow-1 flex-sm-grow-0 "
               (click)="disActiveCustomers()">{{"salesflow.Customers.disActive"|translate}}</button>
-            <button class="btn btn-primary flex-grow-1 flex-sm-grow-0"
+            <button *ngIf="hasFeature(featureEnum.CreateClient)" class="btn btn-primary flex-grow-1 flex-sm-grow-0"
               (click)="navigateToCreateCustomer()">{{"salesflow.Customers.addNewCustomer"|translate}}</button>
 
           </div>
@@ -101,7 +102,8 @@
                   <input type="checkbox" (change)="toggleSelectAll($event)" [checked]="isAllSelected()" />
                 </th>
                 <ng-container *ngFor="let colum of page.columns">
-                  <th (click)="onSortClicked(colum)" [class.pointer]="colum.Sortable">
+                  <th *ngIf="!(colum.Name === 'AddMobile' && !hasFeature(featureEnum.AddPhone))"
+                    (click)="onSortClicked(colum)" [class.pointer]="colum.Sortable">
                     {{ colum.Title | translate }}
                     <i class="uil uil-sort ms-1" *ngIf="colum.Sortable" [ngClass]="{
                          'sort-icon-ase': isColumnAscending(colum),
@@ -116,31 +118,42 @@
               <tr *ngIf="items.length === 0">
                 <td colspan="100%"> {{"salesflow.Customers.noClients"|translate}} </td>
               </tr>
-              <tr *ngFor="let item of items | paginate: page.options; let i = index" >
+              <tr *ngFor="let item of items | paginate: page.options; let i = index"  [ngClass]="{ 'no-hover-row': !hasFeature(featureEnum.GetClientWithPhoneDetails) }">
                 <td><input type="checkbox" [(ngModel)]="item.selected" /></td>
-                <td (click)="clientDetails(item.id)">{{ (page.options.currentPage - 1) * page.options.itemsPerPage + i + 1 }}</td>
-                <td (click)="clientDetails(item.id)">{{ item.name }}</td>
+                <td [class.disabled-cell]="!hasFeature(featureEnum.GetClientWithPhoneDetails)"
+                  (click)="hasFeature(featureEnum.GetClientWithPhoneDetails) && clientDetails(item.id)">{{
+                  (page.options.currentPage - 1) * page.options.itemsPerPage + i + 1 }}</td>
+                <td [class.disabled-cell]="!hasFeature(featureEnum.GetClientWithPhoneDetails)"
+                  (click)="hasFeature(featureEnum.GetClientWithPhoneDetails) && clientDetails(item.id)">{{ item.name }}</td>
                 <td>
-                  <p-inputSwitch [(ngModel)]="item.isActive" (ngModelChange)="updateActivation(item.id, item.isActive)">
+                  <p-inputSwitch [(ngModel)]="item.isActive"
+                    [disabled]="page.isSaving || !hasFeature(item.isActive ? featureEnum.DeactivateClients : featureEnum.ActivateClients)"
+                    (ngModelChange)="updateActivation(item.id, item.isActive)">
                   </p-inputSwitch>
                 </td>
-                <td (click)="clientDetails(item.id)">{{ item.email }}</td>
-                <td (click)="clientDetails(item.id)">{{ getVerifyStatusName(item.verifyStatus) }}</td>
-                <td (click)="clientDetails(item.id)">{{ item.nationalNumber }}</td>
-                <td (click)="clientDetails(item.id)">{{ item.mobile }}</td>
-                <td (click)="clientDetails(item.id)">{{ item.mobilesCount}}</td>
+                <td [class.disabled-cell]="!hasFeature(featureEnum.GetClientWithPhoneDetails)"
+                  (click)="hasFeature(featureEnum.GetClientWithPhoneDetails) && clientDetails(item.id)">{{ item.email }}</td>
+                <td [class.disabled-cell]="!hasFeature(featureEnum.GetClientWithPhoneDetails)"
+                  (click)="hasFeature(featureEnum.GetClientWithPhoneDetails) && clientDetails(item.id)">{{ getVerifyStatusName(item.verifyStatus) }}</td>
+                <td [class.disabled-cell]="!hasFeature(featureEnum.GetClientWithPhoneDetails)"
+                  (click)="hasFeature(featureEnum.GetClientWithPhoneDetails) && clientDetails(item.id)">{{ item.nationalNumber }}</td>
+                <td [class.disabled-cell]="!hasFeature(featureEnum.GetClientWithPhoneDetails)"
+                  (click)="hasFeature(featureEnum.GetClientWithPhoneDetails) && clientDetails(item.id)">{{ item.mobile }}</td>
+                <td [class.disabled-cell]="!hasFeature(featureEnum.GetClientWithPhoneDetails)"
+                  (click)="hasFeature(featureEnum.GetClientWithPhoneDetails) && clientDetails(item.id)">{{ item.mobilesCount}}</td>
                 <!-- <td>
                   <img [src]="getImageUrl(item.path)" style="width: 80px; height: 80px; object-fit: cover;" />
                 </td> -->
-                <td>
+                <td  *ngIf="hasFeature(featureEnum.AddPhone)">
                   <button class="btn btn-primary me-2"
                     (click)="navigateToCreateMobile(item.id); $event.stopPropagation()">
                     {{"salesflow.Customers.addMobile" | translate}}
                   </button>
                 </td>
                 <td>
-                  <button pButton icon="pi pi-pencil" class="p-button-rounded p-button-text p-button-info"
-                    aria-label="Edit" (click)="editCustomer(item.id); $event.stopPropagation()">
+                  <button *ngIf="hasFeature(featureEnum.EditClient)" pButton icon="pi pi-pencil"
+                    class="p-button-rounded p-button-text p-button-info" aria-label="Edit"
+                    (click)="editCustomer(item.id); $event.stopPropagation()">
                   </button>
                 </td>
               </tr>
