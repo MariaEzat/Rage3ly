@@ -1,17 +1,18 @@
 <!-- Container -->
-<div class="d-flex min-vh-100 bg-Dark text-white container-fluid p-md-4" >
+<div class="d-flex min-vh-100 bg-Dark text-white container-fluid p-md-4"
+  *ngIf="hasFeature(featureEnum.GetAllAdvertisementForAdmin)">
   <div class="flex-grow-1 p-2 chang-width" style="width: 90%;">
     <div class="container-fluid">
 
       <!-- Search Card -->
 
       <div class="card p-4 mb-4" style="background-color: #1A1F3766;">
-         <div class="d-flex justify-content-between align-items-center mb-3">
-        <h5 class="mb-3 text-white">{{"sites.advertisment.searchOfAdverdisments"|translate}} </h5>
+        <div class="d-flex justify-content-between align-items-center mb-3">
+          <h5 class="mb-3 text-white">{{"sites.advertisment.searchOfAdverdisments"|translate}} </h5>
           <div class="totalItems cr7 px-3 py-1 ms-2">{{page.options.totalItems}}
-                        {{"sites.advertisment.advertisment"|translate}}
-                    </div>
-                    </div>
+            {{"sites.advertisment.advertisment"|translate}}
+          </div>
+        </div>
         <form [formGroup]="page.searchForm">
           <div class="form-body">
             <div class="row g-2">
@@ -21,18 +22,20 @@
                 </ng-control>
               </div>
               <div class="col-12 col-md-6 col-lg-2">
-                <ng-control [form]="page.searchForm" control="StartDate" label="sites.advertisment.startDate" [inputClass]="'bg-Dark  border-color'"
-                  [labelClass]="'text-white'" [type]="page.ControlType.INPUT_DATE"></ng-control>
+                <ng-control [form]="page.searchForm" control="StartDate" label="sites.advertisment.startDate"
+                  [inputClass]="'bg-Dark  border-color'" [labelClass]="'text-white'"
+                  [type]="page.ControlType.INPUT_DATE"></ng-control>
               </div>
               <div class="col-12 col-md-6 col-lg-2">
 
-                <ng-control [form]="page.searchForm" control="EndDate" label="sites.advertisment.endDate" [inputClass]="'bg-Dark border-color'" 
-                  [labelClass]="'color-gray-300'" [type]="page.ControlType.INPUT_DATE"></ng-control>
+                <ng-control [form]="page.searchForm" control="EndDate" label="sites.advertisment.endDate"
+                  [inputClass]="'bg-Dark border-color'" [labelClass]="'color-gray-300'"
+                  [type]="page.ControlType.INPUT_DATE"></ng-control>
               </div>
               <!-- Search Button -->
               <div class="col-12 col-md-6 col-lg-2 d-flex align-items-end">
-                <button class='color-brand-700 rb-btn  rb-btn-sm  w-100 border-color text-white w-100'  (click)="search()"
-                  [disabled]="page.searchForm.invalid || page.isSearching">
+                <button class='color-brand-700 rb-btn  rb-btn-sm  w-100 border-color text-white w-100'
+                  (click)="search()" [disabled]="page.searchForm.invalid || page.isSearching">
                   <i class="uil uil-search"></i>
                   <span class="rb-btn-text d-md-inline-block">
                     {{'shared.search'|translate}}</span>
@@ -49,26 +52,27 @@
         <!-- Header -->
         <div class="d-flex flex-wrap gap-2 justify-content-between align-items-center mb-3">
           <h1 class="text-white">{{"sites.advertisment.advertisments"|translate}}</h1>
-        
+
           <div class="d-flex flex-wrap gap-2">
-            <button class="btn btn-primary flex-grow-1 flex-sm-grow-0" (click)="deleteSelectedAds()">
+            <button class="btn btn-primary flex-grow-1 flex-sm-grow-0" (click)="deleteSelectedAds()" *ngIf="hasFeature(featureEnum.BulkDeleteAdvertisement)">
               {{"sites.advertisment.delete"|translate}}
             </button>
-            <button class="btn btn-primary flex-grow-1 flex-sm-grow-0" (click)="activateAds()">
+            <button class="btn btn-primary flex-grow-1 flex-sm-grow-0" *ngIf="hasFeature(featureEnum.BulkActivateAdvertisement)" (click)="activateAds()">
               {{"sites.advertisment.active"|translate}}
             </button>
-            <button class="btn btn-primary flex-grow-1 flex-sm-grow-0" (click)="disActiveAds()">
+            <button class="btn btn-primary flex-grow-1 flex-sm-grow-0"*ngIf="hasFeature(featureEnum.BulkDeactivateAdvertisement)" (click)="disActiveAds()">
               {{"sites.advertisment.disActive"|translate}}
             </button>
-            <button class="btn btn-primary flex-grow-1 flex-sm-grow-0"*ngIf="hasFeature(featureEnum.CreateAdvertisement)" (click)="navigateToCreateBrand()">
+            <button class="btn btn-primary flex-grow-1 flex-sm-grow-0"
+              *ngIf="hasFeature(featureEnum.CreateAdvertisement)" (click)="navigateToCreateBrand()">
               {{"sites.advertisment.addNewAdvertisment"|translate}}
             </button>
           </div>
         </div>
-        
-        
-        
-        
+
+
+
+
         <!-- Table -->
         <div class="table-responsive scrolled mt-3 h-100">
           <table class="table text-center align-middle transparent-table">
@@ -80,8 +84,7 @@
                 <ng-container *ngFor="let colum of page.columns">
                   <th (click)="onSortClicked(colum)" [class.pointer]="colum.Sortable">
                     {{ colum.Title | translate }}
-                    <i class="uil uil-sort ms-1" *ngIf="colum.Sortable"
-                       [ngClass]="{
+                    <i class="uil uil-sort ms-1" *ngIf="colum.Sortable" [ngClass]="{
                          'sort-icon-ase': isColumnAscending(colum),
                          'sort-icon-des': !isColumnAscending(colum)
                        }">
@@ -98,10 +101,13 @@
                 <td data-label="Select"><input type="checkbox" [(ngModel)]="item.selected" /></td>
                 <td data-label="No.">{{ (page.options.currentPage - 1) * page.options.itemsPerPage + i + 1 }}</td>
                 <td data-label="{{ 'sites.advertisment.name' | translate }}">{{ item.title }}</td>
-                <td data-label="{{ 'sites.advertisment.startDate' | translate }}">{{ item.startDate | date: 'MMM d, y, h:mm:ss' }}</td>
-                <td data-label="{{ 'sites.advertisment.endDate' | translate }}">{{ item.endDate | date: 'MMM d, y, h:mm:ss' }}</td>
+                <td data-label="{{ 'sites.advertisment.startDate' | translate }}">{{ item.startDate | date: 'MMM d, y,
+                  h:mm:ss' }}</td>
+                <td data-label="{{ 'sites.advertisment.endDate' | translate }}">{{ item.endDate | date: 'MMM d, y,
+                  h:mm:ss' }}</td>
                 <td data-label="Active">
-                  <p-inputSwitch [(ngModel)]="item.isActive" (ngModelChange)="updateActivation(item.id, item.isActive)">
+                  <p-inputSwitch [(ngModel)]="item.isActive" (ngModelChange)="updateActivation(item.id, item.isActive)"
+                    [disabled]="page.isSaving || !hasFeature(item.isActive ? featureEnum.DeactivateAdvertisement : featureEnum.ActiveAdvertisement)">
                   </p-inputSwitch>
                 </td>
                 <td data-label="Image">
@@ -109,23 +115,24 @@
                 </td>
                 <td data-label="Actions">
                   <button pButton icon="pi pi-trash" class="p-button-rounded p-button-text p-button-danger"
-                          aria-label="Delete" (click)="showDeleteConfirmation(item)">
+                    *ngIf="hasFeature(featureEnum.DeleteAdvertisement)" aria-label="Delete"
+                    (click)="showDeleteConfirmation(item)">
                   </button>
                   <button pButton icon="pi pi-pencil" class="p-button-rounded p-button-text p-button-info"
-                          aria-label="Edit" (click)="editad(item.id)">
+                    *ngIf="hasFeature(featureEnum.EditAdvertisement)" aria-label="Edit" (click)="editad(item.id)">
                   </button>
                 </td>
               </tr>
-              
+
             </tbody>
           </table>
-          
+
         </div>
-        
+
 
         <ng-pagination [page]="page" (pageSizeChange)="onChangePageSize()" (pageChange)="getNextPrevData($event)">
         </ng-pagination>
-       
+
       </div>
     </div>
   </div>
@@ -139,8 +146,10 @@
           <strong *ngIf="selectedItem">{{ selectedItem.Name }}</strong>
         </p>
         <div class="d-flex mt-4">
-          <button type="button" class="btn btn-secondary me-auto" (click)="modalRef.hide()">{{"sites.advertisment.cancel"|translate}}</button>
-          <button type="button" class="btn btn-danger ms-2" (click)="remove(); modalRef.hide()">{{"sites.advertisment.confirm"|translate}}</button>
+          <button type="button" class="btn btn-secondary me-auto"
+            (click)="modalRef.hide()">{{"sites.advertisment.cancel"|translate}}</button>
+          <button type="button" class="btn btn-danger ms-2"
+            (click)="remove(); modalRef.hide()">{{"sites.advertisment.confirm"|translate}}</button>
         </div>
       </div>
     </div>
@@ -149,14 +158,17 @@
   <!-- Confirm Bulk Delete -->
   <ng-template #confirmDeleteTemplates>
     <div class="modal-content bg-Dark text-white border border-secondary p-4 rounded">
-    <div class="modal-body">
-      <p  class="modal-confirm-content mb-2"> {{"sites.advertisment.Are you sure you want to delete the selected ads?"|translate}}</p>
-      <div class="d-flex mt-4">
-        <button class="btn btn-secondary me-auto" (click)="modalRef.hide()">{{"sites.advertisment.cancel"|translate}}</button>
-        <button class="btn btn-danger ms-2" (click)="modalRef.content.onConfirm(); modalRef.hide()">{{"sites.advertisment.confirm"|translate}}</button>
+      <div class="modal-body">
+        <p class="modal-confirm-content mb-2"> {{"sites.advertisment.Are you sure you want to delete the selected
+          ads?"|translate}}</p>
+        <div class="d-flex mt-4">
+          <button class="btn btn-secondary me-auto"
+            (click)="modalRef.hide()">{{"sites.advertisment.cancel"|translate}}</button>
+          <button class="btn btn-danger ms-2"
+            (click)="modalRef.content.onConfirm(); modalRef.hide()">{{"sites.advertisment.confirm"|translate}}</button>
+        </div>
       </div>
     </div>
-  </div>
-    
+
   </ng-template>
 </div>

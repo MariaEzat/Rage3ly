@@ -94,19 +94,18 @@ export enum FeatureEnum {
   ExportClientsToExcel = 4021,
   UserData = 4022,
   BulkActivateUser = 4023,
-  SendEmailToClients = 4024,
-  GetClientsWithDefualtShippingAddress = 4025,
-  GetAllPendingClient = 4026,
-  GetAllNotPendingClient = 4027,
-  GetTempClientByID = 4028,
-  RejectUser = 4029,
-  GetAllVerifiedOrRejectUser = 4030,
-  GetUserById = 4031,
-  GetClientDetails = 4032,
-  GetClientWithPhoneDetails = 4033,
-  MostUsedGovernorates = 4034,
-  MostUsedGovernoratesRatio = 4035,
-  AddClientImage = 4036,
+  GetClientsWithDefualtShippingAddress = 4024,
+  GetAllPendingClient = 4025,
+  GetAllNotPendingClient = 4026,
+  GetTempClientByID = 4027,
+  RejectUser = 4028,
+  GetAllVerifiedOrRejectUser = 4029,
+  GetUserById = 4030,
+  GetClientDetails = 4031,
+  GetClientWithPhoneDetails = 4032,
+  MostUsedGovernorates = 4033,
+  MostUsedGovernoratesRatio = 4034,
+  AddClientImage = 4035,
   // Advertisement Features
   CreateAdvertisement = 5000,
   EditAdvertisement = 5001,
@@ -193,4 +192,6 @@ export enum FeatureEnum {
 
   //Emails
   GetAllEmails = 13000,
+  SendEmailToClients = 13001,
+
 }
