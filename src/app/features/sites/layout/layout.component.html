@@ -132,7 +132,7 @@
           class="px-1 nav-icon">
       </a>
 
-      <a class="nav-link text-white py-2 d-flex flex-row-reverse justify-content-end align-items-center"
+      <a class="nav-link text-white py-2 d-flex flex-row-reverse justify-content-end align-items-center" *ngIf="hasFeature(featureEnum.GetAllReturnedPhones)"
         routerLink="/sites/retrivedPhones" routerLinkActive="active" #retrivedPhonesRla="routerLinkActive"
         [ngClass]="{ 'active-color': retrivedPhonesRla.isActive }" (mouseenter)="setActiveLink('retrivedPhones')"
         (mouseleave)="setActiveLink('')">
