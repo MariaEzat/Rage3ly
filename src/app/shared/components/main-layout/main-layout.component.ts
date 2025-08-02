@@ -5,7 +5,6 @@ import { WebsiteService } from 'src/app/features/website/services/website.servic
 import { LocalizationService } from '../../service/localization.service';
 import { DOCUMENT } from '@angular/common';
 import { SharedService } from '../../service/shared.service';
-import { CSSFilesService } from '../../service/cssFiles.service';
 
 @Component({
   selector: 'app-main-layout',
@@ -20,7 +19,7 @@ export class MainLayoutComponent {
   activeLink: string = '';
 
   constructor(private router: Router, public websiteService: WebsiteService, private translate: TranslateService, private _localizationService: LocalizationService,
-    private _CSSFilesService: CSSFilesService, private localizationService: LocalizationService, @Inject(DOCUMENT) private document: Document
+     private localizationService: LocalizationService, @Inject(DOCUMENT) private document: Document
   ) { this.currentLang = this.localizationService.getLanguage(); }
   ngOnInit() {
     this.getUserName();
@@ -66,7 +65,6 @@ onClickOutside(event: MouseEvent): void {
     this.websiteService.getUserInfo().subscribe((res) => {
       if (res.isSuccess) {
         
-        //this._CSSFilesService.changeStyle(this.language.Url);
         this.userName = res.data.name;
         this.websiteService.userInfo = res.data;
         this.getUserFeatures();
