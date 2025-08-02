@@ -4,6 +4,8 @@ import { TranslateService } from '@ngx-translate/core';
 import { WebsiteService } from 'src/app/features/website/services/website.service';
 import { LocalizationService } from '../../service/localization.service';
 import { DOCUMENT } from '@angular/common';
+import { SharedService } from '../../service/shared.service';
+import { CSSFilesService } from '../../service/cssFiles.service';
 
 @Component({
   selector: 'app-main-layout',
@@ -17,7 +19,8 @@ export class MainLayoutComponent {
   showSidebarMenu = false;
   activeLink: string = '';
 
-  constructor(private router: Router, public websiteService: WebsiteService, private translate: TranslateService, private localizationService: LocalizationService, @Inject(DOCUMENT) private document: Document
+  constructor(private router: Router, public websiteService: WebsiteService, private translate: TranslateService, private _localizationService: LocalizationService,
+    private _CSSFilesService: CSSFilesService, private localizationService: LocalizationService, @Inject(DOCUMENT) private document: Document
   ) { this.currentLang = this.localizationService.getLanguage(); }
   ngOnInit() {
     this.getUserName();
@@ -25,6 +28,7 @@ export class MainLayoutComponent {
     this.currentLang = this.localizationService.getLanguage();
     // this.setDirection(this.currentLang);
   }
+  
 
   @ViewChild('langButton', { static: false }) langButton!: ElementRef;
 @ViewChild('langDropdown', { static: false }) langDropdown!: ElementRef;
@@ -57,18 +61,29 @@ onClickOutside(event: MouseEvent): void {
 
   }
 
-  getUserName() {
-    this.websiteService.userLoading = true
+   getUserName() {
+    this.websiteService.userLoading = true;
     this.websiteService.getUserInfo().subscribe((res) => {
       if (res.isSuccess) {
+        
+        //this._CSSFilesService.changeStyle(this.language.Url);
         this.userName = res.data.name;
-        this.websiteService.userInfo = res.data
-        this.websiteService.userLoading = false
+        this.websiteService.userInfo = res.data;
+        this.getUserFeatures();
       }
-    })
+    });
   }
 
-
+  getUserFeatures() {
+    this.websiteService.getUserFeatures().subscribe((res) => {
+      if (res.isSuccess) {
+        SharedService.featureList = res.data.featureIds;
+        this.websiteService.userLoading = false;
+      } else {
+        console.error('Failed to load user features:', res.message);
+      }
+    });
+  }
   getRoleIDFromToken(): string | null {
     const token = localStorage.getItem('eToken');
     if (!token) return null;
