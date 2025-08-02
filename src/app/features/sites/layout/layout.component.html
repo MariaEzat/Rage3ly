@@ -19,7 +19,7 @@
           [src]="dashboardRla.isActive || activeLink === 'dashboard' ? 'assets/images/ActiveDashboard.png' : 'assets/images/DisActiveDashboard.png'"
           class="px-1 nav-icon">
       </a>
-      <a class="nav-link text-white py-2 d-flex flex-row-reverse justify-content-end align-items-center"
+      <a class="nav-link text-white py-2 d-flex flex-row-reverse justify-content-end align-items-center" *ngIf="hasFeature(featureEnum.GetPhonesByAdmin)"
         routerLink="/sites/mobile" routerLinkActive="active" #mobileRla="routerLinkActive"
         [ngClass]="{ 'active-color': mobileRla.isActive }" (mouseenter)="setActiveLink('mobile')"
         (mouseleave)="setActiveLink('')">
