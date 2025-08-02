@@ -29,7 +29,7 @@
           class="px-1 nav-icon">
       </a>
 
-       <a class="nav-link text-white py-2 d-flex flex-row-reverse justify-content-end align-items-center"
+       <a class="nav-link text-white py-2 d-flex flex-row-reverse justify-content-end align-items-center"  *ngIf="hasFeature(featureEnum.GetAllNotificationMessages)"
         routerLink="/sites/notifications" routerLinkActive="active" #notificationsRla="routerLinkActive"
         [ngClass]="{ 'active-color': notificationsRla.isActive }" (mouseenter)="setActiveLink('notifications')"
         (mouseleave)="setActiveLink('')">
@@ -41,7 +41,7 @@
 
 
 
-      <a class="nav-link text-white py-2 d-flex flex-row-reverse justify-content-end align-items-center"
+      <a class="nav-link text-white py-2 d-flex flex-row-reverse justify-content-end align-items-center" *ngIf="hasFeature(featureEnum.GetClientList)"
         routerLink="/sites/customers" routerLinkActive="active" #clientsRla="routerLinkActive"
         [ngClass]="{ 'active-color': clientsRla.isActive || isClientDetailsActive() }"
         (mouseenter)="setActiveLink('customers')" (mouseleave)="setActiveLink('')">
@@ -54,7 +54,7 @@
       
       </a>
 
-      <a class="nav-link text-white py-2 d-flex flex-row-reverse justify-content-end align-items-center"
+      <a class="nav-link text-white py-2 d-flex flex-row-reverse justify-content-end align-items-center" *ngIf="hasFeature(featureEnum.FilterUsers)"
         routerLink="/sites/jobTitle" routerLinkActive="active" #usersRla="routerLinkActive"
         [ngClass]="{ 'active-color': usersRla.isActive }" (mouseenter)="setActiveLink('jobTitle')"
         (mouseleave)="setActiveLink('')">
@@ -63,7 +63,7 @@
           [src]="usersRla.isActive || activeLink === 'jobTitle' ? 'assets/images/IconEmpActive.png' : 'assets/images/IconEmp.png'"
           class="px-1 nav-icon">
       </a>
-      <a class="nav-link text-white py-2 d-flex flex-row-reverse justify-content-end align-items-center"
+      <a class="nav-link text-white py-2 d-flex flex-row-reverse justify-content-end align-items-center" 
         routerLink="/sites/roles" routerLinkActive="active" #RolesRla="routerLinkActive"
         [ngClass]="{ 'active-color': RolesRla.isActive }" (mouseenter)="setActiveLink('roles')"
         (mouseleave)="setActiveLink('')">
@@ -73,7 +73,7 @@
           class="px-1 nav-icon">
       </a>
 
-      <a class="nav-link text-white py-2 d-flex flex-row-reverse justify-content-end align-items-center"
+      <a class="nav-link text-white py-2 d-flex flex-row-reverse justify-content-end align-items-center" *ngIf="hasFeature(featureEnum.GetAllBrand)"
         routerLink="/sites/brand" routerLinkActive="active" #brandRla="routerLinkActive"
         [ngClass]="{ 'active-color': brandRla.isActive }" (mouseenter)="setActiveLink('brand')"
         (mouseleave)="setActiveLink('')">
@@ -82,7 +82,7 @@
           [src]="brandRla.isActive || activeLink === 'brand' ? 'assets/images/Icon-Clients.png' : 'assets/images/Icon@2x.png'"
           class="px-1 nav-icon">
       </a>
-      <a class="nav-link text-white py-2 d-flex flex-row-reverse justify-content-end align-items-center"
+      <a class="nav-link text-white py-2 d-flex flex-row-reverse justify-content-end align-items-center" *ngIf="hasFeature(featureEnum.GetAllActionLog)"
         routerLink="/sites/search" routerLinkActive="active" #searchRla="routerLinkActive"
         [ngClass]="{ 'active-color': searchRla.isActive }" (mouseenter)="setActiveLink('search')"
         (mouseleave)="setActiveLink('')">
@@ -92,7 +92,7 @@
           class="px-1 nav-icon">
       </a>
 
-      <a class="nav-link text-white py-2 d-flex flex-row-reverse justify-content-end align-items-center"
+      <a class="nav-link text-white py-2 d-flex flex-row-reverse justify-content-end align-items-center" *ngIf="hasFeature(featureEnum.GetAllNotificationMessages)"
         routerLink="/sites/notification" routerLinkActive="active" #notificationRla="routerLinkActive"
         [ngClass]="{ 'active-color': notificationRla.isActive }" (mouseenter)="setActiveLink('notification')"
         (mouseleave)="setActiveLink('')">
@@ -101,7 +101,7 @@
           [src]="notificationRla.isActive || activeLink === 'notification' ? 'assets/icons/ActiveSearch.png' : 'assets/icons/DisactiveSearch.png'"
           class="px-1 nav-icon">
       </a>
-      <a class="nav-link text-white py-2 d-flex flex-row-reverse justify-content-end align-items-center"
+      <a class="nav-link text-white py-2 d-flex flex-row-reverse justify-content-end align-items-center" *ngIf="hasFeature(featureEnum.GetAllAdvertisementForAdmin)"
         routerLink="/sites/ads" routerLinkActive="active" #adsRla="routerLinkActive"
         [ngClass]="{ 'active-color': adsRla.isActive }" (mouseenter)="setActiveLink('ads')"
         (mouseleave)="setActiveLink('')">
@@ -110,7 +110,7 @@
           [src]="adsRla.isActive || activeLink === 'ads' ? 'assets/images/Icon.png' : 'assets/images/Icon-notActive.png'"
           class="px-1 nav-icon">
       </a>
-      <a class="nav-link text-white py-2 d-flex flex-row-reverse justify-content-end align-items-center"
+      <a class="nav-link text-white py-2 d-flex flex-row-reverse justify-content-end align-items-center" *ngIf="hasFeature(featureEnum.GetAllTransferOwnershipRequests)"
         routerLink="/sites/transferOfOwnership" routerLinkActive="active" #ownershipRla="routerLinkActive"
         [ngClass]="{ 'active-color': ownershipRla.isActive && !isClientDetailsActive() }"
         (mouseenter)="setActiveLink('ownership')" (mouseleave)="setActiveLink('')">
@@ -122,7 +122,7 @@
                : 'assets/images/transferNotActive.png'" class="px-1 nav-icon">
       </a>
 
-      <a class="nav-link text-white py-2 d-flex flex-row-reverse justify-content-end align-items-center"
+      <a class="nav-link text-white py-2 d-flex flex-row-reverse justify-content-end align-items-center" *ngIf="hasFeature(featureEnum.GetAllMobileRequests)"
         routerLink="/sites/requestToTransferAStolenPhone" routerLinkActive="active" #requestsRla="routerLinkActive"
         [ngClass]="{ 'active-color': requestsRla.isActive }" (mouseenter)="setActiveLink('requests')"
         (mouseleave)="setActiveLink('')">
