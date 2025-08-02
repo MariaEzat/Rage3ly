@@ -24,7 +24,7 @@
 
 
     <div class="charts-row">
-        <div class="chart-card">
+        <div *ngIf="hasFeature(featureEnum.PhoneBrandRatio)" class="chart-card">
             <h4> {{"sites.dashboard.phoneBrandsUsed"|translate}}</h4>
             <div class="center-canvas m-3">
                 <canvas baseChart [data]="brandsBarData" [type]="'bar'" [options]="barOptions"></canvas>
