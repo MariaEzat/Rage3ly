@@ -130,7 +130,7 @@ export class ViewRoleDetailsComponent extends CrudIndexBaseUtils {
 
 
   isSectionActive(section: any): boolean {
-    return section.features.every((feature: any) => feature.isActiveToRole);
+    return section.features.some((feature: any) => feature.isActiveToRole);
   }
 
   onSectionDropdownChange(section: any, index: number): void {
