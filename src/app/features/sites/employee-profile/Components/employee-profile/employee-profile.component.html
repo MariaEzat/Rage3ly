@@ -9,7 +9,7 @@
           <p class="fw-bold mt-2 text-white">{{"sites.employee-profile.profileSettings"|translate}}</p>
         </div>
       </div>
-      <div class="col text-center h-100">
+      <div class="col text-center h-100" *ngIf="hasFeature(featureEnum.ChangePassword)">
         <div class="p-4 border cr5" routerLink="/sites/employeeProfile/changePassword">
           <img src="../assets/images/password.png">
           <p class="fw-bold mt-2 text-white">{{"sites.employee-profile.changePassword"|translate}}</p>
