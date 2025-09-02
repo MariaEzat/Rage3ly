@@ -257,6 +257,26 @@
     }
   },
   "sites": {
+    "Governorate": {
+      "governorate": "Governorate",
+      "governorates": "Governorates",
+      "name": "Name",
+      "cities": "Cities",
+      "governorateCode": "Governorate Code",
+      "isActive": "Is Active",
+      "action": "Action",
+      "code": "Code",
+      "create": "Create Governorate",
+      "delete": "Delete ",
+      "active": "Active",
+      "disActive": "InActive",
+      "deleteSelectedGovernorates": "Are you sure you want to delete the selected Governorates?",
+      "yes": "Yes",
+      "cancel": "Cancel",
+      "confirm": "Confirm",
+      "searchGovernorates":"Search Governorates",
+      "noGovernorates":"No Governorates"
+    },
     "advertisment": {
       "searchOfAdverdisments": "Search Of Adverdisments",
       "advertisment": "Advertisment",
@@ -307,6 +327,7 @@
       "search in users": "search in users"
     },
     "layout": {
+      "governorate":"Governorate",
       "adverdisments": "Adverdisments",
       "clients": "Clients",
       "users": "Users",

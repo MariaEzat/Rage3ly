@@ -13,7 +13,13 @@ const routes: Routes = [
     children: [
       { path: '', redirectTo: 'mobile', pathMatch: 'full' },
 
-
+      {
+        path: 'governorate',
+        loadChildren: () =>
+          import('../sites/governorate/governorate.module').then(
+            (m) => m.GovernoratesModule
+          ),
+      },
 
       {
         path: 'customers',
@@ -25,7 +31,7 @@ const routes: Routes = [
 
       {
         path: 'ads',
-         canActivate: [AuthGuard],
+        canActivate: [AuthGuard],
         loadChildren: () =>
           import('../sites/ads/ads.module').then((m) => m.AdsModule),
       },
@@ -44,17 +50,16 @@ const routes: Routes = [
       {
         path: 'mobile',
         loadChildren: () =>
-          import('./mobile/mobile.module').then(
-            (m) => m.MobileModule
-          ),
+          import('./mobile/mobile.module').then((m) => m.MobileModule),
       },
       {
         path: 'requestToTransferAStolenPhone',
         loadChildren: () =>
-          import('./request-to-transfer-astolen-phone/request-to-transfer-astolen-phone.module').then(
-            (m) => m.RequestToTransferAStolenPhoneModule
-          ),
-      }, {
+          import(
+            './request-to-transfer-astolen-phone/request-to-transfer-astolen-phone.module'
+          ).then((m) => m.RequestToTransferAStolenPhoneModule),
+      },
+      {
         path: 'transferOfOwnership',
         loadChildren: () =>
           import('./transfer-of-ownership/transfer-of-ownership.module').then(
@@ -64,23 +69,17 @@ const routes: Routes = [
       {
         path: 'roles',
         loadChildren: () =>
-          import('./roles/roles.module').then(
-            (m) => m.RolesModule
-          ),
+          import('./roles/roles.module').then((m) => m.RolesModule),
       },
       {
         path: 'brand',
         loadChildren: () =>
-          import('./brand/brand.module').then(
-            (m) => m.BrandModule
-          ),
+          import('./brand/brand.module').then((m) => m.BrandModule),
       },
       {
         path: 'search',
         loadChildren: () =>
-          import('./search/search.module').then(
-            (m) => m.SearchModule
-          ),
+          import('./search/search.module').then((m) => m.SearchModule),
       },
       {
         path: 'notification',
@@ -92,11 +91,9 @@ const routes: Routes = [
       {
         path: 'dashboard',
         loadChildren: () =>
-          import('./dashboard/dashboard.module').then(
-            (m) => m.DashboardModule
-          ),
+          import('./dashboard/dashboard.module').then((m) => m.DashboardModule),
       },
-       {
+      {
         path: 'notifications',
         loadChildren: () =>
           import('./notification/notification.module').then(
@@ -113,9 +110,7 @@ const routes: Routes = [
       {
         path: 'email',
         loadChildren: () =>
-          import('./email/email.module').then(
-            (m) => m.EmailModule
-          ),
+          import('./email/email.module').then((m) => m.EmailModule),
       },
     ],
   },
@@ -124,4 +119,4 @@ const routes: Routes = [
   declarations: [LayoutComponent],
   imports: [CommonModule, SharedModule, RouterModule.forChild(routes)],
 })
-export class SitesModule { }
+export class SitesModule {}

@@ -247,6 +247,26 @@
     }
   },
   "sites": {
+    "Governorate": {
+      "governorate": "المحافظه",
+      "governorates": "المحافظات",
+      "name": " المحافظه",
+      "cities": "المدن",
+      "governorateCode": "كود المحافظه",
+      "isActive": "تفعيل المحافظة",
+      "action": "الاجراءات",
+      "code": "الكود",
+      "create": "اضافة محافظه",
+      "delete": "حذف ",
+      "active": "تفعيل",
+      "disActive": "الغاء التفعيل",
+      "deleteSelectedGovernorates": "هل أنت متأكد أنك تريد حذف المحافظات المحددة؟",
+      "yes": "نعم",
+      "cancel": "الغاء",
+      "confirm": "تأكيد",
+      "searchGovernorates":"بحث بالمحافظات",
+      "noGovernorates":"لا توجد محافظات"
+    },
     "advertisment": {
       "searchOfAdverdisments": "بحث في الاعلانات",
       "advertisment": "اعلان",
@@ -297,6 +317,7 @@
       "search in users": "بحث في الموظفين"
     },
     "layout": {
+      "governorate":"المحافظة",
       "adverdisments": "الاعلانات",
       "clients": "العملاء",
       "users": "المستخدمين",
