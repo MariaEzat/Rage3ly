@@ -87,6 +87,15 @@
               <img [src]="RolesRla.isActive ? 'assets/images/roleActive.png' : 'assets/images/roleNotActive.png'"
                 class="px-1 nav-icon">
             </a>
+              <a class="nav-link text-white py-2 d-flex flex-row-reverse justify-content-end align-items-center fontStyle"
+         routerLink="/sites/governorate" routerLinkActive="active"
+        #governorateRla="routerLinkActive" [ngClass]="{ 'active-color': governorateRla.isActive }"
+        (mouseenter)="setActiveLink('governorate')" (mouseleave)="setActiveLink('')">
+        {{ "sites.layout.governorate" | translate }}
+        <img
+          [src]="governorateRla.isActive || activeLink === 'governorate' ? 'assets/images/governorateActive.png' : 'assets/images/governorateNotActive.png'"
+          class="px-1 nav-icon">
+      </a>
             <a class="nav-link text-white py-2 d-flex flex-row-reverse justify-content-end align-items-center fontStyle"
               routerLink="/sites/brand" routerLinkActive="active" #BrandRla="routerLinkActive"
               [ngClass]="{ 'active-color': BrandRla.isActive }" (click)="toggleSidebar()">
