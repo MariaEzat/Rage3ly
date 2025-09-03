@@ -44,12 +44,12 @@
                 <div class="d-flex flex-wrap gap-2 justify-content-between align-items-center mb-3">
                     <h5 class="text-white">{{ "sites.city.cities" | translate }}</h5>
                     <div class="d-flex flex-wrap gap-2">
-                        <button class="btn btn-primary" (click)="activateCities()">{{ "sites.city.active" |
+                        <button *ngIf="hasFeature(featureEnum.ActiveCity)" class="btn btn-primary" (click)="activateCities()">{{ "sites.city.active" |
                             translate }}</button>
-                        <button class="btn btn-primary" (click)="disActiveCities()">{{
+                        <button *ngIf="hasFeature(featureEnum.DeactiveCity)" class="btn btn-primary" (click)="disActiveCities()">{{
                             "sites.city.disActive" |
                             translate }}</button>
-                        <button class="btn btn-primary" (click)="deleteSelectedCities()">{{ "shared.delete" |
+                        <button *ngIf="hasFeature(featureEnum.BulkDeleteCity)" class="btn btn-primary" (click)="deleteSelectedCities()">{{ "shared.delete" |
                             translate }}</button>
                         <button class="btn btn-primary" *ngIf="hasFeature(featureEnum.CreateCity)"
                             (click)="navigateToCreateCity()">{{ "sites.city.create" | translate
@@ -97,7 +97,7 @@
                                         class="p-button-rounded p-button-text p-button-info" aria-label="Edit"
                                         (click)="editCity(item.id); $event.stopPropagation()">
                                     </button>
-                                    <button pButton icon="pi pi-trash"
+                                    <button *ngIf="hasFeature(featureEnum.DeleteCity)" pButton icon="pi pi-trash"
                                         class="p-button-rounded p-button-text p-button-danger" aria-label="Delete"
                                         (click)="showDeleteConfirmation(item); $event.stopPropagation()">
                                     </button>
