@@ -1,0 +1,43 @@
+.nav-tabs .nav-link.bg-brand-100 {
+  background-color: #fcecd8; /* Adjust this to match your active tab style */
+  color: #EB762C;
+}
+
+/* Optional: Style for the icon color when hovered */
+
+.custom-large-textarea {
+  width: 100%; /* Ensure it takes the full width of the container */
+  min-height: 300px; /* Explicitly set a larger height */
+  max-height: 500px; /* Optional: Limit maximum height */
+  font-size: 1rem; /* Adjust text size */
+  padding: 10px; /* Add padding for better appearance */
+  box-sizing: border-box; /* Ensure padding doesn't overflow */
+}
+.btn-primary {
+  background-color: #4DC3FF;
+  border: none;
+}
+
+.btn-primary:hover {
+  background-color: #35b3f2;
+}
+
+.expand-arrow svg {
+  transition: transform 0.3s;
+  margin-right: 8px;  
+  transform: rotate(180deg); 
+}
+.expand-arrow {
+  cursor: pointer; 
+}
+h1,h2,h3,h4,h5{
+  font-family: 'Zain', serif !important;
+ }
+
+ p,span,button,nav,div,a ,label,td,form{
+  font-family: 'Zain', serif !important;
+  font-size: 18px;
+ }
+ .font-big {
+  font-size: 25px;
+ }

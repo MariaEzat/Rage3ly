@@ -20,6 +20,13 @@ const routes: Routes = [
             (m) => m.GovernoratesModule
           ),
       },
+       {
+        path: 'city',
+        loadChildren: () =>
+          import('../sites/city/city.module').then(
+            (m) => m.CityModule
+          ),
+      },
 
       {
         path: 'customers',

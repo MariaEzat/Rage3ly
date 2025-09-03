@@ -274,8 +274,26 @@
       "yes": "Yes",
       "cancel": "Cancel",
       "confirm": "Confirm",
-      "searchGovernorates":"Search Governorates",
-      "noGovernorates":"No Governorates"
+      "searchGovernorates": "Search Governorates",
+      "noGovernorates": "No Governorates"
+    },
+    "city": {
+      "city": "City",
+      "cities": "Cities",
+      "name":"City Name",
+      "governorateName":"Governorate Name",
+      "searchCities": "Search Cities",
+      "active": "Active",
+      "disActive": "DisActive",
+      "create": "Create City",
+       "delete": "Delete ",
+       "isActive":"Is Active",
+       "action":"Action",
+      "noCities": "No Cities",
+      "deleteSelectedCities": "Are you sure you want to delete the selected Cities?",
+      "yes": "Yes",
+      "cancel": "Cancel",
+      "confirm": "Confirm"
     },
     "advertisment": {
       "searchOfAdverdisments": "Search Of Adverdisments",
@@ -327,7 +345,8 @@
       "search in users": "search in users"
     },
     "layout": {
-      "governorate":"Governorate",
+      "governorate": "Governorate",
+      "city": "City",
       "adverdisments": "Adverdisments",
       "clients": "Clients",
       "users": "Users",
@@ -369,17 +388,17 @@
       "serialNumber": "Serial Number",
       "dateOfPurchase": "Date Of Purchase",
       "search": "Search",
-       "Safe": "Safe",
-    "PendingUploadImage": "Pending Upload Image",
-    "PendingAdminConfirmation": "Pending Admin Confirmation",
-    "Stolen": "Stolen",
-    "NotSure": "Not Sure",
-    "UnRegistered": "UnRegistered",
-    "deleted":"Deleted",
-    "notDeleted":"Not Deleted",
-    "dateOfPurchaseError":"Date of Purchase cannot be in the future",
-    "otherBrand": "Other Brand",
-    "mobileDetails":"Mobile Details"
+      "Safe": "Safe",
+      "PendingUploadImage": "Pending Upload Image",
+      "PendingAdminConfirmation": "Pending Admin Confirmation",
+      "Stolen": "Stolen",
+      "NotSure": "Not Sure",
+      "UnRegistered": "UnRegistered",
+      "deleted": "Deleted",
+      "notDeleted": "Not Deleted",
+      "dateOfPurchaseError": "Date of Purchase cannot be in the future",
+      "otherBrand": "Other Brand",
+      "mobileDetails": "Mobile Details"
     },
     "employee-profile": {
       "profileSettings": "Profile Settings",
@@ -434,7 +453,7 @@
       "request": "Request",
       "policeDepartment": "Police Department",
       "reportNumber": "Report Number",
-      "canceled":"Cancelled"
+      "canceled": "Cancelled"
     },
     "ownership": {
       "ownership": "Ownership",
@@ -473,7 +492,7 @@
       "otherBrand": "Other Brand",
       "Img": "Img",
       "transfer": "Transfer",
-      "canceled":"Cancelled"
+      "canceled": "Cancelled"
     },
     "brands": {
       "brands": "Brands",
@@ -581,10 +600,10 @@
       "Read": "Read",
       "searchOfNotification": "Search Of Notification",
       "sendNotification": "Send Notification",
-      "users":"Users",
+      "users": "Users",
       "selectedUsers": "Selected Users",
       "noUsersSelected": "No Users Selected",
-      "action":"Action"
+      "action": "Action"
     }
   },
   "salesflow": {

@@ -267,6 +267,24 @@
       "searchGovernorates":"بحث بالمحافظات",
       "noGovernorates":"لا توجد محافظات"
     },
+     "city": {
+      "city": "مدينه",
+      "cities": "المدن",
+      "name":"اسم المدينة",
+      "governorateName":"المحافظة",
+      "searchCities": "البحث في المن",
+      "active": "تفعيل",
+      "disActive": "الغاء التفعيل",
+      "create": "اضافة مدينة",
+       "delete": "حذف ",
+       "isActive":"تفعيل المدينة",
+       "action":"الاجراءات",
+      "noCities": "لا يوجد مدن ",
+      "deleteSelectedCities": "هل تريد حذف المدن المحددة ؟",
+      "yes": "نعم",
+      "cancel": "الغاء",
+      "confirm": "تأكيد"
+    },
     "advertisment": {
       "searchOfAdverdisments": "بحث في الاعلانات",
       "advertisment": "اعلان",
@@ -318,6 +336,7 @@
     },
     "layout": {
       "governorate":"المحافظة",
+      "city":"المدينة",
       "adverdisments": "الاعلانات",
       "clients": "العملاء",
       "users": "المستخدمين",

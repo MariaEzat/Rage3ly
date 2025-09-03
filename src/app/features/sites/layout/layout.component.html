@@ -82,6 +82,16 @@
           class="px-1 nav-icon">
       </a>
 
+        <a class="nav-link text-white py-2 d-flex flex-row-reverse justify-content-end align-items-center"
+         routerLink="/sites/city" routerLinkActive="active"
+        #cityRla="routerLinkActive" [ngClass]="{ 'active-color': cityRla.isActive }"
+        (mouseenter)="setActiveLink('city')" (mouseleave)="setActiveLink('')">
+        {{ "sites.layout.city" | translate }}
+        <img
+          [src]="cityRla.isActive || activeLink === 'city' ? 'assets/images/cityActive.png' : 'assets/images/cityNotActive.png'"
+          class="px-1 nav-icon">
+      </a>
+
       <a class="nav-link text-white py-2 d-flex flex-row-reverse justify-content-end align-items-center"
         *ngIf="hasFeature(featureEnum.GetAllBrand)" routerLink="/sites/brand" routerLinkActive="active"
         #brandRla="routerLinkActive" [ngClass]="{ 'active-color': brandRla.isActive }"
