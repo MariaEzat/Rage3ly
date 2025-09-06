@@ -1,5 +1,5 @@
 <!-- Container -->
-<div class="d-flex min-vh-100 bg-Dark text-white">
+<div class="d-flex min-vh-100 bg-Dark text-white" *ngIf="hasFeature(featureEnum.GetAllGovernorateWithAllCities)">
     <div class="flex-grow-1 p-2 chang-width" style="width: 90%;">
         <div class="container-fluid">
 
@@ -40,12 +40,12 @@
                 <div class="d-flex flex-wrap gap-2 justify-content-between align-items-center mb-3">
                     <h5 class="text-white">{{ "sites.Governorate.governorates" | translate }}</h5>
                     <div class="d-flex flex-wrap gap-2">
-                        <button class="btn btn-primary" (click)="activateGovernorates()">{{ "sites.Governorate.active" |
+                        <button class="btn btn-primary" (click)="activateGovernorates()" *ngIf="hasFeature(featureEnum.BulkActivateGovernorate)">{{ "sites.Governorate.active" |
                             translate }}</button>
-                        <button class="btn btn-primary" (click)="disActiveGovernorates()">{{
+                        <button class="btn btn-primary" (click)="disActiveGovernorates()" *ngIf="hasFeature(featureEnum.BulkDeactivateGovernorate)">{{
                             "sites.Governorate.disActive" |
                             translate }}</button>
-                        <button class="btn btn-primary" (click)="deleteSelectedGovernorates()">{{ "shared.delete" |
+                        <button class="btn btn-primary" (click)="deleteSelectedGovernorates()" *ngIf="hasFeature(featureEnum.BulkDeleteGovernorate)">{{ "shared.delete" |
                             translate }}</button>
                         <button class="btn btn-primary" *ngIf="hasFeature(featureEnum.CreateGovernorate)"
                             (click)="navigateToCreateGovernorate()">{{ "sites.Governorate.create" | translate
@@ -96,17 +96,17 @@
                                 <td *ngIf="!item.cities?.length">-</td>
                                 <td>{{item.governorateCode}}</td>
                                 <td>
-                                    <p-inputSwitch [(ngModel)]="item.isActive" [disabled]="page.isSaving"
+                                    <p-inputSwitch [(ngModel)]="item.isActive" [disabled]="page.isSaving || !hasFeature(item.DeactiveGovernorate ? featureEnum.DeactiveCity : featureEnum.ActiveGovernorate)"
                                         (ngModelChange)="updateActivation(item, item.isActive)">
                                     </p-inputSwitch>
                                 </td>
                                 <td>
-                                    <button *ngIf="hasFeature(featureEnum.EditGovernorate)" pButton icon="pi pi-pencil"
+                                    <button pButton icon="pi pi-pencil" *ngIf="hasFeature(featureEnum.EditGovernorate)"
                                         class="p-button-rounded p-button-text p-button-info" aria-label="Edit"
                                         (click)="editGovernorate(item.id); $event.stopPropagation()">
                                     </button>
                                     <button pButton icon="pi pi-trash"
-                                        class="p-button-rounded p-button-text p-button-danger" aria-label="Delete"
+                                        class="p-button-rounded p-button-text p-button-danger" *ngIf="hasFeature(featureEnum.DeleteGovernorate)"  aria-label="Delete"
                                         (click)="showDeleteConfirmation(item); $event.stopPropagation()">
                                     </button>
                                 </td>

@@ -3,93 +3,59 @@ export enum FeatureEnum {
   CreateBrand = 1,
   DeleteBrand = 2,
   EditBrand = 3,
-  GetBrandByName = 4,
-  GetBrandlist = 5,
-  ActiveBrand = 6,
-  DeactiveBrand = 7,
-  BulkDeleteBrand = 8,
-  BulkActivateBrand = 9,
-  BulkDeActivateBrand = 10,
-  GetBrandsNames = 11,
-  GetBrandByID = 12,
-  GetAllBrand = 13,
+  GetBrandlist = 4,
+  BulkDeleteBrand = 5,
+  GetBrandByID = 6,
+
   // City Features
   CreateCity = 1000,
   DeleteCity = 1001,
   EditCity = 1002,
-  GetCityList = 1003,
-  FilterCity = 1004,
+  FilterCity = 1003,
   ActiveCity = 1005,
   DeactiveCity = 1006,
-  AddRangeCities = 1007,
-  BulkDeleteCity = 1008,
-  BulkDeactivateCity = 1009,
-  BulkActivateCity = 1010,
-  GetCitybyID = 1011,
-  GetCitiesbyGovernorateID = 1012,
-  SelectCityList = 1013,
+  BulkDeleteCity = 1007,
+  BulkDeactivateCity = 1008,
+  BulkActivateCity = 1009,
+  GetCitybyID = 1010,
 
   // Governorate Features
   CreateGovernorate = 2000,
   DeleteGovernorate = 2001,
   EditGovernorate = 2002,
-  GetGovernorateList = 2003,
-  GetGovernorateByName = 2004,
-  ActiveGovernorate = 2005,
-  DeactiveGovernorate = 2006,
-  AddRangeGovernrates = 2007,
-  BulkDeleteGovernorate = 2008,
-  BulkActivateGovernorate = 2009,
-  BulkDeactivateGovernorate = 2010,
-  GetAllGovernorateWithAllCities = 2011,
-  GetGovernoratebyID = 2012,
-  InitiatGovernratesAndCities = 2014,
-  GetGovernorateDropdownList = 2015,
+  ActiveGovernorate = 2003,
+  DeactiveGovernorate = 2004,
+  BulkDeleteGovernorate = 2005,
+  BulkActivateGovernorate = 2006,
+  BulkDeactivateGovernorate = 2007,
+  GetAllGovernorateWithAllCities = 2008,
+  GetGovernoratebyID = 2009,
+  InitiatGovernratesAndCities = 2010,
 
   // Role Features
-  CreateRole = 3000,
-  DeleteRole = 3001,
-  EditRole = 3002,
-  GetRoleList = 3003,
-  ActivateRole = 3004,
-  DeactivateRole = 3005,
-  AssignFeaturesToRole = 3006,
-  AssignBulkFeaturesToRole = 3007,
-  AssignFeaturesToModule = 3008,
-  AssignModulesToRole = 3009,
-  UnassignFeaturesfromRole = 3010,
-  UnassignFeaturesfromModule = 3011,
-  UnassignBulkFeaturesToRole = 3012,
-  SearchRoleByName = 3013,
+  AssignFeaturesToRole = 3000,
+  UnassignFeaturesfromRole = 3001,
+  UnassignBulkFeaturesToRole = 3002,
+  AssignBulkFeaturesToRole = 3003,
+
 
   // Client Features
-  ClientRegister = 4000,
-  CreateClient = 4001,
-  GetClientList = 4002,
-  SearchClient = 4003,
-  ActivateClients = 4004,
-  BulkDeActivateUser = 4005,
-  DeactivateClients = 4006,
-  BulkActivateClients = 4007,
-  BulkDeactivateClients = 4008,
-  GetClientByMobile = 4009,
-  VerifiedUser = 4010,
-  ClientSelectList = 4011,
-  ExportClientsToExcel = 4012,
-  BulkActivateUser = 4013,
-  GetClientsWithDefualtShippingAddress = 4014,
-  GetAllPendingClient = 4015,
-  GetAllNotPendingClient = 4016,
-  GetTempClientByID = 4017,
-  RejectUser = 4018,
-  GetAllVerifiedOrRejectUser = 4019,
-  GetClientWithPhoneDetails = 4020,
-  MostUsedGovernorates = 4021,
-  MostUsedGovernoratesRatio = 4022,
-  DeleteClient = 4023,
-  GetClientById = 4024,
-  RecoverAccount = 4025,
-  GetUserById = 4026,
+  CreateClient = 4000,
+  SearchClient = 4001,
+  ActivateClients = 4002,
+  BulkDeActivateUser = 4003,
+  DeactivateClients = 4004,
+  BulkActivateClients = 4005,
+  BulkDeactivateClients = 4006,
+  ClientSelectList = 4007,
+  ExportClientsToExcel = 4008,
+  BulkActivateUser = 4009,
+  GetClientWithPhoneDetails = 4010,
+  MostUsedGovernorates = 4011,
+  MostUsedGovernoratesRatio = 4012,
+  GetClientById = 4013,
+  GetUserById = 4014,
+
 
   // Advertisement Features
   CreateAdvertisement = 5000,
@@ -97,114 +63,106 @@ export enum FeatureEnum {
   DeleteAdvertisement = 5002,
   GetAdvertisementByID = 5003,
   ActiveAdvertisement = 5004,
-  // GetAllAdvertisement = 5005,
   BulkActivateAdvertisement = 5005,
   BulkDeactivateAdvertisement = 5006,
   BulkDeleteAdvertisement = 5007,
   DeactivateAdvertisement = 5008,
   GetAllAdvertisementForAdmin = 5009,
-  // Media Features
-  //UploadMedia ,
-  DeleteMedia = 6000,
-  DeleteBulkMediaBySourceId = 6001,
-  //SaveMedia,
 
   // Phone Features
-  BulkDeletePhones = 7000,
-  GetPhonesByAdmin = 7001,
-  PhoneBrandRatio = 7002,
-  GetAllReturnedPhones = 7003,
-  GovernoratePhoneRatio = 7004,
-  GetStolenPhoneRatio = 7005,
+  BulkDeletePhones = 6000,
+  GetPhonesByAdmin = 6001,
+  PhoneBrandRatio = 6002,
+  GetAllReturnedPhones = 6003,
+  GovernoratePhoneRatio = 6004,
+  GetStolenPhoneRatio = 6005,
 
   // General Featueres
-  GetFeaturesbyRoleID = 8000,
-  GetFeatueresListed = 8001,
-  GetModulesbyRoleID = 8002,
-  //AssignAllFeaturesToRole,
-  GetVerifyStatusList = 8003,
-  GetAllVerifiedStatus = 8004,
-  CreateUser = 8005,
-  EditUser = 8006,
-  FilterUsers = 8007,
-  ChangePassword = 8008,
-  ActivateUser = 8009,
-  DeactivateUser = 8010,
+  GetFeaturesbyRoleID = 7000,
+  GetFeatueresListed = 7001,
+  GetModulesbyRoleID = 7002,
+  GetVerifyStatusList = 7003,
+  CreateUser = 7004,
+  EditUser = 7005,
+  FilterUsers = 7006,
+  ChangePassword = 7007,
+  DeactivateUser = 7008,
+  ActivateUser = 7009,
+
   //CheckOTPValidation
-  DashboardStatistics = 8011,
-  UserData = 8012,
+  DashboardStatistics = 7010,
+  UserData = 7011,
+  ReturnedPhonesAndClients = 7012,
 
 
   //MobileStatusChangeRequest
-  GetAllMobileRequests = 9000,
-  RejectMobileStatusChangeRequests = 9001,
-  GetMobileStatusChangeRequestsById = 9002,
-  ApproveMobileStatusChangeRequests = 9003,
-  EditImageRequestStatus = 9004,
-  StolenPhonesByGovernorate = 9005,
-  StolenPhonesByCities = 9006,
+  GetAllMobileRequests = 8000,
+  RejectMobileStatusChangeRequests = 8001,
+  ApproveMobileStatusChangeRequests = 8002,
+  EditImageRequestStatus = 8003,
+  StolenPhonesByGovernorate = 8004,
+  StolenPhonesByCities = 8005,
 
 
 
   //transfer ownership request
-  GetTransferOwnershipRequestByID = 10000,
-  AcceptTransferOwnershipRequest = 10001,
-  RejectTransferOwnershipRequest = 10002,
-  GetAllTransferOwnershipRequests = 10003,
-  EditImageStatusTransferOwnershipRequest = 10004,
- 
+  AcceptTransferOwnershipRequest = 9000,
+  RejectTransferOwnershipRequest = 9001,
+  GetAllTransferOwnershipRequests = 9002,
+  EditImageStatusTransferOwnershipRequest = 9003,
+
   //ActionLog
-  GetAllActionLog = 11000,
-  FilterActionLogByStolenStatus = 11001,
-  GetMostSearchClients = 11002,
+  GetAllActionLog = 10000,
+  FilterActionLogByStolenStatus = 10001,
+  GetMostSearchClients = 10002,
 
   //Notification
-  GetAllNotificationMessages = 12000,
-  SendNotification = 12001,
+  GetAllNotificationMessages = 11000,
+  SendNotification = 11001,
 
   //Emails
-  GetAllEmails = 13000,
-  SendEmailToClients = 13001,
+  GetAllEmails = 12000,
+  SendEmailToClients = 12001,
 
 
 
   //Client Role Features 
 
-    //1- brand
-    SelectBrandList=14000,
+  //1- brand
+  SelectBrandList = 13000,
 
-    //2- Client
-    EditClient=15000,
-    ChangeUserPassword=15001,
-    AddClientImage=15002,
-    GetClientDetails=15003,
+  //2- Client
+  EditClient = 14000,
+  ChangeUserPassword = 14001,
+  AddClientImage = 14002,
+  GetClientDetails = 14003,
+  DeleteClient = 14004,
+  //3- Advertisement
+  GetAllAdvertisement = 15000,
 
-    //3- Advertisement
-    GetAllAdvertisement=16000,
+  //4-  Phone
+  AddPhone = 16000,
+  SearchPhone = 16001,
+  DeletePhone = 16002,
+  EditPhone = 16003,
+  GetPhoneByID = 16004,
+  GetClientPhones = 16005,
+  PhoneSafe = 16006,
 
-    //4-  Phone
-    AddPhone = 17000,
-    SearchPhone=17001,
-    DeletePhone=17002,
-    EditPhone=17003,
-    GetPhoneByID=17004,
-    GetClientPhones=17005,
-    PhoneSafe=17006,
+  //5- MobileStatusChangeRequest
+  AddMobileStatusChangeRequest = 17000,
+  EditMobileStatusChangeRequestImage = 17001,
+  GetAllMobileRequestsByClientId = 17002,
+  CancelMobileStatusChangeRequests = 17003,
 
-    //5- MobileStatusChangeRequest
-    AddMobileStatusChangeRequest=18000,
-    EditMobileStatusChangeRequestImage=18001,
-    GetAllMobileRequestsByClientId=18002,
-    CancelMobileStatusChangeRequests=18003,
+  //6-TransferOwnershipRequest,
+  CreateTransferOwnershipRequest = 18000,
+  EditTransferOwnershipRequestImage = 18001,
+  GetOwnerShipRequestByClientId = 18002,
+  CancelTransferOwnershipRequest = 18003,
 
-    //6-TransferOwnershipRequest,
-    CreateTransferOwnershipRequest = 19000,
-    EditTransferOwnershipRequestImage=19001,
-    GetOwnerShipRequestByClientId=19002,
-    CancelTransferOwnershipRequest=19003,
-
-    //7-NotificationNotification
-    GetAllNotificationMessagesForClient = 20000
+  //7-NotificationNotification
+  GetAllNotificationMessagesForClient = 19000
 
 
 }

@@ -43,7 +43,7 @@
 
 
       <a class="nav-link text-white py-2 d-flex flex-row-reverse justify-content-end align-items-center"
-        *ngIf="hasFeature(featureEnum.GetClientList)" routerLink="/sites/customers" routerLinkActive="active"
+        *ngIf="hasFeature(featureEnum.SearchClient)" routerLink="/sites/customers" routerLinkActive="active"
         #clientsRla="routerLinkActive" [ngClass]="{ 'active-color': clientsRla.isActive || isClientDetailsActive() }"
         (mouseenter)="setActiveLink('customers')" (mouseleave)="setActiveLink('')">
         {{ "sites.layout.clients" | translate }}
@@ -93,7 +93,7 @@
       </a>
 
       <a class="nav-link text-white py-2 d-flex flex-row-reverse justify-content-end align-items-center"
-        *ngIf="hasFeature(featureEnum.GetAllBrand)" routerLink="/sites/brand" routerLinkActive="active"
+        *ngIf="hasFeature(featureEnum.GetBrandlist)" routerLink="/sites/brand" routerLinkActive="active"
         #brandRla="routerLinkActive" [ngClass]="{ 'active-color': brandRla.isActive }"
         (mouseenter)="setActiveLink('brand')" (mouseleave)="setActiveLink('')">
         {{ "sites.layout.brand" | translate }}
