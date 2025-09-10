@@ -12,12 +12,12 @@ export enum FeatureEnum {
   DeleteCity = 1001,
   EditCity = 1002,
   FilterCity = 1003,
-  ActiveCity = 1005,
-  DeactiveCity = 1006,
-  BulkDeleteCity = 1007,
-  BulkDeactivateCity = 1008,
-  BulkActivateCity = 1009,
-  GetCitybyID = 1010,
+  ActiveCity = 1004,
+  DeactiveCity = 1005,
+  BulkDeleteCity = 1006,
+  BulkDeactivateCity = 1007,
+  BulkActivateCity = 1008,
+  GetCitybyID = 1009,
 
   // Governorate Features
   CreateGovernorate = 2000,
