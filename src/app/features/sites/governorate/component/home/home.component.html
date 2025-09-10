@@ -96,7 +96,7 @@
                                 <td *ngIf="!item.cities?.length">-</td>
                                 <td>{{item.governorateCode}}</td>
                                 <td>
-                                    <p-inputSwitch [(ngModel)]="item.isActive" [disabled]="page.isSaving || !hasFeature(item.DeactiveGovernorate ? featureEnum.DeactiveCity : featureEnum.ActiveGovernorate)"
+                                    <p-inputSwitch [(ngModel)]="item.isActive" [disabled]="page.isSaving || !hasFeature(item.isActive ? featureEnum.DeactiveGovernorate : featureEnum.ActiveGovernorate)"
                                         (ngModelChange)="updateActivation(item, item.isActive)">
                                     </p-inputSwitch>
                                 </td>
