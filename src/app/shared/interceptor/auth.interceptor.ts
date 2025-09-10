@@ -10,7 +10,7 @@ import {
 import { Observable, throwError } from 'rxjs';
 import { catchError, tap } from 'rxjs/operators';
 import { Router } from '@angular/router';
-import { TokenService } from '../service/token.service'
+import { TokenService } from '../service/token.service';
 
 @Injectable()
 export class AuthInterceptor implements HttpInterceptor {
@@ -20,7 +20,6 @@ export class AuthInterceptor implements HttpInterceptor {
     const token = this.tokenService.getToken();
 
     let authReq = req;
-
     if (token) {
       authReq = req.clone({
         setHeaders: { Authorization: token }
@@ -30,24 +29,34 @@ export class AuthInterceptor implements HttpInterceptor {
     return next.handle(authReq).pipe(
       catchError((error: HttpErrorResponse) => {
         if (error.status === 401) {
-          this.tokenService.clearUserData();
-          this.router.navigate(['/auth/login']).then(() => {
-            window.location.reload();
-          });
-                  }
+          const publicPaths = ['/home', '/privacy', '/comingSoon'];
+          const currentUrl = this.router.url;
+
+          // لو مش واقف على صفحة عامة → روح للـ login
+          if (!publicPaths.includes(currentUrl)) {
+            this.tokenService.clearUserData();
+            this.router.navigate(['/auth/login']).then(() => {
+              window.location.reload();
+            });
+          }
+        }
         return throwError(() => error);
       }),
       tap(event => {
         if (event instanceof HttpResponse) {
           if (event.body && event.body.errorCode === 7) {
-            this.tokenService.clearUserData();
-            this.router.navigate(['/auth/login']).then(() => {
-            window.location.reload();
-          });
+            const publicPaths = ['/home', '/privacy', '/comingSoon'];
+            const currentUrl = this.router.url;
+
+            if (!publicPaths.includes(currentUrl)) {
+              this.tokenService.clearUserData();
+              this.router.navigate(['/auth/login']).then(() => {
+                window.location.reload();
+              });
+            }
           }
         }
       })
     );
-    
   }
 }
