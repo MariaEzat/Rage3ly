@@ -73,7 +73,7 @@
       </a>
 
       <a class="nav-link text-white py-2 d-flex flex-row-reverse justify-content-end align-items-center"
-         routerLink="/sites/governorate" routerLinkActive="active"
+         routerLink="/sites/governorate" routerLinkActive="active" *ngIf="hasFeature(featureEnum.GetAllGovernorateWithAllCities)"
         #governorateRla="routerLinkActive" [ngClass]="{ 'active-color': governorateRla.isActive }"
         (mouseenter)="setActiveLink('governorate')" (mouseleave)="setActiveLink('')">
         {{ "sites.layout.governorate" | translate }}
@@ -83,7 +83,7 @@
       </a>
 
         <a class="nav-link text-white py-2 d-flex flex-row-reverse justify-content-end align-items-center"
-         routerLink="/sites/city" routerLinkActive="active"
+         routerLink="/sites/city" routerLinkActive="active" *ngIf="hasFeature(featureEnum.FilterCity)"
         #cityRla="routerLinkActive" [ngClass]="{ 'active-color': cityRla.isActive }"
         (mouseenter)="setActiveLink('city')" (mouseleave)="setActiveLink('')">
         {{ "sites.layout.city" | translate }}
