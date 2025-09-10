@@ -25,7 +25,10 @@
         </div>
 
         <hr />
-
+<div class="d-flex justify-content-end align-items-start py-3">
+    <p-inputSwitch [(ngModel)]="isActivated"></p-inputSwitch>
+    <label class="ms-2">{{"sites.city.active"|translate}} {{"sites.city.city"|translate}}</label>
+  </div>
         <!-- Form -->
         <ng-container *ngIf="page.isPageLoaded">
             <form [formGroup]="page.form">
