@@ -388,7 +388,8 @@
       "notDeleted": "غير محذوف",
       "dateOfPurchaseError":"تاريخ الشراء لا يمكن ان يكون ف المستقبل",
       "otherBrand":"ماركات اخرى",
-      "mobileDetails":"تفاصيل الموبايل"
+      "mobileDetails":"تفاصيل الموبايل",
+      "brandName":" الماركة"
     },
     "employee-profile": {
       "profileSettings": "إعدادات الملف الشخصي",

@@ -398,7 +398,8 @@
       "notDeleted": "Not Deleted",
       "dateOfPurchaseError": "Date of Purchase cannot be in the future",
       "otherBrand": "Other Brand",
-      "mobileDetails": "Mobile Details"
+      "mobileDetails": "Mobile Details",
+      "brandName":"Brand"
     },
     "employee-profile": {
       "profileSettings": "Profile Settings",

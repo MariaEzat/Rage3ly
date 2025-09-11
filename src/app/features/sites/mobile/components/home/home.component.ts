@@ -106,6 +106,12 @@ export class HomeComponent extends CrudIndexBaseUtils {
         Sortable: true,
       },
       {
+        Name: 'Brand',
+        Title: 'sites.mobile.brandName',
+        Selectable: false,
+        Sortable: true,
+      },
+      {
         Name: 'Mobile Model',
         Title: 'sites.mobile.mobileModel',
         Selectable: false,

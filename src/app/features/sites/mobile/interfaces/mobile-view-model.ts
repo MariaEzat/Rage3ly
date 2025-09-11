@@ -7,6 +7,8 @@ export interface mobileViewModel {
   imeI2: string;
   selected?: boolean;
   deleted: boolean;
+  brandId:string;
+  brandName:string;
 }
 
 export class mobileCreateViewModel {
